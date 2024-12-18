@@ -38,7 +38,7 @@ const Page = () => {
           >
             <div className="flex items-center gap-2 rounded-full border border-white/20 bg-black/30 px-4 py-2 text-sm backdrop-blur-md transition-all duration-300 group-hover:border-white/40 group-hover:bg-black/50">
               <link.icon size={16} />
-              <span className="font-light tracking-wide">{link.label}</span>
+              <span className="hidden font-light tracking-wide sm:block">{link.label}</span>
             </div>
             <div className="absolute -inset-[1px] -z-10 rounded-full bg-gradient-to-r from-blue-400 to-red-700 opacity-0 blur transition-opacity duration-300 group-hover:opacity-40"></div>
           </a>

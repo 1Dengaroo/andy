@@ -5,6 +5,8 @@ import './globals.css';
 import ParticleNetwork from '@/components/particle-network/network';
 import Navbar from '@/components/navbar/navbar';
 
+import { Analytics } from '@vercel/analytics/react';
+
 const inter = Inter({ subsets: ['latin'] });
 
 const baseUrl = 'https://andydeng.me';
@@ -54,6 +56,7 @@ export default function RootLayout({
             <Navbar />
           </div>
         </div>
+        <Analytics />
       </body>
     </html>
   );

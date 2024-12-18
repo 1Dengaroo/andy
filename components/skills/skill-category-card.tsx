@@ -1,25 +1,64 @@
-const SkillCategory = ({ title, skills }: { title: string; skills: string[] }) => (
-  <div className="group relative ml-8 before:absolute before:-left-[41px] before:top-3 before:h-4 before:w-4 before:rounded-full before:border-2 before:border-blue-400 before:bg-black before:transition-all before:duration-300 before:content-[''] after:absolute after:-bottom-12 after:-left-[33px] after:top-3 after:w-[2px] after:bg-gradient-to-b after:from-blue-400/50 after:to-transparent after:content-[''] last:after:hidden before:hover:border-blue-300 before:hover:bg-blue-400/20">
-    <div className="relative mb-6 inline-block">
-      <h3 className="text-2xl font-light tracking-wider transition-colors duration-300 group-hover:text-blue-400">
-        <span className="bg-gradient-to-r from-blue-400 to-blue-400 bg-[length:0%_1px] bg-left-bottom bg-no-repeat pb-1 transition-[background-size] duration-300 group-hover:bg-[length:100%_1px]">
-          {title}
-        </span>
-      </h3>
-    </div>
+import { ChevronRight } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { LucideIcon } from 'lucide-react';
 
-    <div className="mb-12 flex flex-wrap gap-3">
-      {skills.map((skill) => (
-        <span
-          key={skill}
-          className="relative overflow-hidden rounded-sm bg-gradient-to-r from-black/40 to-black/20 px-4 py-1.5 text-sm font-light tracking-wider text-white/90 transition-all duration-300 before:absolute before:inset-0 before:-z-10 before:translate-y-[100%] before:bg-gradient-to-r before:from-blue-600/10 before:to-purple-600/10 before:transition-transform before:duration-300 hover:text-white hover:before:translate-y-0"
-        >
-          {skill}
-          <div className="absolute inset-0 -z-20 bg-gradient-to-r from-blue-400/5 to-purple-400/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-        </span>
-      ))}
-    </div>
-  </div>
-);
+interface Skill {
+  name?: string;
+  icon?: LucideIcon;
+  description?: string;
+}
+
+interface SkillCategory {
+  title: string;
+  skills: (Skill | string)[];
+}
+
+interface SkillCategoryProps {
+  category: SkillCategory;
+}
+
+const SkillCategory: React.FC<SkillCategoryProps> = ({ category }) => {
+  return (
+    <Card className="group relative border-white/20 bg-black/30 backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:bg-black/40 hover:shadow-lg">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-600/20 to-purple-600/20 opacity-0 blur-xl transition-all duration-500 group-hover:opacity-100" />
+
+      <CardHeader className="pb-2">
+        <CardTitle className="flex items-center justify-between text-xl font-light">
+          <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+            {category.title}
+          </span>
+          <ChevronRight className="h-5 w-5 text-blue-400/50 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-blue-400" />
+        </CardTitle>
+      </CardHeader>
+
+      <CardContent>
+        <div className="flex flex-wrap gap-2">
+          {category.skills.map((skill, index) => {
+            const skillObj = typeof skill === 'string' ? { name: skill } : skill;
+
+            return (
+              <TooltipProvider key={index}>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-light tracking-wide text-white/90 transition-all duration-300 hover:border-white/20 hover:bg-white/10">
+                      {skillObj.icon && <skillObj.icon className="h-4 w-4 text-blue-400" />}
+                      <span>{skillObj.name}</span>
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p className="text-xs">
+                      {skillObj.description || `Experience with ${skillObj.name}`}
+                    </p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            );
+          })}
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
 
 export default SkillCategory;

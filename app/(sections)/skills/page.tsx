@@ -1,43 +1,29 @@
-import React from 'react';
+import SkillCategory from '@/components/skills/skill-category-card';
+
+import { AlertCircle } from 'lucide-react';
 import { skillCategories } from '@/lib/data';
 
-const Page = () => {
+export default function Page() {
   return (
-    <div className="md:flex-start items-center space-y-4 md:flex md:gap-4">
-      <div>
-        <h1 className="text-4xl font-extralight">
+    <div className="mx-auto max-w-6xl gap-x-8 space-y-8 px-4 md:flex">
+      <div className="space-y-4 pt-8">
+        <h1 className="text-4xl font-extralight tracking-tight">
           Technical <span className="text-blue-600">Skills</span>
         </h1>
-        <p className="mt-4 text-lg font-light leading-relaxed text-white/80">
-          Here are some of the technologies I have worked with in a professional setting.
-        </p>
+        <div className="flex items-start gap-2 rounded-lg border border-blue-500/20 bg-blue-500/5 p-4 text-blue-400">
+          <AlertCircle className="mt-1 h-5 w-5 flex-shrink-0" />
+          <p className="text-sm font-light leading-relaxed">
+            These are technologies I&apos;ve worked with professionally. Each skill represents
+            hands-on experience in real-world projects and applications.
+          </p>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {skillCategories.map((category) => (
-          <div
-            key={category.title}
-            className="group relative overflow-hidden rounded-xl border border-white/20 bg-black/30 p-6 backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:bg-black/50"
-          >
-            <div className="absolute -inset-1 -z-10 bg-gradient-to-r from-blue-400 to-red-700 opacity-0 blur transition-opacity duration-300 group-hover:opacity-40" />
-
-            <h2 className="mb-4 text-xl font-light text-blue-400">{category.title}</h2>
-
-            <div className="flex flex-wrap gap-2">
-              {category.skills.map((skill, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-light transition-all duration-300 hover:border-white/20 hover:bg-white/10"
-                >
-                  {skill}
-                </div>
-              ))}
-            </div>
-          </div>
+          <SkillCategory key={category.title} category={category} />
         ))}
       </div>
     </div>
   );
-};
-
-export default Page;
+}

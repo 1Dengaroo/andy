@@ -110,11 +110,6 @@ table {
   text-wrap: balance;
 }
 
-.hero_text {
-  font-size: 2.5rem;
-  font-weight: 10;
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;

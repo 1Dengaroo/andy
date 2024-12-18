@@ -1,3 +1,9 @@
+## 🌐 Deployment
+
+Visit the live website: [andydeng.me](https://andydeng.me)
+
+[![Portfolio Screenshot](https://andydeng.me/og.png)](https://andydeng.me)
+
 ## ✨ Features
 
 - Interactive particle network background with mouse interaction
@@ -6,7 +12,6 @@
 - Dark mode optimized
 - Social media integration
 - SEO optimized
--
 
 ## 🛠️ Tech Stack
 

@@ -1,18 +1,8 @@
-import { ChevronLeft } from 'lucide-react';
-import Link from 'next/link';
 import { experiences } from '@/lib/data';
 
 const Page = () => {
   return (
-    <div className="w-full max-w-4xl">
-      <Link href="/" className="group mb-8 inline-flex items-center gap-2">
-        <ChevronLeft
-          size={16}
-          className="transition-transform duration-300 group-hover:-translate-x-1"
-        />
-        <span className="text-sm font-light">Back</span>
-      </Link>
-
+    <>
       <h1 className="mb-12 text-4xl font-extralight">
         Professional <span className="text-blue-600">Experience</span>
       </h1>
@@ -40,7 +30,7 @@ const Page = () => {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

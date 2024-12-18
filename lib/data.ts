@@ -1,3 +1,5 @@
+import { Github, Linkedin, Mail, FileText } from 'lucide-react';
+
 export const skillCategories = [
   {
     title: 'Languages',
@@ -78,4 +80,17 @@ export const experiences = [
       'Trained junior technicians to handle routine technical issues, improving overall team efficiency'
     ]
   }
+];
+
+export const socialLinks = [
+  { href: 'https://github.com/1Dengaroo/', icon: Github, label: 'GitHub' },
+  { href: 'https://linkedin.com/in/andydeng-/', icon: Linkedin, label: 'LinkedIn' },
+  { href: 'mailto:andydeng0224@gmail.com', icon: Mail, label: 'Email' },
+  { href: '/Andy Deng resume.pdf', icon: FileText, label: 'Resume' }
+];
+
+export const navigationLinks = [
+  { href: '/about', label: 'About' },
+  { href: '/skills', label: 'Skills' },
+  { href: '/experience', label: 'Experience' }
 ];

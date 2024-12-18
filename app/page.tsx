@@ -1,7 +1,7 @@
 const Page = () => {
   return (
     <div className="no-hightlight transition-all duration-500">
-      <div className="flex flex-col items-center justify-center space-y-4">
+      <div className="flex flex-col items-center justify-center space-y-4 text-center">
         <div className="animate-fade-slide-right opacity-0">
           <div className="text-5xl font-extralight">
             Hello, I&apos;m <span className="text-blue-600">Andy</span>

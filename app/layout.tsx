@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 
 import ParticleNetwork from '@/components/particle-network/network';
-import Navbar from '@/components/navbar/navbar';
+import Footer from '@/components/layout/footer';
 
 import { Analytics } from '@vercel/analytics/react';
 
@@ -46,14 +46,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} overflow-hidden antialiased`}>
         <div className="relative min-h-screen">
           <div className="relative z-0">
             <ParticleNetwork />
           </div>
-          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
+          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-2">
             {children}
-            <Navbar />
+            <Footer />
           </div>
         </div>
         <Analytics />

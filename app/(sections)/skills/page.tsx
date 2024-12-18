@@ -5,7 +5,7 @@ import { skillCategories } from '@/lib/data';
 
 export default function Page() {
   return (
-    <div className="mx-auto max-w-6xl gap-x-8 space-y-8 px-4 md:flex">
+    <div className="mx-auto max-w-6xl gap-x-8 space-y-8 md:flex">
       <div className="space-y-4 pt-8">
         <h1 className="text-4xl font-extralight tracking-tight">
           Technical <span className="text-blue-600">Skills</span>

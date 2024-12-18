@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
-import { Dot, DotsConfig, MousePosition } from "./types";
+import { useEffect, useRef } from 'react';
+import { Dot, DotsConfig, MousePosition } from './types';
 
 const CanvasDots: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -10,14 +10,14 @@ const CanvasDots: React.FC = () => {
     nb: 0,
     distance: 0,
     d_radius: 0,
-    array: [],
+    array: []
   });
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     const updateCanvasSize = (): void => {
@@ -28,11 +28,11 @@ const CanvasDots: React.FC = () => {
     updateCanvasSize();
 
     ctx.lineWidth = 0.4;
-    ctx.strokeStyle = "rgb(81, 162, 233)";
+    ctx.strokeStyle = 'rgb(81, 162, 233)';
 
     const mousePosition: MousePosition = {
       x: window.innerWidth / 2,
-      y: window.innerHeight / 2,
+      y: window.innerHeight / 2
     };
 
     const updateDotsConfig = (): void => {
@@ -41,7 +41,7 @@ const CanvasDots: React.FC = () => {
         nb: 200,
         distance: 55,
         d_radius: 220,
-        array: [],
+        array: []
       };
 
       if (windowSize > 1600) {
@@ -66,6 +66,11 @@ const CanvasDots: React.FC = () => {
     };
     updateDotsConfig();
 
+    const friction = 0.98;
+    const repelRadius = 100;
+    const repelForce = 0.05;
+    const baselineSpeed = 0.1;
+
     const draw = (): void => {
       if (!canvas || !ctx) return;
 
@@ -73,14 +78,44 @@ const CanvasDots: React.FC = () => {
 
       if (dotsRef.current.array.length === 0) {
         for (let i = 0; i < dotsRef.current.nb; i++) {
-          dotsRef.current.array.push(new Dot(canvas));
+          const dot = new Dot(canvas);
+          dot.vx = (Math.random() - 0.5) * 0.4;
+          dot.vy = (Math.random() - 0.5) * 0.4;
+          dotsRef.current.array.push(dot);
         }
       }
 
       dotsRef.current.array.forEach((dot, i) => {
+        const dx = dot.x - mousePosition.x;
+        const dy = dot.y - mousePosition.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const speed = Math.sqrt(dot.vx * dot.vx + dot.vy * dot.vy);
+
+        if (dist < repelRadius && dist > 0) {
+          const angle = Math.atan2(dy, dx);
+          dot.vx += Math.cos(angle) * repelForce;
+          dot.vy += Math.sin(angle) * repelForce;
+        }
+
+        if (speed > baselineSpeed) {
+          dot.vx *= friction;
+          dot.vy *= friction;
+        } else {
+          if (speed === 0) {
+            const angle = Math.random() * Math.PI * 2;
+            dot.vx = Math.cos(angle) * baselineSpeed;
+            dot.vy = Math.sin(angle) * baselineSpeed;
+          } else {
+            const angle = Math.atan2(dot.vy, dot.vx);
+            dot.vx = Math.cos(angle) * baselineSpeed;
+            dot.vy = Math.sin(angle) * baselineSpeed;
+          }
+        }
+
         if (i !== 0) {
           dot.animate(canvas.width, canvas.height);
         }
+
         dot.create(ctx, mousePosition, canvas.width);
       });
 
@@ -123,11 +158,6 @@ const CanvasDots: React.FC = () => {
     const handleMouseMove = (e: MouseEvent): void => {
       mousePosition.x = e.clientX;
       mousePosition.y = e.clientY;
-
-      if (dotsRef.current.array[0]) {
-        dotsRef.current.array[0].x = e.clientX;
-        dotsRef.current.array[0].y = e.clientY;
-      }
     };
 
     const handleResize = (): void => {
@@ -135,14 +165,14 @@ const CanvasDots: React.FC = () => {
       updateDotsConfig();
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('resize', handleResize);
 
     draw();
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('resize', handleResize);
       if (animationRef.current !== null) {
         cancelAnimationFrame(animationRef.current);
       }
@@ -150,8 +180,8 @@ const CanvasDots: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 w-full h-full">
-      <canvas ref={canvasRef} className="block w-full h-full" />
+    <div className="fixed inset-0 h-full w-full">
+      <canvas ref={canvasRef} className="block h-full w-full" />
     </div>
   );
 };

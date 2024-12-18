@@ -29,8 +29,11 @@ export class Dot {
   constructor(canvas: HTMLCanvasElement) {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
-    this.vx = (-0.5 + Math.random()) * 0.15;
-    this.vy = (-0.5 + Math.random()) * 0.15;
+
+    // Increase initial velocity so movement is noticeable
+    this.vx = (Math.random() - 0.5) * 2; // range: -1 to 1
+    this.vy = (Math.random() - 0.5) * 2; // range: -1 to 1
+
     this.radius = Math.random() * 1.8 + 0.3;
     this.colour = colorDot[Math.floor(Math.random() * colorDot.length)];
   }
@@ -49,13 +52,15 @@ export class Dot {
   }
 
   animate(canvasWidth: number, canvasHeight: number): void {
-    if (this.y < 0 || this.y > canvasHeight) {
-      this.vy = -this.vy;
-    }
-    if (this.x < 0 || this.x > canvasWidth) {
+    // Bounce off the edges
+    if (this.x + this.vx > canvasWidth || this.x + this.vx < 0) {
       this.vx = -this.vx;
     }
+    if (this.y + this.vy > canvasHeight || this.y + this.vy < 0) {
+      this.vy = -this.vy;
+    }
 
+    // Update positions
     this.x += this.vx;
     this.y += this.vy;
   }

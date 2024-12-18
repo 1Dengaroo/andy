@@ -1,16 +1,11 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin']
-});
+import ParticleNetwork from '@/components/particle-network/network';
+import Navbar from '@/components/navbar/navbar';
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin']
-});
+const inter = Inter({ subsets: ['latin'] });
 
 const baseUrl = 'https://andydeng.me';
 
@@ -49,7 +44,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        <div className="relative min-h-screen">
+          <div className="relative z-0">
+            <ParticleNetwork />
+          </div>
+          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
+            {children}
+            <Navbar />
+          </div>
+        </div>
+      </body>
     </html>
   );
 }

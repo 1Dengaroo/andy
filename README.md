@@ -30,7 +30,7 @@ Visit the live website: [andydeng.me](https://andydeng.me)
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/portfolio.git
+git clone https://github.com/1Dengaroo/portfolio.git
 ```
 
 2. Start the development server

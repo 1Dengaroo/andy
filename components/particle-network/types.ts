@@ -10,13 +10,30 @@ export interface DotsConfig {
   array: Dot[];
 }
 
-const colorDot: string[] = [
-  'rgb(81, 162, 233)',
-  'rgb(81, 162, 233)',
-  'rgb(81, 162, 233)',
-  'rgb(81, 162, 233)',
-  'rgb(255, 77, 90)'
-];
+function generateVibrantColor(): string {
+  const r = Math.floor(Math.random() * 156) + 100; // 100-255
+  const g = Math.floor(Math.random() * 156) + 100; // 100-255
+  const b = Math.floor(Math.random() * 156) + 100; // 100-255
+
+  const dominantChannel = Math.floor(Math.random() * 3);
+
+  let recessiveChannel;
+  do {
+    recessiveChannel = Math.floor(Math.random() * 3);
+  } while (recessiveChannel === dominantChannel);
+
+  const channels = [r, g, b];
+
+  channels[dominantChannel] = Math.min(255, channels[dominantChannel] + 50);
+  channels[recessiveChannel] = Math.max(0, channels[recessiveChannel] - 80);
+
+  return `rgb(${channels[0]}, ${channels[1]}, ${channels[2]})`;
+}
+
+const color1 = generateVibrantColor();
+const color2 = generateVibrantColor();
+
+export const colorDot: string[] = [color1, color1, color1, color1, color2];
 
 export class Dot {
   x: number;
@@ -30,7 +47,6 @@ export class Dot {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
 
-    // Increase initial velocity so movement is noticeable
     this.vx = (Math.random() - 0.5) * 2; // range: -1 to 1
     this.vy = (Math.random() - 0.5) * 2; // range: -1 to 1
 
@@ -47,12 +63,13 @@ export class Dot {
     );
     const distanceRatio = dotDistance / (canvasWidth / 1.7);
 
-    ctx.fillStyle = `${this.colour.slice(0, -1)},${Math.max(0.2, 1 - distanceRatio)})`;
+    const opacity = Math.max(0.2, 1 - distanceRatio);
+
+    ctx.fillStyle = `${this.colour.slice(0, -1)},${opacity})`;
     ctx.fill();
   }
 
   animate(canvasWidth: number, canvasHeight: number): void {
-    // Bounce off the edges
     if (this.x + this.vx > canvasWidth || this.x + this.vx < 0) {
       this.vx = -this.vx;
     }
@@ -60,7 +77,6 @@ export class Dot {
       this.vy = -this.vy;
     }
 
-    // Update positions
     this.x += this.vx;
     this.y += this.vy;
   }

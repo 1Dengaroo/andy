@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { Dot, DotsConfig, MousePosition } from './types';
+import { Dot, DotsConfig, MousePosition, colorDot } from './types';
 
 const CanvasDots: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -12,6 +12,8 @@ const CanvasDots: React.FC = () => {
     d_radius: 0,
     array: []
   });
+
+  const primaryColor = useRef<string>(colorDot[0]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -28,7 +30,7 @@ const CanvasDots: React.FC = () => {
     updateCanvasSize();
 
     ctx.lineWidth = 0.4;
-    ctx.strokeStyle = 'rgb(81, 162, 233)';
+    ctx.strokeStyle = primaryColor.current;
 
     const mousePosition: MousePosition = {
       x: window.innerWidth / 2,
@@ -45,19 +47,19 @@ const CanvasDots: React.FC = () => {
       };
 
       if (windowSize > 1600) {
-        newConfig.nb = 600;
+        newConfig.nb = 400;
         newConfig.distance = 80;
         newConfig.d_radius = 350;
       } else if (windowSize > 1300) {
-        newConfig.nb = 575;
+        newConfig.nb = 350;
         newConfig.distance = 70;
         newConfig.d_radius = 300;
       } else if (windowSize > 1100) {
-        newConfig.nb = 500;
+        newConfig.nb = 300;
         newConfig.distance = 65;
         newConfig.d_radius = 280;
       } else if (windowSize > 800) {
-        newConfig.nb = 300;
+        newConfig.nb = 250;
         newConfig.distance = 60;
         newConfig.d_radius = 250;
       }
@@ -65,6 +67,12 @@ const CanvasDots: React.FC = () => {
       dotsRef.current = newConfig;
     };
     updateDotsConfig();
+
+    // Extract the RGB values from the primary color for connection lines
+    const rgbMatch = primaryColor.current.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+    const lineColorRGB = rgbMatch
+      ? { r: parseInt(rgbMatch[1]), g: parseInt(rgbMatch[2]), b: parseInt(rgbMatch[3]) }
+      : { r: 81, g: 162, b: 233 }; // Fallback to original blue
 
     const friction = 0.98;
     const repelRadius = 100;
@@ -119,50 +127,117 @@ const CanvasDots: React.FC = () => {
         dot.create(ctx, mousePosition, canvas.width);
       });
 
+      const gridSize = dotsRef.current.distance;
+      const grid: { [key: string]: Dot[] } = {};
+
+      // Place dots in grid cells
+      dotsRef.current.array.forEach((dot) => {
+        const cellX = Math.floor(dot.x / gridSize);
+        const cellY = Math.floor(dot.y / gridSize);
+        const key = `${cellX},${cellY}`;
+
+        if (!grid[key]) {
+          grid[key] = [];
+        }
+        grid[key].push(dot);
+      });
+
+      // Check connections only for nearby dots
       dotsRef.current.array.forEach((dot1, i) => {
-        dotsRef.current.array.forEach((dot2, j) => {
-          if (i < j) {
-            const dx = dot1.x - dot2.x;
-            const dy = dot1.y - dot2.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
+        const cellX = Math.floor(dot1.x / gridSize);
+        const cellY = Math.floor(dot1.y / gridSize);
 
-            if (distance < dotsRef.current.distance) {
-              const mouseDistance = Math.sqrt(
-                Math.pow((dot1.x + dot2.x) / 2 - mousePosition.x, 2) +
-                  Math.pow((dot1.y + dot2.y) / 2 - mousePosition.y, 2)
-              );
+        // Check 9 surrounding cells (3x3 grid)
+        for (let x = cellX - 1; x <= cellX + 1; x++) {
+          for (let y = cellY - 1; y <= cellY + 1; y++) {
+            const key = `${x},${y}`;
+            const cellDots = grid[key];
 
-              if (mouseDistance < dotsRef.current.d_radius) {
-                ctx.beginPath();
-                ctx.moveTo(dot1.x, dot1.y);
-                ctx.lineTo(dot2.x, dot2.y);
+            if (cellDots) {
+              cellDots.forEach((dot2) => {
+                // Skip if it's the same dot or already processed
+                const j = dotsRef.current.array.indexOf(dot2);
+                if (i >= j) return;
 
-                const opacity = Math.max(
-                  0.15,
-                  1.2 -
-                    mouseDistance / dotsRef.current.d_radius -
-                    (distance / dotsRef.current.distance) * 0.5
-                );
+                const dx = dot1.x - dot2.x;
+                const dy = dot1.y - dot2.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
 
-                ctx.strokeStyle = `rgba(81, 162, 233, ${opacity})`;
-                ctx.stroke();
-              }
+                if (distance < dotsRef.current.distance) {
+                  const mouseDistance = Math.sqrt(
+                    Math.pow((dot1.x + dot2.x) / 2 - mousePosition.x, 2) +
+                      Math.pow((dot1.y + dot2.y) / 2 - mousePosition.y, 2)
+                  );
+
+                  if (mouseDistance < dotsRef.current.d_radius) {
+                    ctx.beginPath();
+                    ctx.moveTo(dot1.x, dot1.y);
+                    ctx.lineTo(dot2.x, dot2.y);
+
+                    const opacity = Math.max(
+                      0.15,
+                      1.2 -
+                        mouseDistance / dotsRef.current.d_radius -
+                        (distance / dotsRef.current.distance) * 0.5
+                    );
+
+                    ctx.strokeStyle = `rgba(${lineColorRGB.r}, ${lineColorRGB.g}, ${lineColorRGB.b}, ${opacity})`;
+                    ctx.stroke();
+                  }
+                }
+              });
             }
           }
-        });
+        }
       });
 
       animationRef.current = requestAnimationFrame(draw);
     };
 
+    let lastMouseMoveTime = 0;
     const handleMouseMove = (e: MouseEvent): void => {
-      mousePosition.x = e.clientX;
-      mousePosition.y = e.clientY;
+      const now = performance.now();
+      if (now - lastMouseMoveTime > 16) {
+        mousePosition.x = e.clientX;
+        mousePosition.y = e.clientY;
+        lastMouseMoveTime = now;
+      }
     };
 
     const handleResize = (): void => {
       updateCanvasSize();
-      updateDotsConfig();
+
+      const windowSize = window.innerWidth;
+
+      if (windowSize > 1600) {
+        dotsRef.current.distance = 80;
+        dotsRef.current.d_radius = 350;
+      } else if (windowSize > 1300) {
+        dotsRef.current.distance = 70;
+        dotsRef.current.d_radius = 300;
+      } else if (windowSize > 1100) {
+        dotsRef.current.distance = 65;
+        dotsRef.current.d_radius = 280;
+      } else if (windowSize > 800) {
+        dotsRef.current.distance = 60;
+        dotsRef.current.d_radius = 250;
+      } else {
+        dotsRef.current.distance = 55;
+        dotsRef.current.d_radius = 220;
+      }
+
+      const currentParticles = dotsRef.current.array.length;
+      let targetParticles = 200;
+
+      if (windowSize > 1600) targetParticles = 400;
+      else if (windowSize > 1300) targetParticles = 350;
+      else if (windowSize > 1100) targetParticles = 300;
+      else if (windowSize > 800) targetParticles = 250;
+
+      if (Math.abs(currentParticles - targetParticles) > targetParticles * 0.3) {
+        dotsRef.current.array = [];
+        dotsRef.current.nb = targetParticles;
+      }
     };
 
     window.addEventListener('mousemove', handleMouseMove);

@@ -3,11 +3,11 @@ import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 export const skillCategories = [
   {
     title: 'Languages',
-    skills: ['Python', 'JavaScript', 'Ruby', 'C', 'Java', 'SQL']
+    skills: ['Python', 'JavaScript', 'Ruby', 'Java', 'SQL']
   },
   {
     title: 'Frameworks',
-    skills: ['Next.js', 'Rails', 'Django', 'React', 'Node.js', 'Swift']
+    skills: ['Next.js', 'Rails', 'Django', 'React']
   },
   {
     title: 'Tools',
@@ -20,6 +20,10 @@ export const skillCategories = [
   {
     title: 'Testing',
     skills: ['RSpec', 'Playwright', 'Pytest', 'Jest']
+  },
+  {
+    title: 'Cloud Services',
+    skills: ['Heroku', 'Azure', 'Firebase', 'Vercel']
   }
 ];
 

@@ -27,7 +27,7 @@ function TimeCard() {
   }, []);
 
   return (
-    <Card className="h-full">
+    <Card className="h-full w-full">
       <CardContent className="pt-6">
         <div className="text-center align-middle font-serif text-2xl">
           {time} {TIMEZONE}

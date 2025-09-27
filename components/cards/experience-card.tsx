@@ -11,7 +11,7 @@ function ExperienceCard() {
     <Card className="group h-full pb-6">
       <CardHeader className="flex flex-row justify-between gap-4">
         <div>Experience</div>
-        <Button variant="outline" size="icon" className="group-hover:text-hue">
+        <Button variant="outline" size="icon" className="group-hover:text-hue" asChild>
           <a
             href="/Andy_Deng_Resume.pdf"
             target="_blank"
@@ -38,7 +38,7 @@ function ExperienceCard() {
 
           <div className="flex-1 overflow-y-auto">
             {experiences.map((exp, index) => (
-              <TabsContent key={index} value={index.toString()} className="mt-0">
+              <TabsContent key={index} value={index.toString()} className="mt-0" tabIndex={-1}>
                 <h3 className="mb-1 text-lg font-semibold">
                   {exp.role} <span className="text-hue">@ {exp.company}</span>
                 </h3>

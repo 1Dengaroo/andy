@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { useTheme } from 'next-themes';
 import { Dot, DotsConfig, MousePosition } from './types';
 
-const CanvasDots: React.FC = () => {
+const CanvasDots = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const animationRef = useRef<number | null>(null);
   const dotsRef = useRef<DotsConfig>({

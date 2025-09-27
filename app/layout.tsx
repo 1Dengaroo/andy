@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css';
+import '@/styles/globals.css';
 
 import ParticleNetwork from '@/components/particle-network/network';
 
@@ -8,6 +8,8 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ThemeProvider } from '@/components/theme/theme-provider';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import LoaderWrapper from '@/components/layout/initial-loader';
+import ThemeHueProvider from '@/components/theme/theme-hue-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -55,16 +57,18 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative h-screen">
+          <ThemeHueProvider>
             <div className="relative z-0">
               <ParticleNetwork />
             </div>
-            <ScrollArea className="absolute inset-0 z-10">
-              <div className="flex min-h-screen flex-col items-center justify-center p-2">
-                {children}
-              </div>
-            </ScrollArea>
-          </div>
+            <LoaderWrapper>
+              <ScrollArea>
+                <div className="flex min-h-screen flex-col items-center justify-center p-2">
+                  {children}
+                </div>
+              </ScrollArea>
+            </LoaderWrapper>
+          </ThemeHueProvider>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />

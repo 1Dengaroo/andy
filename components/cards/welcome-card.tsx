@@ -9,7 +9,7 @@ function WelcomeCard() {
   return (
     <Card className="group">
       <CardHeader className="flex w-full flex-row justify-between gap-4">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
           Welcome!
           <span className="text-hue">
             <Bird className="h-5 w-5" />

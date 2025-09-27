@@ -10,32 +10,28 @@ export interface DotsConfig {
   array: Dot[];
 }
 
-const colorDot: string[] = [
-  'rgb(81, 162, 233)',
-  'rgb(81, 162, 233)',
-  'rgb(81, 162, 233)',
-  'rgb(81, 162, 233)',
-  'rgb(255, 77, 90)'
-];
-
 export class Dot {
   x: number;
   y: number;
   vx: number;
   vy: number;
   radius: number;
-  colour: string;
+  color: string;
 
-  constructor(canvas: HTMLCanvasElement) {
+  constructor(canvas: HTMLCanvasElement, isLight: boolean = false) {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
 
-    // Increase initial velocity so movement is noticeable
-    this.vx = (Math.random() - 0.5) * 2; // range: -1 to 1
-    this.vy = (Math.random() - 0.5) * 2; // range: -1 to 1
+    this.vx = (Math.random() - 0.5) * 2;
+    this.vy = (Math.random() - 0.5) * 2;
 
     this.radius = Math.random() * 1.8 + 0.3;
-    this.colour = colorDot[Math.floor(Math.random() * colorDot.length)];
+
+    if (isLight) {
+      this.color = 'rgb(0, 0, 0)';
+    } else {
+      this.color = 'rgb(255, 255, 255)';
+    }
   }
 
   create(ctx: CanvasRenderingContext2D, mousePosition: MousePosition, canvasWidth: number): void {
@@ -47,12 +43,11 @@ export class Dot {
     );
     const distanceRatio = dotDistance / (canvasWidth / 1.7);
 
-    ctx.fillStyle = `${this.colour.slice(0, -1)},${Math.max(0.2, 1 - distanceRatio)})`;
+    ctx.fillStyle = `${this.color.slice(0, -1)},${Math.max(0.2, 1 - distanceRatio)})`;
     ctx.fill();
   }
 
   animate(canvasWidth: number, canvasHeight: number): void {
-    // Bounce off the edges
     if (this.x + this.vx > canvasWidth || this.x + this.vx < 0) {
       this.vx = -this.vx;
     }
@@ -60,7 +55,6 @@ export class Dot {
       this.vy = -this.vy;
     }
 
-    // Update positions
     this.x += this.vx;
     this.y += this.vy;
   }

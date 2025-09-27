@@ -3,10 +3,11 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 
 import ParticleNetwork from '@/components/particle-network/network';
-import Footer from '@/components/layout/footer';
 
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { ThemeProvider } from '@/components/theme/theme-provider';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -46,17 +47,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} overflow-hidden antialiased`}>
-        <div className="relative min-h-screen">
-          <div className="relative z-0">
-            <ParticleNetwork />
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="relative h-screen">
+            <div className="relative z-0">
+              <ParticleNetwork />
+            </div>
+            <ScrollArea className="absolute inset-0 z-10">
+              <div className="flex min-h-screen flex-col items-center justify-center p-2">
+                {children}
+              </div>
+            </ScrollArea>
           </div>
-          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-2">
-            {children}
-            <Footer />
-          </div>
-        </div>
+        </ThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>

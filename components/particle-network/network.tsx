@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { useTheme } from 'next-themes';
 import { Dot, DotsConfig, MousePosition } from './types';
 
 const CanvasDots: React.FC = () => {
@@ -12,6 +13,7 @@ const CanvasDots: React.FC = () => {
     d_radius: 0,
     array: []
   });
+  const { theme, resolvedTheme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -27,8 +29,10 @@ const CanvasDots: React.FC = () => {
     };
     updateCanvasSize();
 
+    const currentTheme = resolvedTheme || theme;
+    const isLight = currentTheme === 'light';
+
     ctx.lineWidth = 0.4;
-    ctx.strokeStyle = 'rgb(81, 162, 233)';
 
     const mousePosition: MousePosition = {
       x: window.innerWidth / 2,
@@ -45,19 +49,19 @@ const CanvasDots: React.FC = () => {
       };
 
       if (windowSize > 1600) {
-        newConfig.nb = 600;
+        newConfig.nb = 450;
         newConfig.distance = 80;
         newConfig.d_radius = 350;
       } else if (windowSize > 1300) {
-        newConfig.nb = 575;
+        newConfig.nb = 350;
         newConfig.distance = 70;
         newConfig.d_radius = 300;
       } else if (windowSize > 1100) {
-        newConfig.nb = 500;
+        newConfig.nb = 300;
         newConfig.distance = 65;
         newConfig.d_radius = 280;
       } else if (windowSize > 800) {
-        newConfig.nb = 300;
+        newConfig.nb = 200;
         newConfig.distance = 60;
         newConfig.d_radius = 250;
       }
@@ -78,7 +82,7 @@ const CanvasDots: React.FC = () => {
 
       if (dotsRef.current.array.length === 0) {
         for (let i = 0; i < dotsRef.current.nb; i++) {
-          const dot = new Dot(canvas);
+          const dot = new Dot(canvas, isLight);
           dot.vx = (Math.random() - 0.5) * 0.4;
           dot.vy = (Math.random() - 0.5) * 0.4;
           dotsRef.current.array.push(dot);
@@ -144,7 +148,22 @@ const CanvasDots: React.FC = () => {
                     (distance / dotsRef.current.distance) * 0.5
                 );
 
-                ctx.strokeStyle = `rgba(81, 162, 233, ${opacity})`;
+                if (isLight) {
+                  ctx.strokeStyle = `rgba(0, 0, 0, ${opacity})`;
+                } else {
+                  const hue = getComputedStyle(document.documentElement)
+                    .getPropertyValue('--hue')
+                    .trim();
+
+                  const hslValues = hue.split(' ');
+                  if (hslValues.length === 3) {
+                    const [h, s, l] = hslValues;
+                    ctx.strokeStyle = `hsla(${h}, ${s}, ${l}, ${opacity})`;
+                  } else {
+                    ctx.strokeStyle = `rgba(81, 162, 233, ${opacity})`;
+                  }
+                }
+
                 ctx.stroke();
               }
             }
@@ -177,7 +196,7 @@ const CanvasDots: React.FC = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, []);
+  }, [theme, resolvedTheme]);
 
   return (
     <div className="fixed inset-0 h-full w-full">

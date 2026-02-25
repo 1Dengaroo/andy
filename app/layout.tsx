@@ -10,6 +10,7 @@ import { ThemeProvider } from '@/components/theme/theme-provider';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import LoaderWrapper from '@/components/layout/initial-loader';
 import ThemeHueProvider from '@/components/theme/theme-hue-provider';
+import SkipLinks from '@/components/layout/skip-links';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -51,7 +52,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <SkipLinks />
+        <ThemeProvider attribute="class" forcedTheme="dark" disableTransitionOnChange>
           <ThemeHueProvider>
             <div className="relative z-0">
               <ParticleNetwork />

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { Dot, DotsConfig, MousePosition } from './types';
 
@@ -14,8 +14,33 @@ const CanvasDots = () => {
     array: []
   });
   const { theme, resolvedTheme } = useTheme();
+  const [enabled, setEnabled] = useState(true);
 
   useEffect(() => {
+    const stored = localStorage.getItem('particles-enabled');
+    if (stored !== null) {
+      setEnabled(stored === 'true');
+    }
+
+    const handleToggle = (e: CustomEvent<boolean>) => {
+      setEnabled(e.detail);
+    };
+
+    window.addEventListener('particles-toggle', handleToggle as EventListener);
+    return () => {
+      window.removeEventListener('particles-toggle', handleToggle as EventListener);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!enabled) {
+      if (animationRef.current !== null) {
+        cancelAnimationFrame(animationRef.current);
+        animationRef.current = null;
+      }
+      return;
+    }
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -196,10 +221,10 @@ const CanvasDots = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [theme, resolvedTheme]);
+  }, [theme, resolvedTheme, enabled]);
 
   return (
-    <div className="fixed inset-0 h-full w-full">
+    <div className={`fixed inset-0 h-full w-full ${enabled ? '' : 'hidden'}`}>
       <canvas ref={canvasRef} className="block h-full w-full" />
     </div>
   );

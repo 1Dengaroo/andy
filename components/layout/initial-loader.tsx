@@ -59,7 +59,7 @@ export default function LoaderWrapper({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const isHomePage = pathname === '/';
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false); // Temporarily disabled
 
   useEffect(() => {
     if (!isHomePage) {

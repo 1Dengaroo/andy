@@ -4,17 +4,12 @@ import { FileText } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Card, CardContent, CardHeader } from '../ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger
-} from '../ui/accordion';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
 import { experiences } from '@/lib/data';
 
 function ExperienceCard() {
   return (
-    <Card className="group h-full pb-6">
+    <Card id="experience" className="group h-full pb-6">
       <CardHeader className="flex flex-row justify-between gap-4">
         <div>Experience</div>
         <Button variant="outline" size="icon" className="group-hover:text-hue" asChild>
@@ -39,7 +34,7 @@ function ExperienceCard() {
                     <span className="font-semibold">
                       {exp.roles ? exp.roles[0].role : exp.role}
                     </span>
-                    <span className="text-hue text-sm font-normal">@ {exp.company}</span>
+                    <span className="text-sm font-normal text-hue">@ {exp.company}</span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -54,7 +49,7 @@ function ExperienceCard() {
                           <ul className="space-y-2.5">
                             {role.achievements.map((achievement, achIndex) => (
                               <li key={achIndex} className="flex gap-3 text-sm leading-relaxed">
-                                <span className="text-hue shrink-0">▹</span>
+                                <span className="shrink-0 text-hue">▹</span>
                                 <span className="text-foreground/90">{achievement}</span>
                               </li>
                             ))}
@@ -68,7 +63,7 @@ function ExperienceCard() {
                       <ul className="space-y-2.5">
                         {exp.achievements?.map((achievement, achIndex) => (
                           <li key={achIndex} className="flex gap-3 text-sm leading-relaxed">
-                            <span className="text-hue shrink-0">▹</span>
+                            <span className="shrink-0 text-hue">▹</span>
                             <span className="text-foreground/90">{achievement}</span>
                           </li>
                         ))}
@@ -89,7 +84,7 @@ function ExperienceCard() {
                 <TabsTrigger
                   key={index}
                   value={index.toString()}
-                  className="data-[state=active]:text-hue data-[state=active]:bg-hue/10 rounded-md border border-border px-4 py-2 text-sm data-[state=active]:border-hue"
+                  className="rounded-md border border-border px-4 py-2 text-sm data-[state=active]:border-hue data-[state=active]:bg-hue/10 data-[state=active]:text-hue"
                 >
                   {exp.company}
                 </TabsTrigger>
@@ -113,7 +108,7 @@ function ExperienceCard() {
                         <ul className="space-y-2.5">
                           {role.achievements.map((achievement, achIndex) => (
                             <li key={achIndex} className="flex gap-3 text-sm leading-relaxed">
-                              <span className="text-hue shrink-0">▹</span>
+                              <span className="shrink-0 text-hue">▹</span>
                               <span className="text-foreground/90">{achievement}</span>
                             </li>
                           ))}
@@ -132,7 +127,7 @@ function ExperienceCard() {
                     <ul className="space-y-2.5">
                       {exp.achievements?.map((achievement, achIndex) => (
                         <li key={achIndex} className="flex gap-3 text-sm leading-relaxed">
-                          <span className="text-hue shrink-0">▹</span>
+                          <span className="shrink-0 text-hue">▹</span>
                           <span className="text-foreground/90">{achievement}</span>
                         </li>
                       ))}

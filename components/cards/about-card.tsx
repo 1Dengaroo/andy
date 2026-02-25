@@ -5,7 +5,7 @@ function AboutCard() {
     <Card className="h-full">
       <CardHeader>
         <CardTitle>
-          About <span className="text-hue">Me</span>
+          About <span className="inline-block animate-wiggle text-hue">Me</span>
         </CardTitle>
       </CardHeader>
       <CardContent>

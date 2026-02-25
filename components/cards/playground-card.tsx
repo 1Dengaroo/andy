@@ -8,20 +8,20 @@ import { Button } from '../ui/button';
 
 function PlaygroundCard() {
   const hueColors = [
+    { color: '0 0% 100%', label: 'White' },
     { color: '217 91% 53%', label: 'Blue' },
     { color: '142 76% 36%', label: 'Green' },
     { color: '0 84% 60%', label: 'Red' },
     { color: '280 83% 60%', label: 'Purple' },
-    { color: '45 93% 47%', label: 'Orange' },
-    { color: '330 81% 60%', label: 'Pink' }
+    { color: '45 93% 47%', label: 'Orange' }
   ];
+
+  const DEFAULT_HUE = '0 0% 100%';
 
   // Load saved theme on mount
   useEffect(() => {
     const savedHue = sessionStorage.getItem('theme-hue');
-    if (savedHue) {
-      document.documentElement.style.setProperty('--hue', savedHue);
-    }
+    document.documentElement.style.setProperty('--hue', savedHue || DEFAULT_HUE);
   }, []);
 
   const handleColorClick = (hue: string) => {
@@ -72,20 +72,20 @@ function PlaygroundCard() {
   };
 
   return (
-    <Card className="group relative h-full overflow-hidden">
+    <Card id="hue-picker" className="group relative h-full overflow-hidden">
       <CardContent className="relative z-10 pt-6">
-        <div className="flex justify-center gap-2">
+        <div className="flex flex-nowrap justify-center gap-2">
           {hueColors.map((item) => (
             <Button
               key={item.color}
               onClick={() => handleColorClick(item.color)}
-              className="h-8 w-8 rounded-full transition-transform hover:scale-110"
+              className={`h-8 w-8 shrink-0 rounded-full transition-transform hover:scale-110 ${item.label === 'White' ? 'border border-input' : ''}`}
               style={{ backgroundColor: `hsl(${item.color})` }}
               aria-label={`Change theme to ${item.label}`}
             />
           ))}
           <label
-            className="group relative flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-input bg-background transition-transform focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-1 hover:scale-110 hover:bg-accent"
+            className="group relative flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center rounded-full border border-input bg-background transition-transform focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-1 hover:scale-110 hover:bg-accent"
             aria-label="Choose custom color"
           >
             <Input
@@ -93,7 +93,7 @@ function PlaygroundCard() {
               onChange={handleCustomColorChange}
               className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
             />
-            <Palette className="pointer-events-none h-4 w-4 text-muted-foreground" />
+            <Palette className="pointer-events-none h-4 w-4 animate-spin-slow text-muted-foreground" />
           </label>
         </div>
       </CardContent>

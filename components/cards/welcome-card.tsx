@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { Button } from '../ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader } from '../ui/card';
 import { socialLinks } from '@/lib/data';
-import { ModeToggle } from '../theme/theme-toggle';
 import { Bird } from 'lucide-react';
 
 function WelcomeCard() {
@@ -12,11 +11,9 @@ function WelcomeCard() {
         <div className="flex items-center gap-2">
           Welcome!
           <span className="text-hue">
-            <Bird className="h-5 w-5" />
+            <Bird className="h-5 w-5 animate-float" />
           </span>
         </div>
-
-        <ModeToggle className="group-hover:text-hue" />
       </CardHeader>
       <CardContent>
         <CardDescription className="flex flex-col gap-y-4">
@@ -65,7 +62,7 @@ function WelcomeCard() {
                 variant="outline"
                 size="icon"
                 asChild
-                className="group-hover:text-hue p-4"
+                className="p-4 group-hover:text-hue"
               >
                 <Link
                   href={link.href}

@@ -17,7 +17,7 @@ function EveraCard() {
           >
             <Button variant="link" asChild className="h-full w-full p-0" tabIndex={-1}>
               <a
-                href="https://evera-corp.com"
+                href="https://everafashion.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit Evera Fashion"
@@ -45,9 +45,10 @@ function EveraCard() {
         <TooltipContent className="max-w-64">
           <p>
             An ecommerce site I developed from scratch for my mother&apos;s clothing brand. Handled
-            real transactions and fulfilled <span className="font-bold text-hue">25+</span> customer
+            real transactions and fulfilled <span className="font-bold text-hue">70+</span> customer
             orders during its operation.
           </p>
+          <p>This has since moved to Shopify as I am no longer able to dedicate the time.</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

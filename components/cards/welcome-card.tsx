@@ -19,13 +19,39 @@ function WelcomeCard() {
         <ModeToggle className="group-hover:text-hue" />
       </CardHeader>
       <CardContent>
-        <CardDescription className="flex flex-col gap-y-6">
+        <CardDescription className="flex flex-col gap-y-4">
           <p>
-            Hi, I&apos;m <strong>Andy Deng</strong>, a front-end focused software engineer from New
-            York, NY. Currently, I&apos;m working at Pegasystems in Boston, MA.
+            Software Engineer with 2+ years of experience building scalable, user-focused web
+            applications. Currently building <span className="text-hue">Blueprint AI</span> products
+            at Pega.
           </p>
+
           <p>
-            Feel free to reach out to me if you have any projects in mind, or just to say hello.
+            At Pega, I&apos;ve developed numerous features from 0-1, ensuring best practices across
+            React, TypeScript, accessibility, and scalability standards. I&apos;ve helped improve
+            performance across the app, reducing initial load times by{' '}
+            <span className="text-hue">75%</span> and improving app-wide performance ranging from
+            25% to 75% through frontend and backend optimization.
+          </p>
+
+          <p>
+            Previously at <span className="text-hue">forREAL</span>, I built a property management
+            platform from the ground up using Next.js and Django, including apartment listings with
+            maps and search algorithms, lease applications/approvals, automated document signing and
+            identity verification flows (with Stripe and TransUnion), maintenance request tracking,
+            and payment processing with Stripe (including auto-pay functionality).
+          </p>
+
+          <p>
+            I find joy in working in high-velocity environments and working with teams with grit and
+            intensity. I am always excited to build and work on ground-breaking products.
+          </p>
+
+          <p>
+            Want to get in touch? You can reach me here:{' '}
+            <a href="mailto:andydeng0224@gmail.com" className="text-hue hover:underline">
+              andydeng0224@gmail.com
+            </a>
           </p>
         </CardDescription>
       </CardContent>

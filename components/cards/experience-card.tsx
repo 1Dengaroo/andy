@@ -36,20 +36,45 @@ function ExperienceCard() {
               <AccordionItem key={index} value={index.toString()}>
                 <AccordionTrigger className="text-left hover:text-hue">
                   <div className="flex flex-col items-start gap-1">
-                    <span className="font-semibold">{exp.role}</span>
+                    <span className="font-semibold">
+                      {exp.roles ? exp.roles[0].role : exp.role}
+                    </span>
                     <span className="text-hue text-sm font-normal">@ {exp.company}</span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <p className="mb-3 font-mono text-xs text-muted-foreground">{exp.date}</p>
-                  <ul className="space-y-2.5">
-                    {exp.achievements.map((achievement, achIndex) => (
-                      <li key={achIndex} className="flex gap-3 text-sm leading-relaxed">
-                        <span className="text-hue shrink-0">▹</span>
-                        <span className="text-foreground/90">{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {exp.roles ? (
+                    <div className="space-y-6">
+                      {exp.roles.map((role, roleIndex) => (
+                        <div key={roleIndex}>
+                          <h4 className="font-semibold">{role.role}</h4>
+                          <p className="mb-3 font-mono text-xs text-muted-foreground">
+                            {role.date}
+                          </p>
+                          <ul className="space-y-2.5">
+                            {role.achievements.map((achievement, achIndex) => (
+                              <li key={achIndex} className="flex gap-3 text-sm leading-relaxed">
+                                <span className="text-hue shrink-0">▹</span>
+                                <span className="text-foreground/90">{achievement}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <>
+                      <p className="mb-3 font-mono text-xs text-muted-foreground">{exp.date}</p>
+                      <ul className="space-y-2.5">
+                        {exp.achievements?.map((achievement, achIndex) => (
+                          <li key={achIndex} className="flex gap-3 text-sm leading-relaxed">
+                            <span className="text-hue shrink-0">▹</span>
+                            <span className="text-foreground/90">{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
                 </AccordionContent>
               </AccordionItem>
             ))}
@@ -73,23 +98,47 @@ function ExperienceCard() {
 
             {experiences.map((exp, index) => (
               <TabsContent key={index} value={index.toString()} className="mt-0">
-                <div className="space-y-3">
-                  <div>
-                    <h3 className="text-lg font-semibold">
-                      {exp.role} <span className="text-hue">@ {exp.company}</span>
-                    </h3>
-                    <p className="mt-1 font-mono text-xs text-muted-foreground">{exp.date}</p>
-                  </div>
-
-                  <ul className="space-y-2.5">
-                    {exp.achievements.map((achievement, achIndex) => (
-                      <li key={achIndex} className="flex gap-3 text-sm leading-relaxed">
-                        <span className="text-hue shrink-0">▹</span>
-                        <span className="text-foreground/90">{achievement}</span>
-                      </li>
+                {exp.roles ? (
+                  <div className="space-y-6">
+                    {exp.roles.map((role, roleIndex) => (
+                      <div key={roleIndex} className="space-y-3">
+                        <div>
+                          <h3 className="text-lg font-semibold">
+                            {role.role} <span className="text-hue">@ {exp.company}</span>
+                          </h3>
+                          <p className="mt-1 font-mono text-xs text-muted-foreground">
+                            {role.date}
+                          </p>
+                        </div>
+                        <ul className="space-y-2.5">
+                          {role.achievements.map((achievement, achIndex) => (
+                            <li key={achIndex} className="flex gap-3 text-sm leading-relaxed">
+                              <span className="text-hue shrink-0">▹</span>
+                              <span className="text-foreground/90">{achievement}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     ))}
-                  </ul>
-                </div>
+                  </div>
+                ) : (
+                  <div className="space-y-3">
+                    <div>
+                      <h3 className="text-lg font-semibold">
+                        {exp.role} <span className="text-hue">@ {exp.company}</span>
+                      </h3>
+                      <p className="mt-1 font-mono text-xs text-muted-foreground">{exp.date}</p>
+                    </div>
+                    <ul className="space-y-2.5">
+                      {exp.achievements?.map((achievement, achIndex) => (
+                        <li key={achIndex} className="flex gap-3 text-sm leading-relaxed">
+                          <span className="text-hue shrink-0">▹</span>
+                          <span className="text-foreground/90">{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </TabsContent>
             ))}
           </Tabs>

@@ -34,10 +34,12 @@ export const experiences = [
     location: 'Boston, MA',
     date: 'May 2025 – Present',
     achievements: [
-      'Enhanced AI-driven workflow automation for enterprise clients by building full-stack features for Blueprint GenAI including case lifecycle processes, business rules, and bug fixes/accessibility improvements',
-      'Improved internal React component library used by the Pega CRM platform and across 25+ engineering teams, establishing and adhering to React, TypeScript, and Git best practices',
-      'Defined numerous data class structures for Blueprint backend services, establishing scalable data models for GenAI feature integration used by over a million blueprints',
-      'Conducted over 45 code reviews on features, bug fixes, and accessibility improvements across Blueprint and component libraries, ensuring best practices and adherence to internal coding standards'
+      'Designed and shipped numerous Blueprint AI features end-to-end (design → production), implementing complex React/TypeScript UI flows and backend APIs supporting 1M+ blueprint artifacts',
+      'Improved performance by reducing initial load times by 75% (6s → 1.5s) and improving app-wide performance by 25-75% through frontend optimization, backend API refactoring, and caching strategies',
+      "Contributed to internal React component library used across Pega's engineering organization, ensuring accessibility compliance and TypeScript best practices",
+      'Conducted numerous code reviews across Blueprint frontend and backend features and component libraries, maintaining high code quality standards',
+      'Replaced client-side polling with WebSocket-based real-time updates for Blueprint AI workflows, reducing API rate limiting incidents and lowering backend request volume by around half',
+      'Designed a central React context to manage AI-generated diffs across the application, enabling highlighting of incremental changes without full re-renders'
     ]
   },
   {
@@ -46,10 +48,9 @@ export const experiences = [
     location: 'Boston, MA',
     date: 'Sep 2024 – May 2025',
     achievements: [
-      'Designed and implemented a comprehensive lease management system that features real-time payment processing with Stripe, document signing and verification flows, and automatic payments',
-      'Reduced expensive Google API usage by over 70% by implementing clustering, caching, and lazy loading strategies to display apartment listings and points of interest while prioritizing UX',
-      'Improved code confidence, security, and reliability by advocating for and implementing test driven development and agile methodologies, writing over 300 integration and units tests using Pytest',
-      'Collaborated with a team of 4 engineers to build a scalable and professional end-to-end apartment rental platform utilizing Next.js, TypeScript, Tailwind, Django, Firebase, Azure'
+      'Architected and built an end-to-end property management platform from 0-1 using Next.js and Django, handling apartment listings with interactive maps, lease applications/approvals, automated document signing with identity verification (Stripe, TransUnion), maintenance tracking, and payment processing with auto-pay',
+      'Established test-driven development practices, writing 500+ integration and unit tests using Pytest and achieving 90% code coverage on payments and leases, significantly improving deployment confidence',
+      'Reduced expensive Google API usage by over 70% by implementing clustering, caching, and lazy loading strategies to display apartment listings and points of interest while prioritizing user experience'
     ]
   },
   {
@@ -60,29 +61,27 @@ export const experiences = [
     achievements: [
       'Reduced Stream Chat API costs by $500/month by building and optimizing a Redis-based real-time chat notification system that tracked 10,000+ daily messages',
       'Built an atomic transaction system for Stripe payment processing that successfully processed over 1,000 orders',
-      'Collaborated closely with Ops and Cx teams to introduce several high priority QoL bug fixes and features',
       'Maintained 90% code coverage through comprehensive Playwright and RSpec testing suites'
     ]
   },
   {
-    role: 'Undergraduate Research Assistant',
     company: 'Boston College',
     location: 'Chestnut Hill, MA',
-    date: 'Jan 2023 – Jan 2024',
-    achievements: [
-      'Reduced course application processing time by 66% by developing a Django REST API used by 300+ users',
-      'Played a key role in designing an algorithm for TA-Professor matching, completely eliminating complaints',
-      'Automated deployment pipelines using GitHub Actions, integrating over 300 unit and integration tests with Pytest'
-    ]
-  },
-  {
-    role: 'Information Technology Technician',
-    company: 'Boston College',
-    location: 'Chestnut Hill, MA',
-    date: 'Aug 2022 – May 2024',
-    achievements: [
-      'Resolved over 400 support tickets by quickly diagnosing and addressing technical issues for students and faculty',
-      'Trained junior technicians on routine fixes and troubleshooting procedures'
+    roles: [
+      {
+        role: 'Research Assistant',
+        date: 'Jan 2023 – Jan 2024',
+        achievements: [
+          'Selected from 90+ engineering students to work directly with Professor Maira Samary on a Django REST API and algorithm that reduced TA-Professor matching time by almost 80% for 300+ BC students and faculty'
+        ]
+      },
+      {
+        role: 'IT Technician',
+        date: 'Aug 2022 – May 2024',
+        achievements: [
+          'Resolved over 400 support tickets by diagnosing and addressing technical issues for students and faculty'
+        ]
+      }
     ]
   }
 ];

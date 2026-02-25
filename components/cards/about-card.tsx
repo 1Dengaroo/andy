@@ -22,19 +22,8 @@ function AboutCard() {
               <li>Tailwind CSS</li>
               <li>Ruby</li>
               <li>Rails</li>
-              <li>Git</li>
             </ul>
           </div>
-
-          <p>
-            Currently at Pegasystems, I work on Blueprint GenAI workflow automation serving
-            enterprise clients.
-          </p>
-
-          <p>
-            Previously, I&apos;ve contributed to startups and research projects, building payment
-            processing systems, lease management platforms, matching algorithms.
-          </p>
 
           <div>
             <p>Some tools/skills I am hoping to gain more exposure to:</p>
@@ -43,6 +32,7 @@ function AboutCard() {
               <li>AWS</li>
               <li>CI/CD deployment pipelines</li>
               <li>Jenkins</li>
+              <li>Three.js</li>
             </ul>
           </div>
         </CardDescription>

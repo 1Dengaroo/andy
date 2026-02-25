@@ -108,6 +108,14 @@ export default {
   				to: {
   					height: '0'
   				}
+  			},
+  			'film-scroll': {
+  				'0%': {
+  					transform: 'translateY(0)'
+  				},
+  				'100%': {
+  					transform: 'translateY(-50%)'
+  				}
   			}
   		},
   		animation: {
@@ -116,7 +124,8 @@ export default {
   			'fade-slide-up': 'fade-slide-up 0.5s ease-out forwards',
   			'fade-slide-down': 'fade-slide-down 1s ease-out forwards',
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'film-scroll': 'film-scroll 3s linear infinite'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

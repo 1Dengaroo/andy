@@ -5,7 +5,11 @@ function FooterCard() {
     <Card className="flex h-full min-h-20 flex-col items-center justify-center px-6 text-xs text-muted-foreground">
       <p className="flex items-center gap-1 text-center">
         Made by{' '}
-        <Button variant="link" asChild className="h-auto p-0 text-xs font-medium text-hue">
+        <Button
+          variant="link"
+          asChild
+          className="h-auto p-0 text-xs font-medium text-accent-primary"
+        >
           <a
             href="https://linkedin.com/in/andydeng-"
             target="_blank"
@@ -16,7 +20,7 @@ function FooterCard() {
           </a>
         </Button>
         {' • '}
-        <Button variant="link" asChild className="h-auto p-0 text-xs text-hue">
+        <Button variant="link" asChild className="h-auto p-0 text-xs text-accent-primary">
           <a
             href="https://github.com/1dengaroo/andy"
             target="_blank"

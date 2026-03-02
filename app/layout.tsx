@@ -1,18 +1,37 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import {
+  Plus_Jakarta_Sans,
+  Bricolage_Grotesque,
+  Crimson_Pro,
+  Outfit,
+  Instrument_Sans
+} from 'next/font/google';
 import '@/styles/globals.css';
 
 import ParticleNetwork from '@/components/particle-network/network';
 
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { ThemeProvider } from '@/components/theme/theme-provider';
+import { ThemeProvider } from '@/lib/theme/theme-provider';
+import { themeIds } from '@/lib/theme/theme-registry';
+import { FontProvider } from '@/lib/font/font-provider';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import LoaderWrapper from '@/components/layout/initial-loader';
-import ThemeHueProvider from '@/components/theme/theme-hue-provider';
 import SkipLinks from '@/components/layout/skip-links';
 
-const inter = Inter({ subsets: ['latin'] });
+const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-plus-jakarta' });
+const bricolage = Bricolage_Grotesque({ subsets: ['latin'], variable: '--font-bricolage' });
+const crimsonPro = Crimson_Pro({ subsets: ['latin'], variable: '--font-crimson-pro' });
+const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
+const instrumentSans = Instrument_Sans({ subsets: ['latin'], variable: '--font-instrument-sans' });
+
+const fontVariables = [
+  plusJakarta.variable,
+  bricolage.variable,
+  crimsonPro.variable,
+  outfit.variable,
+  instrumentSans.variable
+].join(' ');
 
 const baseUrl = 'https://andydeng.me';
 
@@ -51,21 +70,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>
+      <body
+        className={`${fontVariables} antialiased`}
+        style={{ fontFamily: 'var(--font-plus-jakarta)' }}
+      >
         <SkipLinks />
-        <ThemeProvider attribute="class" forcedTheme="dark" disableTransitionOnChange>
-          <ThemeHueProvider>
+        <ThemeProvider
+          attribute="data-theme"
+          themes={themeIds}
+          defaultTheme="dark"
+          disableTransitionOnChange
+        >
+          <FontProvider>
             <div className="relative z-0">
               <ParticleNetwork />
             </div>
             <LoaderWrapper>
               <ScrollArea>
-                <div className="flex min-h-screen flex-col items-center justify-center p-2">
+                <div className="flex min-h-screen flex-col items-center justify-center p-1">
                   {children}
                 </div>
               </ScrollArea>
             </LoaderWrapper>
-          </ThemeHueProvider>
+          </FontProvider>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />

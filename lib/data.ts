@@ -38,7 +38,6 @@ export const experiences = [
       'Improved performance by reducing initial load times by 75% (6s → 1.5s) and improving app-wide performance by 25-75% through frontend optimization, backend API refactoring, and caching strategies',
       "Contributed to internal React component library used across Pega's engineering organization, ensuring accessibility compliance and TypeScript best practices",
       'Conducted numerous code reviews across Blueprint frontend and backend features and component libraries, maintaining high code quality standards',
-      'Replaced client-side polling with WebSocket-based real-time updates for Blueprint AI workflows, reducing API rate limiting incidents and lowering backend request volume by around half',
       'Designed a central React context to manage AI-generated diffs across the application, enabling highlighting of incremental changes without full re-renders'
     ]
   },

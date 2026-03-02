@@ -1,0 +1,64 @@
+[data-theme='candy'] {
+  /*
+   * CANDY
+   * Bubblegum wrapper meets toy store shelf.
+   * Lavender base, hot pink primary, grape purple secondary.
+   */
+
+  /* Semantic tokens (oklch L C H) */
+  --accent-primary: 0.6 0.24 350;
+  --accent-secondary: 0.55 0.2 300;
+
+  --surface-primary: 0.96 0.02 290;
+  --surface-secondary: 0.93 0.03 290;
+  --surface-elevated: 0.99 0.005 290;
+  --surface-overlay: 0.2 0.06 290;
+
+  --border-default: 0.88 0.03 290;
+  --border-subtle: 0.92 0.02 290;
+  --border-strong: 0.75 0.06 310;
+
+  --text-primary: 0.2 0.06 290;
+  --text-secondary: 0.4 0.05 290;
+  --text-muted: 0.5 0.04 290;
+  --text-inverse: 0.97 0.01 290;
+
+  --shadow-sm: 0 1px 2px oklch(0.6 0.24 350 / 0.08);
+  --shadow-md: 0 4px 6px oklch(0.6 0.24 350 / 0.12);
+  --shadow-lg: 0 10px 15px oklch(0.6 0.24 350 / 0.16);
+
+  /* shadcn bridge tokens (HSL) */
+  --background: 275 35% 90%;
+  --foreground: 275 50% 15%;
+  --card: 0 0% 100%;
+  --card-foreground: 275 50% 15%;
+  --popover: 280 30% 98%;
+  --popover-foreground: 275 50% 15%;
+  --primary: 340 75% 52%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 280 25% 90%;
+  --secondary-foreground: 280 40% 25%;
+  --muted: 280 20% 92%;
+  --muted-foreground: 280 15% 45%;
+  --accent: 310 30% 90%;
+  --accent-foreground: 310 45% 18%;
+  --destructive: 15 70% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 280 25% 86%;
+  --input: 280 20% 92%;
+  --ring: 340 75% 52%;
+  --radius: 0.5rem;
+  --chart-1: 340 75% 52%;
+  --chart-2: 290 55% 50%;
+  --chart-3: 160 60% 45%;
+  --chart-4: 75 60% 55%;
+  --chart-5: 240 55% 55%;
+  --sidebar-background: 275 35% 93%;
+  --sidebar-foreground: 275 50% 15%;
+  --sidebar-primary: 340 75% 48%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 310 30% 88%;
+  --sidebar-accent-foreground: 310 45% 18%;
+  --sidebar-border: 280 25% 83%;
+  --sidebar-ring: 340 75% 48%;
+}

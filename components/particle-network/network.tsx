@@ -14,7 +14,7 @@ const CanvasDots = () => {
     array: []
   });
   const { theme, resolvedTheme } = useTheme();
-  const [enabled, setEnabled] = useState(true);
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem('particles-enabled');
@@ -176,14 +176,12 @@ const CanvasDots = () => {
                 if (isLight) {
                   ctx.strokeStyle = `rgba(0, 0, 0, ${opacity})`;
                 } else {
-                  const hue = getComputedStyle(document.documentElement)
-                    .getPropertyValue('--hue')
+                  const raw = getComputedStyle(document.documentElement)
+                    .getPropertyValue('--accent-primary')
                     .trim();
 
-                  const hslValues = hue.split(' ');
-                  if (hslValues.length === 3) {
-                    const [h, s, l] = hslValues;
-                    ctx.strokeStyle = `hsla(${h}, ${s}, ${l}, ${opacity})`;
+                  if (raw) {
+                    ctx.strokeStyle = `oklch(${raw} / ${opacity})`;
                   } else {
                     ctx.strokeStyle = `rgba(81, 162, 233, ${opacity})`;
                   }

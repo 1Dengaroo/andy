@@ -10,7 +10,7 @@ function WelcomeCard() {
       <CardHeader className="flex w-full flex-row justify-between gap-4">
         <div className="flex items-center gap-2">
           Welcome!
-          <span className="text-hue">
+          <span className="text-accent-primary">
             <Bird className="h-5 w-5 animate-float" />
           </span>
         </div>
@@ -18,35 +18,18 @@ function WelcomeCard() {
       <CardContent>
         <CardDescription className="flex flex-col gap-y-4">
           <p>
-            Software Engineer with 2+ years of experience building scalable, user-focused web
-            applications. Currently building <span className="text-hue">Blueprint AI</span> products
-            at Pega.
-          </p>
-
-          <p>
-            At Pega, I&apos;ve developed numerous features from 0-1, ensuring best practices across
-            React, TypeScript, accessibility, and scalability standards. I&apos;ve helped improve
-            performance across the app, reducing initial load times by{' '}
-            <span className="text-hue">75%</span> and improving app-wide performance ranging from
-            25% to 75% through frontend and backend optimization.
-          </p>
-
-          <p>
-            Previously at <span className="text-hue">forREAL</span>, I built a property management
-            platform from the ground up using Next.js and Django, including apartment listings with
-            maps and search algorithms, lease applications/approvals, automated document signing and
-            identity verification flows (with Stripe and TransUnion), maintenance request tracking,
-            and payment processing with Stripe (including auto-pay functionality).
+            Software Engineer with 2+ years of experience building products from 0-1. Currently
+            building <span className="text-accent-primary">Blueprint AI</span> products at Pega.
           </p>
 
           <p>
             I find joy in working in high-velocity environments and working with teams with grit and
-            intensity. I am always excited to build and work on ground-breaking products.
+            intensity.
           </p>
 
           <p>
             Want to get in touch? You can reach me here:{' '}
-            <a href="mailto:andydeng0224@gmail.com" className="text-hue hover:underline">
+            <a href="mailto:andydeng0224@gmail.com" className="text-accent-primary hover:underline">
               andydeng0224@gmail.com
             </a>
           </p>
@@ -62,7 +45,7 @@ function WelcomeCard() {
                 variant="outline"
                 size="icon"
                 asChild
-                className="p-4 group-hover:text-hue"
+                className="p-4 group-hover:text-accent-primary"
               >
                 <Link
                   href={link.href}

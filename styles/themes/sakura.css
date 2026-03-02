@@ -1,0 +1,58 @@
+[data-theme='sakura'] {
+  /* Semantic tokens (oklch L C H) */
+  --accent-primary: 0.6 0.15 350;
+  --accent-secondary: 0.55 0.12 320;
+
+  --surface-primary: 0.96 0.01 350;
+  --surface-secondary: 0.94 0.015 350;
+  --surface-elevated: 0.98 0.005 350;
+  --surface-overlay: 0.25 0.01 350;
+
+  --border-default: 0.87 0.025 345;
+  --border-subtle: 0.91 0.015 345;
+  --border-strong: 0.75 0.04 350;
+
+  --text-primary: 0.2 0.03 340;
+  --text-secondary: 0.4 0.03 340;
+  --text-muted: 0.55 0.025 345;
+  --text-inverse: 0.95 0.01 350;
+
+  --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px oklch(0 0 0 / 0.08);
+  --shadow-lg: 0 10px 15px oklch(0 0 0 / 0.12);
+
+  /* shadcn bridge tokens (HSL) */
+  --background: 345 30% 91%;
+  --foreground: 340 30% 12%;
+  --card: 345 30% 97%;
+  --card-foreground: 340 30% 12%;
+  --popover: 345 35% 97%;
+  --popover-foreground: 340 30% 12%;
+  --primary: 345 65% 52%;
+  --primary-foreground: 345 90% 97%;
+  --secondary: 340 25% 88%;
+  --secondary-foreground: 340 25% 18%;
+  --muted: 345 20% 92%;
+  --muted-foreground: 340 15% 42%;
+  --accent: 345 20% 92%;
+  --accent-foreground: 340 30% 12%;
+  --destructive: 0 70% 55%;
+  --destructive-foreground: 345 90% 97%;
+  --border: 340 25% 87%;
+  --input: 340 25% 87%;
+  --ring: 345 65% 52%;
+  --radius: 0.5rem;
+  --chart-1: 345 60% 48%;
+  --chart-2: 320 45% 55%;
+  --chart-3: 0 50% 60%;
+  --chart-4: 280 40% 55%;
+  --chart-5: 15 45% 50%;
+  --sidebar-background: 345 35% 94%;
+  --sidebar-foreground: 340 15% 40%;
+  --sidebar-primary: 345 65% 46%;
+  --sidebar-primary-foreground: 345 90% 97%;
+  --sidebar-accent: 345 20% 90%;
+  --sidebar-accent-foreground: 340 30% 12%;
+  --sidebar-border: 340 25% 84%;
+  --sidebar-ring: 345 65% 46%;
+}

@@ -42,7 +42,8 @@ export default {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        hue: 'hsl(var(--hue))'
+        'accent-primary': 'oklch(var(--accent-primary) / <alpha-value>)',
+        'accent-secondary': 'oklch(var(--accent-secondary) / <alpha-value>)'
       },
       keyframes: {
         'fade-slide-right': {

@@ -38,7 +38,7 @@
 }
 
 .logo-path {
-  stroke: hsl(var(--hue));
+  stroke: oklch(var(--accent-primary));
   stroke-width: 2;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
@@ -46,7 +46,7 @@
 }
 
 .logo-letter {
-  fill: hsl(var(--hue));
+  fill: oklch(var(--accent-primary));
   font-size: 40px;
   font-weight: 600;
   font-family: monospace;

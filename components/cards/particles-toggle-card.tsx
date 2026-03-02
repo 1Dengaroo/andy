@@ -7,7 +7,7 @@ import { Button } from '../ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 
 function ParticlesToggleCard() {
-  const [enabled, setEnabled] = useState(true);
+  const [enabled, setEnabled] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -39,17 +39,19 @@ function ParticlesToggleCard() {
                 variant="ghost"
                 size="sm"
                 onClick={handleToggle}
-                className={`flex items-center gap-2 transition-all ${enabled ? 'text-hue' : 'text-muted-foreground'}`}
-                aria-label={enabled ? 'Disable particles' : 'Enable particles'}
+                className={`flex items-center gap-2 transition-all ${enabled ? 'text-accent-primary' : 'text-muted-foreground'}`}
+                aria-label={enabled ? 'Disable particle network' : 'Enable particle network'}
               >
                 <Sparkles className={`h-4 w-4 ${enabled ? 'animate-pulse-soft' : ''}`} />
-                <span className="text-sm">{enabled ? 'Particles On' : 'Particles Off'}</span>
+                <span className="text-sm">
+                  {enabled ? 'Disable Particle Network' : 'Enable Particle Network'}
+                </span>
               </Button>
             </CardContent>
           </Card>
         </TooltipTrigger>
         <TooltipContent>
-          <p>Toggle background particles. Disable if experiencing performance issues.</p>
+          <p>Toggle background particle network. Disable if experiencing performance issues.</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

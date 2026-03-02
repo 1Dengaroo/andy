@@ -2,90 +2,91 @@
 
 import { useEffect, useState } from 'react';
 import { Card, CardContent } from '../ui/card';
-import { themes, themeNames } from '@/lib/themes';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger
+} from '../ui/dropdown-menu';
+import { themes, getTheme } from '@/lib/theme/theme-registry';
 import { cn } from '@/lib/utils';
-import { Check } from 'lucide-react';
+import { Check, ChevronDown } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
+function ColorDots({
+  colors,
+  size = 'lg'
+}: {
+  colors: [string, string, string];
+  size?: 'sm' | 'lg';
+}) {
+  return (
+    <span className="flex items-center gap-0.5">
+      {colors.map((color, i) => (
+        <span
+          key={i}
+          className={cn(
+            'shrink-0 rounded-full',
+            size === 'lg' ? 'h-5 w-5' : 'h-3 w-3 border border-border/50'
+          )}
+          style={{ backgroundColor: color }}
+        />
+      ))}
+    </span>
+  );
+}
+
 function ThemePickerCard() {
-  const [colorTheme, setColorTheme] = useState('indie');
+  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
-    const stored = localStorage.getItem('color-theme');
-    if (stored && themeNames.includes(stored)) {
-      setColorTheme(stored);
-    }
   }, []);
 
-  const handleThemeClick = (name: string) => {
-    setColorTheme(name);
-    document.documentElement.setAttribute('data-theme', name);
-    localStorage.setItem('color-theme', name);
-  };
-
-  const getThemeColors = (themeName: string) => {
-    const theme = themes.find((t) => t.name === themeName);
-    if (!theme) return null;
-
-    const isDark = mounted && resolvedTheme === 'dark';
-    const colors = isDark ? theme.colors.dark : theme.colors.light;
-
-    return {
-      primary: colors.primary,
-      secondary: colors.secondary,
-      accent: colors.accent
-    };
-  };
+  const activeTheme = mounted ? (getTheme(theme ?? '') ?? themes[0]) : themes[0];
 
   return (
     <Card id="theme-picker" className="group relative h-full overflow-hidden">
-      <CardContent className="relative z-10 pt-6">
-        <div className="flex flex-nowrap justify-center gap-3">
-          {themes.map((theme) => {
-            const colors = getThemeColors(theme.name);
-            const isActive = colorTheme === theme.name;
+      <CardContent className="relative z-10 flex items-center justify-center pt-6">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <button
+              className={cn(
+                'flex items-center gap-2 rounded-full border border-input px-3 py-1.5 transition-all',
+                'hover:scale-105 hover:border-ring/50',
+                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background'
+              )}
+              aria-label="Change theme"
+            >
+              <ColorDots colors={activeTheme.previewColors} />
+              <span className="text-sm font-medium">{mounted ? activeTheme.name : '\u00A0'}</span>
+              <ChevronDown className="h-4 w-4 text-muted-foreground" />
+            </button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="center" className="w-56">
+            {themes.map((t) => {
+              const isActive = mounted && theme === t.id;
 
-            return (
-              <button
-                key={theme.name}
-                onClick={() => handleThemeClick(theme.name)}
-                className={cn(
-                  'relative flex h-8 shrink-0 items-center gap-0.5 rounded-full border px-1 transition-all hover:scale-105',
-                  isActive
-                    ? 'border-ring ring-2 ring-ring ring-offset-1 ring-offset-background'
-                    : 'border-input hover:border-ring/50'
-                )}
-                aria-label={`Change theme to ${theme.label}`}
-                title={theme.label}
-              >
-                {colors && (
-                  <>
-                    <span
-                      className="h-5 w-5 shrink-0 rounded-full"
-                      style={{ backgroundColor: `hsl(${colors.primary})` }}
-                    />
-                    <span
-                      className="h-5 w-5 shrink-0 rounded-full"
-                      style={{ backgroundColor: `hsl(${colors.secondary})` }}
-                    />
-                    <span
-                      className="h-5 w-5 shrink-0 rounded-full"
-                      style={{ backgroundColor: `hsl(${colors.accent})` }}
-                    />
-                  </>
-                )}
-                {isActive && (
-                  <span className="absolute -right-1 -top-1 flex h-4 w-4 animate-float items-center justify-center rounded-full bg-primary">
-                    <Check className="h-3 w-3 text-primary-foreground" />
-                  </span>
-                )}
-              </button>
-            );
-          })}
-        </div>
+              return (
+                <DropdownMenuItem
+                  key={t.id}
+                  onClick={() => setTheme(t.id)}
+                  className="flex cursor-pointer items-center justify-between py-2.5"
+                >
+                  <div className="flex items-center gap-3">
+                    <ColorDots colors={t.previewColors} size="sm" />
+                    <div>
+                      <div className="text-sm font-medium">{t.name}</div>
+                      <div className="text-xs text-muted-foreground">{t.description}</div>
+                    </div>
+                  </div>
+                  {isActive && <Check className="h-4 w-4 text-primary" />}
+                </DropdownMenuItem>
+              );
+            })}
+          </DropdownMenuContent>
+        </DropdownMenu>
       </CardContent>
     </Card>
   );

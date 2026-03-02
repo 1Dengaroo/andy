@@ -8,7 +8,7 @@ const NotFound = () => {
       <div className="space-y-6 text-center">
         <div className="space-y-2">
           <h1 className="text-6xl font-extralight">
-            4<span className="text-hue">0</span>4
+            4<span className="text-accent-primary">0</span>4
           </h1>
           <p className="text-xl font-light">Page not found</p>
         </div>

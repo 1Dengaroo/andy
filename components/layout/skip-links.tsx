@@ -16,7 +16,7 @@ function SkipLinks() {
         <a
           key={link.id}
           href={`#${link.id}`}
-          className="rounded-md bg-background px-3 py-2 text-sm font-medium text-foreground shadow-lg ring-1 ring-border transition-colors hover:bg-accent focus:outline-none focus:ring-2 focus:ring-hue"
+          className="rounded-md bg-background px-3 py-2 text-sm font-medium text-foreground shadow-lg ring-1 ring-border transition-colors hover:bg-accent focus:outline-none focus:ring-2 focus:ring-accent-primary"
         >
           Skip to {link.label}
         </a>

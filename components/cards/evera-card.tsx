@@ -23,6 +23,7 @@ function EveraCard() {
                 rel="noopener noreferrer"
                 aria-label="Visit Evera Fashion"
               >
+                <div className="absolute inset-0 bg-black" />
                 <div
                   className="absolute inset-0 bg-cover bg-center opacity-60"
                   style={{ backgroundImage: `url(${everaBackgroundImage})` }}
@@ -45,8 +46,9 @@ function EveraCard() {
         <TooltipContent className="max-w-64">
           <p>
             An ecommerce site I developed from scratch for my mother&apos;s clothing brand. Handled
-            real transactions and fulfilled <span className="font-bold text-hue">70+</span> customer
-            orders during its operation.
+            real transactions and fulfilled{' '}
+            <span className="font-bold text-accent-primary">70+</span> customer orders during its
+            operation.
           </p>
           <p>This has since moved to Shopify as I am no longer able to dedicate the time.</p>
         </TooltipContent>

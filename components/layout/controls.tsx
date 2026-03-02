@@ -60,8 +60,10 @@ function ThemePicker() {
           aria-label="Change theme"
         >
           <ColorDots colors={activeTheme.previewColors} />
-          <span className="text-sm font-medium">{mounted ? activeTheme.name : '\u00A0'}</span>
-          <ChevronDown className="h-4 w-4 text-muted-foreground" />
+          <span className="hidden text-sm font-medium sm:inline">
+            {mounted ? activeTheme.name : '\u00A0'}
+          </span>
+          <ChevronDown className="hidden h-4 w-4 text-muted-foreground sm:block" />
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-56">
@@ -153,8 +155,10 @@ function FontPicker() {
           aria-label="Change font"
         >
           <Type className="h-4 w-4 text-muted-foreground" />
-          <span className="text-sm font-medium">{mounted ? current.name : '\u00A0'}</span>
-          <ChevronDown className="h-4 w-4 text-muted-foreground" />
+          <span className="hidden text-sm font-medium sm:inline">
+            {mounted ? current.name : '\u00A0'}
+          </span>
+          <ChevronDown className="hidden h-4 w-4 text-muted-foreground sm:block" />
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-56">
@@ -187,7 +191,7 @@ export default function Controls() {
         <h1 className="text-lg font-bold">Andy Deng</h1>
         <p className="text-xs text-muted-foreground">Software Engineer</p>
       </div>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1.5 sm:gap-2">
         <ParticlesToggle />
         <FontPicker />
         <ThemePicker />

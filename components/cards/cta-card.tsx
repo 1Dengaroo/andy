@@ -6,10 +6,13 @@ import { Mail } from 'lucide-react';
 
 function CTACard() {
   return (
-    <Card className="flex h-full w-full items-center justify-between gap-4 px-6 py-4">
-      <div className="flex items-center gap-4">
+    <Card className="flex h-full w-full flex-col items-center justify-between gap-3 px-6 py-4 sm:flex-row sm:gap-4">
+      <div className="flex items-center gap-3 sm:gap-4">
         <p className="text-sm text-foreground">Interested in working together?</p>
-        <Button asChild className="bg-accent-primary text-white hover:bg-accent-primary/90">
+        <Button
+          asChild
+          className="shrink-0 bg-accent-primary text-white hover:bg-accent-primary/90"
+        >
           <a href="mailto:andydeng0224@gmail.com?subject=Let's%20Work%20Together">
             <Mail className="h-4 w-4" />
             Get in Touch

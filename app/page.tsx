@@ -21,29 +21,29 @@ const Page = () => {
 
       {/* Row 1: Welcome + Experience (left) | About + Skills (right) */}
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 lg:grid-cols-4">
-        <div className="flex flex-col gap-3 lg:col-span-3">
+        <div className="contents lg:col-span-3 lg:flex lg:flex-col lg:gap-3">
           <div
-            className="animate-fade-slide-up opacity-0"
+            className="order-2 animate-fade-slide-up opacity-0 lg:order-none"
             style={{ animationDelay: `${DELAY_INCREMENT * 0}ms` }}
           >
             <MainCard />
           </div>
           <div
-            className="flex-1 animate-fade-slide-up opacity-0"
+            className="order-3 animate-fade-slide-up opacity-0 lg:order-none lg:flex-1"
             style={{ animationDelay: `${DELAY_INCREMENT * 1}ms` }}
           >
             <ExperienceCard />
           </div>
         </div>
-        <div className="flex flex-col gap-3 lg:col-span-1">
+        <div className="contents lg:col-span-1 lg:flex lg:flex-col lg:gap-3">
           <div
-            className="h-full animate-fade-slide-up opacity-0"
+            className="order-1 h-full animate-fade-slide-up opacity-0 lg:order-none"
             style={{ animationDelay: `${DELAY_INCREMENT * 2}ms` }}
           >
             <AboutCard />
           </div>
           <div
-            className="h-full animate-fade-slide-up opacity-0"
+            className="order-4 h-full animate-fade-slide-up opacity-0 lg:order-none"
             style={{ animationDelay: `${DELAY_INCREMENT * 3}ms` }}
           >
             <SkillsCard />
@@ -80,7 +80,8 @@ const Page = () => {
       </div>
 
       {/* Row 3: CTA + Footer */}
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 lg:grid-cols-4 animate-fade-slide-up opacity-0"
+      <div
+        className="mx-auto grid w-full max-w-7xl animate-fade-slide-up grid-cols-1 gap-3 opacity-0 lg:grid-cols-4"
         style={{ animationDelay: `${DELAY_INCREMENT * 8}ms` }}
       >
         <div className="lg:col-span-3">

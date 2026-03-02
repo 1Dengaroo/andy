@@ -27,3 +27,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+@media (max-width: 1023px) {
+  .animate-fade-slide-up {
+    animation-delay: 0s !important;
+  }
+}

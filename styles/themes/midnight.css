@@ -1,0 +1,58 @@
+[data-theme='midnight'] {
+  /* Semantic tokens (oklch L C H) */
+  --accent-primary: 0.68 0.16 235;
+  --accent-secondary: 0.6 0.14 275;
+
+  --surface-primary: 0.13 0.03 265;
+  --surface-secondary: 0.16 0.035 265;
+  --surface-elevated: 0.2 0.04 265;
+  --surface-overlay: 0.07 0.02 265;
+
+  --border-default: 0.28 0.05 260;
+  --border-subtle: 0.22 0.04 260;
+  --border-strong: 0.4 0.08 240;
+
+  --text-primary: 0.92 0.015 250;
+  --text-secondary: 0.75 0.03 255;
+  --text-muted: 0.55 0.04 260;
+  --text-inverse: 0.12 0.03 265;
+
+  --shadow-sm: 0 1px 3px oklch(0.55 0.16 235 / 0.12);
+  --shadow-md: 0 4px 8px oklch(0.55 0.16 235 / 0.18);
+  --shadow-lg: 0 10px 20px oklch(0.55 0.16 235 / 0.22);
+
+  /* shadcn bridge tokens (HSL) */
+  --background: 235 35% 7%;
+  --foreground: 225 20% 92%;
+  --card: 235 32% 11%;
+  --card-foreground: 225 20% 92%;
+  --popover: 235 35% 6%;
+  --popover-foreground: 225 20% 92%;
+  --primary: 215 80% 60%;
+  --primary-foreground: 235 40% 97%;
+  --secondary: 235 28% 18%;
+  --secondary-foreground: 225 20% 85%;
+  --muted: 235 22% 13%;
+  --muted-foreground: 230 20% 52%;
+  --accent: 235 22% 13%;
+  --accent-foreground: 225 20% 92%;
+  --destructive: 0 75% 55%;
+  --destructive-foreground: 235 40% 97%;
+  --border: 235 28% 19%;
+  --input: 235 28% 19%;
+  --ring: 215 80% 60%;
+  --radius: 0.5rem;
+  --chart-1: 215 75% 55%;
+  --chart-2: 265 55% 58%;
+  --chart-3: 190 60% 52%;
+  --chart-4: 170 50% 50%;
+  --chart-5: 245 50% 62%;
+  --sidebar-background: 235 35% 4%;
+  --sidebar-foreground: 230 20% 52%;
+  --sidebar-primary: 215 80% 55%;
+  --sidebar-primary-foreground: 235 40% 97%;
+  --sidebar-accent: 235 22% 8%;
+  --sidebar-accent-foreground: 225 20% 92%;
+  --sidebar-border: 235 28% 14%;
+  --sidebar-ring: 215 80% 55%;
+}

@@ -10,6 +10,8 @@
 @import '@/styles/themes/retro.css';
 @import '@/styles/themes/candy.css';
 @import '@/styles/themes/arctic.css';
+@import '@/styles/themes/midnight.css';
+@import '@/styles/themes/honey.css';
 
 * {
   -webkit-user-select: none;

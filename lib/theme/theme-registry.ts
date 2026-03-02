@@ -55,6 +55,20 @@ export const themes: ThemeDefinition[] = [
     description: 'Cool and crisp',
     isDark: false,
     previewColors: ['oklch(0.97 0.008 220)', 'oklch(0.6 0.14 230)', 'oklch(0.7 0.1 200)']
+  },
+  {
+    id: 'midnight',
+    name: 'Midnight',
+    description: 'Deep and electric',
+    isDark: true,
+    previewColors: ['oklch(0.13 0.03 265)', 'oklch(0.68 0.16 235)', 'oklch(0.6 0.14 275)']
+  },
+  {
+    id: 'honey',
+    name: 'Honey',
+    description: 'Golden and warm',
+    isDark: false,
+    previewColors: ['oklch(0.95 0.02 75)', 'oklch(0.62 0.17 65)', 'oklch(0.55 0.14 35)']
   }
 ];
 

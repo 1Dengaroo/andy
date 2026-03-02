@@ -2,7 +2,6 @@
 
 const skipLinks = [
   { id: 'experience', label: 'Experience' },
-  { id: 'hue-picker', label: 'Themes' },
   { id: 'kallio', label: 'Projects' }
 ];
 

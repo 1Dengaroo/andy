@@ -38,17 +38,20 @@ const baseUrl = 'https://andydeng.me';
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Andy Deng',
-    template: '%s | Andy Deng'
+    default: 'andydeng.me',
+    template: '%s | andydeng.me'
   },
-  description: "Andy Deng's Portfolio",
+  description: 'Andy Deng — Software Engineer',
   openGraph: {
-    title: 'Andy Deng Portfolio',
-    description: "Andy Deng's Portfolio",
+    title: 'andydeng.me',
+    description: 'Andy Deng — Software Engineer',
     url: baseUrl,
-    siteName: 'Andy Deng Portfolio',
+    siteName: 'Andy Deng',
     locale: 'en_US',
     type: 'website'
+  },
+  icons: {
+    icon: '/favicon.svg'
   },
   robots: {
     index: true,

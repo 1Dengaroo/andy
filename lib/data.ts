@@ -15,7 +15,7 @@ export const skillCategories = [
   },
   {
     title: 'Databases',
-    skills: ['PostgreSQL', 'Redis', 'AWS (S3, RDS)']
+    skills: ['PostgreSQL', 'Redis']
   },
   {
     title: 'Testing',
@@ -23,7 +23,7 @@ export const skillCategories = [
   },
   {
     title: 'Cloud Services',
-    skills: ['Azure', 'Heroku', 'Vercel', 'Firebase']
+    skills: ['AWS', 'Vercel', 'Firebase']
   }
 ];
 

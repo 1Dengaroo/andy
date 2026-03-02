@@ -19,17 +19,6 @@ function AboutCard() {
             <span className="text-accent-primary">New York, NY</span>.
           </p>
           <p>I move quickly, take ownership seriously, and care deeply about product quality.</p>
-
-          <div>
-            <p>My favorite tools to work with include but are not limited to:</p>
-            <ul className="list-inside list-disc">
-              <li>TypeScript</li>
-              <li>React/Next.js</li>
-              <li>Python</li>
-              <li>Ruby</li>
-              <li>Rails</li>
-            </ul>
-          </div>
         </CardDescription>
       </CardContent>
     </Card>

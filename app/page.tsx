@@ -4,7 +4,7 @@ import KallioCard from '@/components/cards/kallio-card';
 import ProjectsCard from '@/components/cards/evera-card';
 import ExperienceCard from '@/components/cards/experience-card';
 import FooterCard from '@/components/cards/footer-card';
-import LoopkitCard from '@/components/cards/loopkit-card';
+import QuFlowCard from '@/components/cards/quflow-card';
 import SkillsCard from '@/components/cards/skills-card';
 import EducationCard from '@/components/cards/education-card';
 import CTACard from '@/components/cards/cta-card';
@@ -69,7 +69,7 @@ const Page = () => {
           className="h-full animate-fade-slide-up opacity-0"
           style={{ animationDelay: `${DELAY_INCREMENT * 6}ms` }}
         >
-          <LoopkitCard />
+          <QuFlowCard />
         </div>
         <div
           className="h-full animate-fade-slide-up opacity-0"

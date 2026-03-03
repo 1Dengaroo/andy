@@ -5,13 +5,13 @@ import { Button } from '../ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 import { ArrowUpRight, RefreshCw } from 'lucide-react';
 
-function LoopkitCard() {
+function QuFlowCard() {
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
           <Card
-            id="loopkit"
+            id="quflow"
             className="group relative h-full overflow-hidden transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
             tabIndex={0}
           >
@@ -20,7 +20,7 @@ function LoopkitCard() {
                 href="https://js-visualizer-xi.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Visit Loopkit"
+                aria-label="Visit QuFlow"
               >
                 <div
                   className="absolute inset-0 bg-cover bg-center"
@@ -32,7 +32,7 @@ function LoopkitCard() {
                   <div className="flex items-center justify-between px-2">
                     <div className="flex items-center gap-2">
                       <RefreshCw className="h-5 w-5 animate-pulse-soft text-white" />
-                      <p className="text-xl font-light text-white">Loopkit</p>
+                      <p className="text-xl font-light text-white">QuFlow</p>
                     </div>
                     <Button variant="ghost" size="icon" className="text-white">
                       <ArrowUpRight className="h-5 w-5" />
@@ -54,4 +54,4 @@ function LoopkitCard() {
   );
 }
 
-export default LoopkitCard;
+export default QuFlowCard;

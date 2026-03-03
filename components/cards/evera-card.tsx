@@ -50,7 +50,9 @@ function EveraCard() {
             <span className="font-bold text-accent-primary">70+</span> customer orders during its
             operation.
           </p>
-          <p>This has since moved to Shopify as I am no longer able to dedicate the time.</p>
+          <p className="mt-2">
+            This has since moved to Shopify as I am no longer able to dedicate the time.
+          </p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

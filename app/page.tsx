@@ -1,6 +1,6 @@
 import MainCard from '@/components/cards/welcome-card';
 import AboutCard from '@/components/cards/about-card';
-import KallioCard from '@/components/cards/kallio-card';
+import ParselyCard from '@/components/cards/parsely-card';
 import ProjectsCard from '@/components/cards/evera-card';
 import ExperienceCard from '@/components/cards/experience-card';
 import FooterCard from '@/components/cards/footer-card';
@@ -57,19 +57,19 @@ const Page = () => {
           className="h-full animate-fade-slide-up opacity-0"
           style={{ animationDelay: `${DELAY_INCREMENT * 4}ms` }}
         >
-          <KallioCard />
+          <ParselyCard />
         </div>
         <div
           className="h-full animate-fade-slide-up opacity-0"
           style={{ animationDelay: `${DELAY_INCREMENT * 5}ms` }}
         >
-          <ProjectsCard />
+          <QuFlowCard />
         </div>
         <div
           className="h-full animate-fade-slide-up opacity-0"
           style={{ animationDelay: `${DELAY_INCREMENT * 6}ms` }}
         >
-          <QuFlowCard />
+          <ProjectsCard />
         </div>
         <div
           className="h-full animate-fade-slide-up opacity-0"

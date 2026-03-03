@@ -66,6 +66,7 @@ export const experiences = [
   {
     company: 'Boston College',
     location: 'Chestnut Hill, MA',
+    dateRange: 'Aug 2020 – May 2024',
     roles: [
       {
         role: 'Research Assistant',

@@ -172,7 +172,9 @@ function FontPicker() {
               className="flex cursor-pointer items-center justify-between py-2.5"
             >
               <div>
-                <div className="text-sm font-medium">{f.name}</div>
+                <div className="text-sm font-medium" style={{ fontFamily: `var(${f.variable})` }}>
+                  {f.name}
+                </div>
                 <div className="text-xs text-muted-foreground">{f.description}</div>
               </div>
               {isActive && <Check className="h-4 w-4 text-primary" />}

@@ -66,13 +66,19 @@ function ExperienceCard() {
               <AccordionTrigger className="text-left hover:no-underline [&[data-state=open]]:text-accent-primary">
                 <div className="flex w-full items-center justify-between pr-2">
                   <div className="flex flex-col items-start gap-0.5 sm:flex-row sm:items-center sm:gap-2">
-                    <span className="font-semibold">
-                      {exp.roles ? exp.roles[0].role : exp.role}
-                    </span>
-                    <span className="text-sm font-normal text-accent-primary">@ {exp.company}</span>
+                    {exp.roles ? (
+                      <span className="font-semibold text-accent-primary">{exp.company}</span>
+                    ) : (
+                      <>
+                        <span className="font-semibold">{exp.role}</span>
+                        <span className="text-sm font-normal text-accent-primary">
+                          @ {exp.company}
+                        </span>
+                      </>
+                    )}
                   </div>
                   <span className="hidden font-mono text-xs text-muted-foreground sm:block">
-                    {exp.roles ? exp.roles[0].date : exp.date}
+                    {exp.roles ? exp.dateRange : exp.date}
                   </span>
                 </div>
               </AccordionTrigger>

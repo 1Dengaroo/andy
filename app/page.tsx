@@ -1,6 +1,6 @@
 import MainCard from '@/components/cards/welcome-card';
 import AboutCard from '@/components/cards/about-card';
-import TimeCard from '@/components/cards/time-card';
+import KallioCard from '@/components/cards/kallio-card';
 import ProjectsCard from '@/components/cards/evera-card';
 import ExperienceCard from '@/components/cards/experience-card';
 import FooterCard from '@/components/cards/footer-card';
@@ -57,7 +57,7 @@ const Page = () => {
           className="h-full animate-fade-slide-up opacity-0"
           style={{ animationDelay: `${DELAY_INCREMENT * 4}ms` }}
         >
-          <TimeCard />
+          <KallioCard />
         </div>
         <div
           className="h-full animate-fade-slide-up opacity-0"

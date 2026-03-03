@@ -1,25 +1,25 @@
-import { ChevronLeft } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
 const NotFound = () => {
   return (
-    <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-8">
-      <div className="space-y-6 text-center">
-        <div className="space-y-2">
-          <h1 className="text-6xl font-extralight">
-            4<span className="text-accent-primary">0</span>4
-          </h1>
-          <p className="text-xl font-light">Page not found</p>
+    <div className="flex w-full max-w-md flex-col items-center gap-3 px-2">
+      <Card className="w-full p-8 text-center">
+        <h1 className="text-7xl font-extralight tracking-tight">
+          4<span className="text-accent-primary">0</span>4
+        </h1>
+        <p className="mt-3 text-lg text-muted-foreground">This page doesn&apos;t exist</p>
+        <div className="mt-6">
+          <Button asChild>
+            <Link href="/" className="gap-2">
+              <ArrowLeft size={16} />
+              Back home
+            </Link>
+          </Button>
         </div>
-
-        <Button asChild>
-          <Link href="/" className="gap-2">
-            <ChevronLeft size={16} />
-            <span>Return Home</span>
-          </Link>
-        </Button>
-      </div>
+      </Card>
     </div>
   );
 };

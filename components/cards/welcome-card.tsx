@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import { Button } from '../ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader } from '../ui/card';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 import { socialLinks } from '@/lib/data';
 import { Bird } from 'lucide-react';
 
 function WelcomeCard() {
   return (
-    <Card className="group">
+    <Card>
       <CardHeader className="flex w-full flex-row justify-between gap-4">
         <div className="flex items-center gap-2">
           Welcome!
@@ -37,27 +38,35 @@ function WelcomeCard() {
       </CardContent>
       <CardFooter>
         <div className="flex gap-x-2">
-          {socialLinks.map((link) => {
-            const Icon = link.icon;
-            return (
-              <Button
-                key={link.label}
-                variant="outline"
-                size="icon"
-                asChild
-                className="p-4 group-hover:text-accent-primary"
-              >
-                <Link
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={link.label}
-                >
-                  <Icon className="h-5 w-5" />
-                </Link>
-              </Button>
-            );
-          })}
+          <TooltipProvider>
+            {socialLinks.map((link) => {
+              const Icon = link.icon;
+              return (
+                <Tooltip key={link.label}>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      asChild
+                      className="p-4 hover:text-accent-primary"
+                    >
+                      <Link
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={link.label}
+                      >
+                        <Icon className="h-5 w-5" />
+                      </Link>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{link.label}</p>
+                  </TooltipContent>
+                </Tooltip>
+              );
+            })}
+          </TooltipProvider>
         </div>
       </CardFooter>
     </Card>

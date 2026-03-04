@@ -5,6 +5,7 @@ import { FileText } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Card, CardContent, CardHeader } from '../ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 import { experiences } from '@/lib/data';
 
 const VISIBLE_COUNT = 2;
@@ -41,19 +42,28 @@ function AchievementList({ achievements }: { achievements: string[] }) {
 
 function ExperienceCard() {
   return (
-    <Card id="experience" className="group h-full pb-6">
+    <Card id="experience" className="h-full pb-6">
       <CardHeader className="flex flex-row justify-between gap-4">
         <div>Experience</div>
-        <Button variant="outline" size="icon" className="group-hover:text-accent-primary" asChild>
-          <a
-            href="/Andy_Deng_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download Resume"
-          >
-            <FileText className="h-5 w-5" />
-          </a>
-        </Button>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="outline" size="icon" asChild className="hover:text-accent-primary">
+                <a
+                  href="/Andy_Deng_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View Resume"
+                >
+                  <FileText className="h-5 w-5" />
+                </a>
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>View Resume</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </CardHeader>
       <CardContent>
         <Accordion type="single" collapsible defaultValue="0">

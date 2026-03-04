@@ -12,7 +12,7 @@ function ParselyCard() {
         <TooltipTrigger asChild>
           <Card
             id="parsely"
-            className="group relative h-full overflow-hidden transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+            className="relative h-full overflow-hidden focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
             tabIndex={0}
           >
             <Button variant="ghost" asChild className="h-full w-full p-0" tabIndex={-1}>

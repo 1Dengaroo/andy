@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import {
   Plus_Jakarta_Sans,
   Bricolage_Grotesque,
-  Crimson_Pro,
-  Outfit,
+  Lora,
+  Space_Mono,
   Instrument_Sans
 } from 'next/font/google';
 import '@/styles/globals.css';
@@ -21,15 +21,19 @@ import SkipLinks from '@/components/layout/skip-links';
 
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-plus-jakarta' });
 const bricolage = Bricolage_Grotesque({ subsets: ['latin'], variable: '--font-bricolage' });
-const crimsonPro = Crimson_Pro({ subsets: ['latin'], variable: '--font-crimson-pro' });
-const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
+const lora = Lora({ subsets: ['latin'], variable: '--font-lora' });
+const spaceMono = Space_Mono({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-space-mono'
+});
 const instrumentSans = Instrument_Sans({ subsets: ['latin'], variable: '--font-instrument-sans' });
 
 const fontVariables = [
   plusJakarta.variable,
   bricolage.variable,
-  crimsonPro.variable,
-  outfit.variable,
+  lora.variable,
+  spaceMono.variable,
   instrumentSans.variable
 ].join(' ');
 

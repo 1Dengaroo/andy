@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Card } from '../ui/card';
 import { Button } from '../ui/button';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 import { socialLinks } from '@/lib/data';
 import { Mail } from 'lucide-react';
 
@@ -20,21 +21,30 @@ function CTACard() {
         </Button>
       </div>
       <div className="flex gap-1">
-        {socialLinks.map((link) => {
-          const Icon = link.icon;
-          return (
-            <Button key={link.label} variant="ghost" size="icon" asChild>
-              <Link
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={link.label}
-              >
-                <Icon className="h-4 w-4" />
-              </Link>
-            </Button>
-          );
-        })}
+        <TooltipProvider>
+          {socialLinks.map((link) => {
+            const Icon = link.icon;
+            return (
+              <Tooltip key={link.label}>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost" size="icon" asChild className="hover:text-accent-primary">
+                    <Link
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={link.label}
+                    >
+                      <Icon className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{link.label}</p>
+                </TooltipContent>
+              </Tooltip>
+            );
+          })}
+        </TooltipProvider>
       </div>
     </Card>
   );

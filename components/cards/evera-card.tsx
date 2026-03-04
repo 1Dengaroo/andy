@@ -13,7 +13,7 @@ function EveraCard() {
         <TooltipTrigger asChild>
           <Card
             id="evera"
-            className="group relative h-full overflow-hidden transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+            className="relative h-full overflow-hidden focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
             tabIndex={0}
           >
             <Button variant="ghost" asChild className="h-full w-full p-0" tabIndex={-1}>
@@ -32,7 +32,6 @@ function EveraCard() {
                   <div className="flex items-center justify-between px-6">
                     <p className="relative text-center align-middle font-serif text-2xl text-white">
                       Evera Fashion
-                      <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
                     </p>
                     <Button variant="ghost" size="icon" className="text-white">
                       <ArrowUpRight className="h-5 w-5" />

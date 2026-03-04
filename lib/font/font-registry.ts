@@ -19,16 +19,16 @@ export const fonts: FontDefinition[] = [
     variable: '--font-bricolage'
   },
   {
-    id: 'crimson-pro',
-    name: 'Crimson Pro',
-    description: 'Elegant serif',
-    variable: '--font-crimson-pro'
+    id: 'lora',
+    name: 'Lora',
+    description: 'Warm serif',
+    variable: '--font-lora'
   },
   {
-    id: 'outfit',
-    name: 'Outfit',
-    description: 'Modern geometric',
-    variable: '--font-outfit'
+    id: 'space-mono',
+    name: 'Space Mono',
+    description: 'Monospace terminal',
+    variable: '--font-space-mono'
   },
   {
     id: 'instrument-sans',

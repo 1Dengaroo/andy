@@ -1,26 +1,49 @@
 'use client';
 
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+
 const skipLinks = [
   { id: 'experience', label: 'Experience' },
-  { id: 'kallio', label: 'Projects' }
+  { id: 'projects', label: 'Projects' },
+  { id: 'contact', label: 'Contact' }
 ];
 
 function SkipLinks() {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const target = document.getElementById(id);
+    if (!target) return;
+    target.setAttribute('tabindex', '-1');
+    target.focus({ preventScroll: true });
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
-    <nav
-      aria-label="Skip links"
-      className="fixed left-4 top-4 z-50 flex flex-col gap-1 focus-within:opacity-100 [&:not(:focus-within)]:pointer-events-none [&:not(:focus-within)]:opacity-0"
-    >
-      {skipLinks.map((link) => (
-        <a
-          key={link.id}
-          href={`#${link.id}`}
-          className="rounded-md bg-background px-3 py-2 text-sm font-medium text-foreground shadow-lg ring-1 ring-border transition-colors hover:bg-accent focus:outline-none focus:ring-2 focus:ring-accent-primary"
-        >
-          Skip to {link.label}
-        </a>
-      ))}
-    </nav>
+    <TooltipProvider delayDuration={0}>
+      <nav
+        aria-label="Skip links"
+        className="fixed left-1/2 top-0 z-50 -translate-x-1/2 -translate-y-full transition-transform duration-200 ease-out focus-within:translate-y-0"
+      >
+        <div className="mt-3 rounded-lg border border-border bg-card p-2 shadow-lg">
+          <div className="flex items-center gap-1">
+            {skipLinks.map((link) => (
+              <Tooltip key={link.id}>
+                <TooltipTrigger asChild>
+                  <a
+                    href={`#${link.id}`}
+                    onClick={(e) => handleClick(e, link.id)}
+                    className="rounded-md px-3 py-1.5 text-sm font-medium text-card-foreground transition-colors hover:bg-accent focus:bg-accent focus:outline-none"
+                  >
+                    {link.label}
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent side="bottom">Skip to {link.label}</TooltipContent>
+              </Tooltip>
+            ))}
+          </div>
+        </div>
+      </nav>
+    </TooltipProvider>
   );
 }
 

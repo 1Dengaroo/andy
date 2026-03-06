@@ -72,7 +72,10 @@ const Page = () => {
       </div>
 
       {/* Row 3: CTA + Footer */}
-      <FadeIn id="contact" className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 lg:grid-cols-4">
+      <FadeIn
+        id="contact"
+        className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 lg:grid-cols-4"
+      >
         <div className="lg:col-span-3">
           <CTACard />
         </div>

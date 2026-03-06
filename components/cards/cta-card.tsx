@@ -15,13 +15,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger
 } from '../ui/dropdown-menu';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription
-} from '../ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '../ui/dialog';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import { socialLinks } from '@/lib/data';
 import { Mail, Send, MessageSquare, CircleCheck } from 'lucide-react';
@@ -125,7 +119,17 @@ function CTACard() {
         </div>
       </Card>
 
-      <Dialog open={dialogOpen} onOpenChange={(open) => { setDialogOpen(open); if (!open) setTimeout(() => { setStatus('idle'); reset(); }, 200); }}>
+      <Dialog
+        open={dialogOpen}
+        onOpenChange={(open) => {
+          setDialogOpen(open);
+          if (!open)
+            setTimeout(() => {
+              setStatus('idle');
+              reset();
+            }, 200);
+        }}
+      >
         <DialogContent className="rounded-xl border-0 bg-card text-card-foreground shadow-lg sm:max-w-lg">
           {status === 'sent' ? (
             <div className="flex flex-col items-center gap-4 py-6">
@@ -137,12 +141,7 @@ function CTACard() {
                 <p className="text-sm font-medium text-card-foreground">Message sent!</p>
                 <p className="mt-1 text-xs text-muted-foreground">I&apos;ll be in touch soon.</p>
               </div>
-              <Button
-                variant="outline"
-                size="sm"
-                autoFocus
-                onClick={() => setDialogOpen(false)}
-              >
+              <Button variant="outline" size="sm" autoFocus onClick={() => setDialogOpen(false)}>
                 Close
               </Button>
             </div>

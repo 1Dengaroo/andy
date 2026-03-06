@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og.png',
+        url: '/og.webp',
         width: 1200,
         height: 630,
         alt: 'Andy Deng — Software Engineer'
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'andydeng.me',
     description: 'Andy Deng — Software Engineer',
-    images: ['/og.png']
+    images: ['/og.webp']
   },
   icons: {
     icon: '/favicon.svg'

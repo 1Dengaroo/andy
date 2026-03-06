@@ -11,7 +11,7 @@ function AboutCard() {
       </CardHeader>
       <CardContent>
         <div className="relative mb-4 aspect-[4/3] w-full overflow-hidden rounded-lg">
-          <Image src="/pfp.JPEG" alt="Andy Deng" fill className="object-cover" />
+          <Image src="/pfp.webp" alt="Andy Deng" fill className="object-cover" />
         </div>
         <CardDescription className="flex flex-col gap-y-4">
           <p>

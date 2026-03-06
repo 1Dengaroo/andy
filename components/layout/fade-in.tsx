@@ -12,7 +12,6 @@ interface FadeInProps {
 export default function FadeIn({ children, className = '', delay = 0, id }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
     const el = ref.current;
     if (!el) return;

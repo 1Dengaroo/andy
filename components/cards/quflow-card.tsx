@@ -24,7 +24,7 @@ function QuFlowCard() {
               >
                 <div
                   className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: 'url(/js-viz.png)' }}
+                  style={{ backgroundImage: 'url(/js-viz.webp)' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 

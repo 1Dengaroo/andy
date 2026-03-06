@@ -138,6 +138,16 @@ export default {
             opacity: '0.7'
           }
         },
+        'theme-dot-pulse': {
+          '0%, 100%': {
+            transform: 'scale(1)',
+            opacity: '1'
+          },
+          '50%': {
+            transform: 'scale(1.2)',
+            opacity: '0.75'
+          }
+        },
         wiggle: {
           '0%, 100%': {
             transform: 'rotate(0deg)'

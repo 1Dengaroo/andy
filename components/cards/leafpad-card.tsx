@@ -3,37 +3,37 @@
 import { useState } from 'react';
 import { Card, CardContent } from '../ui/card';
 import { Button } from '../ui/button';
-import { ArrowUpRight, Braces, Info } from 'lucide-react';
+import { ArrowUpRight, FileText, Info } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '../ui/dialog';
 
-function ParselyCard() {
+function LeafpadCard() {
   const [open, setOpen] = useState(false);
 
   return (
     <>
       <Card
-        id="parsely"
+        id="leafpad"
         className="group relative h-full overflow-hidden focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
         tabIndex={0}
       >
         <Button variant="ghost" asChild className="h-full w-full p-0" tabIndex={-1}>
           <a
-            href="https://parsely-two.vercel.app"
+            href="https://leafpad.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Visit Parsely"
+            aria-label="Visit Leafpad"
           >
             <div
               className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: 'url(/parsely.webp)' }}
+              style={{ backgroundImage: 'url(/leafpad.png)' }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
             <CardContent className="relative z-10 w-full pt-6">
               <div className="flex items-center justify-between px-2">
                 <div className="flex items-center gap-2">
-                  <Braces className="h-5 w-5 animate-pulse-soft text-white" />
-                  <p className="text-xl font-light text-white">Parsely</p>
+                  <FileText className="h-5 w-5 animate-pulse-soft text-white" />
+                  <p className="text-xl font-light text-white">Leafpad</p>
                 </div>
                 <Button variant="ghost" size="icon" className="text-white" tabIndex={-1}>
                   <ArrowUpRight className="h-5 w-5" />
@@ -97,4 +97,4 @@ function ParselyCard() {
   );
 }
 
-export default ParselyCard;
+export default LeafpadCard;

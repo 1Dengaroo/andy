@@ -130,7 +130,7 @@ function CTACard() {
             }, 200);
         }}
       >
-        <DialogContent className="rounded-xl border-0 bg-card text-card-foreground shadow-lg sm:max-w-lg">
+        <DialogContent>
           {status === 'sent' ? (
             <div className="flex flex-col items-center gap-4 py-6">
               <VisuallyHidden.Root>

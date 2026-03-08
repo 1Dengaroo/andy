@@ -1,6 +1,5 @@
 import MainCard from '@/components/cards/welcome-card';
 import AboutCard from '@/components/cards/about-card';
-import ParselyCard from '@/components/cards/parsely-card';
 import ProjectsCard from '@/components/cards/evera-card';
 import ExperienceCard from '@/components/cards/experience-card';
 import FooterCard from '@/components/cards/footer-card';
@@ -8,6 +7,9 @@ import QuFlowCard from '@/components/cards/quflow-card';
 import SkillsCard from '@/components/cards/skills-card';
 import EducationCard from '@/components/cards/education-card';
 import CTACard from '@/components/cards/cta-card';
+import ParsnipsCard from '@/components/cards/parsnips-card';
+import LeafpadCard from '@/components/cards/leafpad-card';
+import ParselyCard from '@/components/cards/parsely-card';
 import Controls from '@/components/layout/controls';
 import FadeIn from '@/components/layout/fade-in';
 
@@ -52,21 +54,26 @@ const Page = () => {
         </div>
       </div>
 
-      {/* Row 2: Projects (3 cols) + Education (1 col) */}
-      <div
-        id="projects"
-        className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4"
-      >
+      {/* Row 2: Projects (3 cols) + Education (1 col, full height) */}
+      <div id="projects" className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:col-span-3 lg:grid-cols-3">
+          <FadeIn className="h-full">
+            <ProjectsCard />
+          </FadeIn>
+          <FadeIn className="h-full sm:col-span-2 lg:col-span-2" delay={DELAY_INCREMENT}>
+            <ParsnipsCard />
+          </FadeIn>
+          <FadeIn className="h-full" delay={DELAY_INCREMENT * 2}>
+            <LeafpadCard />
+          </FadeIn>
+          <FadeIn className="h-full" delay={DELAY_INCREMENT * 3}>
+            <ParselyCard />
+          </FadeIn>
+          <FadeIn className="h-full" delay={DELAY_INCREMENT * 4}>
+            <QuFlowCard />
+          </FadeIn>
+        </div>
         <FadeIn className="h-full">
-          <ParselyCard />
-        </FadeIn>
-        <FadeIn className="h-full" delay={DELAY_INCREMENT}>
-          <QuFlowCard />
-        </FadeIn>
-        <FadeIn className="h-full" delay={DELAY_INCREMENT * 2}>
-          <ProjectsCard />
-        </FadeIn>
-        <FadeIn className="h-full" delay={DELAY_INCREMENT * 3}>
           <EducationCard />
         </FadeIn>
       </div>

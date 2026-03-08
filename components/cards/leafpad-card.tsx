@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import { Card, CardContent } from '../ui/card';
 import { Button } from '../ui/button';
-import { ArrowUpRight, FileText, Info } from 'lucide-react';
+import { ArrowUpRight, Info } from 'lucide-react';
+import Image from 'next/image';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '../ui/dialog';
 
 function LeafpadCard() {
@@ -32,7 +33,13 @@ function LeafpadCard() {
             <CardContent className="relative z-10 w-full pt-6">
               <div className="flex items-center justify-between px-2">
                 <div className="flex items-center gap-2">
-                  <FileText className="h-5 w-5 animate-pulse-soft text-white" />
+                  <Image
+                    src="/leafpad-logo.svg"
+                    alt="Leafpad"
+                    width={20}
+                    height={20}
+                    className="animate-pulse-soft"
+                  />
                   <p className="text-xl font-light text-white">Leafpad</p>
                 </div>
                 <Button variant="ghost" size="icon" className="text-white" tabIndex={-1}>
@@ -61,16 +68,16 @@ function LeafpadCard() {
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Better Dev Tools</DialogTitle>
-            <DialogDescription>Why I built Leafpad and Parsely</DialogDescription>
+            <DialogDescription>Why I built Leafpad</DialogDescription>
           </DialogHeader>
           <div className="space-y-3 text-sm text-foreground">
             <p>
-              I wanted a clean markdown editor and a fast JSON formatter that I actually enjoyed
-              using. So I built them myself.
+              I wanted a clean markdown editor, a fast JSON formatter, and a simple notepad that I
+              actually enjoyed using. So I built them all in one place.
             </p>
             <p>
-              Leafpad and Parsely are simple, free, and focused. No ads, no accounts, no
-              distractions. Just the tool, done well.
+              Leafpad is simple, free, and focused. No ads, no accounts, no distractions. Just the
+              tools, done well.
             </p>
             <div className="flex gap-3 pt-2">
               <a
@@ -80,14 +87,6 @@ function LeafpadCard() {
                 className="inline-flex items-center gap-1 text-sm font-medium text-accent-primary hover:underline"
               >
                 Leafpad <ArrowUpRight className="h-3.5 w-3.5" />
-              </a>
-              <a
-                href="https://parsely-two.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm font-medium text-accent-primary hover:underline"
-              >
-                Parsely <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
             </div>
           </div>

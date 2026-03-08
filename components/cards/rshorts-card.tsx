@@ -40,7 +40,7 @@ function RShortsCard() {
                       <div className="flex items-center gap-2">
                         <Video className="h-5 w-5 animate-pulse-soft text-white" />
                         <p className="text-xl font-light text-white">r/Shorts</p>
-                        <span className="text-xs text-white/60">AI Short-Style Content</span>
+                        <span className="text-xs text-white/90">AI Short-Style Content</span>
                       </div>
                       <Button variant="ghost" size="icon" className="text-white">
                         <ArrowUpRight className="h-5 w-5" />

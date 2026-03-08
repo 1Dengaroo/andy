@@ -9,7 +9,6 @@ import EducationCard from '@/components/cards/education-card';
 import CTACard from '@/components/cards/cta-card';
 import RShortsCard from '@/components/cards/rshorts-card';
 import LeafpadCard from '@/components/cards/leafpad-card';
-import ParselyCard from '@/components/cards/parsely-card';
 import Controls from '@/components/layout/controls';
 import FadeIn from '@/components/layout/fade-in';
 
@@ -66,13 +65,10 @@ const Page = () => {
           >
             <RShortsCard />
           </FadeIn>
-          <FadeIn className="h-full" delay={DELAY_INCREMENT * 2}>
+          <FadeIn className="h-full sm:col-span-2" delay={DELAY_INCREMENT * 2}>
             <LeafpadCard />
           </FadeIn>
           <FadeIn className="h-full" delay={DELAY_INCREMENT * 3}>
-            <ParselyCard />
-          </FadeIn>
-          <FadeIn className="h-full" delay={DELAY_INCREMENT * 4}>
             <QuFlowCard />
           </FadeIn>
         </div>

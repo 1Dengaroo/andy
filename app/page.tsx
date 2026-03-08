@@ -7,7 +7,7 @@ import QuFlowCard from '@/components/cards/quflow-card';
 import SkillsCard from '@/components/cards/skills-card';
 import EducationCard from '@/components/cards/education-card';
 import CTACard from '@/components/cards/cta-card';
-import ParsnipsCard from '@/components/cards/parsnips-card';
+import RShortsCard from '@/components/cards/rshorts-card';
 import LeafpadCard from '@/components/cards/leafpad-card';
 import ParselyCard from '@/components/cards/parsely-card';
 import Controls from '@/components/layout/controls';
@@ -56,12 +56,15 @@ const Page = () => {
 
       {/* Row 2: Projects (3 cols) + Education (1 col, full height) */}
       <div id="projects" className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 lg:grid-cols-4">
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:col-span-3 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 overflow-visible sm:grid-cols-2 lg:col-span-3 lg:grid-cols-3">
           <FadeIn className="h-full">
             <ProjectsCard />
           </FadeIn>
-          <FadeIn className="h-full sm:col-span-2 lg:col-span-2" delay={DELAY_INCREMENT}>
-            <ParsnipsCard />
+          <FadeIn
+            className="h-full overflow-visible sm:col-span-2 lg:col-span-2"
+            delay={DELAY_INCREMENT}
+          >
+            <RShortsCard />
           </FadeIn>
           <FadeIn className="h-full" delay={DELAY_INCREMENT * 2}>
             <LeafpadCard />

@@ -19,7 +19,7 @@ function LeafpadCard() {
       >
         <Button variant="ghost" asChild className="h-full w-full p-0" tabIndex={-1}>
           <a
-            href="https://leafpad.vercel.app"
+            href="https://leafpad.app"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Visit Leafpad"
@@ -86,7 +86,7 @@ function LeafpadCard() {
             </p>
             <div className="flex gap-3 pt-2">
               <a
-                href="https://leafpad.vercel.app"
+                href="https://leafpad.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-sm font-medium text-accent-primary hover:underline"

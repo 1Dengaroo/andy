@@ -34,11 +34,12 @@ export const experiences = [
     location: 'Boston, MA',
     date: 'May 2025 – Present',
     achievements: [
-      'Designed and shipped numerous Blueprint AI features end-to-end (design → production), implementing complex React/TypeScript UI flows and backend APIs supporting 1M+ blueprint artifacts',
-      'Improved performance by reducing initial load times by 75% (6s → 1.5s) and improving app-wide performance by 25-75% through frontend optimization, backend API refactoring, and caching strategies',
-      "Contributed to internal React component library used across Pega's engineering organization, ensuring accessibility compliance and TypeScript best practices",
-      'Conducted numerous code reviews across Blueprint frontend and backend features and component libraries, maintaining high code quality standards',
-      'Designed a central React context to manage AI-generated diffs across the application, enabling highlighting of incremental changes without full re-renders'
+      'Shipped AI-assisted Blueprint generation features end-to-end, building React/TypeScript interfaces and Java APIs to process and persist artifacts across 1M+ Blueprints',
+      'Reduced initial load time from 6s to 1.5s and improved performance by up to 75% through frontend rendering optimizations and backend API/service refactoring',
+      'Engineered prompt templates and LLM output parsing with structured fallbacks across multiple providers via a dependency-injected model abstraction layer',
+      'Designed core Java services, APIs, and data models for AI-generated Blueprint artifacts, defining schemas and maintaining backward compatibility',
+      'Led cross-team frontend and backend architecture improvements, standardizing shared components, accessibility patterns, and code quality',
+      'Built a centralized React context layer for AI-generated diffs, enabling incremental change highlighting without full re-renders'
     ]
   },
   {
@@ -47,9 +48,9 @@ export const experiences = [
     location: 'Boston, MA',
     date: 'Sep 2024 – May 2025',
     achievements: [
-      'Architected and built an end-to-end property management platform from 0-1 using Next.js and Django, handling apartment listings with interactive maps, lease applications/approvals, automated document signing with identity verification (Stripe, TransUnion), maintenance tracking, and payment processing with auto-pay',
-      'Established test-driven development practices, writing 500+ integration and unit tests using Pytest and achieving 90% code coverage on payments and leases, significantly improving deployment confidence',
-      'Reduced expensive Google API usage by over 70% by implementing clustering, caching, and lazy loading strategies to display apartment listings and points of interest while prioritizing user experience'
+      'Built a 0–1 property management platform (Next.js and Django) supporting listings with geospatial search, lease workflows, identity verification, document signing, maintenance tracking, and automated payments',
+      'Established test-driven development, writing 500+ Pytest unit and integration tests covering payments and leases',
+      'Reduced Google Maps API usage by 70% by implementing clustering, caching, and lazy loading for apartment listings and points of interest'
     ]
   },
   {
@@ -58,9 +59,9 @@ export const experiences = [
     location: 'Remote',
     date: 'Aug 2023 – Feb 2024',
     achievements: [
-      'Reduced Stream Chat API costs by $500/month by building and optimizing a Redis-based real-time chat notification system that tracked 10,000+ daily messages',
-      'Built an atomic transaction system for Stripe payment processing that successfully processed over 1,000 orders',
-      'Maintained 90% code coverage through comprehensive Playwright and RSpec testing suites'
+      'Reduced Stream Chat API costs by $500/month by building a Redis-based real-time notification system handling 10k+ daily messages',
+      'Implemented idempotent Stripe payment flows with transactional safeguards, processing 1k+ orders',
+      'Maintained Playwright and RSpec test suites, preventing regressions across core application workflows'
     ]
   },
   {

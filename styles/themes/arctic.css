@@ -1,3 +1,13 @@
+[data-theme='arctic'] body {
+  background-image: linear-gradient(
+    135deg,
+    hsl(210 30% 91%) 0%,
+    hsl(200 35% 88%) 50%,
+    hsl(220 28% 90%) 100%
+  );
+  background-attachment: fixed;
+}
+
 [data-theme='arctic'] {
   /* Semantic tokens (oklch L C H) */
   --accent-primary: 0.6 0.14 230;

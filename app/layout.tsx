@@ -102,7 +102,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="data-theme"
           themes={themeIds}
-          defaultTheme="honey"
+          defaultTheme="light"
           disableTransitionOnChange
         >
           <FontProvider>

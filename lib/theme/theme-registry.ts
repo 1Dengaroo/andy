@@ -10,9 +10,9 @@ export const themes: ThemeDefinition[] = [
   {
     id: 'light',
     name: 'Light',
-    description: 'Warm and refined',
+    description: 'Golden and warm',
     isDark: false,
-    previewColors: ['oklch(0.96 0.01 75)', 'oklch(0.55 0.12 55)', 'oklch(0.58 0.1 15)']
+    previewColors: ['oklch(0.95 0.02 75)', 'oklch(0.62 0.17 65)', 'oklch(0.55 0.14 35)']
   },
   {
     id: 'dark',
@@ -66,9 +66,9 @@ export const themes: ThemeDefinition[] = [
   {
     id: 'honey',
     name: 'Honey',
-    description: 'Golden and warm',
+    description: 'Rich amber drip',
     isDark: false,
-    previewColors: ['oklch(0.95 0.02 75)', 'oklch(0.62 0.17 65)', 'oklch(0.55 0.14 35)']
+    previewColors: ['oklch(0.93 0.04 80)', 'oklch(0.6 0.19 75)', 'oklch(0.52 0.16 45)']
   }
 ];
 

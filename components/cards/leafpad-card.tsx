@@ -25,22 +25,27 @@ function LeafpadCard() {
             aria-label="Visit Leafpad"
           >
             <div
-              className="absolute inset-0 bg-cover bg-center"
+              className="absolute inset-0 bg-cover bg-center brightness-75"
               style={{ backgroundImage: 'url(/leafpad.png)' }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
             <CardContent className="relative z-10 w-full pt-6">
               <div className="flex items-center justify-between px-2">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-3">
                   <Image
                     src="/leafpad-logo.svg"
                     alt="Leafpad"
-                    width={20}
-                    height={20}
+                    width={22}
+                    height={22}
                     className="animate-pulse-soft"
                   />
-                  <p className="text-xl font-light text-white">Leafpad</p>
+                  <span
+                    className="text-xl font-bold tracking-tight text-white"
+                    style={{ fontFamily: 'var(--font-sora)', letterSpacing: '-0.025em' }}
+                  >
+                    Leafpad
+                  </span>
                 </div>
                 <Button variant="ghost" size="icon" className="text-white" tabIndex={-1}>
                   <ArrowUpRight className="h-5 w-5" />

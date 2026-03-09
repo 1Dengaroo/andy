@@ -4,7 +4,8 @@ import {
   Bricolage_Grotesque,
   Lora,
   Space_Mono,
-  Instrument_Sans
+  Instrument_Sans,
+  Sora
 } from 'next/font/google';
 import '@/styles/globals.css';
 
@@ -28,13 +29,15 @@ const spaceMono = Space_Mono({
   variable: '--font-space-mono'
 });
 const instrumentSans = Instrument_Sans({ subsets: ['latin'], variable: '--font-instrument-sans' });
+const sora = Sora({ subsets: ['latin'], weight: ['700'], variable: '--font-sora' });
 
 const fontVariables = [
   plusJakarta.variable,
   bricolage.variable,
   lora.variable,
   spaceMono.variable,
-  instrumentSans.variable
+  instrumentSans.variable,
+  sora.variable
 ].join(' ');
 
 const baseUrl = 'https://andydeng.me';

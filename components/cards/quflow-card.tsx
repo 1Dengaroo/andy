@@ -3,7 +3,7 @@
 import { Card, CardContent } from '../ui/card';
 import { Button } from '../ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
-import { ArrowUpRight, RefreshCw } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 function QuFlowCard() {
   return (
@@ -17,23 +17,29 @@ function QuFlowCard() {
           >
             <Button variant="ghost" asChild className="h-full w-full p-0" tabIndex={-1}>
               <a
-                href="https://js-visualizer-xi.vercel.app/"
+                href="https://quflow.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit QuFlow"
               >
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: 'url(/js-viz.webp)' }}
+                <video
+                  src="/quflow.mov"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 h-full w-full object-cover brightness-75"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
                 <CardContent className="relative z-10 w-full pt-6">
                   <div className="flex items-center justify-between px-2">
-                    <div className="flex items-center gap-2">
-                      <RefreshCw className="h-5 w-5 animate-pulse-soft text-white" />
-                      <p className="text-xl font-light text-white">QuFlow</p>
-                    </div>
+                    <h1
+                      className="text-2xl font-extrabold tracking-tight text-white"
+                      style={{ fontFamily: 'var(--font-bricolage)' }}
+                    >
+                      Qu<span style={{ color: '#3b82f6' }}>Flow</span>
+                    </h1>
                     <Button variant="ghost" size="icon" className="text-white">
                       <ArrowUpRight className="h-5 w-5" />
                     </Button>

@@ -1,34 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { Card, CardContent } from '../ui/card';
 import { Button } from '../ui/button';
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '../ui/dialog';
+import { ProjectModal, useHashModal } from './project-modal';
 
 function RShortsCard() {
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    if (window.location.hash === '#rshorts') {
-      setOpen(true);
-    }
-
-    const onHashChange = () => {
-      if (window.location.hash === '#rshorts') {
-        setOpen(true);
-      }
-    };
-    window.addEventListener('hashchange', onHashChange);
-    return () => window.removeEventListener('hashchange', onHashChange);
-  }, []);
-
-  useEffect(() => {
-    if (!open && window.location.hash === '#rshorts') {
-      history.replaceState(null, '', window.location.pathname);
-    }
-  }, [open]);
+  const [open, setOpen] = useHashModal('rshorts');
 
   return (
     <>
@@ -78,50 +57,38 @@ function RShortsCard() {
         </CardContent>
       </Card>
 
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="overflow-hidden sm:max-w-lg">
-          <div className="relative -mx-6 -mt-6 aspect-video overflow-hidden">
-            <video
-              src="/rshorts.mov"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="h-full w-full object-cover object-[18%_center]"
-            />
-          </div>
-          <DialogHeader>
-            <div className="flex items-center gap-2">
-              <Image
-                src="/rshorts-logo.svg"
-                alt="r/Shorts"
-                width={20}
-                height={20}
-                className="rounded-lg"
-              />
-              <DialogTitle>r/Shorts</DialogTitle>
-            </div>
-            <DialogDescription>AI-powered short-form video generator</DialogDescription>
-          </DialogHeader>
-          <div className="space-y-3 text-sm text-foreground">
-            <p>
-              An AI Shorts-style video generator. Paste a prompt, get a fully narrated, captioned
-              video ready for TikTok, Reels, and YouTube Shorts.
-            </p>
-            <p>Built with Remotion, rendered with AWS Lambda and stored in S3.</p>
-            <div className="flex gap-3 pt-2">
-              <a
-                href="https://rshorts.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm font-medium text-accent-primary hover:underline"
-              >
-                rshorts.app <ArrowUpRight className="h-3.5 w-3.5" />
-              </a>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
+      <ProjectModal
+        open={open}
+        onOpenChange={setOpen}
+        preview={
+          <video
+            src="/rshorts.mov"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="h-full w-full object-cover object-[18%_center]"
+          />
+        }
+        logo={
+          <Image
+            src="/rshorts-logo.svg"
+            alt="r/Shorts"
+            width={20}
+            height={20}
+            className="rounded-lg"
+          />
+        }
+        title="r/Shorts"
+        subtitle="AI-powered short-form video generator"
+        link={{ label: 'rshorts.app', href: 'https://rshorts.app' }}
+      >
+        <p>
+          An AI Shorts-style video generator. Paste a prompt, get a fully narrated, captioned video
+          ready for TikTok, Reels, and YouTube Shorts.
+        </p>
+        <p>Built with Remotion, rendered with AWS Lambda and stored in S3.</p>
+      </ProjectModal>
     </>
   );
 }

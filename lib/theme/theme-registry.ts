@@ -10,9 +10,9 @@ export const themes: ThemeDefinition[] = [
   {
     id: 'light',
     name: 'Light',
-    description: 'Golden and warm',
+    description: 'Champagne & rose',
     isDark: false,
-    previewColors: ['oklch(0.95 0.02 75)', 'oklch(0.62 0.17 65)', 'oklch(0.55 0.14 35)']
+    previewColors: ['oklch(0.97 0.007 30)', 'oklch(0.52 0.17 350)', 'oklch(0.65 0.1 80)']
   },
   {
     id: 'dark',
@@ -64,11 +64,11 @@ export const themes: ThemeDefinition[] = [
     previewColors: ['oklch(0.13 0.03 265)', 'oklch(0.68 0.16 235)', 'oklch(0.6 0.14 275)']
   },
   {
-    id: 'honey',
-    name: 'Honey',
-    description: 'Rich amber drip',
+    id: 'birch',
+    name: 'Birch',
+    description: 'Bark & golden amber',
     isDark: false,
-    previewColors: ['oklch(0.93 0.04 80)', 'oklch(0.6 0.19 75)', 'oklch(0.52 0.16 45)']
+    previewColors: ['oklch(0.975 0.005 65)', 'oklch(0.58 0.14 80)', 'oklch(0.30 0.01 50)']
   }
 ];
 

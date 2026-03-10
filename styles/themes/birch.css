@@ -1,0 +1,86 @@
+/* Birch — Paper white with charcoal bark & golden amber */
+
+[data-theme='birch'] body {
+  background-image: linear-gradient(
+    135deg,
+    hsl(48 18% 93%) 0%,
+    hsl(35 14% 90%) 50%,
+    hsl(25 12% 91%) 100%
+  );
+  background-attachment: fixed;
+}
+
+[data-theme='birch'] {
+  /* Semantic tokens (oklch L C H) */
+  --accent-primary: 0.58 0.14 80;
+  --accent-secondary: 0.3 0.01 50;
+
+  --surface-primary: 0.975 0.005 65;
+  --surface-secondary: 0.96 0.007 60;
+  --surface-elevated: 0.99 0.003 65;
+  --surface-overlay: 0.15 0.01 50;
+
+  --border-default: 0.9 0.01 60;
+  --border-subtle: 0.93 0.007 65;
+  --border-strong: 0.68 0.03 55;
+
+  --text-primary: 0.15 0.01 50;
+  --text-secondary: 0.34 0.008 50;
+  --text-muted: 0.52 0.006 55;
+  --text-inverse: 0.975 0.005 65;
+
+  --shadow-sm: 0 1px 2px oklch(0.2 0.01 50 / 0.06);
+  --shadow-md: 0 4px 10px oklch(0.2 0.01 50 / 0.08);
+  --shadow-lg: 0 12px 24px oklch(0.2 0.01 50 / 0.11);
+
+  /* shadcn bridge tokens (HSL) */
+  --background: 42 8% 94%;
+  --foreground: 40 6% 10%;
+  --card: 45 7% 97%;
+  --card-foreground: 40 6% 10%;
+  --popover: 45 8% 98%;
+  --popover-foreground: 40 6% 10%;
+  --primary: 45 65% 44%;
+  --primary-foreground: 40 8% 10%;
+  --secondary: 42 5% 90%;
+  --secondary-foreground: 40 5% 16%;
+  --muted: 42 4% 92%;
+  --muted-foreground: 40 3% 42%;
+  --accent: 42 4% 92%;
+  --accent-foreground: 40 6% 10%;
+  --destructive: 0 58% 48%;
+  --destructive-foreground: 45 8% 97%;
+  --border: 42 5% 88%;
+  --input: 42 5% 88%;
+  --ring: 45 65% 44%;
+  --radius: 0.5rem;
+  --chart-1: 45 62% 42%;
+  --chart-2: 25 35% 40%;
+  --chart-3: 0 0% 28%;
+  --chart-4: 80 28% 42%;
+  --chart-5: 15 40% 46%;
+  --sidebar-background: 42 6% 93%;
+  --sidebar-foreground: 40 3% 40%;
+  --sidebar-primary: 45 65% 40%;
+  --sidebar-primary-foreground: 40 8% 10%;
+  --sidebar-accent: 42 4% 90%;
+  --sidebar-accent-foreground: 40 6% 10%;
+  --sidebar-border: 42 4% 85%;
+  --sidebar-ring: 45 65% 40%;
+}
+
+[data-theme='birch'] .bg-card {
+  background: linear-gradient(160deg, hsl(45 7% 97%) 0%, hsl(38 5% 96%) 100%);
+}
+
+[data-theme='birch'] .bg-primary {
+  background: linear-gradient(135deg, hsl(45 65% 46%) 0%, hsl(38 60% 40%) 100%);
+}
+
+[data-theme='birch'] .bg-secondary {
+  background: linear-gradient(145deg, hsl(42 5% 91%) 0%, hsl(36 4% 90%) 100%);
+}
+
+[data-theme='birch'] .bg-muted {
+  background: linear-gradient(135deg, hsl(42 4% 93%) 0%, hsl(38 3% 92%) 100%);
+}

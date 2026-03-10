@@ -45,13 +45,31 @@ const baseUrl = 'https://andydeng.me';
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'andydeng.me',
-    template: '%s | andydeng.me'
+    default: 'Andy Deng — Software Engineer',
+    template: '%s | Andy Deng'
   },
-  description: 'Andy Deng — Software Engineer',
+  description:
+    'Andy Deng is a software engineer with 2+ years of experience building products from 0-1. Currently building Blueprint AI products at Pega. Based in New York, NY.',
+  keywords: [
+    'Andy Deng',
+    'software engineer',
+    'front-end developer',
+    'React',
+    'Next.js',
+    'TypeScript',
+    'New York',
+    'portfolio',
+    'web developer'
+  ],
+  authors: [{ name: 'Andy Deng', url: baseUrl }],
+  creator: 'Andy Deng',
+  alternates: {
+    canonical: baseUrl
+  },
   openGraph: {
-    title: 'andydeng.me',
-    description: 'Andy Deng — Software Engineer',
+    title: 'Andy Deng — Software Engineer',
+    description:
+      'Software engineer with 2+ years of experience building products from 0-1. Currently building Blueprint AI products at Pega.',
     url: baseUrl,
     siteName: 'Andy Deng',
     locale: 'en_US',
@@ -61,14 +79,15 @@ export const metadata: Metadata = {
         url: '/og.webp',
         width: 1200,
         height: 630,
-        alt: 'Andy Deng — Software Engineer'
+        alt: 'Andy Deng — Software Engineer portfolio website'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'andydeng.me',
-    description: 'Andy Deng — Software Engineer',
+    title: 'Andy Deng — Software Engineer',
+    description:
+      'Software engineer with 2+ years of experience building products from 0-1. Currently building Blueprint AI products at Pega.',
     images: ['/og.webp']
   },
   icons: {
@@ -94,6 +113,43 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Andy Deng',
+              url: baseUrl,
+              jobTitle: 'Software Engineer',
+              worksFor: {
+                '@type': 'Organization',
+                name: 'Pega'
+              },
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'New York',
+                addressRegion: 'NY',
+                addressCountry: 'US'
+              },
+              sameAs: ['https://github.com/1Dengaroo', 'https://linkedin.com/in/andydeng-'],
+              alumniOf: {
+                '@type': 'EducationalOrganization',
+                name: 'Boston College'
+              },
+              knowsAbout: [
+                'React',
+                'Next.js',
+                'TypeScript',
+                'Python',
+                'JavaScript',
+                'Software Engineering'
+              ]
+            })
+          }}
+        />
+      </head>
       <body
         className={`${fontVariables} antialiased`}
         style={{ fontFamily: 'var(--font-plus-jakarta)' }}

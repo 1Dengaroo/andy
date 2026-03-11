@@ -12,7 +12,7 @@ function QuFlowCard() {
     <>
       <Card
         id="quflow"
-        className="group relative h-full cursor-pointer overflow-hidden focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+        className="group relative aspect-[3/1] cursor-pointer overflow-hidden border-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         tabIndex={0}
         onClick={() => setOpen(true)}
         onKeyDown={(e) => {
@@ -28,19 +28,23 @@ function QuFlowCard() {
           loop
           muted
           playsInline
-          className="absolute inset-0 h-full w-full object-cover brightness-75"
+          className="absolute inset-0 h-full w-full object-cover brightness-[0.65] transition-all duration-500 group-hover:scale-105 group-hover:brightness-75"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
         <CardContent className="relative z-10 w-full pt-6">
-          <div className="flex items-center justify-between px-2">
-            <h1
+          <div className="flex items-end justify-between px-2">
+            <h3
               className="text-2xl font-extrabold tracking-tight text-white"
               style={{ fontFamily: 'var(--font-bricolage)' }}
             >
-              Qu<span style={{ color: '#3b82f6' }}>Flow</span>
-            </h1>
-            <Button variant="ghost" size="icon" className="text-white" tabIndex={-1}>
+              Qu<span className="text-blue-400">Flow</span>
+            </h3>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-white/70 transition-colors group-hover:text-white"
+              tabIndex={-1}
+            >
               <ArrowUpRight className="h-5 w-5" />
             </Button>
           </div>

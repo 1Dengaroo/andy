@@ -10,30 +10,16 @@ export const themes: ThemeDefinition[] = [
   {
     id: 'light',
     name: 'Light',
-    description: 'Champagne & rose',
+    description: 'Warm stone & brass',
     isDark: false,
-    previewColors: ['oklch(0.97 0.007 30)', 'oklch(0.52 0.17 350)', 'oklch(0.65 0.1 80)']
+    previewColors: ['oklch(0.975 0.006 70)', 'oklch(0.55 0.13 55)', 'oklch(0.17 0.012 45)']
   },
   {
     id: 'dark',
     name: 'Dark',
-    description: 'Rich and elegant',
+    description: 'Charcoal & gold',
     isDark: true,
-    previewColors: ['oklch(0.16 0.015 50)', 'oklch(0.62 0.12 65)', 'oklch(0.6 0.1 25)']
-  },
-  {
-    id: 'neon',
-    name: 'Neon',
-    description: 'Cyberpunk nightlife',
-    isDark: true,
-    previewColors: ['oklch(0.12 0.03 290)', 'oklch(0.7 0.28 330)', 'oklch(0.75 0.18 195)']
-  },
-  {
-    id: 'retro',
-    name: 'Retro',
-    description: '70s nostalgia',
-    isDark: false,
-    previewColors: ['oklch(0.93 0.025 80)', 'oklch(0.62 0.18 45)', 'oklch(0.55 0.12 145)']
+    previewColors: ['oklch(0.17 0.010 45)', 'oklch(0.68 0.14 65)', 'oklch(0.92 0.015 60)']
   },
   {
     id: 'candy',

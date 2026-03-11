@@ -31,6 +31,28 @@
   --shadow-md: 0 4px 6px oklch(0 0 0 / 0.35);
   --shadow-lg: 0 10px 15px oklch(0 0 0 / 0.4);
 
+  /* Card style tokens — rounded, shadowed, classic look */
+  --card-radius: 12px;
+  --card-border-width: 0px;
+  --card-border-opacity: 0;
+  --card-shadow: var(--shadow-lg);
+  --card-hover-shadow: 0 14px 28px oklch(0 0 0 / 0.5);
+  --card-hover-y: -3px;
+  --card-accent-bar-height: 0px;
+  --card-accent-bar-scale: 0;
+
+  /* Typography overrides — classic sans-serif style */
+  --heading-font: inherit;
+  --section-label-font: inherit;
+  --section-label-size: 0.875rem;
+  --section-label-tracking: normal;
+  --section-label-transform: none;
+  --tag-font: inherit;
+  --tag-radius: 9999px;
+  --tag-padding-y: 0.25rem;
+  --tag-padding-x: 0.75rem;
+  --tag-font-size: 0.75rem;
+
   /* shadcn bridge tokens (HSL) */
   --background: 30 12% 7%;
   --foreground: 38 30% 88%;
@@ -51,7 +73,7 @@
   --border: 30 14% 20%;
   --input: 30 14% 20%;
   --ring: 40 55% 52%;
-  --radius: 0.5rem;
+  --radius: 0.75rem;
   --chart-1: 40 50% 45%;
   --chart-2: 20 45% 50%;
   --chart-3: 55 40% 50%;

@@ -1,0 +1,139 @@
+/* Blueprint — Engineering drawing / technical drafting aesthetic */
+
+[data-theme='blueprint'] body {
+  background-color: #0b1a3b;
+  background-image:
+    linear-gradient(hsl(215 60% 28% / 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(215 60% 28% / 0.3) 1px, transparent 1px),
+    linear-gradient(hsl(215 60% 28% / 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(215 60% 28% / 0.12) 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 0%, hsl(215 65% 20%) 0%, #0b1a3b 70%);
+  background-size:
+    80px 80px,
+    80px 80px,
+    16px 16px,
+    16px 16px,
+    100% 100%;
+  background-attachment: fixed;
+}
+
+[data-theme='blueprint'] {
+  /* Semantic tokens (oklch L C H) */
+  --accent-primary: 0.78 0.12 210;
+  --accent-secondary: 0.65 0.1 200;
+
+  --surface-primary: 0.18 0.04 245;
+  --surface-secondary: 0.21 0.045 245;
+  --surface-elevated: 0.25 0.05 245;
+  --surface-overlay: 0.1 0.03 245;
+
+  --border-default: 0.38 0.06 215;
+  --border-subtle: 0.3 0.05 220;
+  --border-strong: 0.5 0.08 210;
+
+  --text-primary: 0.92 0.02 210;
+  --text-secondary: 0.72 0.05 215;
+  --text-muted: 0.5 0.04 220;
+  --text-inverse: 0.15 0.04 245;
+
+  --shadow-sm: 0 1px 3px oklch(0.08 0.03 245 / 0.5);
+  --shadow-md: 0 2px 6px oklch(0.08 0.03 245 / 0.5);
+  --shadow-lg: 0 4px 12px oklch(0.08 0.03 245 / 0.6);
+
+  /* Card style tokens — drafted, technical */
+  --card-radius: 0px;
+  --card-border-width: 1px;
+  --card-border-opacity: 1;
+  --card-shadow: none;
+  --card-hover-shadow: var(--shadow-md);
+  --card-hover-y: -1px;
+  --card-accent-bar-height: 0px;
+  --card-accent-bar-scale: 0;
+
+  /* Typography — technical drafting */
+  --heading-font: var(--font-space-mono), monospace;
+  --section-label-font: var(--font-space-mono), monospace;
+  --section-label-size: 0.6rem;
+  --section-label-tracking: 0.18em;
+  --section-label-transform: uppercase;
+  --tag-font: var(--font-space-mono), monospace;
+  --tag-radius: 0px;
+  --tag-padding-y: 0.2rem;
+  --tag-padding-x: 0.5rem;
+  --tag-font-size: 0.6rem;
+
+  /* shadcn bridge tokens (HSL) */
+  --background: 220 60% 14%;
+  --foreground: 210 40% 88%;
+  --card: 220 50% 17%;
+  --card-foreground: 210 40% 88%;
+  --popover: 220 55% 13%;
+  --popover-foreground: 210 40% 88%;
+  --primary: 200 70% 62%;
+  --primary-foreground: 220 60% 10%;
+  --secondary: 220 40% 24%;
+  --secondary-foreground: 210 30% 75%;
+  --muted: 220 35% 20%;
+  --muted-foreground: 215 25% 48%;
+  --accent: 220 35% 20%;
+  --accent-foreground: 210 40% 88%;
+  --destructive: 0 60% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 215 40% 28%;
+  --input: 215 40% 28%;
+  --ring: 200 70% 62%;
+  --radius: 0rem;
+  --chart-1: 200 65% 58%;
+  --chart-2: 180 50% 50%;
+  --chart-3: 220 50% 55%;
+  --chart-4: 160 45% 48%;
+  --chart-5: 240 45% 58%;
+  --sidebar-background: 220 60% 10%;
+  --sidebar-foreground: 215 25% 48%;
+  --sidebar-primary: 200 70% 55%;
+  --sidebar-primary-foreground: 220 60% 10%;
+  --sidebar-accent: 220 40% 15%;
+  --sidebar-accent-foreground: 210 40% 88%;
+  --sidebar-border: 215 35% 22%;
+  --sidebar-ring: 200 70% 55%;
+}
+
+/* Dashed wireframe borders */
+[data-theme='blueprint'] .card-editorial {
+  border-style: dashed;
+  border-color: hsl(210 50% 35%);
+}
+
+[data-theme='blueprint'] .card-editorial:hover {
+  border-color: hsl(200 65% 55%);
+  border-style: solid;
+}
+
+/* Accent bar looks like a dimension line */
+[data-theme='blueprint'] .card-editorial::before {
+  height: 1px;
+  box-shadow: 0 0 4px oklch(0.78 0.12 210 / 0.4);
+}
+
+/* Tags as technical labels */
+[data-theme='blueprint'] .tag-pill {
+  border-style: dashed;
+  border-color: hsl(210 40% 32%);
+  color: hsl(200 50% 60%);
+}
+
+[data-theme='blueprint'] .tag-pill:hover {
+  border-style: solid;
+  border-color: hsl(200 65% 55%);
+  color: hsl(200 70% 70%);
+}
+
+/* Section labels styled like drawing annotations */
+[data-theme='blueprint'] .section-label {
+  color: hsl(200 60% 60%);
+}
+
+/* White ink heading style */
+[data-theme='blueprint'] .heading-serif {
+  color: hsl(210 30% 92%);
+}

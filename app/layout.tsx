@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     template: '%s | Andy Deng'
   },
   description:
-    'Andy Deng is a software engineer with 2+ years of experience building products from 0-1. Currently building Blueprint AI products at Pega. Based in New York, NY.',
+    'Andy Deng is a software engineer currently building Blueprint AI at Pega. Always building, always learning. Based in New York, NY.',
   keywords: [
     'Andy Deng',
     'software engineer',
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Andy Deng — Software Engineer',
     description:
-      'Software engineer with 2+ years of experience building products from 0-1. Currently building Blueprint AI products at Pega.',
+      'Software engineer currently building Blueprint AI at Pega. Always building, always learning.',
     url: baseUrl,
     siteName: 'Andy Deng',
     locale: 'en_US',
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Andy Deng — Software Engineer',
     description:
-      'Software engineer with 2+ years of experience building products from 0-1. Currently building Blueprint AI products at Pega.',
+      'Software engineer currently building Blueprint AI at Pega. Always building, always learning.',
     images: ['/og.webp']
   },
   icons: {
@@ -158,7 +158,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="data-theme"
           themes={themeIds}
-          defaultTheme="light"
+          defaultTheme="print"
           disableTransitionOnChange
         >
           <FontProvider>

@@ -1,0 +1,139 @@
+/* Dotcom — Early internet / Windows 95 / GeoCities nostalgia */
+
+[data-theme='dotcom'] body {
+  background-color: #c0c0c0;
+  background-image: linear-gradient(180deg, #c0c0c0 0%, #b8b8b8 50%, #c4c4c4 100%);
+  background-attachment: fixed;
+}
+
+[data-theme='dotcom'] {
+  /* Semantic tokens (oklch L C H) */
+  --accent-primary: 0.45 0.25 265;
+  --accent-secondary: 0.55 0.2 245;
+
+  --surface-primary: 0.82 0.005 250;
+  --surface-secondary: 0.78 0.008 250;
+  --surface-elevated: 0.92 0.003 250;
+  --surface-overlay: 0.2 0.01 250;
+
+  --border-default: 0.55 0.005 250;
+  --border-subtle: 0.7 0.005 250;
+  --border-strong: 0.35 0.008 250;
+
+  --text-primary: 0.1 0.005 250;
+  --text-secondary: 0.28 0.005 250;
+  --text-muted: 0.4 0.005 250;
+  --text-inverse: 0.95 0.003 250;
+
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+
+  /* Card style tokens — Windows 95 beveled panels */
+  --card-radius: 0px;
+  --card-border-width: 2px;
+  --card-border-opacity: 1;
+  --card-shadow: none;
+  --card-hover-shadow: none;
+  --card-hover-y: 0px;
+  --card-accent-bar-height: 0px;
+  --card-accent-bar-scale: 0;
+
+  /* Typography — system fonts, Times New Roman headings */
+  --heading-font: 'Times New Roman', 'Times', serif;
+  --section-label-font: var(--font-space-mono), monospace;
+  --section-label-size: 0.7rem;
+  --section-label-tracking: 0em;
+  --section-label-transform: none;
+  --tag-font: var(--font-space-mono), monospace;
+  --tag-radius: 0px;
+  --tag-padding-y: 0.15rem;
+  --tag-padding-x: 0.45rem;
+  --tag-font-size: 0.65rem;
+
+  /* shadcn bridge tokens (HSL) */
+  --background: 0 0% 75%;
+  --foreground: 0 0% 0%;
+  --card: 0 0% 93%;
+  --card-foreground: 0 0% 0%;
+  --popover: 0 0% 93%;
+  --popover-foreground: 0 0% 0%;
+  --primary: 240 100% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 85%;
+  --secondary-foreground: 0 0% 10%;
+  --muted: 0 0% 88%;
+  --muted-foreground: 0 0% 30%;
+  --accent: 0 0% 85%;
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 80% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 55%;
+  --input: 0 0% 100%;
+  --ring: 240 100% 50%;
+  --radius: 0rem;
+  --chart-1: 240 100% 50%;
+  --chart-2: 120 60% 35%;
+  --chart-3: 0 80% 50%;
+  --chart-4: 60 80% 45%;
+  --chart-5: 300 60% 45%;
+  --sidebar-background: 0 0% 80%;
+  --sidebar-foreground: 0 0% 10%;
+  --sidebar-primary: 240 100% 50%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 0 0% 85%;
+  --sidebar-accent-foreground: 0 0% 0%;
+  --sidebar-border: 0 0% 55%;
+  --sidebar-ring: 240 100% 50%;
+}
+
+/* Win95 3D beveled borders — raised panel */
+[data-theme='dotcom'] .card-editorial {
+  border-color: transparent;
+  border-top-color: #ffffff;
+  border-left-color: #dfdfdf;
+  border-right-color: #808080;
+  border-bottom-color: #404040;
+}
+
+[data-theme='dotcom'] .card-editorial:hover {
+  border-top-color: #ffffff;
+  border-left-color: #efefef;
+  border-right-color: #606060;
+  border-bottom-color: #303030;
+}
+
+/* Active/pressed state for clickable project cards */
+[data-theme='dotcom'] .card-editorial:active {
+  border-top-color: #404040;
+  border-left-color: #808080;
+  border-right-color: #ffffff;
+  border-bottom-color: #dfdfdf;
+}
+
+/* Tags styled like Win95 buttons */
+[data-theme='dotcom'] .tag-pill {
+  border-width: 2px;
+  border-color: transparent;
+  border-top-color: #ffffff;
+  border-left-color: #dfdfdf;
+  border-right-color: #808080;
+  border-bottom-color: #404040;
+  background: hsl(0 0% 88%);
+  color: hsl(0 0% 10%);
+}
+
+[data-theme='dotcom'] .tag-pill:hover {
+  background: hsl(0 0% 83%);
+  color: hsl(240 100% 50%);
+  border-top-color: #ffffff;
+  border-left-color: #efefef;
+  border-right-color: #606060;
+  border-bottom-color: #303030;
+}
+
+/* Blue underlined links — classic web */
+[data-theme='dotcom'] .section-label {
+  color: hsl(240 100% 50%);
+  text-decoration: underline;
+}

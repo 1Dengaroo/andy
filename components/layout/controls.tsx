@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Card } from '../ui/card';
 import {
   Dialog,
   DialogContent,
@@ -12,8 +11,8 @@ import {
 } from '../ui/dialog';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 import { themes, getTheme } from '@/lib/theme/theme-registry';
+import { Card } from '../ui/card';
 import { cn } from '@/lib/utils';
-import { ChevronDown } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useFont } from '@/lib/font/font-provider';
 
@@ -48,8 +47,6 @@ function SettingsDialog() {
   const { fontId, setFont, fonts, mounted: fontMounted } = useFont();
   const particles = useParticles();
   const [mounted, setMounted] = useState(false);
-  const [showAllThemes, setShowAllThemes] = useState(false);
-
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -64,8 +61,8 @@ function SettingsDialog() {
             <DialogTrigger asChild>
               <button
                 className={cn(
-                  'group relative flex items-center gap-1.5 rounded-full p-1.5 transition-all duration-300',
-                  'hover:scale-110',
+                  'group relative flex items-center gap-1 rounded-sm p-1.5 transition-all duration-300',
+                  'hover:bg-accent/50',
                   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background'
                 )}
                 aria-label="Settings"
@@ -74,9 +71,9 @@ function SettingsDialog() {
                   <span
                     key={i}
                     className={cn(
-                      'inline-block rounded-full transition-all duration-300',
-                      'group-hover:shadow-[0_0_8px_currentColor]',
-                      i === 0 ? 'size-3' : i === 1 ? 'size-3.5' : 'size-3'
+                      'inline-block rounded-[1px] transition-all duration-300',
+                      'group-hover:shadow-[0_0_6px_currentColor]',
+                      i === 0 ? 'size-2.5' : i === 1 ? 'size-3' : 'size-2.5'
                     )}
                     style={{
                       backgroundColor: color,
@@ -84,12 +81,6 @@ function SettingsDialog() {
                     }}
                   />
                 ))}
-                <span
-                  className="absolute inset-0 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                  style={{
-                    background: `radial-gradient(circle, oklch(var(--accent-primary) / 0.08) 0%, transparent 70%)`
-                  }}
-                />
               </button>
             </DialogTrigger>
           </TooltipTrigger>
@@ -108,17 +99,14 @@ function SettingsDialog() {
           <section>
             <h3 className="mb-3 text-sm font-medium">Theme</h3>
             <div className="grid grid-cols-3 gap-2">
-              {(showAllThemes
-                ? themes
-                : themes.filter((t) => t.id === 'light' || t.id === 'dark' || t.id === theme)
-              ).map((t) => {
+              {themes.map((t) => {
                 const isActive = mounted && theme === t.id;
                 return (
                   <button
                     key={t.id}
                     onClick={() => setTheme(t.id)}
                     className={cn(
-                      'flex flex-col items-center gap-1.5 rounded-lg border p-3 text-xs transition-colors',
+                      'flex flex-col items-center gap-1.5 rounded-sm border p-3 text-xs transition-colors',
                       'hover:bg-accent/50',
                       isActive ? 'border-primary ring-1 ring-primary' : 'border-border'
                     )}
@@ -127,7 +115,7 @@ function SettingsDialog() {
                       {t.previewColors.map((color, i) => (
                         <span
                           key={i}
-                          className="inline-block size-3.5 rounded-full border border-border/50"
+                          className="inline-block size-3.5 rounded-[1px] border border-border/50"
                           style={{ backgroundColor: color }}
                         />
                       ))}
@@ -137,17 +125,6 @@ function SettingsDialog() {
                 );
               })}
             </div>
-            {themes.length > 2 && (
-              <button
-                onClick={() => setShowAllThemes((prev) => !prev)}
-                className="mt-2 flex w-full items-center justify-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <span>{showAllThemes ? 'Show less' : `${themes.length - 2} more themes`}</span>
-                <ChevronDown
-                  className={cn('size-3 transition-transform', showAllThemes && 'rotate-180')}
-                />
-              </button>
-            )}
           </section>
 
           <section>
@@ -155,7 +132,7 @@ function SettingsDialog() {
             <select
               value={fontMounted ? fontId : ''}
               onChange={(e) => setFont(e.target.value)}
-              className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground transition-colors hover:border-ring/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              className="w-full rounded-sm border border-border bg-background px-3 py-2 text-sm text-foreground transition-colors hover:border-ring/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
               style={{
                 fontFamily: fontMounted
                   ? `var(${fonts.find((f) => f.id === fontId)?.variable})`
@@ -202,10 +179,10 @@ function SettingsDialog() {
 
 export default function Controls() {
   return (
-    <Card className="flex w-full items-center justify-between px-4 py-2">
+    <Card className="flex w-full items-center justify-between px-4 py-3">
       <div>
-        <h1 className="text-lg font-bold">Andy Deng</h1>
-        <p className="text-xs text-muted-foreground">Software Engineer</p>
+        <h1 className="heading-serif text-xl font-semibold tracking-tight">Andy Deng</h1>
+        <p className="section-label">Software Engineer</p>
       </div>
       <div className="flex items-center gap-1.5 sm:gap-2">
         <SettingsDialog />

@@ -1,0 +1,76 @@
+[data-theme='darkroom'] body {
+  background-color: #0c0c0e;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"),
+    linear-gradient(170deg, #0c0c0e 0%, #111114 40%, #0d0d10 100%);
+  background-attachment: fixed;
+}
+
+[data-theme='darkroom'] {
+  /* Semantic tokens (oklch L C H) */
+  --accent-primary: 0.62 0.1 240;
+  --accent-secondary: 0.55 0.08 230;
+
+  --surface-primary: 0.17 0.008 280;
+  --surface-secondary: 0.2 0.01 280;
+  --surface-elevated: 0.23 0.012 280;
+  --surface-overlay: 0.08 0.005 280;
+
+  --border-default: 0.28 0.01 280;
+  --border-subtle: 0.24 0.008 280;
+  --border-strong: 0.38 0.015 280;
+
+  --text-primary: 0.92 0.01 80;
+  --text-secondary: 0.72 0.01 70;
+  --text-muted: 0.55 0.01 60;
+  --text-inverse: 0.12 0.005 280;
+
+  --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.4);
+  --shadow-md: 0 2px 8px oklch(0 0 0 / 0.4);
+  --shadow-lg: 0 8px 24px oklch(0 0 0 / 0.5);
+
+  /* Card style tokens */
+  --card-radius: 2px;
+  --card-border-width: 1px;
+  --card-border-opacity: 0.4;
+  --card-shadow: none;
+  --card-hover-shadow: var(--shadow-md);
+  --card-hover-y: -2px;
+  --card-accent-bar-height: 0px;
+  --card-accent-bar-scale: 0;
+
+  /* shadcn bridge tokens (HSL) */
+  --background: 240 10% 5%;
+  --foreground: 36 10% 90%;
+  --card: 240 6% 11%;
+  --card-foreground: 36 10% 90%;
+  --popover: 240 6% 9%;
+  --popover-foreground: 36 10% 90%;
+  --primary: 218 50% 55%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 5% 18%;
+  --secondary-foreground: 36 8% 80%;
+  --muted: 240 4% 14%;
+  --muted-foreground: 30 5% 58%;
+  --accent: 240 4% 14%;
+  --accent-foreground: 36 10% 90%;
+  --destructive: 0 75% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 240 5% 18%;
+  --input: 240 5% 18%;
+  --ring: 218 50% 55%;
+  --radius: 0.125rem;
+  --chart-1: 218 50% 52%;
+  --chart-2: 200 40% 48%;
+  --chart-3: 160 35% 48%;
+  --chart-4: 240 35% 52%;
+  --chart-5: 180 35% 45%;
+  --sidebar-background: 240 8% 4%;
+  --sidebar-foreground: 30 5% 52%;
+  --sidebar-primary: 218 50% 50%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 240 4% 10%;
+  --sidebar-accent-foreground: 36 10% 90%;
+  --sidebar-border: 240 5% 14%;
+  --sidebar-ring: 218 50% 50%;
+}

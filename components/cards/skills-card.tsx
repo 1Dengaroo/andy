@@ -1,18 +1,24 @@
-import { Card, CardContent, CardHeader } from '../ui/card';
+import { Card, CardContent } from '../ui/card';
 import { skillCategories } from '@/lib/data';
 
 function SkillsCard() {
   return (
     <Card className="h-full">
-      <CardHeader>
-        <div>Skills</div>
-      </CardHeader>
-      <CardContent>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
+      <CardContent className="pt-6">
+        <span className="section-label">Toolkit</span>
+        <div className="mt-3 space-y-3">
           {skillCategories.map((category) => (
             <div key={category.title}>
-              <p className="text-sm font-medium text-accent-primary">{category.title}</p>
-              <p className="text-sm text-muted-foreground">{category.skills.join(', ')}</p>
+              <p className="mb-1.5 text-xs font-medium uppercase tracking-wider text-foreground/70">
+                {category.title}
+              </p>
+              <div className="flex flex-wrap gap-1">
+                {category.skills.map((skill) => (
+                  <span key={skill} className="tag-pill">
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>

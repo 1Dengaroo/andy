@@ -12,80 +12,72 @@ import Controls from '@/components/layout/controls';
 import FadeIn from '@/components/layout/fade-in';
 import FooterCard from '@/components/cards/footer-card';
 
-const DELAY = 100;
+const D = 80;
 
 const Page = () => {
   return (
-    <div className="mb-8 mt-4 flex w-full flex-col items-center gap-3 px-2">
-      <div className="mx-auto w-full max-w-7xl animate-fade-slide-up opacity-0">
+    <div className="mb-8 mt-4 flex w-full flex-col items-center gap-2 px-2">
+      <div className="mx-auto w-full max-w-6xl animate-fade-slide-up opacity-0">
         <Controls />
       </div>
 
-      {/* Row 1: Welcome + Experience (left) | About + Skills (right) */}
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 lg:grid-cols-4">
-        <div className="contents lg:col-span-3 lg:flex lg:flex-col lg:gap-3">
-          <div
-            className="order-2 animate-fade-slide-up opacity-0 lg:order-none"
-            style={{ animationDelay: `${DELAY * 0}ms` }}
-          >
-            <WelcomeCard />
-          </div>
-          <div
-            className="order-3 animate-fade-slide-up opacity-0 lg:order-none lg:flex-1"
-            style={{ animationDelay: `${DELAY * 1}ms` }}
-          >
-            <ExperienceCard />
-          </div>
+      {/* Row 1: About (photo) | Welcome */}
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-2 lg:grid-cols-3">
+        <div
+          className="order-2 animate-fade-slide-up opacity-0 lg:order-none lg:col-span-1"
+          style={{ animationDelay: `${D}ms` }}
+        >
+          <AboutCard />
         </div>
-        <div className="contents lg:col-span-1 lg:flex lg:flex-col lg:gap-3">
-          <div
-            className="order-1 h-full animate-fade-slide-up opacity-0 lg:order-none"
-            style={{ animationDelay: `${DELAY * 2}ms` }}
-          >
-            <AboutCard />
-          </div>
-          <div
-            className="order-4 h-full animate-fade-slide-up opacity-0 lg:order-none"
-            style={{ animationDelay: `${DELAY * 3}ms` }}
-          >
-            <SkillsCard />
-          </div>
-          <div
-            className="order-5 animate-fade-slide-up opacity-0 lg:order-none"
-            style={{ animationDelay: `${DELAY * 4}ms` }}
-          >
-            <EducationCard />
-          </div>
+        <div
+          className="order-1 h-full animate-fade-slide-up opacity-0 lg:order-none lg:col-span-2"
+          style={{ animationDelay: `${D * 0}ms` }}
+        >
+          <WelcomeCard />
         </div>
       </div>
 
-      {/* Row 2: Projects — 2x2 grid */}
-      <div id="projects" className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 sm:grid-cols-2">
+      {/* Row 2: Two project cards side by side */}
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-2 sm:grid-cols-2">
+        <FadeIn>
+          <LeafpadCard />
+        </FadeIn>
+        <FadeIn delay={D}>
+          <RShortsCard />
+        </FadeIn>
+      </div>
+
+      {/* Row 3: Experience (wide) | Skills + Education (stacked) */}
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-2 lg:grid-cols-5">
+        <FadeIn className="lg:col-span-3">
+          <ExperienceCard />
+        </FadeIn>
+        <div className="flex flex-col gap-2 lg:col-span-2">
+          <FadeIn delay={D}>
+            <SkillsCard />
+          </FadeIn>
+          <FadeIn delay={D * 2}>
+            <EducationCard />
+          </FadeIn>
+        </div>
+      </div>
+
+      {/* Row 4: Two more project cards */}
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-2 sm:grid-cols-2">
         <FadeIn>
           <EveraCard />
         </FadeIn>
-        <FadeIn delay={DELAY}>
-          <RShortsCard />
-        </FadeIn>
-        <FadeIn delay={DELAY * 2}>
-          <LeafpadCard />
-        </FadeIn>
-        <FadeIn delay={DELAY * 3}>
+        <FadeIn delay={D}>
           <QuFlowCard />
         </FadeIn>
       </div>
 
-      {/* Row 3: CTA + Footer */}
-      <FadeIn
-        id="contact"
-        className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 lg:grid-cols-4"
-      >
-        <div className="lg:col-span-3">
+      {/* Row 5: CTA + Footer */}
+      <FadeIn className="mx-auto flex w-full max-w-6xl flex-col gap-2">
+        <div id="contact">
           <CTACard />
         </div>
-        <div className="lg:col-span-1">
-          <FooterCard />
-        </div>
+        <FooterCard />
       </FadeIn>
     </div>
   );

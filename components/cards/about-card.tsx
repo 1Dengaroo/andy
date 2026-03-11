@@ -2,38 +2,32 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
+import { Card, CardContent } from '../ui/card';
 
 function AboutCard() {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <Card className="h-full">
-      <CardHeader>
-        <CardTitle>
-          About <span className="inline-block animate-wiggle text-accent-primary">Me</span>
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="relative mb-4 aspect-[4/3] w-full overflow-hidden rounded-lg bg-muted">
-          {!loaded && <div className="absolute inset-0 animate-pulse rounded-lg bg-muted" />}
-          <Image
-            src="/pfp.webp"
-            alt="Andy Deng"
-            fill
-            sizes="(max-width: 1024px) 100vw, 25vw"
-            loading="lazy"
-            className={`object-cover transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'}`}
-            onLoad={() => setLoaded(true)}
-          />
-        </div>
-        <CardDescription className="flex flex-col gap-y-4">
-          <p>
-            I&apos;m a front-end focused software engineer from{' '}
-            <span className="text-accent-primary">New York, NY</span>.
-          </p>
-          <p>I move quickly, take ownership seriously, and care deeply about product quality.</p>
-        </CardDescription>
+    <Card className="h-full overflow-hidden">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted">
+        {!loaded && <div className="absolute inset-0 animate-pulse bg-muted" />}
+        <Image
+          src="/pfp.webp"
+          alt="Andy Deng"
+          fill
+          sizes="(max-width: 1024px) 100vw, 25vw"
+          loading="lazy"
+          className={`object-cover transition-all duration-500 ${loaded ? 'opacity-100 hover:scale-[1.03]' : 'opacity-0'}`}
+          onLoad={() => setLoaded(true)}
+        />
+      </div>
+      <CardContent className="pt-4">
+        <span className="section-label">About</span>
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+          I&apos;m a front-end focused engineer from{' '}
+          <span className="font-medium text-foreground">New York, NY</span>. I move quickly, take
+          ownership seriously, and care deeply about product quality.
+        </p>
       </CardContent>
     </Card>
   );

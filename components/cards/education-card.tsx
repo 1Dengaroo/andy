@@ -3,18 +3,21 @@ import { Card } from '../ui/card';
 
 function EducationCard() {
   return (
-    <Card className="flex h-full items-center gap-4 p-6">
+    <Card className="flex h-full items-center gap-4 p-5">
       <Image
         src="/bc-logo.svg"
         alt="Boston College logo"
-        width={48}
-        height={48}
+        width={40}
+        height={40}
         className="shrink-0"
       />
-      <div>
-        <p className="font-medium text-accent-primary">Boston College</p>
-        <p className="text-sm text-foreground">B.A. Computer Science</p>
-        <p className="text-xs text-muted-foreground">Class of 2024</p>
+      <div className="min-w-0">
+        <p className="text-sm font-medium text-foreground">Boston College</p>
+        <p className="text-xs text-muted-foreground">
+          B.A. Computer Science
+          <span className="mx-1.5 text-border">|</span>
+          2024
+        </p>
       </div>
     </Card>
   );

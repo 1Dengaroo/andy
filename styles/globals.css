@@ -5,11 +5,15 @@
 @import '@/styles/loader.css';
 @import '@/styles/themes/light.css';
 @import '@/styles/themes/dark.css';
-@import '@/styles/themes/sakura.css';
-@import '@/styles/themes/candy.css';
-@import '@/styles/themes/arctic.css';
-@import '@/styles/themes/midnight.css';
-@import '@/styles/themes/birch.css';
+@import '@/styles/themes/print.css';
+@import '@/styles/themes/darkroom.css';
+@import '@/styles/themes/overworld.css';
+@import '@/styles/themes/terminal.css';
+@import '@/styles/themes/blueprint.css';
+@import '@/styles/themes/dotcom.css';
+@import '@/styles/themes/spotify.css';
+@import '@/styles/themes/claude.css';
+@import '@/styles/themes/discord.css';
 
 * {
   -webkit-user-select: none;
@@ -31,4 +35,74 @@
   .animate-fade-slide-up {
     animation-delay: 0s !important;
   }
+}
+
+/* ── Card system (theme-driven) ── */
+.card-editorial {
+  position: relative;
+  border-radius: var(--card-radius);
+  border: var(--card-border-width) solid hsl(var(--border) / var(--card-border-opacity));
+  box-shadow: var(--card-shadow);
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease;
+}
+
+.card-editorial::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--card-accent-bar-height, 2px);
+  background: oklch(var(--accent-primary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
+  pointer-events: none;
+}
+
+.card-editorial:hover::before {
+  transform: scaleX(var(--card-accent-bar-scale, 1));
+}
+
+.card-editorial:hover {
+  transform: translateY(var(--card-hover-y));
+  box-shadow: var(--card-hover-shadow);
+}
+
+/* ── Section label styling ── */
+.section-label {
+  font-family: var(--section-label-font, var(--font-space-mono, monospace));
+  font-size: var(--section-label-size, 0.65rem);
+  letter-spacing: var(--section-label-tracking, 0.12em);
+  text-transform: var(--section-label-transform, uppercase);
+  color: oklch(var(--accent-primary));
+}
+
+/* ── Serif heading ── */
+.heading-serif {
+  font-family: var(--heading-font, var(--font-lora, serif));
+}
+
+/* ── Tag pill ── */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--tag-padding-y, 0.2rem) var(--tag-padding-x, 0.55rem);
+  font-size: var(--tag-font-size, 0.7rem);
+  font-family: var(--tag-font, var(--font-space-mono, monospace));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--tag-radius, 2px);
+  color: hsl(var(--muted-foreground));
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+
+.tag-pill:hover {
+  border-color: oklch(var(--accent-primary));
+  color: oklch(var(--accent-primary));
 }

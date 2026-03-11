@@ -1,0 +1,119 @@
+/* Discord — Blurple accent, dark charcoal, chat app aesthetic */
+
+[data-theme='discord'] body {
+  background-color: #313338;
+  background-image: none;
+}
+
+[data-theme='discord'] {
+  /* Semantic tokens (oklch L C H) */
+  --accent-primary: 0.56 0.2 270;
+  --accent-secondary: 0.50 0.16 265;
+
+  --surface-primary: 0.28 0.008 260;
+  --surface-secondary: 0.25 0.008 260;
+  --surface-elevated: 0.32 0.008 260;
+  --surface-overlay: 0.1 0.005 260;
+
+  --border-default: 0.24 0.006 260;
+  --border-subtle: 0.22 0.005 260;
+  --border-strong: 0.35 0.008 260;
+
+  --text-primary: 0.95 0.005 80;
+  --text-secondary: 0.76 0.005 260;
+  --text-muted: 0.56 0.005 260;
+  --text-inverse: 0.15 0.005 260;
+
+  --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.3);
+  --shadow-md: 0 4px 8px oklch(0 0 0 / 0.35);
+  --shadow-lg: 0 8px 20px oklch(0 0 0 / 0.4);
+
+  /* Card style tokens — rounded, borderless, Discord panel style */
+  --card-radius: 8px;
+  --card-border-width: 0px;
+  --card-border-opacity: 0;
+  --card-shadow: none;
+  --card-hover-shadow: var(--shadow-md);
+  --card-hover-y: -1px;
+  --card-accent-bar-height: 0px;
+  --card-accent-bar-scale: 0;
+
+  /* Typography — clean sans-serif */
+  --heading-font: inherit;
+  --section-label-font: inherit;
+  --section-label-size: 0.7rem;
+  --section-label-tracking: 0.04em;
+  --section-label-transform: uppercase;
+  --tag-font: inherit;
+  --tag-radius: 4px;
+  --tag-padding-y: 0.2rem;
+  --tag-padding-x: 0.55rem;
+  --tag-font-size: 0.7rem;
+
+  /* shadcn bridge tokens (HSL) */
+  --background: 228 6% 19%;
+  --foreground: 210 10% 93%;
+  --card: 228 6% 22%;
+  --card-foreground: 210 10% 93%;
+  --popover: 228 7% 18%;
+  --popover-foreground: 210 10% 93%;
+  --primary: 235 86% 65%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 228 6% 28%;
+  --secondary-foreground: 210 8% 82%;
+  --muted: 228 6% 25%;
+  --muted-foreground: 228 5% 55%;
+  --accent: 228 6% 28%;
+  --accent-foreground: 210 10% 93%;
+  --destructive: 359 66% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 228 6% 17%;
+  --input: 228 6% 17%;
+  --ring: 235 86% 65%;
+  --radius: 0.5rem;
+  --chart-1: 235 86% 65%;
+  --chart-2: 139 47% 44%;
+  --chart-3: 38 96% 64%;
+  --chart-4: 359 66% 55%;
+  --chart-5: 197 71% 52%;
+  --sidebar-background: 228 7% 15%;
+  --sidebar-foreground: 228 5% 52%;
+  --sidebar-primary: 235 86% 60%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 228 6% 20%;
+  --sidebar-accent-foreground: 210 10% 93%;
+  --sidebar-border: 228 6% 14%;
+  --sidebar-ring: 235 86% 60%;
+}
+
+/* Card panels — Discord channel-like surfaces */
+[data-theme='discord'] .card-editorial {
+  background: hsl(228 6% 22%);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+[data-theme='discord'] .card-editorial:hover {
+  background: hsl(228 6% 25%);
+}
+
+/* Tags — Discord role-chip style */
+[data-theme='discord'] .tag-pill {
+  border-color: hsl(228 6% 30%);
+  color: hsl(210 8% 72%);
+  background: hsl(228 6% 25%);
+}
+
+[data-theme='discord'] .tag-pill:hover {
+  border-color: hsl(235 86% 65%);
+  color: hsl(0 0% 100%);
+  background: hsl(235 86% 65% / 0.15);
+}
+
+/* Blurple section labels */
+[data-theme='discord'] .section-label {
+  color: hsl(228 5% 55%);
+  font-weight: 700;
+}

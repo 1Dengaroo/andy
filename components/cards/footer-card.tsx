@@ -1,37 +1,27 @@
-import { Card } from '../ui/card';
-import { Button } from '../ui/button';
 function FooterCard() {
   return (
-    <Card className="flex h-full min-h-20 flex-col items-center justify-center px-6 text-xs text-muted-foreground">
-      <p className="flex items-center gap-1 text-center">
+    <div className="flex h-full min-h-14 items-center justify-center px-4 text-center">
+      <p className="font-mono text-[0.6rem] tracking-wider text-muted-foreground/60">
         Made by{' '}
-        <Button
-          variant="link"
-          asChild
-          className="h-auto p-0 text-xs font-medium text-accent-primary"
+        <a
+          href="https://linkedin.com/in/andydeng-"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-muted-foreground/80 transition-colors hover:text-accent-primary"
         >
-          <a
-            href="https://linkedin.com/in/andydeng-"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Connect with Andy Deng on LinkedIn"
-          >
-            Andy Deng
-          </a>
-        </Button>
-        {' • '}
-        <Button variant="link" asChild className="h-auto p-0 text-xs text-accent-primary">
-          <a
-            href="https://github.com/1dengaroo/andy"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View source code on GitHub"
-          >
-            Source Code
-          </a>
-        </Button>
+          Andy Deng
+        </a>
+        {' / '}
+        <a
+          href="https://github.com/1dengaroo/andy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-muted-foreground/80 transition-colors hover:text-accent-primary"
+        >
+          Source
+        </a>
       </p>
-    </Card>
+    </div>
   );
 }
 

@@ -18,7 +18,7 @@ import {
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '../ui/dialog';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import { socialLinks } from '@/lib/data';
-import { Mail, Send, MessageSquare, CircleCheck } from 'lucide-react';
+import { Mail, Send, MessageSquare, CircleCheck, ArrowRight, FileText } from 'lucide-react';
 
 const contactSchema = z.object({
   name: z.string().min(1, 'Name is required'),
@@ -62,14 +62,26 @@ function CTACard() {
 
   return (
     <>
-      <Card className="flex h-full w-full flex-col items-center justify-between gap-3 px-6 py-4 sm:flex-row sm:gap-4">
-        <div className="flex items-center gap-3 sm:gap-4">
-          <p className="text-sm text-foreground">Interested in working together?</p>
+      <Card className="flex h-full w-full flex-col justify-between gap-4 !border-accent-primary/20 bg-accent-primary p-6 sm:flex-row sm:items-center">
+        <div className="flex items-center gap-3">
+          <div>
+            <p className="heading-serif text-lg font-semibold text-white">
+              Let&apos;s work together
+            </p>
+            <p className="mt-0.5 text-xs text-white/70">
+              Open to new opportunities and collaborations.
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button className="shrink-0 bg-accent-primary text-white hover:bg-accent-primary/90">
-                <Mail className="h-4 w-4" />
+              <Button
+                variant="outline"
+                className="rounded-sm border-white/20 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:text-white"
+              >
                 Get in Touch
+                <ArrowRight className="ml-1 h-3.5 w-3.5" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -85,37 +97,59 @@ function CTACard() {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-        </div>
-        <div className="flex gap-1">
-          <TooltipProvider>
-            {socialLinks.map((link) => {
-              const Icon = link.icon;
-              return (
-                <Tooltip key={link.label}>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      asChild
-                      className="hover:text-accent-primary"
-                    >
-                      <Link
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={link.label}
+          <div className="flex gap-0.5">
+            <TooltipProvider>
+              {socialLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <Tooltip key={link.label}>
+                    <TooltipTrigger asChild>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        asChild
+                        className="h-8 w-8 text-white/60 hover:bg-white/10 hover:text-white"
                       >
-                        <Icon className="h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>{link.label}</p>
-                  </TooltipContent>
-                </Tooltip>
-              );
-            })}
-          </TooltipProvider>
+                        <Link
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={link.label}
+                        >
+                          <Icon className="h-3.5 w-3.5" />
+                        </Link>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{link.label}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                );
+              })}
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    asChild
+                    className="h-8 w-8 text-white/60 hover:bg-white/10 hover:text-white"
+                  >
+                    <a
+                      href="/Andy_Deng_Resume.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View Resume"
+                    >
+                      <FileText className="h-3.5 w-3.5" />
+                    </a>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Resume</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </div>
         </div>
       </Card>
 
@@ -171,7 +205,7 @@ function CTACard() {
                     placeholder="Message"
                     rows={3}
                     {...register('message')}
-                    className="flex w-full resize-y rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                    className="flex w-full resize-y rounded-sm border border-input bg-transparent px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                   />
                   {errors.message && (
                     <p className="mt-1 text-xs text-destructive">{errors.message.message}</p>
@@ -180,7 +214,7 @@ function CTACard() {
                 <Button
                   type="submit"
                   disabled={status === 'sending'}
-                  className="mt-1 w-full bg-accent-primary text-white hover:bg-accent-primary/90"
+                  className="mt-1 w-full rounded-sm bg-accent-primary text-white hover:bg-accent-primary/90"
                 >
                   <Send className="h-3.5 w-3.5" />
                   {status === 'sending' ? 'Sending...' : 'Send Message'}

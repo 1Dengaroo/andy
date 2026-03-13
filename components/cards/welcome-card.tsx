@@ -69,7 +69,7 @@ function WelcomeCard() {
                   className="h-8 w-8 rounded-sm transition-colors hover:border-accent-primary hover:text-accent-primary"
                 >
                   <a
-                    href="/Andy_Deng_Resume.pdf"
+                    href="/docs/resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="View Resume"

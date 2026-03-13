@@ -1,6 +1,6 @@
 import WelcomeCard from '@/components/cards/welcome-card';
 import AboutCard from '@/components/cards/about-card';
-import EveraCard from '@/components/cards/evera-card';
+import OoeyCard from '@/components/cards/ooey-card';
 import ExperienceCard from '@/components/cards/experience-card';
 import QuFlowCard from '@/components/cards/quflow-card';
 import SkillsCard from '@/components/cards/skills-card';
@@ -40,7 +40,7 @@ const Page = () => {
       {/* Row 2: Two project cards side by side */}
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-2 sm:grid-cols-2">
         <FadeIn>
-          <LeafpadCard />
+          <OoeyCard />
         </FadeIn>
         <FadeIn delay={D}>
           <RShortsCard />
@@ -65,7 +65,7 @@ const Page = () => {
       {/* Row 4: Two more project cards */}
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-2 sm:grid-cols-2">
         <FadeIn>
-          <EveraCard />
+          <LeafpadCard />
         </FadeIn>
         <FadeIn delay={D}>
           <QuFlowCard />

@@ -12,7 +12,7 @@ function AboutCard() {
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted">
         {!loaded && <div className="absolute inset-0 animate-pulse bg-muted" />}
         <Image
-          src="/pfp.webp"
+          src="/images/pfp.webp"
           alt="Andy Deng"
           fill
           sizes="(max-width: 1024px) 100vw, 25vw"

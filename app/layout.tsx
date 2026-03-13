@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og.webp',
+        url: '/images/og.webp',
         width: 1200,
         height: 630,
         alt: 'Andy Deng — Software Engineer portfolio website'
@@ -88,10 +88,10 @@ export const metadata: Metadata = {
     title: 'Andy Deng — Software Engineer',
     description:
       'Software engineer currently building Blueprint AI at Pega. Always building, always learning.',
-    images: ['/og.webp']
+    images: ['/images/og.webp']
   },
   icons: {
-    icon: '/favicon.svg'
+    icon: '/logos/favicon.svg'
   },
   robots: {
     index: true,

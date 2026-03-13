@@ -22,7 +22,7 @@ function QuFlowCard() {
         }}
       >
         <video
-          src="/quflow.mov"
+          src="/videos/quflow.mov"
           autoPlay
           loop
           muted
@@ -53,7 +53,7 @@ function QuFlowCard() {
         onOpenChange={setOpen}
         preview={
           <video
-            src="/quflow.mov"
+            src="/videos/quflow.mov"
             autoPlay
             loop
             muted

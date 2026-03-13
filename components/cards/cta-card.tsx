@@ -135,7 +135,7 @@ function CTACard() {
                     className="h-8 w-8 text-white/60 hover:bg-white/10 hover:text-white"
                   >
                     <a
-                      href="/Andy_Deng_Resume.pdf"
+                      href="/docs/resume.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="View Resume"

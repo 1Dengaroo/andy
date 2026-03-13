@@ -23,7 +23,7 @@ function RShortsCard() {
         }}
       >
         <video
-          src="/rshorts.mov"
+          src="/videos/rshorts.mov"
           autoPlay
           loop
           muted
@@ -39,7 +39,7 @@ function RShortsCard() {
               </span>
               <div className="flex items-center gap-2">
                 <Image
-                  src="/rshorts-logo.svg"
+                  src="/logos/rshorts-logo.svg"
                   alt="r/Shorts"
                   width={20}
                   height={20}
@@ -63,7 +63,7 @@ function RShortsCard() {
         onOpenChange={setOpen}
         preview={
           <video
-            src="/rshorts.mov"
+            src="/videos/rshorts.mov"
             autoPlay
             loop
             muted
@@ -73,7 +73,7 @@ function RShortsCard() {
         }
         logo={
           <Image
-            src="/rshorts-logo.svg"
+            src="/logos/rshorts-logo.svg"
             alt="r/Shorts"
             width={20}
             height={20}

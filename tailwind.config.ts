@@ -183,6 +183,7 @@ export default {
         'spin-slow': 'spin-slow 8s linear infinite'
       },
       borderRadius: {
+        xl: 'calc(var(--radius) + 4px)',
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)'

@@ -8,7 +8,7 @@
 [data-theme='discord'] {
   /* Semantic tokens (oklch L C H) */
   --accent-primary: 0.56 0.2 270;
-  --accent-secondary: 0.50 0.16 265;
+  --accent-secondary: 0.5 0.16 265;
 
   --surface-primary: 0.28 0.008 260;
   --surface-secondary: 0.25 0.008 260;

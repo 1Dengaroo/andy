@@ -89,24 +89,24 @@ function RemesCard() {
                 'linear-gradient(135deg, #6366f1 0%, #7c3aed 30%, #a855f7 60%, #d946ef 100%)',
             }}
           >
-            <div className="absolute right-[5%] top-1/2 z-[1] -translate-y-1/2">
+            <div className="absolute left-[8%] top-1/2 z-[1] -translate-y-[45%]">
               <Image
                 src="/images/remes-mid.png"
                 alt=""
-                width={320}
-                height={192}
-                className="rounded-lg shadow-2xl opacity-90"
-                style={{ transform: 'rotate(2deg)' }}
+                width={420}
+                height={252}
+                className="rounded-lg shadow-2xl"
+                style={{ transform: 'rotate(-1deg)' }}
               />
             </div>
-            <div className="absolute right-[-2%] top-1/2 z-[2] -translate-y-[40%]">
+            <div className="absolute right-[5%] top-1/2 z-[2] -translate-y-[55%]">
               <Image
                 src="/images/remes-right.png"
                 alt=""
-                width={260}
-                height={160}
+                width={340}
+                height={210}
                 className="rounded-lg shadow-2xl"
-                style={{ transform: 'rotate(-1deg)' }}
+                style={{ transform: 'rotate(1deg)' }}
               />
             </div>
           </div>

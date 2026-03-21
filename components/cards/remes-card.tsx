@@ -132,7 +132,8 @@ function RemesCard() {
         <p>
           Built in collaboration with a sales colleague who actively uses it at Modal Labs. Stack
           includes Next.js App Router, TypeScript, Tailwind CSS, shadcn/ui, Supabase, Anthropic
-          Claude API, Apollo API, and Gmail OAuth. ~200 users.
+          Claude API, Apollo API, and Gmail OAuth. ~200 users, sending 100-300 personalized
+          outreach emails per week.
         </p>
       </ProjectModal>
     </>

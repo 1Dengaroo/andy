@@ -63,19 +63,15 @@ const Page = () => {
         </div>
       </div>
 
-      {/* Row 4: Two more project cards */}
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-2 sm:grid-cols-2">
+      {/* Row 4: Three project cards */}
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
         <FadeIn>
           <RShortsCard />
         </FadeIn>
         <FadeIn delay={D}>
           <LeafpadCard />
         </FadeIn>
-      </div>
-
-      {/* Row 5: QuFlow */}
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-2 sm:grid-cols-2">
-        <FadeIn>
+        <FadeIn delay={D * 2}>
           <QuFlowCard />
         </FadeIn>
       </div>

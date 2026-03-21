@@ -1,11 +1,5 @@
 import type { Metadata } from 'next';
-import {
-  Plus_Jakarta_Sans,
-  Bricolage_Grotesque,
-  Lora,
-  Space_Mono,
-  Sora
-} from 'next/font/google';
+import { Plus_Jakarta_Sans, Bricolage_Grotesque, Lora, Space_Mono, Sora } from 'next/font/google';
 import '@/styles/globals.css';
 
 import ParticleNetwork from '@/components/particle-network/network';
@@ -147,10 +141,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body
-        className={`${fontVariables} antialiased`}
-        style={{ fontFamily: 'var(--font-sora)' }}
-      >
+      <body className={`${fontVariables} antialiased`} style={{ fontFamily: 'var(--font-sora)' }}>
         <SkipLinks />
         <ThemeProvider
           attribute="data-theme"

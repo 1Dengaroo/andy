@@ -6,6 +6,7 @@ import QuFlowCard from '@/components/cards/quflow-card';
 import SkillsCard from '@/components/cards/skills-card';
 import EducationCard from '@/components/cards/education-card';
 import CTACard from '@/components/cards/cta-card';
+import RemesCard from '@/components/cards/remes-card';
 import RShortsCard from '@/components/cards/rshorts-card';
 import LeafpadCard from '@/components/cards/leafpad-card';
 import Controls from '@/components/layout/controls';
@@ -43,7 +44,7 @@ const Page = () => {
           <OoeyCard />
         </FadeIn>
         <FadeIn delay={D}>
-          <RShortsCard />
+          <RemesCard />
         </FadeIn>
       </div>
 
@@ -65,14 +66,21 @@ const Page = () => {
       {/* Row 4: Two more project cards */}
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-2 sm:grid-cols-2">
         <FadeIn>
-          <LeafpadCard />
+          <RShortsCard />
         </FadeIn>
         <FadeIn delay={D}>
+          <LeafpadCard />
+        </FadeIn>
+      </div>
+
+      {/* Row 5: QuFlow */}
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-2 sm:grid-cols-2">
+        <FadeIn>
           <QuFlowCard />
         </FadeIn>
       </div>
 
-      {/* Row 5: CTA + Footer */}
+      {/* Row 6: CTA + Footer */}
       <FadeIn className="mx-auto flex w-full max-w-6xl flex-col gap-2">
         <div id="contact">
           <CTACard />

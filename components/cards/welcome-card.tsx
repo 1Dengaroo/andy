@@ -17,8 +17,18 @@ function WelcomeCard() {
         <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
           <p>
             Currently building <span className="font-medium text-foreground">Blueprint AI</span> at
-            Pega. I&apos;m driven by ambitious goals and the people around me who raise the bar. I
-            love to learn, build things that matter, and move fast.
+            Pega, where I own features end-to-end across the React frontend and Java backend --
+            shipping AI-assisted features throughout the platform and recently winning Pega&apos;s
+            annual hackathon across 225+. Blueprint AI was also recognized with MTLC&apos;s Product
+            of the Year award for software and apps.
+          </p>
+          <p>
+            Outside of work, I build to solve real problems. Most recently{' '}
+            <span className="font-medium text-foreground">Remes</span>, an AI-powered outbound sales
+            platform actively used by GTM representatives at ServiceNow, and{' '}
+            <span className="font-medium text-foreground">Leafpad</span>, a developer tools suite
+            with 500+ monthly visitors. I&apos;m driven by ambitious goals and the people around me
+            who raise the bar.
           </p>
           <p>
             <a

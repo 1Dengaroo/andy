@@ -38,8 +38,8 @@ export const experiences = [
       'Reduced initial load time from 6s to 1.5s and improved performance by up to 75% through frontend rendering optimizations and backend API/service refactoring',
       'Engineered prompt templates and LLM output parsing with structured fallbacks across multiple providers via a dependency-injected model abstraction layer',
       'Designed core Java services, APIs, and data models for AI-generated Blueprint artifacts, defining schemas and maintaining backward compatibility',
-      'Led cross-team frontend and backend architecture improvements, standardizing shared components, accessibility patterns, and code quality',
-      'Built a centralized React context layer for AI-generated diffs, enabling incremental change highlighting without full re-renders'
+      'Built a centralized React context layer for AI-generated diffs, enabling incremental change highlighting without full re-renders',
+      "Won Pega's annual hackathon across 225+ teams, building a voice-to-Blueprint GenAI app generator"
     ]
   },
   {
@@ -92,11 +92,3 @@ export const socialLinks = [
   { href: 'https://linkedin.com/in/andydeng-/', icon: Linkedin, label: 'LinkedIn' },
   { href: 'mailto:andydeng0224@gmail.com', icon: Mail, label: 'Email' }
 ];
-
-export const navigationLinks = [
-  { href: '/about', label: 'About' },
-  { href: '/skills', label: 'Skills' },
-  { href: '/experience', label: 'Experience' }
-];
-
-export const everaBackgroundImage = 'https://www.everafashion.com/images/home_1.webp';

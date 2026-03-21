@@ -61,6 +61,7 @@ function RShortsCard() {
       <ProjectModal
         open={open}
         onOpenChange={setOpen}
+        closeClassName="text-white"
         preview={
           <video
             src="/videos/rshorts.mov"

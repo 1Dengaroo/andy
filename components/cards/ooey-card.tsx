@@ -43,6 +43,7 @@ function OoeyCard() {
       <ProjectModal
         open={open}
         onOpenChange={setOpen}
+        closeClassName="text-white"
         preview={
           <div
             className="h-full w-full bg-cover bg-center"

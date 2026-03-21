@@ -18,12 +18,12 @@ const D = 80;
 const Page = () => {
   return (
     <div className="mb-8 mt-4 flex w-full flex-col items-center gap-2 px-2">
-      <div className="mx-auto w-full max-w-6xl animate-fade-slide-up opacity-0">
+      <div className="mx-auto w-full max-w-[76rem] animate-fade-slide-up opacity-0">
         <Controls />
       </div>
 
       {/* Row 1: About (photo) | Welcome */}
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-2 lg:grid-cols-3">
+      <div className="mx-auto grid w-full max-w-[76rem] grid-cols-1 gap-2 lg:grid-cols-3">
         <div
           className="order-2 animate-fade-slide-up opacity-0 lg:order-none lg:col-span-1"
           style={{ animationDelay: `${D}ms` }}
@@ -39,7 +39,7 @@ const Page = () => {
       </div>
 
       {/* Row 2: Two project cards side by side */}
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-2 sm:grid-cols-2">
+      <div className="mx-auto grid w-full max-w-[76rem] grid-cols-1 gap-2 sm:grid-cols-2">
         <FadeIn>
           <OoeyCard />
         </FadeIn>
@@ -49,7 +49,7 @@ const Page = () => {
       </div>
 
       {/* Row 3: Experience (wide) | Skills + Education (stacked) */}
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-2 lg:grid-cols-5">
+      <div className="mx-auto grid w-full max-w-[76rem] grid-cols-1 gap-2 lg:grid-cols-5">
         <FadeIn className="lg:col-span-3">
           <ExperienceCard />
         </FadeIn>
@@ -64,7 +64,7 @@ const Page = () => {
       </div>
 
       {/* Row 4: Three project cards */}
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto grid w-full max-w-[76rem] grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
         <FadeIn>
           <RShortsCard />
         </FadeIn>
@@ -76,8 +76,8 @@ const Page = () => {
         </FadeIn>
       </div>
 
-      {/* Row 6: CTA + Footer */}
-      <FadeIn className="mx-auto flex w-full max-w-6xl flex-col gap-2">
+      {/* Row 5: CTA + Footer */}
+      <FadeIn className="mx-auto flex w-full max-w-[76rem] flex-col gap-2">
         <div id="contact">
           <CTACard />
         </div>

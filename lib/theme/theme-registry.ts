@@ -8,22 +8,22 @@ export interface ThemeDefinition {
 
 export const themes: ThemeDefinition[] = [
   {
-    id: 'print',
-    name: 'Print',
+    id: 'light',
+    name: 'Light',
     description: 'Paper & ink',
     isDark: false,
-    previewColors: ['oklch(0.96 0.005 80)', 'oklch(0.52 0.12 240)', 'oklch(0.15 0.01 50)']
+    previewColors: ['oklch(0.96 0.005 80)', 'oklch(0.42 0.14 360)', 'oklch(0.15 0.01 50)']
   },
   {
-    id: 'light',
-    name: 'Honey',
-    description: 'Warm stone & brass',
-    isDark: false,
-    previewColors: ['oklch(0.975 0.006 70)', 'oklch(0.62 0.17 65)', 'oklch(0.17 0.012 45)']
+    id: 'dark',
+    name: 'Dark',
+    description: 'Slate & burgundy',
+    isDark: true,
+    previewColors: ['oklch(0.17 0.01 260)', 'oklch(0.62 0.14 360)', 'oklch(0.93 0.005 260)']
   },
   {
-    id: 'overworld',
-    name: 'Overworld',
+    id: 'minecraft',
+    name: 'Minecraft',
     description: 'Blocky & crafted',
     isDark: true,
     previewColors: ['oklch(0.22 0.01 60)', 'oklch(0.58 0.15 145)', 'oklch(0.52 0.08 75)']

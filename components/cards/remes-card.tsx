@@ -26,21 +26,21 @@ function RemesCard() {
           className="absolute inset-0 transition-all duration-700 group-hover:scale-105"
           style={{
             background:
-              'linear-gradient(135deg, #6366f1 0%, #7c3aed 30%, #a855f7 60%, #d946ef 100%)',
+              'linear-gradient(135deg, #6366f1 0%, #7c3aed 30%, #a855f7 60%, #d946ef 100%)'
           }}
         />
         {/* Layered UI screenshots on the right */}
-        <div className="absolute right-[5%] top-1/2 z-[1] hidden -translate-y-1/2 sm:block">
+        <div className="absolute right-[10%] top-1/2 z-[1] hidden -translate-y-1/2 sm:block">
           <Image
             src="/images/remes-mid.png"
             alt=""
             width={320}
             height={192}
-            className="rounded-lg shadow-2xl opacity-90 transition-all duration-700 group-hover:translate-x-1"
+            className="rounded-lg opacity-90 shadow-2xl transition-all duration-700 group-hover:translate-x-1"
             style={{ transform: 'rotate(2deg)' }}
           />
         </div>
-        <div className="absolute right-[-2%] top-1/2 z-[2] hidden -translate-y-[40%] sm:block">
+        <div className="absolute right-[3%] top-1/2 z-[2] hidden -translate-y-[40%] sm:block">
           <Image
             src="/images/remes-right.png"
             alt=""
@@ -81,12 +81,13 @@ function RemesCard() {
       <ProjectModal
         open={open}
         onOpenChange={setOpen}
+        closeClassName="text-white"
         preview={
           <div
             className="relative h-full w-full"
             style={{
               background:
-                'linear-gradient(135deg, #6366f1 0%, #7c3aed 30%, #a855f7 60%, #d946ef 100%)',
+                'linear-gradient(135deg, #6366f1 0%, #7c3aed 30%, #a855f7 60%, #d946ef 100%)'
             }}
           >
             <div className="absolute left-[8%] top-1/2 z-[1] -translate-y-[45%]">
@@ -132,8 +133,8 @@ function RemesCard() {
         <p>
           Built in collaboration with a sales colleague who actively uses it at Modal Labs. Stack
           includes Next.js App Router, TypeScript, Tailwind CSS, shadcn/ui, Supabase, Anthropic
-          Claude API, Apollo API, and Gmail OAuth. ~200 users, sending 100-300 personalized
-          outreach emails per week.
+          Claude API, Apollo API, and Gmail OAuth. ~200 users, sending 100-300 personalized outreach
+          emails per week.
         </p>
       </ProjectModal>
     </>

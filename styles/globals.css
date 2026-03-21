@@ -5,15 +5,10 @@
 @import '@/styles/loader.css';
 @import '@/styles/themes/light.css';
 @import '@/styles/themes/dark.css';
-@import '@/styles/themes/print.css';
-@import '@/styles/themes/darkroom.css';
-@import '@/styles/themes/overworld.css';
-@import '@/styles/themes/terminal.css';
-@import '@/styles/themes/blueprint.css';
+@import '@/styles/themes/minecraft.css';
 @import '@/styles/themes/dotcom.css';
 @import '@/styles/themes/spotify.css';
 @import '@/styles/themes/claude.css';
-@import '@/styles/themes/discord.css';
 
 @layer base {
   * {

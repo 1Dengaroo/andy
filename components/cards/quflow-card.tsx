@@ -51,6 +51,7 @@ function QuFlowCard() {
       <ProjectModal
         open={open}
         onOpenChange={setOpen}
+        closeClassName="text-white"
         preview={
           <video
             src="/videos/quflow.mov"

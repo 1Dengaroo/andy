@@ -4,7 +4,6 @@ import {
   Bricolage_Grotesque,
   Lora,
   Space_Mono,
-  Instrument_Sans,
   Sora
 } from 'next/font/google';
 import '@/styles/globals.css';
@@ -20,6 +19,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import LoaderWrapper from '@/components/layout/initial-loader';
 import SkipLinks from '@/components/layout/skip-links';
 
+const sora = Sora({ subsets: ['latin'], variable: '--font-sora' });
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-plus-jakarta' });
 const bricolage = Bricolage_Grotesque({ subsets: ['latin'], variable: '--font-bricolage' });
 const lora = Lora({ subsets: ['latin'], variable: '--font-lora' });
@@ -28,16 +28,13 @@ const spaceMono = Space_Mono({
   weight: ['400', '700'],
   variable: '--font-space-mono'
 });
-const instrumentSans = Instrument_Sans({ subsets: ['latin'], variable: '--font-instrument-sans' });
-const sora = Sora({ subsets: ['latin'], weight: ['700'], variable: '--font-sora' });
 
 const fontVariables = [
+  sora.variable,
   plusJakarta.variable,
   bricolage.variable,
   lora.variable,
-  spaceMono.variable,
-  instrumentSans.variable,
-  sora.variable
+  spaceMono.variable
 ].join(' ');
 
 const baseUrl = 'https://andydeng.me';
@@ -152,13 +149,13 @@ export default function RootLayout({
       </head>
       <body
         className={`${fontVariables} antialiased`}
-        style={{ fontFamily: 'var(--font-plus-jakarta)' }}
+        style={{ fontFamily: 'var(--font-sora)' }}
       >
         <SkipLinks />
         <ThemeProvider
           attribute="data-theme"
           themes={themeIds}
-          defaultTheme="print"
+          defaultTheme="light"
           disableTransitionOnChange
         >
           <FontProvider>

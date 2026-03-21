@@ -13,6 +13,7 @@ interface ProjectModalProps {
   subtitle: string;
   children: ReactNode;
   link: { label: string; href: string };
+  closeClassName?: string;
 }
 
 export function useHashModal(hash: string) {
@@ -49,7 +50,8 @@ export function ProjectModal({
   title,
   subtitle,
   children,
-  link
+  link,
+  closeClassName
 }: ProjectModalProps) {
   const linkRef = useRef<HTMLAnchorElement>(null);
 
@@ -57,6 +59,7 @@ export function ProjectModal({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         className="overflow-hidden sm:max-w-lg"
+        closeClassName={closeClassName}
         onOpenAutoFocus={(e) => {
           e.preventDefault();
           linkRef.current?.focus();

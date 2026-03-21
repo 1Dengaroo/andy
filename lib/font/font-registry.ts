@@ -7,16 +7,16 @@ export interface FontDefinition {
 
 export const fonts: FontDefinition[] = [
   {
+    id: 'sora',
+    name: 'Sora',
+    description: 'Sharp & geometric',
+    variable: '--font-sora'
+  },
+  {
     id: 'plus-jakarta',
     name: 'Plus Jakarta Sans',
     description: 'Refined & contemporary',
     variable: '--font-plus-jakarta'
-  },
-  {
-    id: 'bricolage',
-    name: 'Bricolage Grotesque',
-    description: 'Quirky & characterful',
-    variable: '--font-bricolage'
   },
   {
     id: 'lora',
@@ -29,16 +29,10 @@ export const fonts: FontDefinition[] = [
     name: 'Space Mono',
     description: 'Monospace terminal',
     variable: '--font-space-mono'
-  },
-  {
-    id: 'instrument-sans',
-    name: 'Instrument Sans',
-    description: 'Clean editorial',
-    variable: '--font-instrument-sans'
   }
 ];
 
-export const defaultFontId = 'plus-jakarta';
+export const defaultFontId = 'sora';
 
 export function getFont(id: string): FontDefinition | undefined {
   return fonts.find((f) => f.id === id);

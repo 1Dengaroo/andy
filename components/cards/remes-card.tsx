@@ -123,7 +123,7 @@ function RemesCard() {
         }
         title="Remes"
         subtitle="AI-powered outbound sales platform"
-        link={{ label: 'remes.vercel.app', href: 'https://remes.vercel.app' }}
+        link={{ label: 'remes.so', href: 'https://remes.so' }}
       >
         <p>
           An AI-powered outbound sales platform for SMBs. Monitors the web for buying signals like

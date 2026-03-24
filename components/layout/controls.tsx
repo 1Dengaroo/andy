@@ -11,41 +11,43 @@ import {
 } from '../ui/dialog';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 import { themes, getTheme } from '@/lib/theme/theme-registry';
+import { backgrounds } from '@/components/backgrounds/background-registry';
 import { Card } from '../ui/card';
 import { cn } from '@/lib/utils';
 import { useTheme } from 'next-themes';
 import { useFont } from '@/lib/font/font-provider';
 
-function useParticles() {
-  const [enabled, setEnabled] = useState(false);
+function useBackground() {
+  const [backgroundId, setBackgroundId] = useState('aurora');
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const stored = localStorage.getItem('particles-enabled');
+    const stored = localStorage.getItem('background-id');
     if (stored !== null) {
-      setEnabled(stored === 'true');
+      setBackgroundId(stored);
     }
   }, []);
 
-  useEffect(() => {
-    if (!mounted) return;
-    window.dispatchEvent(new CustomEvent('particles-toggle', { detail: enabled }));
-  }, [enabled, mounted]);
-
-  const toggle = () => {
-    const newValue = !enabled;
-    setEnabled(newValue);
-    localStorage.setItem('particles-enabled', String(newValue));
+  const setBackground = (id: string) => {
+    setBackgroundId(id);
+    localStorage.setItem('background-id', id);
+    window.dispatchEvent(new CustomEvent('background-change', { detail: id }));
   };
 
-  return { enabled, toggle, mounted };
+  return { backgroundId, setBackground, mounted };
 }
 
-function SettingsDialog() {
+function SettingsDialog({
+  contentVisible,
+  onToggleContent
+}: {
+  contentVisible: boolean;
+  onToggleContent: () => void;
+}) {
   const { theme, setTheme } = useTheme();
   const { fontId, setFont, fonts, mounted: fontMounted } = useFont();
-  const particles = useParticles();
+  const background = useBackground();
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     setMounted(true);
@@ -148,27 +150,45 @@ function SettingsDialog() {
           </section>
 
           <section>
+            <h3 className="mb-3 text-sm font-medium">Background</h3>
+            <select
+              value={background.mounted ? background.backgroundId : 'none'}
+              onChange={(e) => background.setBackground(e.target.value)}
+              className="w-full rounded-sm border border-border bg-background px-3 py-2 text-sm text-foreground transition-colors hover:border-ring/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+            >
+              {backgrounds.map((b) => (
+                <option key={b.id} value={b.id}>
+                  {b.name}
+                </option>
+              ))}
+            </select>
+            <p className="mt-1.5 text-xs text-muted-foreground">
+              Backgrounds look best on dark themes.
+            </p>
+          </section>
+
+          <section>
             <div className="flex items-center justify-between">
-              <h3 className="text-sm font-medium">Particle network</h3>
+              <h3 className="text-sm font-medium">Hide content</h3>
               <button
-                onClick={particles.toggle}
+                onClick={onToggleContent}
                 role="switch"
-                aria-checked={particles.enabled}
+                aria-checked={!contentVisible}
                 className={cn(
                   'relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors',
-                  particles.enabled ? 'bg-primary' : 'bg-input'
+                  !contentVisible ? 'bg-primary' : 'bg-input'
                 )}
               >
                 <span
                   className={cn(
                     'pointer-events-none inline-block size-4 rounded-full bg-background shadow-sm ring-0 transition-transform',
-                    particles.enabled ? 'translate-x-4' : 'translate-x-0'
+                    !contentVisible ? 'translate-x-4' : 'translate-x-0'
                   )}
                 />
               </button>
             </div>
             <p className="mt-1.5 text-xs text-muted-foreground">
-              Animated background effect. Looks best on dark themes.
+              Hide all cards to view the background.
             </p>
           </section>
         </div>
@@ -177,7 +197,13 @@ function SettingsDialog() {
   );
 }
 
-export default function Controls() {
+export default function Controls({
+  contentVisible,
+  onToggleContent
+}: {
+  contentVisible: boolean;
+  onToggleContent: () => void;
+}) {
   return (
     <Card className="flex w-full items-center justify-between px-4 py-3">
       <div>
@@ -185,7 +211,7 @@ export default function Controls() {
         <p className="section-label">Software Engineer</p>
       </div>
       <div className="flex items-center gap-1.5 sm:gap-2">
-        <SettingsDialog />
+        <SettingsDialog contentVisible={contentVisible} onToggleContent={onToggleContent} />
       </div>
     </Card>
   );

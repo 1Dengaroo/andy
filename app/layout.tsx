@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans, Bricolage_Grotesque, Lora, Space_Mono, Sora } from 'next/font/google';
 import '@/styles/globals.css';
 
-import ParticleNetwork from '@/components/particle-network/network';
+import BackgroundCanvas from '@/components/backgrounds/background-canvas';
 
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -146,12 +146,12 @@ export default function RootLayout({
         <ThemeProvider
           attribute="data-theme"
           themes={themeIds}
-          defaultTheme="light"
+          defaultTheme="dark"
           disableTransitionOnChange
         >
           <FontProvider>
             <div className="relative z-0">
-              <ParticleNetwork />
+              <BackgroundCanvas />
             </div>
             <LoaderWrapper>
               <ScrollArea>

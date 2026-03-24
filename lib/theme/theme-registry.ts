@@ -12,7 +12,7 @@ export const themes: ThemeDefinition[] = [
     name: 'Light',
     description: 'Paper & ink',
     isDark: false,
-    previewColors: ['oklch(0.96 0.005 80)', 'oklch(0.42 0.14 360)', 'oklch(0.15 0.01 50)']
+    previewColors: ['oklch(0.88 0.008 80)', 'oklch(0.42 0.14 360)', 'oklch(0.15 0.01 50)']
   },
   {
     id: 'dark',

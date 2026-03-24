@@ -36,11 +36,11 @@ export const themes: ThemeDefinition[] = [
     previewColors: ['oklch(0.82 0.005 250)', 'oklch(0.45 0.25 265)', 'oklch(0.10 0.005 250)']
   },
   {
-    id: 'spotify',
-    name: 'Spotify',
-    description: 'True black & green',
-    isDark: true,
-    previewColors: ['oklch(0.15 0.003 0)', 'oklch(0.75 0.20 155)', 'oklch(0.48 0.004 0)']
+    id: 'comic',
+    name: 'Comic',
+    description: 'Pop art & bold ink',
+    isDark: false,
+    previewColors: ['oklch(0.97 0.02 95)', 'oklch(0.63 0.24 28)', 'oklch(0.1 0.01 50)']
   },
   {
     id: 'claude',
@@ -48,7 +48,7 @@ export const themes: ThemeDefinition[] = [
     description: 'Dark sand & terracotta',
     isDark: true,
     previewColors: ['oklch(0.18 0.015 50)', 'oklch(0.65 0.15 45)', 'oklch(0.92 0.01 70)']
-  }
+  },
 ];
 
 export const themeIds = themes.map((t) => t.id);

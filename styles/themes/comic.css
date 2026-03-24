@@ -1,0 +1,121 @@
+/* Comic — Pop art / comic book aesthetic with bold outlines and halftone */
+
+[data-theme='comic'] body {
+  background-color: #fffbe6;
+  background-image:
+    radial-gradient(circle, #00000008 1px, transparent 1px),
+    linear-gradient(180deg, #fffbe6 0%, #fff7d6 50%, #fffbe6 100%);
+  background-size: 6px 6px, 100% 100%;
+  background-attachment: fixed;
+}
+
+[data-theme='comic'] {
+  /* Semantic tokens (oklch L C H) */
+  --accent-primary: 0.63 0.24 28;
+  --accent-secondary: 0.55 0.22 265;
+
+  --surface-primary: 0.97 0.02 95;
+  --surface-secondary: 0.94 0.03 95;
+  --surface-elevated: 0.99 0.01 95;
+  --surface-overlay: 0.15 0.01 50;
+
+  --border-default: 0.2 0.01 50;
+  --border-subtle: 0.35 0.01 50;
+  --border-strong: 0.1 0.01 50;
+
+  --text-primary: 0.1 0.01 50;
+  --text-secondary: 0.25 0.01 50;
+  --text-muted: 0.42 0.01 50;
+  --text-inverse: 0.97 0.005 95;
+
+  --shadow-sm: 3px 3px 0px oklch(0.1 0.01 50);
+  --shadow-md: 4px 4px 0px oklch(0.1 0.01 50);
+  --shadow-lg: 6px 6px 0px oklch(0.1 0.01 50);
+
+  /* Card style tokens — thick outlines, hard shadows */
+  --card-radius: 4px;
+  --card-border-width: 3px;
+  --card-border-opacity: 1;
+  --card-shadow: var(--shadow-md);
+  --card-hover-shadow: var(--shadow-lg);
+  --card-hover-y: -3px;
+  --card-accent-bar-height: 0px;
+  --card-accent-bar-scale: 0;
+
+  /* Typography — bold comic book lettering */
+  --heading-font: 'Arial Black', 'Impact', sans-serif;
+  --section-label-font: 'Arial Black', 'Impact', sans-serif;
+  --section-label-size: 0.7rem;
+  --section-label-tracking: 0.06em;
+  --section-label-transform: uppercase;
+  --tag-font: var(--font-space-mono), monospace;
+  --tag-radius: 2px;
+  --tag-padding-y: 0.2rem;
+  --tag-padding-x: 0.55rem;
+  --tag-font-size: 0.65rem;
+
+  /* shadcn bridge tokens (HSL) */
+  --background: 50 100% 95%;
+  --foreground: 0 0% 5%;
+  --card: 50 60% 97%;
+  --card-foreground: 0 0% 5%;
+  --popover: 50 60% 97%;
+  --popover-foreground: 0 0% 5%;
+  --primary: 15 85% 52%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 50 40% 90%;
+  --secondary-foreground: 0 0% 10%;
+  --muted: 50 30% 92%;
+  --muted-foreground: 0 0% 35%;
+  --accent: 50 40% 90%;
+  --accent-foreground: 0 0% 5%;
+  --destructive: 0 85% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 12%;
+  --input: 0 0% 12%;
+  --ring: 15 85% 52%;
+  --radius: 0.25rem;
+  --chart-1: 15 85% 52%;
+  --chart-2: 220 80% 50%;
+  --chart-3: 50 90% 50%;
+  --chart-4: 340 75% 48%;
+  --chart-5: 145 65% 40%;
+  --sidebar-background: 50 80% 92%;
+  --sidebar-foreground: 0 0% 20%;
+  --sidebar-primary: 15 85% 48%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 50 40% 88%;
+  --sidebar-accent-foreground: 0 0% 5%;
+  --sidebar-border: 0 0% 18%;
+  --sidebar-ring: 15 85% 48%;
+}
+
+/* Thick comic outlines */
+[data-theme='comic'] .card-editorial {
+  border-color: hsl(0 0% 8%);
+}
+
+[data-theme='comic'] .card-editorial:hover {
+  border-color: hsl(0 0% 0%);
+}
+
+/* Tags like speech bubble chips */
+[data-theme='comic'] .tag-pill {
+  border-width: 2px;
+  border-color: hsl(0 0% 10%);
+  background: hsl(50 60% 92%);
+  box-shadow: 2px 2px 0px hsl(0 0% 10%);
+}
+
+[data-theme='comic'] .tag-pill:hover {
+  background: hsl(15 85% 52%);
+  color: white;
+  border-color: hsl(0 0% 5%);
+  box-shadow: 2px 2px 0px hsl(0 0% 5%);
+}
+
+/* Bold uppercase section labels */
+[data-theme='comic'] .section-label {
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}

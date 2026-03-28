@@ -10,25 +10,22 @@ function WelcomeCard() {
     <Card className="flex h-full flex-col justify-between">
       <CardContent className="pt-6">
         <span className="section-label">Introduction</span>
-        <h2 className="heading-serif mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
-          Always <span className="text-accent-primary">building</span>, always{' '}
-          <span className="text-accent-primary">learning</span>.
-        </h2>
         <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
           <p>
-            Currently building <span className="font-medium text-foreground">Blueprint AI</span> at
-            Pega, where I own features end-to-end across the React frontend and Java backend --
-            shipping AI-assisted features throughout the platform and recently winning Pega&apos;s
-            annual hackathon across 225+. Blueprint AI was also recognized with MTLC&apos;s Product
-            of the Year award for software and apps.
+            Software Engineer with 2+ years of experience building products from 0 to 1. Currently
+            working on AI-powered development tools at{' '}
+            <span className="font-medium text-foreground">Pega</span>, where I own features
+            end-to-end across the React frontend and Java backend. Recently won Pega&apos;s annual
+            hackathon across 225+ participants.
           </p>
           <p>
-            Outside of work, I build to solve real problems. Most recently{' '}
+            I&apos;m a builder at heart. I thrive in fast-paced environments where I can take
+            ownership and ship work that matters. On the side, I build projects across AI, developer
+            tooling, and web applications -- most recently{' '}
             <span className="font-medium text-foreground">Remes</span>, an AI-powered outbound sales
-            platform actively used by GTM representatives at ServiceNow, and{' '}
+            platform, and{' '}
             <span className="font-medium text-foreground">Leafpad</span>, a developer tools suite
-            with 500+ monthly visitors. I&apos;m driven by ambitious goals and the people around me
-            who raise the bar.
+            with 500+ monthly visitors.
           </p>
           <p>
             <a

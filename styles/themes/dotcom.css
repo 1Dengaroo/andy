@@ -22,7 +22,7 @@
 
   --text-primary: 0.1 0.005 250;
   --text-secondary: 0.28 0.005 250;
-  --text-muted: 0.4 0.005 250;
+  --text-muted: 0.33 0.005 250;
   --text-inverse: 0.95 0.003 250;
 
   --shadow-sm: none;
@@ -63,7 +63,7 @@
   --secondary: 0 0% 85%;
   --secondary-foreground: 0 0% 10%;
   --muted: 0 0% 88%;
-  --muted-foreground: 0 0% 30%;
+  --muted-foreground: 0 0% 22%;
   --accent: 0 0% 85%;
   --accent-foreground: 0 0% 0%;
   --destructive: 0 80% 50%;

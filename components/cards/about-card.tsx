@@ -24,7 +24,7 @@ function AboutCard() {
       <CardContent className="pt-4">
         <span className="section-label">About</span>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          I&apos;m a front-end focused engineer from{' '}
+          I&apos;m a software engineer from{' '}
           <span className="font-medium text-foreground">New York, NY</span>. I move quickly, take
           ownership seriously, and care deeply about product quality.
         </p>

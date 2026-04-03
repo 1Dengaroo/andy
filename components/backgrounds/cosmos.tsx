@@ -15,7 +15,12 @@ export default function CosmosBackground() {
     const isLight = resolvedTheme === 'light' || resolvedTheme === 'dotcom';
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(
+      60,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
     camera.position.z = 2;
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
@@ -32,8 +37,18 @@ export default function CosmosBackground() {
     const starColors = new Float32Array(starCount * 3);
 
     const starColorPalette = isLight
-      ? [new THREE.Color(0x6633cc), new THREE.Color(0x3366cc), new THREE.Color(0xcc3366), new THREE.Color(0x336699)]
-      : [new THREE.Color(0xffffff), new THREE.Color(0xaaccff), new THREE.Color(0xffccaa), new THREE.Color(0xffaaaa)];
+      ? [
+          new THREE.Color(0x6633cc),
+          new THREE.Color(0x3366cc),
+          new THREE.Color(0xcc3366),
+          new THREE.Color(0x336699)
+        ]
+      : [
+          new THREE.Color(0xffffff),
+          new THREE.Color(0xaaccff),
+          new THREE.Color(0xffccaa),
+          new THREE.Color(0xffaaaa)
+        ];
 
     for (let i = 0; i < starCount; i++) {
       positions[i * 3] = (Math.random() - 0.5) * 12;
@@ -325,11 +340,7 @@ export default function CosmosBackground() {
           if (s.cooldown <= 0) {
             const angle = Math.random() * Math.PI * 0.5 + Math.PI * 0.75;
             s.velocity.set(Math.cos(angle) * 3, Math.sin(angle) * 3, 0);
-            s.mesh.position.set(
-              (Math.random() - 0.3) * 6,
-              (Math.random() * 0.5 + 0.5) * 4,
-              -1
-            );
+            s.mesh.position.set((Math.random() - 0.3) * 6, (Math.random() * 0.5 + 0.5) * 4, -1);
             s.mesh.rotation.z = angle;
             s.mesh.visible = true;
             s.life = Math.random() * 0.8 + 0.4;
@@ -351,11 +362,7 @@ export default function CosmosBackground() {
         } else {
           s.cooldown -= delta;
           if (s.cooldown <= 0) {
-            s.mesh.position.set(
-              (Math.random() - 0.5) * 6,
-              (Math.random() - 0.5) * 4,
-              -2
-            );
+            s.mesh.position.set((Math.random() - 0.5) * 6, (Math.random() - 0.5) * 4, -2);
             s.mesh.visible = true;
             s.life = s.maxLife;
             s.mesh.material.uniforms.uProgress.value = 0;

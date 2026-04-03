@@ -48,7 +48,7 @@ export const themes: ThemeDefinition[] = [
     description: 'Dark sand & terracotta',
     isDark: true,
     previewColors: ['oklch(0.18 0.015 50)', 'oklch(0.65 0.15 45)', 'oklch(0.92 0.01 70)']
-  },
+  }
 ];
 
 export const themeIds = themes.map((t) => t.id);

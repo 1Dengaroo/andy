@@ -24,16 +24,15 @@ const Page = () => {
 
   useEffect(() => {
     document.body.style.overflow = contentVisible ? '' : 'hidden';
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [contentVisible]);
 
   return (
     <div className="mb-8 mt-4 flex w-full flex-col items-center gap-2 px-2">
       <div className="mx-auto w-full max-w-[76rem] animate-fade-slide-up opacity-0">
-        <Controls
-          contentVisible={contentVisible}
-          onToggleContent={toggle}
-        />
+        <Controls contentVisible={contentVisible} onToggleContent={toggle} />
       </div>
 
       <div

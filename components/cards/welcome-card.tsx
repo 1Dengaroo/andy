@@ -23,9 +23,8 @@ function WelcomeCard() {
             ownership and ship work that matters. On the side, I build projects across AI, developer
             tooling, and web applications -- most recently{' '}
             <span className="font-medium text-foreground">Remes</span>, an AI-powered outbound sales
-            platform, and{' '}
-            <span className="font-medium text-foreground">Leafpad</span>, a developer tools suite
-            with 500+ monthly visitors.
+            platform, and <span className="font-medium text-foreground">Leafpad</span>, a developer
+            tools suite with 500+ monthly visitors.
           </p>
           <p>
             <a

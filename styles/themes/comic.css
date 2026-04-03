@@ -5,7 +5,9 @@
   background-image:
     radial-gradient(circle, #00000008 1px, transparent 1px),
     linear-gradient(180deg, #fffbe6 0%, #fff7d6 50%, #fffbe6 100%);
-  background-size: 6px 6px, 100% 100%;
+  background-size:
+    6px 6px,
+    100% 100%;
   background-attachment: fixed;
 }
 

@@ -14,6 +14,8 @@ interface ProjectModalProps {
   children: ReactNode;
   link: { label: string; href: string };
   closeClassName?: string;
+  className?: string;
+  previewClassName?: string;
 }
 
 export function useHashModal(hash: string) {
@@ -51,14 +53,16 @@ export function ProjectModal({
   subtitle,
   children,
   link,
-  closeClassName
+  closeClassName,
+  className,
+  previewClassName
 }: ProjectModalProps) {
   const linkRef = useRef<HTMLAnchorElement>(null);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className="overflow-hidden sm:max-w-lg"
+        className={`sm:max-w-lg ${className ?? ''}`}
         closeClassName={closeClassName}
         onOpenAutoFocus={(e) => {
           e.preventDefault();
@@ -66,7 +70,11 @@ export function ProjectModal({
         }}
       >
         {preview && (
-          <div className="relative -mx-6 -mt-6 aspect-video overflow-hidden">{preview}</div>
+          <div
+            className={`relative -mx-6 -mt-6 overflow-hidden ${previewClassName ?? 'aspect-video'}`}
+          >
+            {preview}
+          </div>
         )}
         <DialogHeader>
           <div className="flex items-center gap-2">

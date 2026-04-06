@@ -29,7 +29,7 @@ function QuFlowCard() {
           playsInline
           className="absolute inset-0 h-full w-full object-cover brightness-[0.55] transition-all duration-700 group-hover:scale-105 group-hover:brightness-[0.7]"
         />
-        <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
+        <div className="bg-linear-to-t absolute inset-0 from-black/70 via-black/20 to-transparent" />
         <CardContent className="relative z-10 flex h-full w-full flex-col justify-end p-5">
           <div className="flex items-end justify-between">
             <div>

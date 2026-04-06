@@ -90,16 +90,16 @@ const Page = () => {
         {/* Row 4: Four project cards — 2x2 */}
         <div className="mx-auto grid w-full max-w-[76rem] grid-cols-1 gap-2 sm:grid-cols-2">
           <FadeIn>
-            <RShortsCard />
+            <OoeyCard />
           </FadeIn>
           <FadeIn delay={D}>
             <LeafpadCard />
           </FadeIn>
           <FadeIn delay={D * 2}>
-            <QuFlowCard />
+            <RShortsCard />
           </FadeIn>
           <FadeIn delay={D * 3}>
-            <OoeyCard />
+            <QuFlowCard />
           </FadeIn>
         </div>
 

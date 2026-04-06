@@ -52,63 +52,63 @@ function RemesCard() {
               width: '48%',
               height: '72%',
               borderRadius: 10,
-              border: '1px solid rgba(99,102,241,0.2)',
-              backgroundColor: 'rgba(99,102,241,0.06)',
-              boxShadow: '0 8px 32px rgba(99,102,241,0.1)',
+              border: '1px solid rgba(99,102,241,0.35)',
+              backgroundColor: 'rgba(99,102,241,0.1)',
+              boxShadow: '0 8px 32px rgba(99,102,241,0.15)',
               overflow: 'hidden'
             }}
           >
             {/* Header with tabs */}
             <div
               className="flex items-center justify-between border-b px-2.5 py-1.5"
-              style={{ borderColor: 'rgba(99,102,241,0.15)' }}
+              style={{ borderColor: 'rgba(99,102,241,0.25)' }}
             >
               <div className="flex items-center gap-1.5">
                 <div
                   className="size-1.5 rounded-full"
-                  style={{ backgroundColor: 'rgba(99,102,241,0.5)' }}
+                  style={{ backgroundColor: 'rgba(99,102,241,0.7)' }}
                 />
                 <div
                   className="h-1 w-6 rounded-full"
-                  style={{ backgroundColor: 'rgba(99,102,241,0.3)' }}
+                  style={{ backgroundColor: 'rgba(99,102,241,0.45)' }}
                 />
               </div>
               <div className="flex gap-1">
                 <div
                   className="h-1.5 w-5 rounded-sm"
-                  style={{ backgroundColor: 'rgba(99,102,241,0.2)' }}
+                  style={{ backgroundColor: 'rgba(99,102,241,0.35)' }}
                 />
                 <div
                   className="h-1.5 w-5 rounded-sm"
-                  style={{ backgroundColor: 'rgba(99,102,241,0.08)' }}
+                  style={{ backgroundColor: 'rgba(99,102,241,0.15)' }}
                 />
               </div>
             </div>
             {/* Signal rows */}
             <div className="space-y-1.5 p-2.5">
               {[
-                { w: '70%', badge: 'rgba(52,211,153,0.25)', dot: 'rgba(52,211,153,0.6)' },
-                { w: '85%', badge: 'rgba(251,191,36,0.2)', dot: 'rgba(251,191,36,0.5)' },
-                { w: '60%', badge: 'rgba(52,211,153,0.25)', dot: 'rgba(52,211,153,0.6)' },
-                { w: '75%', badge: 'rgba(99,102,241,0.15)', dot: 'rgba(99,102,241,0.4)' }
+                { w: '70%', badge: 'rgba(52,211,153,0.4)', dot: 'rgba(52,211,153,0.8)' },
+                { w: '85%', badge: 'rgba(251,191,36,0.35)', dot: 'rgba(251,191,36,0.7)' },
+                { w: '60%', badge: 'rgba(52,211,153,0.4)', dot: 'rgba(52,211,153,0.8)' },
+                { w: '75%', badge: 'rgba(99,102,241,0.25)', dot: 'rgba(99,102,241,0.6)' }
               ].map((row, i) => (
                 <div key={i} className="flex items-center gap-1.5">
                   <div
                     className="size-3.5 shrink-0 rounded"
-                    style={{ backgroundColor: `rgba(99,102,241,${0.18 - i * 0.03})` }}
+                    style={{ backgroundColor: `rgba(99,102,241,${0.3 - i * 0.04})` }}
                   />
                   <div className="flex-1 space-y-0.5">
                     <div
                       className="h-1 rounded-full"
                       style={{
-                        backgroundColor: `rgba(99,102,241,${0.24 - i * 0.04})`,
+                        backgroundColor: `rgba(99,102,241,${0.4 - i * 0.05})`,
                         width: row.w
                       }}
                     />
                     <div
                       className="h-0.5 rounded-full"
                       style={{
-                        backgroundColor: `rgba(99,102,241,${0.12 - i * 0.02})`,
+                        backgroundColor: `rgba(99,102,241,${0.22 - i * 0.03})`,
                         width: '60%'
                       }}
                     />
@@ -132,28 +132,28 @@ function RemesCard() {
               width: 110,
               height: 92,
               borderRadius: 8,
-              border: '1px solid rgba(99,102,241,0.18)',
-              backgroundColor: 'rgba(99,102,241,0.05)',
-              boxShadow: '0 6px 24px rgba(99,102,241,0.1)',
+              border: '1px solid rgba(99,102,241,0.3)',
+              backgroundColor: 'rgba(99,102,241,0.08)',
+              boxShadow: '0 6px 24px rgba(99,102,241,0.15)',
               transform: 'rotate(-3deg)',
               overflow: 'hidden'
             }}
           >
             {/* Email header — To + Subject */}
-            <div className="border-b px-2 py-1.5" style={{ borderColor: 'rgba(99,102,241,0.12)' }}>
+            <div className="border-b px-2 py-1.5" style={{ borderColor: 'rgba(99,102,241,0.2)' }}>
               <div className="flex items-center gap-1">
                 <div
                   className="size-2.5 rounded-full"
-                  style={{ backgroundColor: 'rgba(99,102,241,0.25)' }}
+                  style={{ backgroundColor: 'rgba(99,102,241,0.4)' }}
                 />
                 <div className="space-y-0.5">
                   <div
                     className="h-0.5 w-8 rounded-full"
-                    style={{ backgroundColor: 'rgba(99,102,241,0.25)' }}
+                    style={{ backgroundColor: 'rgba(99,102,241,0.4)' }}
                   />
                   <div
                     className="h-0.5 w-5 rounded-full"
-                    style={{ backgroundColor: 'rgba(99,102,241,0.12)' }}
+                    style={{ backgroundColor: 'rgba(99,102,241,0.22)' }}
                   />
                 </div>
               </div>
@@ -161,11 +161,11 @@ function RemesCard() {
               <div className="mt-1 flex items-center gap-1">
                 <div
                   className="h-0.5 w-2 rounded-full"
-                  style={{ backgroundColor: 'rgba(99,102,241,0.2)' }}
+                  style={{ backgroundColor: 'rgba(99,102,241,0.35)' }}
                 />
                 <div
                   className="h-0.5 w-12 rounded-full"
-                  style={{ backgroundColor: 'rgba(99,102,241,0.18)' }}
+                  style={{ backgroundColor: 'rgba(99,102,241,0.3)' }}
                 />
               </div>
             </div>
@@ -173,35 +173,35 @@ function RemesCard() {
             <div className="space-y-1 p-2">
               <div
                 className="h-0.5 w-full rounded-full"
-                style={{ backgroundColor: 'rgba(99,102,241,0.14)' }}
+                style={{ backgroundColor: 'rgba(99,102,241,0.25)' }}
               />
               <div
                 className="h-0.5 w-[90%] rounded-full"
-                style={{ backgroundColor: 'rgba(99,102,241,0.11)' }}
+                style={{ backgroundColor: 'rgba(99,102,241,0.2)' }}
               />
               <div
                 className="h-0.5 w-[70%] rounded-full"
-                style={{ backgroundColor: 'rgba(99,102,241,0.09)' }}
+                style={{ backgroundColor: 'rgba(99,102,241,0.16)' }}
               />
               <div className="pt-0.5">
                 <div
                   className="h-0.5 w-full rounded-full"
-                  style={{ backgroundColor: 'rgba(99,102,241,0.11)' }}
+                  style={{ backgroundColor: 'rgba(99,102,241,0.2)' }}
                 />
                 <div
                   className="mt-0.5 h-0.5 w-[60%] rounded-full"
-                  style={{ backgroundColor: 'rgba(99,102,241,0.08)' }}
+                  style={{ backgroundColor: 'rgba(99,102,241,0.15)' }}
                 />
               </div>
               {/* AI generated indicator */}
               <div className="mt-1 flex items-center gap-0.5">
                 <div
                   className="size-1 rounded-full"
-                  style={{ backgroundColor: 'rgba(139,92,246,0.4)' }}
+                  style={{ backgroundColor: 'rgba(139,92,246,0.6)' }}
                 />
                 <div
                   className="h-0.5 w-5 rounded-full"
-                  style={{ backgroundColor: 'rgba(139,92,246,0.2)' }}
+                  style={{ backgroundColor: 'rgba(139,92,246,0.35)' }}
                 />
               </div>
             </div>
@@ -214,9 +214,9 @@ function RemesCard() {
               left: '22%',
               bottom: '36%',
               borderRadius: 7,
-              border: '1px solid rgba(99,102,241,0.15)',
-              backgroundColor: 'rgba(99,102,241,0.04)',
-              boxShadow: '0 4px 16px rgba(99,102,241,0.08)',
+              border: '1px solid rgba(99,102,241,0.25)',
+              backgroundColor: 'rgba(99,102,241,0.07)',
+              boxShadow: '0 4px 16px rgba(99,102,241,0.12)',
               transform: 'rotate(1deg)',
               padding: '5px 7px',
               overflow: 'hidden'
@@ -225,33 +225,33 @@ function RemesCard() {
             <div className="flex items-center gap-1.5">
               <div
                 className="size-3.5 rounded-full"
-                style={{ backgroundColor: 'rgba(52,211,153,0.2)' }}
+                style={{ backgroundColor: 'rgba(52,211,153,0.35)' }}
               />
               <div className="space-y-0.5">
                 <div
                   className="h-0.5 w-7 rounded-full"
-                  style={{ backgroundColor: 'rgba(99,102,241,0.22)' }}
+                  style={{ backgroundColor: 'rgba(99,102,241,0.35)' }}
                 />
                 <div
                   className="h-0.5 w-10 rounded-full"
-                  style={{ backgroundColor: 'rgba(99,102,241,0.1)' }}
+                  style={{ backgroundColor: 'rgba(99,102,241,0.18)' }}
                 />
               </div>
               {/* Send button */}
               <div
                 className="h-2.5 w-5 rounded"
-                style={{ backgroundColor: 'rgba(99,102,241,0.2)' }}
+                style={{ backgroundColor: 'rgba(99,102,241,0.3)' }}
               />
             </div>
           </div>
         </div>
 
-        {/* Subtle brand glow behind panels */}
+        {/* Brand glow behind panels */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              'radial-gradient(ellipse 50% 70% at 70% 40%, rgba(99,102,241,0.14) 0%, transparent 70%)'
+              'radial-gradient(ellipse 50% 70% at 70% 40%, rgba(99,102,241,0.22) 0%, transparent 70%)'
           }}
         />
 
@@ -260,7 +260,7 @@ function RemesCard() {
           className="absolute inset-0"
           style={{
             background:
-              'radial-gradient(ellipse 35% 50% at 20% 35%, rgba(139,92,246,0.08) 0%, transparent 60%)'
+              'radial-gradient(ellipse 35% 50% at 20% 35%, rgba(139,92,246,0.14) 0%, transparent 60%)'
           }}
         />
 

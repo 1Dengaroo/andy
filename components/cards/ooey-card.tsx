@@ -26,7 +26,7 @@ function OoeyCard() {
           className="absolute inset-0 bg-cover bg-center opacity-50 transition-all duration-700 group-hover:scale-105 group-hover:opacity-65"
           style={{ backgroundImage: `url(/images/ooey.webp)` }}
         />
-        <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
+        <div className="bg-linear-to-t absolute inset-0 from-black/70 via-black/20 to-transparent" />
         <CardContent className="relative z-10 flex h-full w-full flex-col justify-end p-5">
           <div className="flex items-end justify-between">
             <div>

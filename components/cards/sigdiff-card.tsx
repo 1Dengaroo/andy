@@ -34,8 +34,8 @@ function SigdiffCard() {
               left: '8%',
               right: '8%',
               top: '6%',
-              color: 'rgba(88,166,255,0.35)',
-              borderBottom: '1px solid rgba(48,54,61,0.3)',
+              color: 'rgba(88,166,255,0.6)',
+              borderBottom: '1px solid rgba(48,54,61,0.5)',
               paddingBottom: 3
             }}
           >
@@ -55,12 +55,12 @@ function SigdiffCard() {
             <div className="space-y-[3px]">
               {/* Neutral */}
               <div className="flex items-center gap-1 rounded-sm px-1.5 py-[2px]">
-                <span className="font-mono text-[6px]" style={{ color: 'rgba(139,148,158,0.25)' }}>
+                <span className="font-mono text-[6px]" style={{ color: 'rgba(139,148,158,0.45)' }}>
                   1
                 </span>
                 <div
                   className="h-[2px] w-16 rounded-full"
-                  style={{ backgroundColor: 'rgba(139,148,158,0.1)' }}
+                  style={{ backgroundColor: 'rgba(139,148,158,0.2)' }}
                 />
               </div>
               {/* Removed lines */}
@@ -68,37 +68,37 @@ function SigdiffCard() {
                 <div
                   key={i}
                   className="flex items-center gap-1 rounded-sm px-1.5 py-[2px]"
-                  style={{ backgroundColor: 'rgba(248,81,73,0.08)' }}
+                  style={{ backgroundColor: 'rgba(248,81,73,0.15)' }}
                 >
-                  <span className="font-mono text-[6px]" style={{ color: 'rgba(248,81,73,0.4)' }}>
+                  <span className="font-mono text-[6px]" style={{ color: 'rgba(248,81,73,0.7)' }}>
                     {i + 2}
                   </span>
-                  <span className="font-mono text-[6px]" style={{ color: 'rgba(248,81,73,0.35)' }}>
+                  <span className="font-mono text-[6px]" style={{ color: 'rgba(248,81,73,0.6)' }}>
                     -
                   </span>
                   <div
                     className="h-[2px] rounded-full"
-                    style={{ backgroundColor: `rgba(248,81,73,${0.22 - i * 0.02})`, width: w * 4 }}
+                    style={{ backgroundColor: `rgba(248,81,73,${0.4 - i * 0.03})`, width: w * 4 }}
                   />
                 </div>
               ))}
               {/* Neutral */}
               <div className="flex items-center gap-1 rounded-sm px-1.5 py-[2px]">
-                <span className="font-mono text-[6px]" style={{ color: 'rgba(139,148,158,0.25)' }}>
+                <span className="font-mono text-[6px]" style={{ color: 'rgba(139,148,158,0.45)' }}>
                   9
                 </span>
                 <div
                   className="h-[2px] w-12 rounded-full"
-                  style={{ backgroundColor: 'rgba(139,148,158,0.1)' }}
+                  style={{ backgroundColor: 'rgba(139,148,158,0.2)' }}
                 />
               </div>
               <div className="flex items-center gap-1 rounded-sm px-1.5 py-[2px]">
-                <span className="font-mono text-[6px]" style={{ color: 'rgba(139,148,158,0.25)' }}>
+                <span className="font-mono text-[6px]" style={{ color: 'rgba(139,148,158,0.45)' }}>
                   10
                 </span>
                 <div
                   className="h-[2px] w-8 rounded-full"
-                  style={{ backgroundColor: 'rgba(139,148,158,0.08)' }}
+                  style={{ backgroundColor: 'rgba(139,148,158,0.15)' }}
                 />
               </div>
             </div>
@@ -112,7 +112,7 @@ function SigdiffCard() {
               top: '14%',
               bottom: '40%',
               width: 1,
-              backgroundColor: 'rgba(48,54,61,0.5)'
+              backgroundColor: 'rgba(48,54,61,0.8)'
             }}
           />
 
@@ -129,12 +129,12 @@ function SigdiffCard() {
             <div className="space-y-[3px]">
               {/* Neutral */}
               <div className="flex items-center gap-1 rounded-sm px-1.5 py-[2px]">
-                <span className="font-mono text-[6px]" style={{ color: 'rgba(139,148,158,0.25)' }}>
+                <span className="font-mono text-[6px]" style={{ color: 'rgba(139,148,158,0.45)' }}>
                   1
                 </span>
                 <div
                   className="h-[2px] w-16 rounded-full"
-                  style={{ backgroundColor: 'rgba(139,148,158,0.1)' }}
+                  style={{ backgroundColor: 'rgba(139,148,158,0.2)' }}
                 />
               </div>
               {/* Added lines */}
@@ -142,28 +142,28 @@ function SigdiffCard() {
                 <div
                   key={i}
                   className="flex items-center gap-1 rounded-sm px-1.5 py-[2px]"
-                  style={{ backgroundColor: 'rgba(63,185,80,0.08)' }}
+                  style={{ backgroundColor: 'rgba(63,185,80,0.15)' }}
                 >
-                  <span className="font-mono text-[6px]" style={{ color: 'rgba(63,185,80,0.4)' }}>
+                  <span className="font-mono text-[6px]" style={{ color: 'rgba(63,185,80,0.7)' }}>
                     {i + 2}
                   </span>
-                  <span className="font-mono text-[6px]" style={{ color: 'rgba(63,185,80,0.35)' }}>
+                  <span className="font-mono text-[6px]" style={{ color: 'rgba(63,185,80,0.6)' }}>
                     +
                   </span>
                   <div
                     className="h-[2px] rounded-full"
-                    style={{ backgroundColor: `rgba(63,185,80,${0.22 - i * 0.02})`, width: w * 4 }}
+                    style={{ backgroundColor: `rgba(63,185,80,${0.4 - i * 0.03})`, width: w * 4 }}
                   />
                 </div>
               ))}
               {/* Neutral */}
               <div className="flex items-center gap-1 rounded-sm px-1.5 py-[2px]">
-                <span className="font-mono text-[6px]" style={{ color: 'rgba(139,148,158,0.25)' }}>
+                <span className="font-mono text-[6px]" style={{ color: 'rgba(139,148,158,0.45)' }}>
                   8
                 </span>
                 <div
                   className="h-[2px] w-12 rounded-full"
-                  style={{ backgroundColor: 'rgba(139,148,158,0.1)' }}
+                  style={{ backgroundColor: 'rgba(139,148,158,0.2)' }}
                 />
               </div>
             </div>
@@ -176,45 +176,45 @@ function SigdiffCard() {
               right: '10%',
               bottom: '38%',
               borderRadius: 5,
-              border: '1px solid rgba(48,54,61,0.6)',
-              backgroundColor: 'rgba(22,27,34,0.9)',
+              border: '1px solid rgba(48,54,61,0.8)',
+              backgroundColor: 'rgba(22,27,34,0.95)',
               padding: '3px 7px',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
+              boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
             }}
           >
             <div className="flex items-center gap-1.5 font-mono text-[6px]">
-              <span style={{ color: 'rgba(139,148,158,0.5)' }}>bump</span>
+              <span style={{ color: 'rgba(139,148,158,0.7)' }}>bump</span>
               <span
                 className="rounded px-1 py-[1px]"
                 style={{
-                  backgroundColor: 'rgba(248,81,73,0.12)',
-                  color: 'rgba(248,81,73,0.7)',
+                  backgroundColor: 'rgba(248,81,73,0.2)',
+                  color: 'rgba(248,81,73,0.85)',
                   fontSize: 5,
                   fontWeight: 600
                 }}
               >
                 major
               </span>
-              <span style={{ color: 'rgba(139,148,158,0.3)' }}>·</span>
-              <span style={{ color: 'rgba(248,81,73,0.4)', fontSize: 5 }}>-4</span>
-              <span style={{ color: 'rgba(63,185,80,0.4)', fontSize: 5 }}>+6</span>
+              <span style={{ color: 'rgba(139,148,158,0.5)' }}>·</span>
+              <span style={{ color: 'rgba(248,81,73,0.7)', fontSize: 5 }}>-4</span>
+              <span style={{ color: 'rgba(63,185,80,0.7)', fontSize: 5 }}>+6</span>
             </div>
           </div>
         </div>
 
-        {/* Subtle ambient glow — red left, green right */}
+        {/* Ambient glow — red left, green right */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              'radial-gradient(ellipse 30% 50% at 25% 30%, rgba(248,81,73,0.07) 0%, transparent 70%)'
+              'radial-gradient(ellipse 30% 50% at 25% 30%, rgba(248,81,73,0.12) 0%, transparent 70%)'
           }}
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              'radial-gradient(ellipse 30% 50% at 75% 30%, rgba(63,185,80,0.07) 0%, transparent 70%)'
+              'radial-gradient(ellipse 30% 50% at 75% 30%, rgba(63,185,80,0.12) 0%, transparent 70%)'
           }}
         />
 

@@ -94,4 +94,5 @@
 .tag-pill:hover {
   border-color: oklch(var(--accent-primary));
   color: oklch(var(--accent-primary));
+  transform: translateY(-1px);
 }

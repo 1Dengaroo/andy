@@ -78,10 +78,10 @@ function CTACard() {
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
-                className="rounded-sm border-white/20 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:text-white"
+                className="group/cta rounded-sm border-white/20 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:text-white"
               >
                 Get in Touch
-                <ArrowRight className="ml-1 h-3.5 w-3.5" />
+                <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform duration-200 group-hover/cta:translate-x-0.5" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -108,7 +108,7 @@ function CTACard() {
                         variant="ghost"
                         size="icon"
                         asChild
-                        className="h-8 w-8 text-white/60 hover:bg-white/10 hover:text-white"
+                        className="h-8 w-8 text-white/60 transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/10 hover:text-white active:translate-y-0"
                       >
                         <Link
                           href={link.href}
@@ -132,7 +132,7 @@ function CTACard() {
                     variant="ghost"
                     size="icon"
                     asChild
-                    className="h-8 w-8 text-white/60 hover:bg-white/10 hover:text-white"
+                    className="h-8 w-8 text-white/60 transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/10 hover:text-white active:translate-y-0"
                   >
                     <a
                       href="/docs/resume.pdf"

@@ -20,11 +20,12 @@ function WelcomeCard() {
           </p>
           <p>
             I&apos;m a builder at heart. I thrive in fast-paced environments where I can take
-            ownership and ship work that matters. On the side, I build projects across AI, developer
-            tooling, and web applications -- most recently{' '}
-            <span className="font-medium text-foreground">Remes</span>, an AI-powered outbound sales
-            platform, and <span className="font-medium text-foreground">Leafpad</span>, a developer
-            tools suite with 500+ monthly visitors.
+            ownership and ship work that matters. On the side, I build projects across developer
+            tooling and web applications -- including{' '}
+            <span className="font-medium text-foreground">sigdiff</span>, an open source npm package
+            for semantic code diffing, and{' '}
+            <span className="font-medium text-foreground">Leafpad</span>, a developer tools suite
+            with 1,200+ monthly users.
           </p>
           <p>
             <a
@@ -48,7 +49,7 @@ function WelcomeCard() {
                       variant="outline"
                       size="icon"
                       asChild
-                      className="h-8 w-8 rounded-sm transition-colors hover:border-accent-primary hover:text-accent-primary"
+                      className="h-8 w-8 rounded-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-accent-primary hover:text-accent-primary active:translate-y-0"
                     >
                       <Link
                         href={link.href}
@@ -72,7 +73,7 @@ function WelcomeCard() {
                   variant="outline"
                   size="icon"
                   asChild
-                  className="h-8 w-8 rounded-sm transition-colors hover:border-accent-primary hover:text-accent-primary"
+                  className="h-8 w-8 rounded-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-accent-primary hover:text-accent-primary active:translate-y-0"
                 >
                   <a
                     href="/docs/resume.pdf"

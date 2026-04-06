@@ -146,7 +146,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="data-theme"
           themes={themeIds}
-          defaultTheme="light"
+          defaultTheme="dark"
           disableTransitionOnChange
         >
           <FontProvider>

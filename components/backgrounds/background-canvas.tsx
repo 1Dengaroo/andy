@@ -14,7 +14,7 @@ const componentMap: Record<string, React.ComponentType> = {
 };
 
 export default function BackgroundCanvas() {
-  const [backgroundId, setBackgroundId] = useState('none');
+  const [backgroundId, setBackgroundId] = useState('aurora');
 
   useEffect(() => {
     const stored = localStorage.getItem('background-id');

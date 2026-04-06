@@ -18,7 +18,7 @@ import { useTheme } from 'next-themes';
 import { useFont } from '@/lib/font/font-provider';
 
 function useBackground() {
-  const [backgroundId, setBackgroundId] = useState('none');
+  const [backgroundId, setBackgroundId] = useState('aurora');
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

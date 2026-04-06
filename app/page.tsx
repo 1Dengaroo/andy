@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import WelcomeCard from '@/components/cards/welcome-card';
 import AboutCard from '@/components/cards/about-card';
 import OoeyCard from '@/components/cards/ooey-card';
+import SigdiffCard from '@/components/cards/sigdiff-card';
 import ExperienceCard from '@/components/cards/experience-card';
 import QuFlowCard from '@/components/cards/quflow-card';
 import SkillsCard from '@/components/cards/skills-card';
@@ -64,7 +65,7 @@ const Page = () => {
         {/* Row 2: Two project cards side by side */}
         <div className="mx-auto grid w-full max-w-[76rem] grid-cols-1 gap-2 sm:grid-cols-2">
           <FadeIn>
-            <OoeyCard />
+            <SigdiffCard />
           </FadeIn>
           <FadeIn delay={D}>
             <RemesCard />
@@ -86,8 +87,8 @@ const Page = () => {
           </div>
         </div>
 
-        {/* Row 4: Three project cards */}
-        <div className="mx-auto grid w-full max-w-[76rem] grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Row 4: Four project cards — 2x2 */}
+        <div className="mx-auto grid w-full max-w-[76rem] grid-cols-1 gap-2 sm:grid-cols-2">
           <FadeIn>
             <RShortsCard />
           </FadeIn>
@@ -96,6 +97,9 @@ const Page = () => {
           </FadeIn>
           <FadeIn delay={D * 2}>
             <QuFlowCard />
+          </FadeIn>
+          <FadeIn delay={D * 3}>
+            <OoeyCard />
           </FadeIn>
         </div>
 

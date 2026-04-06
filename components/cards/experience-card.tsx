@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { Button } from '../ui/button';
 import { Card, CardContent } from '../ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
 import { experiences } from '@/lib/data';
@@ -23,15 +24,16 @@ function AchievementList({ achievements }: { achievements: string[] }) {
         ))}
       </ul>
       {hasMore && (
-        <button
+        <Button
+          variant="link"
           onClick={(e) => {
             e.stopPropagation();
             setExpanded(!expanded);
           }}
-          className="mt-2 font-mono text-xs text-accent-primary transition-colors hover:text-accent-primary/80"
+          className="mt-2 h-auto p-0 font-mono text-xs text-accent-primary transition-colors hover:text-accent-primary/80 hover:no-underline"
         >
           {expanded ? '- Show less' : `+ ${achievements.length - VISIBLE_COUNT} more`}
-        </button>
+        </Button>
       )}
     </>
   );

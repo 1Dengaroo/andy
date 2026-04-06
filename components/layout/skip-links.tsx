@@ -32,7 +32,7 @@ function SkipLinks() {
                   <a
                     href={`#${link.id}`}
                     onClick={(e) => handleClick(e, link.id)}
-                    className="rounded-md px-3 py-1.5 text-sm font-medium text-card-foreground transition-colors hover:bg-accent focus:bg-accent focus:outline-none"
+                    className="rounded-md px-3 py-1.5 text-sm font-medium text-card-foreground transition-colors hover:bg-accent focus:bg-accent"
                   >
                     {link.label}
                   </a>

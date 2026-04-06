@@ -205,7 +205,7 @@ function CTACard() {
                     placeholder="Message"
                     rows={3}
                     {...register('message')}
-                    className="flex w-full resize-y rounded-sm border border-input bg-transparent px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                    className="flex w-full resize-y rounded-sm border border-input bg-transparent px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-muted-foreground"
                   />
                   {errors.message && (
                     <p className="mt-1 text-xs text-destructive">{errors.message.message}</p>

@@ -11,7 +11,7 @@ function OoeyCard() {
     <>
       <Card
         id="ooey"
-        className="group relative aspect-[7/2] cursor-pointer overflow-hidden !border-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="group relative aspect-[7/2] cursor-pointer overflow-hidden !border-0"
         tabIndex={0}
         onClick={() => setOpen(true)}
         onKeyDown={(e) => {
@@ -43,6 +43,7 @@ function OoeyCard() {
       <ProjectModal
         open={open}
         onOpenChange={setOpen}
+        triggerId="ooey"
         closeClassName="text-white"
         preview={
           <div

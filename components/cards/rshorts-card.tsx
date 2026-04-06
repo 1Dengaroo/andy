@@ -13,7 +13,7 @@ function RShortsCard() {
     <>
       <Card
         id="rshorts"
-        className="group relative aspect-[7/2] cursor-pointer overflow-hidden !border-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="group relative aspect-[7/2] cursor-pointer overflow-hidden !border-0"
         tabIndex={0}
         onClick={() => setOpen(true)}
         onKeyDown={(e) => {
@@ -90,6 +90,7 @@ function RShortsCard() {
       <ProjectModal
         open={open}
         onOpenChange={setOpen}
+        triggerId="rshorts"
         closeClassName="text-white"
         className="max-h-[90vh] overflow-y-auto !border-[#332D26] !bg-[#1A1410] !text-[#EDE5DA] sm:!max-w-2xl"
         previewClassName=""

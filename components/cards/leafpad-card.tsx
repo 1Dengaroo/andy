@@ -21,7 +21,7 @@ function LeafpadCard() {
     <>
       <Card
         id="leafpad"
-        className="group relative aspect-[7/2] cursor-pointer overflow-hidden !border-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="group relative aspect-[7/2] cursor-pointer overflow-hidden !border-0"
         tabIndex={0}
         onClick={() => setOpen(true)}
         onKeyDown={(e) => {
@@ -325,6 +325,7 @@ function LeafpadCard() {
       <ProjectModal
         open={open}
         onOpenChange={setOpen}
+        triggerId="leafpad"
         className="max-h-[90vh] overflow-y-auto !border-[#e5e4dc] !bg-[#f5f2eb] !text-[#1a2820] sm:!max-w-3xl"
         previewClassName=""
         closeClassName="text-[#8a9490] hover:text-[#1a2820]"

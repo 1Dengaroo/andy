@@ -23,7 +23,7 @@ function RemesCard() {
     <>
       <Card
         id="remes"
-        className="group relative aspect-[5/2] cursor-pointer overflow-hidden !border-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="group relative aspect-[5/2] cursor-pointer overflow-hidden !border-0"
         tabIndex={0}
         onClick={() => setOpen(true)}
         onKeyDown={(e) => {
@@ -303,6 +303,7 @@ function RemesCard() {
       <ProjectModal
         open={open}
         onOpenChange={setOpen}
+        triggerId="remes"
         className="max-h-[90vh] overflow-y-auto !border-[#ddd8ed] !bg-[#f6f5fc] !text-[#1c1a30] sm:!max-w-3xl"
         previewClassName=""
         preview={

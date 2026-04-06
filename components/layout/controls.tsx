@@ -12,6 +12,7 @@ import {
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 import { themes, getTheme } from '@/lib/theme/theme-registry';
 import { backgrounds } from '@/components/backgrounds/background-registry';
+import { Button } from '../ui/button';
 import { Card } from '../ui/card';
 import { cn } from '@/lib/utils';
 import { useTheme } from 'next-themes';
@@ -61,11 +62,11 @@ function SettingsDialog({
         <Tooltip>
           <TooltipTrigger asChild>
             <DialogTrigger asChild>
-              <button
+              <Button
+                variant="ghost"
+                size="icon"
                 className={cn(
-                  'group relative flex items-center gap-1 rounded-sm p-1.5 transition-all duration-300',
-                  'hover:bg-accent/50',
-                  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background'
+                  'group relative flex items-center gap-1 rounded-sm p-1.5 transition-all duration-300'
                 )}
                 aria-label="Settings"
               >
@@ -83,7 +84,7 @@ function SettingsDialog({
                     }}
                   />
                 ))}
-              </button>
+              </Button>
             </DialogTrigger>
           </TooltipTrigger>
           <TooltipContent>
@@ -134,7 +135,7 @@ function SettingsDialog({
             <select
               value={fontMounted ? fontId : ''}
               onChange={(e) => setFont(e.target.value)}
-              className="w-full rounded-sm border border-border bg-background px-3 py-2 text-sm text-foreground transition-colors hover:border-ring/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              className="w-full rounded-sm border border-border bg-background px-3 py-2 text-sm text-foreground transition-colors hover:border-ring/50 focus:border-ring"
               style={{
                 fontFamily: fontMounted
                   ? `var(${fonts.find((f) => f.id === fontId)?.variable})`
@@ -154,7 +155,7 @@ function SettingsDialog({
             <select
               value={background.mounted ? background.backgroundId : 'none'}
               onChange={(e) => background.setBackground(e.target.value)}
-              className="w-full rounded-sm border border-border bg-background px-3 py-2 text-sm text-foreground transition-colors hover:border-ring/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              className="w-full rounded-sm border border-border bg-background px-3 py-2 text-sm text-foreground transition-colors hover:border-ring/50 focus:border-ring"
             >
               {backgrounds.map((b) => (
                 <option key={b.id} value={b.id}>

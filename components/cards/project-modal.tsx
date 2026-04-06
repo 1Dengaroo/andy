@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, ReactNode } from 'react';
+import { Button } from '../ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '../ui/dialog';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -16,6 +17,7 @@ interface ProjectModalProps {
   closeClassName?: string;
   className?: string;
   previewClassName?: string;
+  triggerId?: string;
 }
 
 export function useHashModal(hash: string) {
@@ -55,7 +57,8 @@ export function ProjectModal({
   link,
   closeClassName,
   className,
-  previewClassName
+  previewClassName,
+  triggerId
 }: ProjectModalProps) {
   const linkRef = useRef<HTMLAnchorElement>(null);
 
@@ -67,6 +70,12 @@ export function ProjectModal({
         onOpenAutoFocus={(e) => {
           e.preventDefault();
           linkRef.current?.focus();
+        }}
+        onCloseAutoFocus={(e) => {
+          if (triggerId) {
+            e.preventDefault();
+            document.getElementById(triggerId)?.focus();
+          }
         }}
       >
         {preview && (
@@ -86,15 +95,11 @@ export function ProjectModal({
         <div className="space-y-3 text-sm text-foreground">
           {children}
           <div className="flex gap-3 pt-2">
-            <a
-              ref={linkRef}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 rounded-sm text-sm font-medium text-accent-primary hover:underline focus:outline-none focus:ring-1 focus:ring-accent-primary focus:ring-offset-2"
-            >
-              {link.label} <ArrowUpRight className="h-3.5 w-3.5" />
-            </a>
+            <Button variant="link" asChild className="h-auto p-0 text-accent-primary">
+              <a ref={linkRef} href={link.href} target="_blank" rel="noopener noreferrer">
+                {link.label} <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+            </Button>
           </div>
         </div>
       </DialogContent>

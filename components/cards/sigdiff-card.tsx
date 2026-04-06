@@ -12,7 +12,7 @@ function SigdiffCard() {
     <>
       <Card
         id="sigdiff"
-        className="group relative aspect-[5/2] cursor-pointer overflow-hidden !border-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="group relative aspect-[5/2] cursor-pointer overflow-hidden !border-0"
         tabIndex={0}
         onClick={() => setOpen(true)}
         onKeyDown={(e) => {
@@ -248,6 +248,7 @@ function SigdiffCard() {
       <ProjectModal
         open={open}
         onOpenChange={setOpen}
+        triggerId="sigdiff"
         closeClassName="text-white"
         className="max-h-[90vh] overflow-y-auto !border-[#30363d] !bg-[#0d1117] !text-[#e6edf3] sm:!max-w-2xl"
         previewClassName=""

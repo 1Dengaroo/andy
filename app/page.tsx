@@ -63,7 +63,10 @@ const Page = () => {
         </div>
 
         {/* Row 2: Two project cards side by side */}
-        <div className="mx-auto grid w-full max-w-[76rem] grid-cols-1 gap-2 sm:grid-cols-2">
+        <div
+          id="projects"
+          className="mx-auto grid w-full max-w-[76rem] grid-cols-1 gap-2 sm:grid-cols-2"
+        >
           <FadeIn>
             <SigdiffCard />
           </FadeIn>

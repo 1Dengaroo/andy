@@ -34,12 +34,11 @@ export const experiences = [
     location: 'Boston, MA',
     date: 'May 2025 – Present',
     achievements: [
-      'Shipped AI-assisted Blueprint generation features end-to-end, building React/TypeScript interfaces and Java APIs to process and persist artifacts across 1M+ Blueprints',
-      'Reduced initial load time from 6s to 1.5s and improved performance by up to 75% through frontend rendering optimizations and backend API/service refactoring',
-      'Engineered prompt templates and LLM output parsing with structured fallbacks across multiple providers via a dependency-injected model abstraction layer',
-      'Designed core Java services, APIs, and data models for AI-generated Blueprint artifacts, defining schemas and maintaining backward compatibility',
-      'Built a centralized React context layer for AI-generated diffs, enabling incremental change highlighting without full re-renders',
-      "Won Pega's annual hackathon across 225+ teams, building a voice-to-Blueprint GenAI app generator"
+      'Led full-stack performance overhaul of Blueprint, cutting initial load time from 6s to 1.5s through frontend rendering optimizations and backend API refactoring',
+      'Built LLM orchestration layer handling 1M+ blueprints, with structured outputs, schema validation, retries, and fallback to ensure reliable production behavior',
+      'Designed error handling framework for AI-native workflows ensuring LLM failures degraded gracefully rather than surfacing unpredictably in production',
+      "Owned architectural decisions on Blueprint's core data models and API contracts; aligned with engineers on cross-team changes touching backward compatibility",
+      'Evangelized Claude Code workflows internally to team members; built harness tooling with CLAUDE.md configuration, and linting as mechanical reinforcement'
     ]
   },
   {
@@ -48,9 +47,11 @@ export const experiences = [
     location: 'Boston, MA',
     date: 'Sep 2024 – May 2025',
     achievements: [
-      'Built a 0–1 property management platform (Next.js and Django) supporting listings with geospatial search, lease workflows, identity verification, document signing, maintenance tracking, and automated payments',
-      'Established test-driven development, writing 500+ Pytest unit and integration tests covering payments and leases',
-      'Reduced Google Maps API usage by 70% by implementing clustering, caching, and lazy loading for apartment listings and points of interest'
+      'Built Stripe payments backend (Django/Celery) handling rent collection, autopay scheduling, payment methods, and identity verification',
+      'Designed Django models and APIs for lease lifecycle, maintenance, and tenant/landlord role management',
+      'Created a comprehensive integration test suite covering payment flows, lease state transitions, and API contracts',
+      'Cut Google Maps API costs by 70% via server-side clustering, caching, and lazy loading',
+      'Built property management platform frontend (Next.js) for listings, geospatial search, and lease workflows'
     ]
   },
   {

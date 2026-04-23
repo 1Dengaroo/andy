@@ -12,20 +12,19 @@ function WelcomeCard() {
         <span className="section-label">Introduction</span>
         <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
           <p>
-            Software Engineer with 2+ years of experience building products from 0 to 1. Currently
-            working on AI-powered development tools at{' '}
-            <span className="font-medium text-foreground">Pega</span>, where I own features
-            end-to-end across the React frontend and Java backend. Recently won Pega&apos;s annual
-            hackathon across 225+ participants.
+            Full-Stack Product Engineer with 2 years of experience building scalable consumer
+            applications and AI-driven agentic workflows. Currently at{' '}
+            <span className="font-medium text-foreground">Pega</span>, owning features end-to-end
+            across the React frontend and Java backend. Recent winner of Pega&apos;s annual hackathon
+            across 225+ participants, building an LLM-powered developer tool.
           </p>
           <p>
-            I&apos;m a builder at heart. I thrive in fast-paced environments where I can take
-            ownership and ship work that matters. On the side, I build projects across developer
-            tooling and web applications -- including{' '}
-            <span className="font-medium text-foreground">sigdiff</span>, an open source npm package
+            Focused on the intersection of distributed systems, robust LLM infrastructure, and
+            product quality. Independent projects include{' '}
+            <span className="font-medium text-foreground">sigdiff</span>, an open-source npm package
             for semantic code diffing, and{' '}
             <span className="font-medium text-foreground">Leafpad</span>, a developer tools suite
-            with 1,200+ monthly users.
+            with 1,200+ monthly active users.
           </p>
           <p>
             <a

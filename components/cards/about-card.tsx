@@ -24,9 +24,9 @@ function AboutCard() {
       <CardContent className="pt-4">
         <span className="section-label">About</span>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          I&apos;m a software engineer from{' '}
-          <span className="font-medium text-foreground">New York, NY</span>. I move quickly, take
-          ownership seriously, and care deeply about product quality.
+          Full-Stack Product Engineer with 2 years of experience building scalable consumer
+          applications and AI-driven agentic workflows. Expertise in modern TypeScript, Next.js, and
+          distributed systems to accelerate user experiences and deploy robust LLM infrastructure.
         </p>
       </CardContent>
     </Card>

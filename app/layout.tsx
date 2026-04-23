@@ -36,21 +36,24 @@ const baseUrl = 'https://andydeng.me';
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Andy Deng — Software Engineer',
+    default: 'Andy Deng — Full-Stack Product Engineer',
     template: '%s | Andy Deng'
   },
   description:
-    'Andy Deng is a software engineer currently building Blueprint AI at Pega. Always building, always learning. Based in New York, NY.',
+    'Full-Stack Product Engineer with 2 years of experience building scalable consumer applications and AI-driven agentic workflows. Expertise in modern TypeScript, Next.js, and distributed systems.',
   keywords: [
     'Andy Deng',
     'software engineer',
-    'front-end developer',
+    'full-stack engineer',
+    'product engineer',
     'React',
     'Next.js',
     'TypeScript',
+    'distributed systems',
+    'LLM',
+    'AI',
     'New York',
-    'portfolio',
-    'web developer'
+    'portfolio'
   ],
   authors: [{ name: 'Andy Deng', url: baseUrl }],
   creator: 'Andy Deng',
@@ -58,9 +61,9 @@ export const metadata: Metadata = {
     canonical: baseUrl
   },
   openGraph: {
-    title: 'Andy Deng — Software Engineer',
+    title: 'Andy Deng — Full-Stack Product Engineer',
     description:
-      'Software engineer currently building Blueprint AI at Pega. Always building, always learning.',
+      'Full-Stack Product Engineer with 2 years of experience building scalable consumer applications and AI-driven agentic workflows. Expertise in TypeScript, Next.js, and distributed systems.',
     url: baseUrl,
     siteName: 'Andy Deng',
     locale: 'en_US',
@@ -76,9 +79,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Andy Deng — Software Engineer',
+    title: 'Andy Deng — Full-Stack Product Engineer',
     description:
-      'Software engineer currently building Blueprint AI at Pega. Always building, always learning.',
+      'Full-Stack Product Engineer with 2 years of experience building scalable consumer applications and AI-driven agentic workflows. Expertise in TypeScript, Next.js, and distributed systems.',
     images: ['/images/og.webp']
   },
   icons: {
@@ -113,7 +116,7 @@ export default function RootLayout({
               '@type': 'Person',
               name: 'Andy Deng',
               url: baseUrl,
-              jobTitle: 'Software Engineer',
+              jobTitle: 'Full-Stack Product Engineer',
               worksFor: {
                 '@type': 'Organization',
                 name: 'Pega'
@@ -135,6 +138,9 @@ export default function RootLayout({
                 'TypeScript',
                 'Python',
                 'JavaScript',
+                'Distributed Systems',
+                'LLM Infrastructure',
+                'Agentic AI',
                 'Software Engineering'
               ]
             })

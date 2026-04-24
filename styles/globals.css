@@ -66,7 +66,7 @@
 /* ── Section label styling ── */
 .section-label {
   font-family: var(--section-label-font, var(--font-space-mono, monospace));
-  font-size: var(--section-label-size, 0.65rem);
+  font-size: var(--section-label-size, 0.7rem);
   letter-spacing: var(--section-label-tracking, 0.12em);
   text-transform: var(--section-label-transform, uppercase);
   color: oklch(var(--accent-primary));

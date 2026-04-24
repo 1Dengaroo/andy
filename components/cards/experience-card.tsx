@@ -65,7 +65,7 @@ function ExperienceCard() {
                       </>
                     )}
                   </div>
-                  <span className="hidden font-mono text-[0.65rem] text-muted-foreground sm:block">
+                  <span className="hidden font-mono text-xs text-muted-foreground sm:block">
                     {exp.roles ? exp.dateRange : exp.date}
                   </span>
                 </div>
@@ -76,7 +76,7 @@ function ExperienceCard() {
                     {exp.roles.map((role, roleIndex) => (
                       <div key={roleIndex}>
                         <h4 className="text-sm font-semibold">{role.role}</h4>
-                        <p className="mb-2.5 font-mono text-[0.65rem] text-muted-foreground">
+                        <p className="mb-2.5 font-mono text-xs text-muted-foreground">
                           {role.date}
                         </p>
                         <AchievementList achievements={role.achievements} />
@@ -85,7 +85,7 @@ function ExperienceCard() {
                   </div>
                 ) : (
                   <>
-                    <p className="mb-2.5 font-mono text-[0.65rem] text-muted-foreground sm:hidden">
+                    <p className="mb-2.5 font-mono text-xs text-muted-foreground sm:hidden">
                       {exp.date}
                     </p>
                     <AchievementList achievements={exp.achievements ?? []} />

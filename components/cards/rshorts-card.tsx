@@ -13,7 +13,7 @@ function RShortsCard() {
     <>
       <Card
         id="rshorts"
-        className="group relative aspect-[7/2] cursor-pointer overflow-hidden !border-0"
+        className="group relative aspect-[5/2] cursor-pointer overflow-hidden !border-0"
         tabIndex={0}
         onClick={() => setOpen(true)}
         onKeyDown={(e) => {

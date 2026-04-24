@@ -22,11 +22,12 @@ function AboutCard() {
         />
       </div>
       <CardContent className="pt-4">
-        <span className="section-label">About</span>
+        <span className="section-label">Introduction</span>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          Full-Stack Product Engineer with 2 years of experience building scalable consumer
-          applications and AI-driven agentic workflows. Expertise in modern TypeScript, Next.js, and
-          distributed systems to accelerate user experiences and deploy robust LLM infrastructure.
+          Full-stack product engineer with 2 years of experience shipping consumer applications and
+          AI-driven agentic workflows. Currently at Pega, owning features end-to-end across the
+          React frontend and Java backend. Recent winner of Pega's annual hackathon across 225+
+          participants, building an LLM-powered developer tool.
         </p>
       </CardContent>
     </Card>

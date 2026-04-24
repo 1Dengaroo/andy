@@ -22,20 +22,20 @@
 
   --text-primary: 0.93 0.005 260;
   --text-secondary: 0.7 0.008 260;
-  --text-muted: 0.58 0.008 260;
+  --text-muted: 0.63 0.008 260;
   --text-inverse: 0.15 0.01 260;
 
   --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
-  --shadow-md: 0 2px 8px oklch(0 0 0 / 0.25);
+  --shadow-md: 0 4px 12px oklch(0 0 0 / 0.35);
   --shadow-lg: 0 8px 24px oklch(0 0 0 / 0.3);
 
   /* Card style tokens */
-  --card-radius: 2px;
+  --card-radius: 4px;
   --card-border-width: 1px;
-  --card-border-opacity: 0.4;
+  --card-border-opacity: 0.55;
   --card-shadow: none;
   --card-hover-shadow: var(--shadow-md);
-  --card-hover-y: -2px;
+  --card-hover-y: -3px;
   --card-accent-bar-height: 0px;
   --card-accent-bar-scale: 0;
 
@@ -51,7 +51,7 @@
   --secondary: 220 10% 18%;
   --secondary-foreground: 210 10% 80%;
   --muted: 220 8% 14%;
-  --muted-foreground: 215 8% 58%;
+  --muted-foreground: 215 8% 63%;
   --accent: 220 8% 14%;
   --accent-foreground: 210 10% 92%;
   --destructive: 0 72% 50%;

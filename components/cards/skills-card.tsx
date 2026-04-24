@@ -3,9 +3,9 @@ import { skillCategories } from '@/lib/data';
 
 function SkillsCard() {
   return (
-    <Card className="h-full">
+    <Card className="flex flex-1 flex-col">
       <CardContent className="pt-6">
-        <span className="section-label">Toolkit</span>
+        <span className="section-label">Technical Skills</span>
         <div className="mt-3 space-y-3">
           {skillCategories.map((category) => (
             <div key={category.title}>

@@ -9,18 +9,21 @@ function WelcomeCard() {
   return (
     <Card className="flex h-full flex-col justify-between">
       <CardContent className="pt-6">
-        <span className="section-label">Introduction</span>
+        <span className="section-label">About</span>
         <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
           <p>
-            Full-Stack Product Engineer with 2 years of experience building scalable consumer
-            applications and AI-driven agentic workflows. Currently at{' '}
-            <span className="font-medium text-foreground">Pega</span>, owning features end-to-end
-            across the React frontend and Java backend. Recent winner of Pega&apos;s annual hackathon
-            across 225+ participants, building an LLM-powered developer tool.
+            I build products from 0 to 1. At{' '}
+            <span className="font-medium text-foreground">Pega</span>, I own features end-to-end
+            across the frontend and backend, working at the intersection of distributed systems, LLM
+            infrastructure, and product quality. I care about asynchronous processing, idempotent
+            design, and high-concurrency architectures that hold up under real load.
           </p>
           <p>
-            Focused on the intersection of distributed systems, robust LLM infrastructure, and
-            product quality. Independent projects include{' '}
+            I thrive in fast-paced environments where I can take ownership and ship at quality. On
+            the side, I build across AI, developer tooling, and web applications. Recent projects
+            include{' '}
+            <span className="font-medium text-foreground">Remes</span>, an AI-powered outbound sales
+            platform,{' '}
             <span className="font-medium text-foreground">sigdiff</span>, an open-source npm package
             for semantic code diffing, and{' '}
             <span className="font-medium text-foreground">Leafpad</span>, a developer tools suite

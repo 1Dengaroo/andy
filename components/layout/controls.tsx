@@ -209,7 +209,7 @@ export default function Controls({
     <Card className="flex w-full items-center justify-between px-4 py-3">
       <div>
         <h1 className="heading-serif text-xl font-semibold tracking-tight">Andy Deng</h1>
-        <p className="section-label">Software Engineer</p>
+        <p className="section-label">Full-Stack Product Engineer</p>
       </div>
       <div className="flex items-center gap-1.5 sm:gap-2">
         <SettingsDialog contentVisible={contentVisible} onToggleContent={onToggleContent} />

@@ -9,7 +9,7 @@ function SkillsCard() {
         <div className="mt-3 space-y-4">
           {skillCategories.map((category) => (
             <div key={category.title}>
-              <p className="mb-2 text-[0.65rem] font-semibold uppercase tracking-widest text-muted-foreground/60">
+              <p className="mb-2 text-[0.65rem] font-semibold uppercase tracking-widest text-foreground/50">
                 {category.title}
               </p>
               <div className="flex flex-wrap gap-1.5">

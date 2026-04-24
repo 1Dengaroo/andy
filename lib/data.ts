@@ -34,11 +34,12 @@ export const experiences = [
     location: 'Boston, MA',
     date: 'May 2025 – Present',
     achievements: [
-      'Led full-stack performance overhaul of Blueprint, cutting initial load time from 6s to 1.5s through frontend rendering optimizations and backend API refactoring',
-      'Built LLM orchestration layer handling 1M+ blueprints, with structured outputs, schema validation, retries, and fallback to ensure reliable production behavior',
-      'Designed error handling framework for AI-native workflows ensuring LLM failures degraded gracefully rather than surfacing unpredictably in production',
-      "Owned architectural decisions on Blueprint's core data models and API contracts; aligned with engineers on cross-team changes touching backward compatibility",
-      'Evangelized Claude Code workflows internally to team members; built harness tooling with CLAUDE.md configuration, and linting as mechanical reinforcement'
+      'Own end-to-end development of Pega Blueprint, an agentic workflow SaaS platform, scaling the system to support 2M+ enterprise workflows',
+      'Created LLM abstraction layer, accelerating feature development by enabling multi-model support via a dependency injection layer',
+      'Accelerated initial load times by 75% (6s to 1.5s) via frontend optimization and backend API/service refactoring',
+      'Established WCAG 2.1 accessibility standards across Blueprint, ensuring full compliance for enterprise customers',
+      'Improved engineering efficiency by building harness framework, leading to 60%+ adoption of AI code generation across Blueprint frontend developers',
+      'Built concurrent async pipelines to parallelize LLM calls across Blueprint sections, cutting end-to-end generation time by over 50%'
     ]
   },
   {
@@ -47,11 +48,10 @@ export const experiences = [
     location: 'Boston, MA',
     date: 'Sep 2024 – May 2025',
     achievements: [
-      'Built Stripe payments backend (Django/Celery) handling rent collection, autopay scheduling, payment methods, and identity verification',
-      'Designed Django models and APIs for lease lifecycle, maintenance, and tenant/landlord role management',
-      'Created a comprehensive integration test suite covering payment flows, lease state transitions, and API contracts',
-      'Cut Google Maps API costs by 70% via server-side clustering, caching, and lazy loading',
-      'Built property management platform frontend (Next.js) for listings, geospatial search, and lease workflows'
+      'Cut Google Maps API costs by 70% by implementing server-side clustering, caching, and lazy loading',
+      'Developed Stripe payments backend (Django/Celery), managing $120k+ in monthly rent payments for rent collection, autopay, and identity verification',
+      'Architected Django models/APIs for lease lifecycle and role management, ensuring transactional integrity with an integration test suite for payment flows',
+      'Delivered property management frontend (Next.js), supporting listing display, search, and lease dashboard'
     ]
   },
   {
@@ -60,9 +60,8 @@ export const experiences = [
     location: 'Remote',
     date: 'Aug 2023 – Feb 2024',
     achievements: [
-      'Reduced Stream Chat API costs by $500/month by building a Redis-based real-time notification system handling 10k+ daily messages',
-      'Implemented idempotent Stripe payment flows with transactional safeguards, processing 1k+ orders',
-      'Maintained Playwright and RSpec test suites, preventing regressions across core application workflows'
+      'Reduced Stream Chat API costs by $500/month by implementing a Redis-based real-time notification system handling 10k+ daily messages',
+      'Improved reliability by implementing idempotent Stripe payment flows, processing 1k+ orders'
     ]
   },
   {

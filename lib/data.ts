@@ -37,6 +37,7 @@ export const experiences = [
       'Own end-to-end development of Pega Blueprint, an agentic workflow SaaS platform, scaling the system to support 2M+ enterprise workflows',
       'Created LLM abstraction layer, accelerating feature development by enabling multi-model support via a dependency injection layer',
       'Accelerated initial load times by 75% (6s to 1.5s) via frontend optimization and backend API/service refactoring',
+      'Helpted to cut backend load/rates by 30%+ by replacing client-side polling with WebSocket event streams',
       'Established WCAG 2.1 accessibility standards across Blueprint, ensuring full compliance for enterprise customers',
       'Improved engineering efficiency by building harness framework, leading to 60%+ adoption of AI code generation across Blueprint frontend developers',
       'Built concurrent async pipelines to parallelize LLM calls across Blueprint sections, cutting end-to-end generation time by over 50%'

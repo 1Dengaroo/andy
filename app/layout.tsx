@@ -135,7 +135,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${fontVariables} antialiased`} style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+      <body
+        className={`${fontVariables} antialiased`}
+        style={{ fontFamily: 'var(--font-space-grotesk)' }}
+      >
         <SkipLinks />
         <ThemeProvider
           attribute="data-theme"

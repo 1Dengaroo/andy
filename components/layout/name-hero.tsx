@@ -7,9 +7,7 @@ function NameHero() {
         </div>
       </div>
       <div className="animate-fade-slide-left opacity-0">
-        <div className="text-5xl font-extralight">
-          I&apos;m a full-stack product engineer
-        </div>
+        <div className="text-5xl font-extralight">I&apos;m a full-stack product engineer</div>
       </div>
     </div>
   );

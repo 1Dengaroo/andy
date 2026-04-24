@@ -11,17 +11,17 @@
 
   --surface-primary: 0.99 0.005 260;
   --surface-secondary: 0.96 0.008 260;
-  --surface-elevated: 1.0 0.0 0;
+  --surface-elevated: 1 0 0;
   --surface-overlay: 0.12 0.005 260;
 
   --border-default: 0.84 0.005 0;
-  --border-subtle: 0.90 0.003 0;
+  --border-subtle: 0.9 0.003 0;
   --border-strong: 0.72 0.008 0;
 
   --text-primary: 0.12 0.005 0;
   --text-secondary: 0.36 0.005 0;
   --text-muted: 0.42 0.005 0;
-  --text-inverse: 0.99 0.0 0;
+  --text-inverse: 0.99 0 0;
 
   --shadow-sm: 0 1px 3px rgba(60, 30, 20, 0.08), 0 0 0 1px rgba(60, 30, 20, 0.05);
   --shadow-md: 0 4px 16px rgba(60, 30, 20, 0.1), 0 0 0 1px rgba(60, 30, 20, 0.05);

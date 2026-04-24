@@ -11,11 +11,25 @@ export const skillCategories = [
   },
   {
     title: 'Backend & AI',
-    skills: ['Node.js', 'Django', 'FastAPI', 'LLM Orchestration', 'Agentic Workflows', 'REST/GraphQL']
+    skills: [
+      'Node.js',
+      'Django',
+      'FastAPI',
+      'LLM Orchestration',
+      'Agentic Workflows',
+      'REST/GraphQL'
+    ]
   },
   {
     title: 'Cloud & DevOps',
-    skills: ['AWS (EC2, S3, RDS)', 'Docker', 'CI/CD (GitHub Actions)', 'PostgreSQL', 'Redis', 'Playwright']
+    skills: [
+      'AWS (EC2, S3, RDS)',
+      'Docker',
+      'CI/CD (GitHub Actions)',
+      'PostgreSQL',
+      'Redis',
+      'Playwright'
+    ]
   }
 ];
 

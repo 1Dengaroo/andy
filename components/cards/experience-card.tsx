@@ -6,7 +6,7 @@ import { Card, CardContent } from '../ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
 import { experiences } from '@/lib/data';
 
-const VISIBLE_COUNT = 2;
+const VISIBLE_COUNT = 4;
 
 function AchievementList({ achievements }: { achievements: string[] }) {
   const [expanded, setExpanded] = useState(false);
@@ -44,7 +44,7 @@ function ExperienceCard() {
     <Card id="experience" className="h-full pb-6">
       <CardContent className="pt-6">
         <span className="section-label">Experience</span>
-        <Accordion type="single" collapsible defaultValue="0" className="mt-3">
+        <Accordion type="multiple" defaultValue={['0']} className="mt-3">
           {experiences.map((exp, index) => (
             <AccordionItem
               key={index}

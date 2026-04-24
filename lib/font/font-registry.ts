@@ -1,38 +1,39 @@
 export interface FontDefinition {
   id: string;
   name: string;
+  variable: string;
   description: string;
-  variable: string; // CSS variable name e.g. --font-plus-jakarta
 }
 
 export const fonts: FontDefinition[] = [
   {
-    id: 'sora',
-    name: 'Sora',
-    description: 'Sharp & geometric',
-    variable: '--font-sora'
+    id: 'default',
+    name: 'Default',
+    variable: '--font-space-grotesk',
+    description: 'Technical and sharp'
   },
   {
-    id: 'plus-jakarta',
-    name: 'Plus Jakarta Sans',
-    description: 'Refined & contemporary',
-    variable: '--font-plus-jakarta'
+    id: 'serif',
+    name: 'Serif',
+    variable: '--font-source-serif',
+    description: 'Classic and readable'
   },
   {
-    id: 'lora',
-    name: 'Lora',
-    description: 'Warm serif',
-    variable: '--font-lora'
+    id: 'system',
+    name: 'System',
+    variable: '',
+    description: "Your device's native font"
   },
   {
-    id: 'space-mono',
-    name: 'Space Mono',
-    description: 'Monospace terminal',
-    variable: '--font-space-mono'
+    id: 'dyslexic',
+    name: 'Dyslexic Friendly',
+    variable: '--font-lexend',
+    description: 'Optimized for readability'
   }
 ];
 
-export const defaultFontId = 'sora';
+export const fontIds = fonts.map((f) => f.id);
+export const defaultFontId = 'default';
 
 export function getFont(id: string): FontDefinition | undefined {
   return fonts.find((f) => f.id === id);

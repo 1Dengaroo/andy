@@ -26,7 +26,7 @@ function AboutCard() {
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
           Full-stack product engineer with 2 years of experience shipping consumer applications and
           AI-driven agentic workflows. Currently at Pega, owning features end-to-end across the
-          React frontend and Java backend. Recent winner of Pega's annual hackathon across 225+
+          React frontend and Java backend. Recent winner of Pega&apos;s annual hackathon across 225+
           participants, building an LLM-powered developer tool.
         </p>
       </CardContent>

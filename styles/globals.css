@@ -65,7 +65,7 @@
 
 /* ── Section label styling ── */
 .section-label {
-  font-family: var(--section-label-font, var(--font-space-mono, monospace));
+  font-family: var(--section-label-font, var(--font-space-grotesk, sans-serif));
   font-size: var(--section-label-size, 0.7rem);
   letter-spacing: var(--section-label-tracking, 0.12em);
   text-transform: var(--section-label-transform, uppercase);
@@ -74,25 +74,26 @@
 
 /* ── Serif heading ── */
 .heading-serif {
-  font-family: var(--heading-font, var(--font-lora, serif));
+  font-family: var(--heading-font, var(--font-source-serif, serif));
 }
 
 /* ── Tag pill ── */
 .tag-pill {
   display: inline-flex;
   align-items: center;
-  padding: var(--tag-padding-y, 0.2rem) var(--tag-padding-x, 0.55rem);
-  font-size: var(--tag-font-size, 0.7rem);
-  font-family: var(--tag-font, var(--font-space-mono, monospace));
+  padding: var(--tag-padding-y, 0.25rem) var(--tag-padding-x, 0.6rem);
+  font-size: var(--tag-font-size, 0.75rem);
+  font-family: var(--tag-font, inherit);
+  background-color: hsl(var(--muted));
   border: 1px solid hsl(var(--border));
-  border-radius: var(--tag-radius, 2px);
-  color: hsl(var(--muted-foreground));
+  border-radius: var(--tag-radius, 4px);
+  color: hsl(var(--foreground));
   transition: all 0.2s ease;
   line-height: 1.4;
+  font-weight: 450;
 }
 
 .tag-pill:hover {
-  border-color: oklch(var(--accent-primary));
-  color: oklch(var(--accent-primary));
+  background-color: hsl(var(--border));
   transform: translateY(-1px);
 }

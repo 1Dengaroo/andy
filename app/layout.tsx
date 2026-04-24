@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Plus_Jakarta_Sans, Bricolage_Grotesque, Lora, Space_Mono, Sora } from 'next/font/google';
+import { Space_Grotesk, Source_Serif_4, Lexend } from 'next/font/google';
 import '@/styles/globals.css';
 
 import BackgroundCanvas from '@/components/backgrounds/background-canvas';
@@ -13,23 +13,11 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import LoaderWrapper from '@/components/layout/initial-loader';
 import SkipLinks from '@/components/layout/skip-links';
 
-const sora = Sora({ subsets: ['latin'], variable: '--font-sora' });
-const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-plus-jakarta' });
-const bricolage = Bricolage_Grotesque({ subsets: ['latin'], variable: '--font-bricolage' });
-const lora = Lora({ subsets: ['latin'], variable: '--font-lora' });
-const spaceMono = Space_Mono({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-space-mono'
-});
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' });
+const sourceSerif = Source_Serif_4({ subsets: ['latin'], variable: '--font-source-serif' });
+const lexend = Lexend({ subsets: ['latin'], variable: '--font-lexend' });
 
-const fontVariables = [
-  sora.variable,
-  plusJakarta.variable,
-  bricolage.variable,
-  lora.variable,
-  spaceMono.variable
-].join(' ');
+const fontVariables = [spaceGrotesk.variable, sourceSerif.variable, lexend.variable].join(' ');
 
 const baseUrl = 'https://andydeng.me';
 
@@ -147,7 +135,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${fontVariables} antialiased`} style={{ fontFamily: 'var(--font-sora)' }}>
+      <body className={`${fontVariables} antialiased`} style={{ fontFamily: 'var(--font-space-grotesk)' }}>
         <SkipLinks />
         <ThemeProvider
           attribute="data-theme"

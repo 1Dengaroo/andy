@@ -30,7 +30,7 @@ export function FontProvider({ children }: { children: ReactNode }) {
 
     const font = getFont(fontId);
     if (font) {
-      document.body.style.fontFamily = `var(${font.variable})`;
+      document.body.style.fontFamily = font.variable ? `var(${font.variable})` : '';
     }
   }, [fontId, mounted]);
 

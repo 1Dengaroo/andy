@@ -311,7 +311,7 @@ function LeafpadCard() {
                 <Image src="/logos/leafpad-logo.svg" alt="Leafpad" width={18} height={18} />
                 <span
                   className="text-lg font-bold tracking-tight text-white sm:text-xl"
-                  style={{ fontFamily: 'var(--font-sora)', letterSpacing: '-0.025em' }}
+                  style={{ fontFamily: 'var(--font-space-grotesk)', letterSpacing: '-0.025em' }}
                 >
                   Leafpad
                 </span>

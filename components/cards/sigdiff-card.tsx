@@ -235,7 +235,7 @@ function SigdiffCard() {
               </span>
               <span
                 className="text-xl font-bold tracking-tight text-white sm:text-2xl"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
+                style={{ fontFamily: 'monospace' }}
               >
                 sigdiff
               </span>

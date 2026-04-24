@@ -33,7 +33,7 @@ function OoeyCard() {
               <span className="mb-1 block font-mono text-[0.6rem] uppercase tracking-widest text-white/50">
                 Freelance
               </span>
-              <p className="heading-serif text-xl font-light text-white sm:text-2xl">Ooey</p>
+              <p className="heading-serif text-xl font-semibold text-white sm:text-2xl">Ooey</p>
             </div>
             <ArrowUpRight className="h-4 w-4 text-white/40 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white/80" />
           </div>

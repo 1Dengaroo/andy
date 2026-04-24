@@ -76,7 +76,7 @@ function RShortsCard() {
                 />
                 <span
                   className="text-xl font-bold tracking-tight text-white sm:text-2xl"
-                  style={{ fontFamily: 'var(--font-bricolage)' }}
+                  style={{ fontFamily: 'var(--font-space-grotesk)' }}
                 >
                   r/Shorts
                 </span>

@@ -115,7 +115,7 @@ function RemesCard() {
                 />
                 <span
                   className="text-xl font-bold tracking-tight sm:text-2xl"
-                  style={{ color: '#ffffff', fontFamily: 'var(--font-bricolage)' }}
+                  style={{ color: '#ffffff', fontFamily: 'var(--font-space-grotesk)' }}
                 >
                   Remes
                 </span>

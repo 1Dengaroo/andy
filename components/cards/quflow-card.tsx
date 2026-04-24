@@ -258,7 +258,7 @@ function QuFlowCard() {
               </span>
               <h3
                 className="text-xl font-extrabold tracking-tight text-white sm:text-2xl"
-                style={{ fontFamily: 'var(--font-bricolage)' }}
+                style={{ fontFamily: 'var(--font-space-grotesk)' }}
               >
                 Qu<span className="text-blue-400">Flow</span>
               </h3>

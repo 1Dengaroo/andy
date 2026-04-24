@@ -28,7 +28,7 @@ function WelcomeCard() {
             with 1,200+ monthly active users.
           </p>
           <p>
-            I'm drawn to scale. I want to work on products that reach{' '}
+            I&apos;m drawn to scale. I want to work on products that reach{' '}
             <span className="font-medium text-foreground">millions</span> of people, where the
             technical problems stay hard enough to keep growing into and the work actually matters.
           </p>

@@ -21,15 +21,14 @@ function WelcomeCard() {
           <p>
             I thrive in fast-paced environments where I can take ownership and ship at quality. On
             the side, I build across AI, developer tooling, and web applications. Recent projects
-            include{' '}
-            <span className="font-medium text-foreground">Remes</span>, an AI-powered outbound sales
-            platform,{' '}
-            <span className="font-medium text-foreground">sigdiff</span>, an open-source npm package
-            for semantic code diffing, and{' '}
+            include <span className="font-medium text-foreground">Remes</span>, an AI-powered
+            outbound sales platform, <span className="font-medium text-foreground">sigdiff</span>,
+            an open-source npm package for semantic code diffing, and{' '}
             <span className="font-medium text-foreground">Leafpad</span>, a developer tools suite
             with 1,200+ monthly active users.
           </p>
           <p>
+            Reach out:{' '}
             <a
               href="mailto:andydeng0224@gmail.com"
               className="text-accent-primary transition-colors hover:text-accent-primary/80"

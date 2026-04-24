@@ -65,7 +65,6 @@
 
 /* ── Section label styling ── */
 .section-label {
-  font-family: var(--section-label-font, var(--font-space-grotesk, sans-serif));
   font-size: var(--section-label-size, 0.7rem);
   letter-spacing: var(--section-label-tracking, 0.12em);
   text-transform: var(--section-label-transform, uppercase);

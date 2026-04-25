@@ -12,6 +12,7 @@ interface FadeInProps {
 export default function FadeIn({ children, className = '', delay = 0, id }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -23,7 +24,7 @@ export default function FadeIn({ children, className = '', delay = 0, id }: Fade
           observer.unobserve(el);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.05 }
     );
 
     observer.observe(el);
@@ -37,8 +38,8 @@ export default function FadeIn({ children, className = '', delay = 0, id }: Fade
       className={className}
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
-        transition: `opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`
+        transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+        transition: `opacity 0.45s ease-out ${delay}ms, transform 0.45s ease-out ${delay}ms`
       }}
     >
       {children}

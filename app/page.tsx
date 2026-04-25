@@ -17,7 +17,7 @@ import Controls from '@/components/layout/controls';
 import FadeIn from '@/components/layout/fade-in';
 import FooterCard from '@/components/cards/footer-card';
 
-const D = 80;
+const D = 60;
 
 const Page = () => {
   const [contentVisible, setContentVisible] = useState(true);
@@ -32,46 +32,39 @@ const Page = () => {
 
   return (
     <div className="mb-8 mt-4 flex w-full flex-col items-center gap-3 px-2">
-      <div className="mx-auto w-full max-w-7xl animate-fade-slide-up opacity-0">
+      <FadeIn className="mx-auto w-full max-w-7xl">
         <Controls contentVisible={contentVisible} onToggleContent={toggle} />
-      </div>
+      </FadeIn>
 
       <div
         style={{
           opacity: contentVisible ? 1 : 0,
-          transform: contentVisible ? 'translateY(0)' : 'translateY(24px)',
-          transition:
-            'opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+          transform: contentVisible ? 'translateY(0)' : 'translateY(12px)',
+          transition: 'opacity 0.35s ease-out, transform 0.35s ease-out',
           pointerEvents: contentVisible ? 'auto' : 'none'
         }}
         className="flex w-full flex-col items-center gap-3"
       >
         {/* Row 1: About (photo) | Welcome */}
         <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 lg:grid-cols-3">
-          <div
-            className="order-2 animate-fade-slide-up opacity-0 lg:order-none lg:col-span-1"
-            style={{ animationDelay: `${D}ms` }}
-          >
+          <FadeIn className="order-2 lg:order-none lg:col-span-1" delay={D}>
             <AboutCard />
-          </div>
-          <div
-            className="order-1 h-full animate-fade-slide-up opacity-0 lg:order-none lg:col-span-2"
-            style={{ animationDelay: `${D * 0}ms` }}
-          >
+          </FadeIn>
+          <FadeIn className="order-1 h-full lg:order-none lg:col-span-2">
             <WelcomeCard />
-          </div>
+          </FadeIn>
         </div>
 
         {/* Row 2: Experience (wide) | Skills + Education (stacked) */}
         <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 lg:grid-cols-6">
-          <FadeIn className="lg:col-span-4">
+          <FadeIn className="lg:col-span-4" delay={D}>
             <ExperienceCard />
           </FadeIn>
           <div className="flex flex-col gap-3 lg:col-span-2">
-            <FadeIn delay={D} className="flex flex-1 flex-col">
+            <FadeIn delay={D * 2} className="flex flex-1 flex-col">
               <SkillsCard />
             </FadeIn>
-            <FadeIn delay={D * 2}>
+            <FadeIn delay={D * 3}>
               <EducationCard />
             </FadeIn>
           </div>

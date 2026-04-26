@@ -63,6 +63,10 @@
   box-shadow: var(--card-hover-shadow);
 }
 
+.card-editorial:focus-visible {
+  outline-offset: 4px;
+}
+
 /* ── Section label styling ── */
 .section-label {
   font-size: var(--section-label-size, 0.7rem);

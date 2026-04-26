@@ -10,9 +10,9 @@ export const themes: ThemeDefinition[] = [
   {
     id: 'light',
     name: 'Light',
-    description: 'Paper & ink',
+    description: 'Cream & indigo',
     isDark: false,
-    previewColors: ['oklch(0.88 0.008 80)', 'oklch(0.42 0.14 360)', 'oklch(0.15 0.01 50)']
+    previewColors: ['oklch(0.97 0.014 85)', 'oklch(0.42 0.11 262)', 'oklch(0.15 0.012 58)']
   },
   {
     id: 'dark',

@@ -14,10 +14,10 @@ function WelcomeCard() {
           <p>
             I&apos;m a full-stack product engineer, currently at{' '}
             <span className="font-medium text-foreground">Pega</span>, where I&apos;m responsible
-            for end-to-end development of Blueprint features and enhancements across the frontend and
-            backend. I have expertise in modern TypeScript, Next.js, and event-driven backend systems
-            to develop elegant user experiences, scalable backend architecture, and robust LLM
-            infrastructure.
+            for end-to-end development of Blueprint features and enhancements across the frontend
+            and backend. I have expertise in modern TypeScript, Next.js, and event-driven backend
+            systems to develop elegant user experiences, scalable backend architecture, and robust
+            LLM infrastructure.
           </p>
           <p>
             I&apos;m independent, work fast, and ship at quality. The work I find most rewarding

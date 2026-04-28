@@ -9,7 +9,7 @@ function AboutCard() {
 
   return (
     <Card className="h-full overflow-hidden">
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted">
+      <div className="relative h-full w-full overflow-hidden bg-muted">
         {!loaded && <div className="absolute inset-0 animate-pulse bg-muted" />}
         <Image
           src="/images/pfp.webp"

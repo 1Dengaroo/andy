@@ -12,25 +12,28 @@ function WelcomeCard() {
         <span className="section-label">About</span>
         <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
           <p>
-            I build products from 0 to 1. At{' '}
-            <span className="font-medium text-foreground">Pega</span>, I own features end-to-end
-            across the frontend and backend, working at the intersection of distributed systems, LLM
-            infrastructure, and product quality. I care about asynchronous processing, idempotent
-            design, and high-concurrency architectures that hold up under real load.
+            I&apos;m a full-stack product engineer, currently at{' '}
+            <span className="font-medium text-foreground">Pega</span>, where I&apos;m responsible
+            for end-to-end development of Blueprint features and enhancements across the frontend and
+            backend. I have expertise in modern TypeScript, Next.js, and event-driven backend systems
+            to develop elegant user experiences, scalable backend architecture, and robust LLM
+            infrastructure.
           </p>
           <p>
-            I thrive in fast-paced environments where I can take ownership and ship at quality. On
-            the side, I build across AI, developer tooling, and web applications. Recent projects
-            include <span className="font-medium text-foreground">Remes</span>, an AI-powered
-            outbound sales platform, <span className="font-medium text-foreground">sigdiff</span>,
-            an open-source npm package for semantic code diffing, and{' '}
+            I&apos;m independent, work fast, and ship at quality. The work I find most rewarding
+            sits where product meets infrastructure, where decisions compound and the technical bar
+            is high enough to keep learning. Outside of work, I build across AI, developer tooling,
+            and web. Recent projects include{' '}
+            <span className="font-medium text-foreground">Remes</span>, an AI-powered outbound sales
+            platform, <span className="font-medium text-foreground">sigdiff</span>, an open-source
+            npm package for semantic code diffing, and{' '}
             <span className="font-medium text-foreground">Leafpad</span>, a developer tools suite
             with 1,200+ monthly active users.
           </p>
           <p>
-            I&apos;m drawn to scale. I want to work on products that reach{' '}
-            <span className="font-medium text-foreground">millions</span> of people, where the
-            technical problems stay hard enough to keep growing into and the work actually matters.
+            I&apos;m drawn to scale and to teams that take engineering seriously. I want to work on
+            products used by millions, where the problems stay hard enough to grow into and the
+            quality of the work shows.
           </p>
           <p>
             Reach out:{' '}

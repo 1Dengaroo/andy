@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Card, CardContent } from '../ui/card';
+import { Card } from '../ui/card';
 
 function AboutCard() {
   const [loaded, setLoaded] = useState(false);
@@ -21,15 +21,6 @@ function AboutCard() {
           onLoad={() => setLoaded(true)}
         />
       </div>
-      <CardContent className="pt-4">
-        <span className="section-label">Introduction</span>
-        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          Full-stack product engineer with 2 years of experience shipping consumer applications and
-          AI-driven agentic workflows. Currently at Pega, owning features end-to-end across the
-          React frontend and Java backend. Recent winner of Pega&apos;s annual hackathon across 225+
-          participants, building an LLM-powered developer tool.
-        </p>
-      </CardContent>
     </Card>
   );
 }

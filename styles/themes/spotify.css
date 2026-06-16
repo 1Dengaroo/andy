@@ -1,0 +1,123 @@
+/* Spotify — Matte black, signature green, music-first energy */
+
+[data-theme='spotify'] body {
+  background-color: #121212;
+  background-image: none;
+}
+
+[data-theme='spotify'] {
+  /* Semantic tokens (oklch L C H) */
+  --accent-primary: 0.7 0.2 145;
+  --accent-secondary: 0.6 0.18 145;
+
+  --surface-primary: 0.16 0.003 0;
+  --surface-secondary: 0.2 0.003 0;
+  --surface-elevated: 0.24 0.003 0;
+  --surface-overlay: 0.08 0.002 0;
+
+  --border-default: 0.22 0.003 0;
+  --border-subtle: 0.18 0.002 0;
+  --border-strong: 0.7 0.2 145;
+
+  --text-primary: 0.98 0 0;
+  --text-secondary: 0.73 0.003 0;
+  --text-muted: 0.56 0.002 0;
+  --text-inverse: 0.08 0.002 0;
+
+  --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.5);
+  --shadow-md: 0 4px 16px oklch(0 0 0 / 0.55);
+  --shadow-lg: 0 12px 40px oklch(0 0 0 / 0.65);
+
+  /* Card style tokens — rounded panels, Spotify card aesthetic */
+  --card-radius: 8px;
+  --card-border-width: 0px;
+  --card-border-opacity: 0;
+  --card-shadow: none;
+  --card-hover-shadow: var(--shadow-md);
+  --card-hover-y: -2px;
+  --card-accent-bar-height: 0px;
+  --card-accent-bar-scale: 0;
+
+  /* Typography — clean, modern sans, Circular-inspired */
+  --heading-font: inherit;
+  --section-label-font: inherit;
+  --section-label-size: 0.68rem;
+  --section-label-tracking: 0.08em;
+  --section-label-transform: uppercase;
+  --tag-font: inherit;
+  --tag-radius: 9999px;
+  --tag-padding-y: 0.22rem;
+  --tag-padding-x: 0.65rem;
+  --tag-font-size: 0.7rem;
+
+  /* shadcn bridge tokens (HSL) */
+  --background: 0 0% 7%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 10%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 8%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 141 73% 42%;
+  --primary-foreground: 0 0% 5%;
+  --secondary: 0 0% 16%;
+  --secondary-foreground: 0 0% 80%;
+  --muted: 0 0% 13%;
+  --muted-foreground: 0 0% 56%;
+  --accent: 0 0% 16%;
+  --accent-foreground: 141 73% 42%;
+  --destructive: 0 75% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 16%;
+  --input: 0 0% 16%;
+  --ring: 141 73% 42%;
+  --radius: 0.5rem;
+  --chart-1: 141 73% 42%;
+  --chart-2: 197 60% 55%;
+  --chart-3: 280 60% 58%;
+  --chart-4: 38 75% 58%;
+  --chart-5: 0 65% 55%;
+  --sidebar-background: 0 0% 6%;
+  --sidebar-foreground: 0 0% 56%;
+  --sidebar-primary: 141 73% 38%;
+  --sidebar-primary-foreground: 0 0% 5%;
+  --sidebar-accent: 0 0% 11%;
+  --sidebar-accent-foreground: 0 0% 90%;
+  --sidebar-border: 0 0% 12%;
+  --sidebar-ring: 141 73% 38%;
+}
+
+/* Cards — Spotify dark panel, lifts on hover */
+[data-theme='spotify'] .card-editorial {
+  background: hsl(0 0% 10%);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+[data-theme='spotify'] .card-editorial:hover {
+  background: hsl(0 0% 13%);
+}
+
+/* Tags — pill-shaped, green accent */
+[data-theme='spotify'] .tag-pill {
+  background: hsl(141 73% 42% / 0.12);
+  border-color: hsl(141 73% 42% / 0.3);
+  color: hsl(141 73% 55%);
+  font-weight: 500;
+  font-size: 0.7rem;
+}
+
+[data-theme='spotify'] .tag-pill:hover {
+  background: hsl(141 73% 42% / 0.22);
+  border-color: hsl(141 73% 42% / 0.6);
+  color: hsl(141 73% 65%);
+}
+
+/* Section labels — Spotify channel-header style */
+[data-theme='spotify'] .section-label {
+  color: hsl(0 0% 56%);
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}

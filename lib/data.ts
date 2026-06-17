@@ -3,32 +3,34 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 export const skillCategories = [
   {
     title: 'Languages',
-    skills: ['TypeScript', 'JavaScript (ES6+)', 'Python', 'Ruby', 'Java', 'SQL']
+    skills: ['TypeScript', 'Python', 'Ruby', 'Java', 'SQL']
   },
   {
     title: 'Frontend',
-    skills: ['React.js', 'Next.js', 'Zustand', 'Tailwind CSS', 'WebSockets', 'SSR']
+    skills: ['React.js', 'Next.js', 'Zustand', 'Tailwind CSS', 'SSR']
   },
   {
     title: 'Backend & AI',
     skills: [
       'Node.js',
       'Django',
-      'FastAPI',
+      'Spring',
       'LLM Orchestration',
       'Agentic Workflows',
+      'Async Pipelines',
+      'WebSockets',
       'REST/GraphQL'
     ]
   },
   {
-    title: 'Cloud & DevOps',
+    title: 'Cloud & Data',
     skills: [
-      'AWS (EC2, S3, RDS)',
+      'AWS (EC2, S3, RDS, Lambda)',
       'Docker',
       'CI/CD (GitHub Actions)',
       'PostgreSQL',
       'Redis',
-      'Playwright'
+      'Celery'
     ]
   }
 ];

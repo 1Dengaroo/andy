@@ -11,7 +11,7 @@
 [data-theme='minecraft'] {
   /* Semantic tokens (oklch L C H) */
   --accent-primary: 0.58 0.15 145;
-  --accent-secondary: 0.52 0.08 75;
+  --accent-secondary: 0.52 0.12 145;
 
   --surface-primary: 0.22 0.01 60;
   --surface-secondary: 0.26 0.015 60;

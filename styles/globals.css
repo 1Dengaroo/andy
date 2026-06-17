@@ -4,9 +4,9 @@
 
 @import '@/styles/loader.css';
 @import '@/styles/themes/light.css';
+@import '@/styles/themes/nocturne.css';
 @import '@/styles/themes/dark.css';
 @import '@/styles/themes/minecraft.css';
-@import '@/styles/themes/dotcom.css';
 @import '@/styles/themes/spotify.css';
 @import '@/styles/themes/claude.css';
 
@@ -59,7 +59,6 @@
 }
 
 .card-editorial:hover {
-  transform: translateY(var(--card-hover-y));
   box-shadow: var(--card-hover-shadow);
 }
 

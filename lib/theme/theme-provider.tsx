@@ -5,16 +5,17 @@ import { ThemeProvider as NextThemesProvider, useTheme } from 'next-themes';
 import { themes } from './theme-registry';
 
 function DarkClassManager() {
-  const { theme } = useTheme();
+  const { theme, resolvedTheme } = useTheme();
 
   React.useEffect(() => {
-    const def = themes.find((t) => t.id === theme);
+    const effective = theme === 'system' ? resolvedTheme : theme;
+    const def = themes.find((t) => t.id === effective);
     if (def?.isDark) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
-  }, [theme]);
+  }, [theme, resolvedTheme]);
 
   return null;
 }

@@ -46,7 +46,7 @@ function SettingsDialog({
   contentVisible: boolean;
   onToggleContent: () => void;
 }) {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const { fontId, setFont, fonts, mounted: fontMounted } = useFont();
   const background = useBackground();
   const [mounted, setMounted] = useState(false);
@@ -54,7 +54,8 @@ function SettingsDialog({
     setMounted(true);
   }, []);
 
-  const activeTheme = mounted ? (getTheme(theme ?? '') ?? themes[0]) : themes[0];
+  const effectiveId = theme === 'system' ? resolvedTheme : theme;
+  const activeTheme = mounted ? (getTheme(effectiveId ?? '') ?? themes[0]) : themes[0];
 
   return (
     <Dialog>
@@ -102,31 +103,33 @@ function SettingsDialog({
           <section>
             <h3 className="mb-3 text-sm font-medium">Theme</h3>
             <div className="grid grid-cols-3 gap-2">
-              {themes.map((t) => {
-                const isActive = mounted && theme === t.id;
-                return (
-                  <button
-                    key={t.id}
-                    onClick={() => setTheme(t.id)}
-                    className={cn(
-                      'flex flex-col items-center gap-1.5 rounded-sm border p-3 text-xs transition-colors',
-                      'hover:bg-accent/50',
-                      isActive ? 'border-primary ring-1 ring-primary' : 'border-border'
-                    )}
-                  >
-                    <div className="flex gap-1">
-                      {t.previewColors.map((color, i) => (
-                        <span
-                          key={i}
-                          className="inline-block size-3.5 rounded-[1px] border border-border/50"
-                          style={{ backgroundColor: color }}
-                        />
-                      ))}
-                    </div>
-                    <span>{t.name}</span>
-                  </button>
-                );
-              })}
+              {themes
+                .filter((t) => t.id !== 'system')
+                .map((t) => {
+                  const isActive = mounted && theme === t.id;
+                  return (
+                    <button
+                      key={t.id}
+                      onClick={() => setTheme(t.id)}
+                      className={cn(
+                        'flex flex-col items-center gap-1.5 rounded-sm border p-3 text-xs transition-colors',
+                        'hover:bg-accent/50',
+                        isActive ? 'border-primary ring-1 ring-primary' : 'border-border'
+                      )}
+                    >
+                      <div className="flex gap-1">
+                        {t.previewColors.map((color, i) => (
+                          <span
+                            key={i}
+                            className="inline-block size-3.5 rounded-[1px] border border-border/50"
+                            style={{ backgroundColor: color }}
+                          />
+                        ))}
+                      </div>
+                      <span>{t.name}</span>
+                    </button>
+                  );
+                })}
             </div>
           </section>
 

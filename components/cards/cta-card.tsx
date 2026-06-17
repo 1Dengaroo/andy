@@ -65,11 +65,9 @@ function CTACard() {
       <Card className="flex h-full w-full flex-col justify-between gap-4 !border-accent-primary/20 bg-accent-primary p-6 sm:flex-row sm:items-center">
         <div className="flex items-center gap-3">
           <div>
-            <p className="heading-serif text-lg font-semibold text-white">
-              Let&apos;s work together
-            </p>
+            <p className="heading-serif text-lg font-semibold text-white">Reach out</p>
             <p className="mt-0.5 text-xs text-white/70">
-              Open to new opportunities and collaborations.
+              Always open to new opportunities and collaborations.
             </p>
           </div>
         </div>

@@ -8,11 +8,18 @@ export interface ThemeDefinition {
 
 export const themes: ThemeDefinition[] = [
   {
+    id: 'system',
+    name: 'System',
+    description: 'Follows OS preference',
+    isDark: false,
+    previewColors: ['oklch(0.97 0 0)', 'oklch(0.5 0 0)', 'oklch(0.15 0 0)']
+  },
+  {
     id: 'light',
     name: 'Light',
-    description: 'Cream & indigo',
+    description: 'Parchment & wine',
     isDark: false,
-    previewColors: ['oklch(0.97 0.014 85)', 'oklch(0.42 0.11 262)', 'oklch(0.15 0.012 58)']
+    previewColors: ['oklch(0.95 0.02 85)', 'oklch(0.34 0.13 12)', 'oklch(0.13 0.014 68)']
   },
   {
     id: 'dark',
@@ -22,18 +29,18 @@ export const themes: ThemeDefinition[] = [
     previewColors: ['oklch(0.17 0.01 260)', 'oklch(0.62 0.14 360)', 'oklch(0.93 0.005 260)']
   },
   {
+    id: 'nocturne',
+    name: 'Nocturne',
+    description: 'Warm black & gold',
+    isDark: true,
+    previewColors: ['oklch(0.14 0.012 65)', 'oklch(0.74 0.1 82)', 'oklch(0.92 0.018 82)']
+  },
+  {
     id: 'minecraft',
     name: 'Minecraft',
     description: 'Blocky & crafted',
     isDark: true,
     previewColors: ['oklch(0.22 0.01 60)', 'oklch(0.58 0.15 145)', 'oklch(0.52 0.08 75)']
-  },
-  {
-    id: 'dotcom',
-    name: 'Dotcom',
-    description: 'Windows 95 nostalgia',
-    isDark: false,
-    previewColors: ['oklch(0.82 0.005 250)', 'oklch(0.45 0.25 265)', 'oklch(0.10 0.005 250)']
   },
   {
     id: 'spotify',
@@ -48,7 +55,7 @@ export const themes: ThemeDefinition[] = [
     description: 'Dark sand & terracotta',
     isDark: true,
     previewColors: ['oklch(0.18 0.015 50)', 'oklch(0.65 0.15 45)', 'oklch(0.92 0.01 70)']
-  },
+  }
 ];
 
 export const themeIds = themes.map((t) => t.id);

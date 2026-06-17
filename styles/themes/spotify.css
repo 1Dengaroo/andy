@@ -114,7 +114,7 @@
   color: hsl(141 73% 65%);
 }
 
-/* Section labels — Spotify channel-header style */
+/* Section labels */
 [data-theme='spotify'] .section-label {
   color: hsl(0 0% 56%);
   font-weight: 700;

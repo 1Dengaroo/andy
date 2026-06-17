@@ -17,9 +17,9 @@ export const themes: ThemeDefinition[] = [
   {
     id: 'light',
     name: 'Light',
-    description: 'Parchment & wine',
+    description: 'Cool blue-gray & red',
     isDark: false,
-    previewColors: ['oklch(0.95 0.02 85)', 'oklch(0.34 0.13 12)', 'oklch(0.13 0.014 68)']
+    previewColors: ['oklch(0.94 0.005 240)', 'oklch(0.4 0.13 12)', 'oklch(0.1 0.005 250)']
   },
   {
     id: 'dark',

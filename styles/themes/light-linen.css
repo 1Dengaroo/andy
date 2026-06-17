@@ -1,0 +1,114 @@
+/* Linen — Barely warm off-white, editorial softness, wine red accent */
+
+[data-theme='light-linen'] body {
+  background-color: #f7f5f2;
+  background-image: none;
+  background-attachment: unset;
+}
+
+[data-theme='light-linen'] {
+  --accent-primary: 0.4 0.13 12;
+  --accent-secondary: 0.34 0.11 12;
+
+  --surface-primary: 0.99 0.004 80;
+  --surface-secondary: 0.96 0.005 80;
+  --surface-elevated: 1 0 0;
+  --surface-overlay: 0.93 0.006 80;
+
+  --border-default: 0.89 0.006 80;
+  --border-subtle: 0.93 0.004 80;
+  --border-strong: 0.77 0.01 80;
+
+  --text-primary: 0.11 0.008 60;
+  --text-secondary: 0.36 0.007 60;
+  --text-muted: 0.55 0.005 60;
+  --text-inverse: 1 0 0;
+
+  --shadow-sm: 0 1px 3px oklch(0.2 0.005 60 / 0.08);
+  --shadow-md: 0 4px 16px oklch(0.2 0.005 60 / 0.1);
+  --shadow-lg: 0 12px 40px oklch(0.2 0.005 60 / 0.13);
+
+  --card-radius: 8px;
+  --card-border-width: 0px;
+  --card-border-opacity: 0;
+  --card-shadow: 0 1px 4px oklch(0.2 0.005 60 / 0.08);
+  --card-hover-shadow: var(--shadow-md);
+  --card-hover-y: -2px;
+  --card-accent-bar-height: 0px;
+  --card-accent-bar-scale: 0;
+
+  --heading-font: inherit;
+  --section-label-font: inherit;
+  --section-label-size: 0.68rem;
+  --section-label-tracking: 0.08em;
+  --section-label-transform: uppercase;
+  --tag-font: inherit;
+  --tag-radius: 9999px;
+  --tag-padding-y: 0.22rem;
+  --tag-padding-x: 0.65rem;
+  --tag-font-size: 0.7rem;
+
+  --background: 30 12% 96%;
+  --foreground: 25 8% 11%;
+  --card: 30 8% 99%;
+  --card-foreground: 25 8% 11%;
+  --popover: 30 8% 99%;
+  --popover-foreground: 25 8% 11%;
+  --primary: 350 58% 36%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 30 10% 92%;
+  --secondary-foreground: 25 6% 22%;
+  --muted: 30 8% 93%;
+  --muted-foreground: 25 5% 45%;
+  --accent: 30 8% 90%;
+  --accent-foreground: 350 58% 36%;
+  --destructive: 0 70% 46%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 30 8% 87%;
+  --input: 30 8% 87%;
+  --ring: 350 58% 36%;
+  --radius: 0.5rem;
+  --chart-1: 350 58% 36%;
+  --chart-2: 197 50% 38%;
+  --chart-3: 38 75% 46%;
+  --chart-4: 142 40% 38%;
+  --chart-5: 280 40% 48%;
+  --sidebar-background: 30 10% 93%;
+  --sidebar-foreground: 25 5% 45%;
+  --sidebar-primary: 350 58% 36%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 30 8% 88%;
+  --sidebar-accent-foreground: 25 8% 11%;
+  --sidebar-border: 30 8% 86%;
+  --sidebar-ring: 350 58% 36%;
+}
+
+[data-theme='light-linen'] .card-editorial {
+  box-shadow: 0 1px 4px oklch(0.2 0.005 60 / 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-theme='light-linen'] .card-editorial:hover {
+  box-shadow: 0 4px 16px oklch(0.2 0.005 60 / 0.1);
+}
+
+[data-theme='light-linen'] .tag-pill {
+  background: hsl(30 10% 90%);
+  border-color: hsl(30 8% 83%);
+  color: hsl(25 6% 30%);
+  font-weight: 500;
+  font-size: 0.7rem;
+}
+
+[data-theme='light-linen'] .tag-pill:hover {
+  background: hsl(350 58% 36% / 0.08);
+  border-color: hsl(350 58% 36% / 0.28);
+  color: hsl(350 58% 32%);
+}
+
+[data-theme='light-linen'] .section-label {
+  color: hsl(25 5% 45%);
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}

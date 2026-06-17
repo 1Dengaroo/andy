@@ -30,10 +30,10 @@ export const themes: ThemeDefinition[] = [
   },
   {
     id: 'nocturne',
-    name: 'Nocturne',
-    description: 'Warm black & gold',
-    isDark: true,
-    previewColors: ['oklch(0.14 0.012 65)', 'oklch(0.74 0.1 82)', 'oklch(0.92 0.018 82)']
+    name: 'Clean',
+    description: 'White & minimal',
+    isDark: false,
+    previewColors: ['oklch(1 0 0)', 'oklch(0.4 0.12 250)', 'oklch(0.1 0 0)']
   },
   {
     id: 'minecraft',

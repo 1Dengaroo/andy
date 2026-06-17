@@ -1,9 +1,7 @@
 [data-theme='dark'] body {
-  background-color: #0f1115;
-  background-image:
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E"),
-    linear-gradient(170deg, #0f1115 0%, #131620 40%, #0e1014 100%);
-  background-attachment: fixed;
+  background-color: #121212;
+  background-image: none;
+  background-attachment: unset;
 }
 
 [data-theme='dark'] {
@@ -11,66 +9,114 @@
   --accent-primary: 0.62 0.14 360;
   --accent-secondary: 0.55 0.12 350;
 
-  --surface-primary: 0.17 0.01 260;
-  --surface-secondary: 0.21 0.012 260;
-  --surface-elevated: 0.25 0.014 260;
-  --surface-overlay: 0.1 0.005 260;
+  --surface-primary: 0.16 0.003 0;
+  --surface-secondary: 0.2 0.003 0;
+  --surface-elevated: 0.24 0.003 0;
+  --surface-overlay: 0.08 0.002 0;
 
-  --border-default: 0.3 0.01 260;
-  --border-subtle: 0.25 0.008 260;
-  --border-strong: 0.4 0.015 260;
+  --border-default: 0.22 0.003 0;
+  --border-subtle: 0.18 0.002 0;
+  --border-strong: 0.62 0.14 360;
 
-  --text-primary: 0.93 0.005 260;
-  --text-secondary: 0.7 0.008 260;
-  --text-muted: 0.63 0.008 260;
-  --text-inverse: 0.15 0.01 260;
+  --text-primary: 0.96 0 0;
+  --text-secondary: 0.73 0.003 0;
+  --text-muted: 0.56 0.002 0;
+  --text-inverse: 0.08 0.002 0;
 
-  --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
-  --shadow-md: 0 4px 12px oklch(0 0 0 / 0.35);
-  --shadow-lg: 0 8px 24px oklch(0 0 0 / 0.3);
+  --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.5);
+  --shadow-md: 0 4px 16px oklch(0 0 0 / 0.55);
+  --shadow-lg: 0 12px 40px oklch(0 0 0 / 0.65);
 
   /* Card style tokens */
-  --card-radius: 4px;
-  --card-border-width: 1px;
-  --card-border-opacity: 0.55;
+  --card-radius: 8px;
+  --card-border-width: 0px;
+  --card-border-opacity: 0;
   --card-shadow: none;
   --card-hover-shadow: var(--shadow-md);
-  --card-hover-y: -3px;
+  --card-hover-y: -2px;
   --card-accent-bar-height: 0px;
   --card-accent-bar-scale: 0;
 
+  /* Typography */
+  --heading-font: inherit;
+  --section-label-font: inherit;
+  --section-label-size: 0.68rem;
+  --section-label-tracking: 0.08em;
+  --section-label-transform: uppercase;
+  --tag-font: inherit;
+  --tag-radius: 9999px;
+  --tag-padding-y: 0.22rem;
+  --tag-padding-x: 0.65rem;
+  --tag-font-size: 0.7rem;
+
   /* shadcn bridge tokens (HSL) */
-  --background: 222 14% 7%;
-  --foreground: 210 10% 92%;
-  --card: 220 12% 11%;
-  --card-foreground: 210 10% 92%;
-  --popover: 220 12% 9%;
-  --popover-foreground: 210 10% 92%;
+  --background: 0 0% 7%;
+  --foreground: 0 0% 96%;
+  --card: 0 0% 10%;
+  --card-foreground: 0 0% 96%;
+  --popover: 0 0% 8%;
+  --popover-foreground: 0 0% 96%;
   --primary: 340 55% 55%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 220 10% 18%;
-  --secondary-foreground: 210 10% 80%;
-  --muted: 220 8% 14%;
-  --muted-foreground: 215 8% 63%;
-  --accent: 220 8% 14%;
-  --accent-foreground: 210 10% 92%;
+  --secondary: 0 0% 16%;
+  --secondary-foreground: 0 0% 80%;
+  --muted: 0 0% 13%;
+  --muted-foreground: 0 0% 56%;
+  --accent: 0 0% 16%;
+  --accent-foreground: 340 55% 65%;
   --destructive: 0 72% 50%;
   --destructive-foreground: 0 0% 100%;
-  --border: 220 10% 18%;
-  --input: 220 10% 18%;
+  --border: 0 0% 16%;
+  --input: 0 0% 16%;
   --ring: 340 55% 55%;
-  --radius: 0.125rem;
+  --radius: 0.5rem;
   --chart-1: 340 55% 55%;
   --chart-2: 200 40% 50%;
   --chart-3: 160 40% 50%;
   --chart-4: 280 35% 55%;
   --chart-5: 180 35% 48%;
-  --sidebar-background: 222 14% 5%;
-  --sidebar-foreground: 215 8% 48%;
+  --sidebar-background: 0 0% 6%;
+  --sidebar-foreground: 0 0% 56%;
   --sidebar-primary: 340 55% 50%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 220 8% 10%;
-  --sidebar-accent-foreground: 210 10% 92%;
-  --sidebar-border: 220 10% 14%;
+  --sidebar-accent: 0 0% 11%;
+  --sidebar-accent-foreground: 0 0% 90%;
+  --sidebar-border: 0 0% 12%;
   --sidebar-ring: 340 55% 50%;
+}
+
+/* Cards — dark panel, lifts on hover */
+[data-theme='dark'] .card-editorial {
+  background: hsl(0 0% 10%);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+[data-theme='dark'] .card-editorial:hover {
+  background: hsl(0 0% 13%);
+}
+
+/* Tags — pill-shaped, red accent */
+[data-theme='dark'] .tag-pill {
+  background: hsl(340 55% 55% / 0.12);
+  border-color: hsl(340 55% 55% / 0.3);
+  color: hsl(340 55% 70%);
+  font-weight: 500;
+  font-size: 0.7rem;
+}
+
+[data-theme='dark'] .tag-pill:hover {
+  background: hsl(340 55% 55% / 0.22);
+  border-color: hsl(340 55% 55% / 0.6);
+  color: hsl(340 55% 80%);
+}
+
+/* Section labels */
+[data-theme='dark'] .section-label {
+  color: hsl(0 0% 56%);
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
 }

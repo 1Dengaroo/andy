@@ -16,7 +16,6 @@ import SkipLinks from '@/components/layout/skip-links';
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' });
 const sourceSerif = Source_Serif_4({ subsets: ['latin'], variable: '--font-source-serif' });
 const lexend = Lexend({ subsets: ['latin'], variable: '--font-lexend' });
-
 const fontVariables = [spaceGrotesk.variable, sourceSerif.variable, lexend.variable].join(' ');
 
 const baseUrl = 'https://andydeng.me';

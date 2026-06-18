@@ -1,4 +1,4 @@
-/* Clean — Pure white, neutral gray, accessible minimal light */
+/* Clean — Pure white, no motion, no decoration, accessibility-first */
 
 [data-theme='nocturne'] body {
   background-color: #ffffff;
@@ -7,30 +7,29 @@
 }
 
 [data-theme='nocturne'] {
-  /* Semantic tokens (oklch L C H) */
-  --accent-primary: 0.4 0.12 250;
-  --accent-secondary: 0.35 0.1 250;
+  --accent-primary: 0.1 0 0;
+  --accent-secondary: 0.2 0 0;
 
   --surface-primary: 1 0 0;
-  --surface-secondary: 0.96 0 0;
+  --surface-secondary: 0.97 0 0;
   --surface-elevated: 1 0 0;
-  --surface-overlay: 0.93 0 0;
+  --surface-overlay: 0.94 0 0;
 
-  --border-default: 0.88 0 0;
-  --border-subtle: 0.92 0 0;
-  --border-strong: 0.75 0 0;
+  --border-default: 0.85 0 0;
+  --border-subtle: 0.91 0 0;
+  --border-strong: 0.72 0 0;
 
   --text-primary: 0.1 0 0;
   --text-secondary: 0.35 0 0;
   --text-muted: 0.55 0 0;
   --text-inverse: 1 0 0;
 
-  --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.06);
-  --shadow-md: 0 2px 8px oklch(0 0 0 / 0.08);
-  --shadow-lg: 0 4px 16px oklch(0 0 0 / 0.1);
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
 
-  /* Card tokens — flat, minimal border */
-  --card-radius: 4px;
+  /* Card tokens — completely flat, no motion */
+  --card-radius: 0px;
   --card-border-width: 1px;
   --card-border-opacity: 1;
   --card-shadow: none;
@@ -39,84 +38,90 @@
   --card-accent-bar-height: 0px;
   --card-accent-bar-scale: 0;
 
-  /* Typography — system sans, minimal styling */
   --heading-font: inherit;
   --section-label-font: inherit;
-  --section-label-size: 0.7rem;
-  --section-label-tracking: 0.06em;
+  --section-label-size: 0.72rem;
+  --section-label-tracking: 0.04em;
   --section-label-transform: uppercase;
   --tag-font: inherit;
-  --tag-radius: 3px;
+  --tag-radius: 2px;
   --tag-padding-y: 0.18rem;
   --tag-padding-x: 0.5rem;
   --tag-font-size: 0.72rem;
 
-  /* shadcn bridge tokens (HSL) */
   --background: 0 0% 100%;
   --foreground: 0 0% 10%;
   --card: 0 0% 100%;
   --card-foreground: 0 0% 10%;
   --popover: 0 0% 100%;
   --popover-foreground: 0 0% 10%;
-  --primary: 220 70% 40%;
+  --primary: 0 0% 10%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 0 0% 95%;
-  --secondary-foreground: 0 0% 20%;
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 18%;
   --muted: 0 0% 96%;
   --muted-foreground: 0 0% 45%;
   --accent: 0 0% 93%;
-  --accent-foreground: 220 70% 40%;
+  --accent-foreground: 0 0% 10%;
   --destructive: 0 72% 50%;
   --destructive-foreground: 0 0% 100%;
-  --border: 0 0% 88%;
-  --input: 0 0% 88%;
-  --ring: 220 70% 40%;
-  --radius: 0.25rem;
-  --chart-1: 220 70% 40%;
-  --chart-2: 160 55% 38%;
-  --chart-3: 38 80% 44%;
-  --chart-4: 280 55% 45%;
-  --chart-5: 0 65% 46%;
+  --border: 0 0% 85%;
+  --input: 0 0% 85%;
+  --ring: 0 0% 10%;
+  --radius: 0px;
+  --chart-1: 0 0% 10%;
+  --chart-2: 0 0% 30%;
+  --chart-3: 0 0% 50%;
+  --chart-4: 0 0% 65%;
+  --chart-5: 0 0% 80%;
   --sidebar-background: 0 0% 98%;
   --sidebar-foreground: 0 0% 45%;
-  --sidebar-primary: 220 70% 40%;
+  --sidebar-primary: 0 0% 10%;
   --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent: 0 0% 93%;
   --sidebar-accent-foreground: 0 0% 10%;
-  --sidebar-border: 0 0% 90%;
-  --sidebar-ring: 220 70% 40%;
+  --sidebar-border: 0 0% 87%;
+  --sidebar-ring: 0 0% 10%;
 }
 
-/* Cards — light border only, no background override */
+/* Cards — static border, no hover change, no transition */
 [data-theme='nocturne'] .card-editorial {
-  border-color: hsl(0 0% 88%);
-  transition: border-color 0.15s ease;
+  border-color: hsl(0 0% 85%);
+  transition: none;
 }
 
 [data-theme='nocturne'] .card-editorial:hover {
-  border-color: hsl(0 0% 75%);
+  transform: none !important;
+  box-shadow: none !important;
 }
 
-/* Tags — light gray chip, blue on hover */
+/* Tags — flat chip, no hover animation */
 [data-theme='nocturne'] .tag-pill {
   background: hsl(0 0% 94%);
-  border-color: hsl(0 0% 86%);
-  color: hsl(0 0% 30%);
+  border-color: hsl(0 0% 84%);
+  color: hsl(0 0% 28%);
   font-size: 0.72rem;
   font-weight: 500;
+  transition: none;
 }
 
 [data-theme='nocturne'] .tag-pill:hover {
-  background: hsl(220 70% 40% / 0.08);
-  border-color: hsl(220 70% 40% / 0.3);
-  color: hsl(220 70% 36%);
+  background: hsl(0 0% 90%);
+  border-color: hsl(0 0% 75%);
+  color: hsl(0 0% 10%);
 }
 
-/* Section labels — muted gray, minimal tracking */
+/* Section labels — plain gray */
 [data-theme='nocturne'] .section-label {
   color: hsl(0 0% 45%);
   font-weight: 600;
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+/* Kill all motion globally in this theme */
+[data-theme='nocturne'] * {
+  transition: none !important;
+  animation: none !important;
 }

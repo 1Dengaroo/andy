@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -40,6 +40,15 @@ function CTACard() {
   } = useForm<ContactForm>({
     resolver: zodResolver(contactSchema)
   });
+
+  useEffect(() => {
+    const openFromHash = () => {
+      if (window.location.hash === '#message_direct') setDialogOpen(true);
+    };
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
+    return () => window.removeEventListener('hashchange', openFromHash);
+  }, []);
 
   const onSubmit = async (data: ContactForm) => {
     setStatus('sending');

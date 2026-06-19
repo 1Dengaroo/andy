@@ -55,7 +55,23 @@ const Page = () => {
           </FadeIn>
         </div>
 
-        {/* Row 2: Experience (wide) | Skills + Education (stacked) */}
+        {/* Row 2: First row of project cards — 3 columns */}
+        <div
+          id="projects"
+          className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          <FadeIn>
+            <RShortsCard />
+          </FadeIn>
+          <FadeIn delay={D}>
+            <RemesCard />
+          </FadeIn>
+          <FadeIn delay={D * 2}>
+            <SigdiffCard />
+          </FadeIn>
+        </div>
+
+        {/* Row 3: Experience (wide) | Skills + Education (stacked) */}
         <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 lg:grid-cols-6">
           <FadeIn className="lg:col-span-4" delay={D}>
             <ExperienceCard />
@@ -70,27 +86,15 @@ const Page = () => {
           </div>
         </div>
 
-        {/* Rows 3–4: All project cards — 3 columns */}
-        <div
-          id="projects"
-          className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"
-        >
+        {/* Row 4: Second row of project cards — 3 columns */}
+        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <FadeIn>
-            <SigdiffCard />
-          </FadeIn>
-          <FadeIn delay={D}>
-            <RemesCard />
-          </FadeIn>
-          <FadeIn delay={D * 2}>
-            <OoeyCard />
-          </FadeIn>
-          <FadeIn delay={D * 3}>
             <LeafpadCard />
           </FadeIn>
-          <FadeIn delay={D * 4}>
-            <RShortsCard />
+          <FadeIn delay={D}>
+            <OoeyCard />
           </FadeIn>
-          <FadeIn delay={D * 5}>
+          <FadeIn delay={D * 2}>
             <QuFlowCard />
           </FadeIn>
         </div>

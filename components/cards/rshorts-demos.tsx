@@ -3,13 +3,19 @@
 import { useState, useEffect, useRef } from 'react';
 
 /* ── r/Shorts dark theme colors ── */
-const BG = '#1A1410';
-const CARD = '#1F1915';
-const FG = '#EDE5DA';
-const FG_SECONDARY = '#B0A89C';
-const FG_MUTED = '#6B635A';
-const BORDER = '#332D26';
+const BG = '#170A0F';
+const CARD = '#211016';
+const FG = '#F0E8EA';
+const FG_SECONDARY = '#BCA8AD';
+const FG_MUTED = '#7A6A6F';
+const BORDER = '#3A1A24';
 const PRIMARY = '#E63757';
+
+/* Vibrant warm gradients for buttons / accents */
+const PRIMARY_GRADIENT = 'linear-gradient(135deg, #FB7185 0%, #E63757 55%, #C81E4A 100%)';
+const PRIMARY_GRADIENT_SOFT =
+  'linear-gradient(135deg, rgba(251,113,133,0.35) 0%, rgba(230,55,87,0.35) 100%)';
+const GLOW_SHADOW = '0 10px 28px -10px rgba(230,55,87,0.65)';
 
 const EXAMPLE_PROMPTS = [
   'My boss fired me for being 2 minutes late so I reported his $200k tax fraud to the IRS',
@@ -68,12 +74,24 @@ export function MockVideoGenerator() {
 
   return (
     <div
-      className="w-full overflow-hidden rounded-xl border"
+      className="relative w-full overflow-hidden rounded-xl border"
       style={{ borderColor: BORDER, backgroundColor: CARD }}
     >
+      {/* Warm glow accents */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full blur-3xl"
+        style={{ background: 'radial-gradient(circle, rgba(244,63,94,0.20) 0%, transparent 70%)' }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-12 -left-12 h-40 w-40 rounded-full blur-3xl"
+        style={{ background: 'radial-gradient(circle, rgba(251,146,60,0.14) 0%, transparent 70%)' }}
+      />
+
       {/* Header */}
       <div
-        className="flex items-center justify-between border-b px-4 py-2.5"
+        className="relative z-10 flex items-center justify-between border-b px-4 py-2.5"
         style={{ borderColor: BORDER }}
       >
         <span className="text-[10px] font-medium" style={{ color: FG_SECONDARY }}>
@@ -91,7 +109,7 @@ export function MockVideoGenerator() {
         )}
       </div>
 
-      <div className="p-4">
+      <div className="relative z-10 p-4">
         {phase === 'input' && (
           <div className="space-y-3">
             <div>
@@ -135,8 +153,9 @@ export function MockVideoGenerator() {
               type="button"
               className="w-full cursor-pointer rounded-lg py-2 text-[10px] font-medium text-white transition-all duration-150"
               style={{
-                backgroundColor: prompt.trim() ? PRIMARY : `${PRIMARY}40`,
-                opacity: prompt.trim() ? 1 : 0.6
+                background: prompt.trim() ? PRIMARY_GRADIENT : PRIMARY_GRADIENT_SOFT,
+                opacity: prompt.trim() ? 1 : 0.7,
+                boxShadow: prompt.trim() ? GLOW_SHADOW : 'none'
               }}
               onClick={handleGenerate}
             >
@@ -171,15 +190,33 @@ export function MockVideoGenerator() {
                 width: '130px',
                 aspectRatio: '9/16',
                 borderColor: `${BORDER}`,
-                background: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%)'
+                background: 'linear-gradient(180deg, #160a0e 0%, #2a1320 100%)'
               }}
             >
-              {/* Caption overlay */}
-              <div className="absolute inset-x-0 bottom-[30%] flex justify-center px-2">
-                <div className="text-center text-[9px] font-bold leading-snug text-white">
-                  {visibleWords.map((word, i) => (
-                    <span key={start + i}>{word} </span>
-                  ))}
+              {/* Caption overlay — active word highlighted */}
+              <div className="absolute inset-x-0 bottom-[28%] flex justify-center px-2">
+                <div className="text-center text-[9px] font-bold leading-relaxed">
+                  {visibleWords.map((word, i) => {
+                    const isActive = start + i === wordIndex;
+                    return (
+                      <span key={start + i}>
+                        <span
+                          className="rounded px-1"
+                          style={
+                            isActive
+                              ? {
+                                  background: PRIMARY_GRADIENT,
+                                  color: '#fff',
+                                  boxShadow: '0 2px 10px -2px rgba(230,55,87,0.7)'
+                                }
+                              : { color: 'rgba(255,255,255,0.55)' }
+                          }
+                        >
+                          {word}
+                        </span>{' '}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -253,7 +290,7 @@ export function MockVideoGenerator() {
               <button
                 type="button"
                 className="w-full cursor-pointer rounded-lg py-1.5 text-center text-[9px] font-medium text-white"
-                style={{ backgroundColor: PRIMARY }}
+                style={{ background: PRIMARY_GRADIENT, boxShadow: GLOW_SHADOW }}
               >
                 Render & Download
               </button>

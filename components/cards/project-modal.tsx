@@ -88,11 +88,11 @@ export function ProjectModal({
         <DialogHeader>
           <div className="flex items-center gap-2">
             {logo}
-            <DialogTitle>{title}</DialogTitle>
+            <DialogTitle className="text-xl">{title}</DialogTitle>
           </div>
-          <DialogDescription>{subtitle}</DialogDescription>
+          <DialogDescription className="text-base">{subtitle}</DialogDescription>
         </DialogHeader>
-        <div className="space-y-3 text-sm text-foreground">
+        <div className="space-y-3 text-base leading-relaxed text-foreground">
           {children}
           <div className="flex gap-3 pt-2">
             <Button variant="link" asChild className="h-auto p-0 text-accent-primary">

@@ -22,8 +22,8 @@ function WelcomeCard() {
             <span className="font-medium text-foreground">Remes</span>, an AI-powered outbound sales
             platform, <span className="font-medium text-foreground">sigdiff</span>, an open-source
             npm package for semantic code diffing, and{' '}
-            <span className="font-medium text-foreground">Leafpad</span>, a developer tools suite
-            with 1,200+ monthly active users.
+            <span className="font-medium text-foreground">r/Shorts</span>, an AI short-form video
+            generator with 700+ videos created.
           </p>
           <p>
             I&apos;m drawn to scale and to teams that take engineering seriously. I want to work on

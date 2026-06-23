@@ -141,7 +141,7 @@ function RShortsCard() {
         onOpenChange={setOpen}
         triggerId="rshorts"
         closeClassName="text-white"
-        className="max-h-[90vh] overflow-y-auto sm:!max-w-2xl"
+        className="sm:!max-w-2xl"
         previewClassName=""
         preview={
           <div className="relative h-full w-full p-5 pb-3" style={{ backgroundColor: '#170A0F' }}>

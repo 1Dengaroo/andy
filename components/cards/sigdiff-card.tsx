@@ -250,7 +250,7 @@ function SigdiffCard() {
         onOpenChange={setOpen}
         triggerId="sigdiff"
         closeClassName="text-white"
-        className="max-h-[90vh] overflow-y-auto !border-[#30363d] !bg-[#0d1117] !text-[#e6edf3] sm:!max-w-2xl"
+        className="!border-[#30363d] !bg-[#0d1117] !text-[#e6edf3] sm:!max-w-2xl"
         previewClassName=""
         preview={
           <div className="relative h-full w-full p-5 pb-3" style={{ backgroundColor: '#0d1117' }}>

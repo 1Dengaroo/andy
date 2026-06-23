@@ -65,7 +65,7 @@ export function ProjectModal({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className={`sm:max-w-lg ${className ?? ''}`}
+        className={`max-h-[90vh] overflow-y-auto sm:max-w-lg ${className ?? ''}`}
         closeClassName={closeClassName}
         onOpenAutoFocus={(e) => {
           e.preventDefault();

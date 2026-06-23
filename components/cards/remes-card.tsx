@@ -133,7 +133,7 @@ function RemesCard() {
         open={open}
         onOpenChange={setOpen}
         triggerId="remes"
-        className="max-h-[90vh] overflow-y-auto !border-[#ddd8ed] !bg-[#f6f5fc] !text-[#1c1a30] sm:!max-w-3xl"
+        className="!border-[#ddd8ed] !bg-[#f6f5fc] !text-[#1c1a30] sm:!max-w-3xl"
         preview={
           <div className="relative h-full w-full p-5 pb-3" style={{ backgroundColor: '#f6f5fc' }}>
             {/* Tab bar */}

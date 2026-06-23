@@ -2,33 +2,33 @@
 
 import { useState, useRef, useCallback, useMemo, type ReactNode } from 'react';
 
-/* ── Leafpad light theme colors ── */
+/* ── Light theme colors (neutral, matches the app UI) ── */
 const CARD = '#ffffff';
-const FG = '#1a2820';
-const FG_SECONDARY = '#5e6a62';
-const FG_MUTED = '#8a9490';
-const BORDER = '#e5e4dc';
-const BORDER_SUBTLE = '#eceae3';
-const PRIMARY = '#4BAE4F';
-const PRIMARY_DARK = '#388E3C';
+const FG = '#18181b';
+const FG_SECONDARY = '#52525b';
+const FG_MUTED = '#a1a1aa';
+const BORDER = '#e4e4e7';
+const BORDER_SUBTLE = '#f0f0f1';
+const PRIMARY = '#18181b';
+const PRIMARY_DARK = '#27272a';
 
-/* ── Syntax highlight colors ── */
-const SYN_KEY = '#388E3C';
-const SYN_STRING = '#b45309';
-const SYN_NUMBER = '#2563eb';
-const SYN_BOOL = '#7c3aed';
+/* ── Syntax highlight colors (match the app's default editor theme) ── */
+const SYN_KEY = '#e05260';
+const SYN_STRING = '#16a34a';
+const SYN_NUMBER = '#c45e00';
+const SYN_BOOL = '#0284c7';
 
 /* ═══════════════════════════════════════════════
    Demo 1 — Markdown Editor
    ═══════════════════════════════════════════════ */
 
-const DEFAULT_MARKDOWN = `# Welcome to Leafpad
+const DEFAULT_MARKDOWN = `# Welcome to Toolbench
 
 Write **bold** and *italic* text easily.
 
 ## Features
 - Live preview
-- [Links](https://leafpad.app)
+- [Links](https://toolbench.vercel.app)
 - \`inline code\`
 
 > Simple, clean editing.`;
@@ -300,7 +300,7 @@ export function MockMarkdownEditor() {
    ═══════════════════════════════════════════════ */
 
 const SAMPLE_JSON = {
-  name: 'leafpad',
+  name: 'toolbench',
   version: '1.2.0',
   tools: ['markdown', 'json', 'notepad', 'uuid', 'base64'],
   config: { theme: 'light', autosave: true, fontSize: 14 },
@@ -467,7 +467,7 @@ export function MockJsonFormatter() {
    Demo 3 — Notepad
    ═══════════════════════════════════════════════ */
 
-const NOTE_COLORS = ['#fef9c3', '#dbeafe', '#fce7f3', '#dcfce7'];
+const NOTE_COLORS = ['#fdf6e3', '#eef2f7', '#f3eef7', '#eef5ef'];
 
 interface Note {
   title: string;

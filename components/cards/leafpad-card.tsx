@@ -366,7 +366,7 @@ function LeafpadCard() {
         }
         title="Toolbench"
         subtitle="A clean set of developer tools"
-        link={{ label: 'toolbench.vercel.app', href: 'https://toolbench.vercel.app' }}
+        link={{ label: 'toolbench-one.vercel.app', href: 'https://toolbench.vercel.app' }}
       >
         <p style={{ color: '#52525b' }}>
           I wanted a clean markdown editor, a fast JSON formatter, and a simple notepad that I

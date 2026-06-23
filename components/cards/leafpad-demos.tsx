@@ -28,7 +28,7 @@ Write **bold** and *italic* text easily.
 
 ## Features
 - Live preview
-- [Links](https://toolbench.vercel.app)
+- [Links](https://toolbench-one.vercel.app)
 - \`inline code\`
 
 > Simple, clean editing.`;

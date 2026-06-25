@@ -1,12 +1,12 @@
-/* Clean — Pure white, no motion, no decoration, accessibility-first */
+/* Clean — Pure white, flat & minimal with subtle motion */
 
-[data-theme='nocturne'] body {
+[data-theme='minimal'] body {
   background-color: #ffffff;
   background-image: none;
   background-attachment: unset;
 }
 
-[data-theme='nocturne'] {
+[data-theme='minimal'] {
   --accent-primary: 0.1 0 0;
   --accent-secondary: 0.2 0 0;
 
@@ -28,7 +28,7 @@
   --shadow-md: none;
   --shadow-lg: none;
 
-  /* Card tokens — completely flat, no motion */
+  /* Card tokens — completely flat, no hover decoration */
   --card-radius: 0px;
   --card-border-width: 1px;
   --card-border-opacity: 1;
@@ -84,44 +84,31 @@
   --sidebar-ring: 0 0% 10%;
 }
 
-/* Cards — static border, no hover change, no transition */
-[data-theme='nocturne'] .card-editorial {
+/* Cards — flat border, no hover decoration */
+[data-theme='minimal'] .card-editorial {
   border-color: hsl(0 0% 85%);
-  transition: none;
 }
 
-[data-theme='nocturne'] .card-editorial:hover {
-  transform: none !important;
-  box-shadow: none !important;
-}
-
-/* Tags — flat chip, no hover animation */
-[data-theme='nocturne'] .tag-pill {
+/* Tags — flat chip with smooth hover transition */
+[data-theme='minimal'] .tag-pill {
   background: hsl(0 0% 94%);
   border-color: hsl(0 0% 84%);
   color: hsl(0 0% 28%);
   font-size: 0.72rem;
   font-weight: 500;
-  transition: none;
 }
 
-[data-theme='nocturne'] .tag-pill:hover {
+[data-theme='minimal'] .tag-pill:hover {
   background: hsl(0 0% 90%);
   border-color: hsl(0 0% 75%);
   color: hsl(0 0% 10%);
 }
 
 /* Section labels — plain gray */
-[data-theme='nocturne'] .section-label {
+[data-theme='minimal'] .section-label {
   color: hsl(0 0% 45%);
   font-weight: 600;
   font-size: 0.72rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-}
-
-/* Kill all motion globally in this theme */
-[data-theme='nocturne'] * {
-  transition: none !important;
-  animation: none !important;
 }

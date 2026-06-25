@@ -29,7 +29,7 @@ export const themes: ThemeDefinition[] = [
     previewColors: ['oklch(0.17 0.01 260)', 'oklch(0.62 0.14 360)', 'oklch(0.93 0.005 260)']
   },
   {
-    id: 'nocturne',
+    id: 'minimal',
     name: 'Minimal',
     description: 'White & minimal',
     isDark: false,

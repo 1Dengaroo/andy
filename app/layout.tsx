@@ -23,16 +23,18 @@ const baseUrl = 'https://andydeng.me';
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Andy Deng — Full-Stack Product Engineer',
+    default: 'Andy Deng — Full-Stack Software Engineer',
     template: '%s | Andy Deng'
   },
   description:
-    'Full-Stack Product Engineer with 2 years of experience building scalable consumer applications and AI-driven agentic workflows. Expertise in modern TypeScript, Next.js, and distributed systems.',
+    'Full-Stack Software Engineer with 2 years of experience building scalable applications and backend systems with AI-driven agentic workflows. Expertise in modern TypeScript, Next.js, and distributed systems.',
   keywords: [
     'Andy Deng',
     'software engineer',
     'full-stack engineer',
-    'product engineer',
+    'software engineer',
+    'backend engineer',
+    'infrastructure',
     'React',
     'Next.js',
     'TypeScript',
@@ -48,9 +50,9 @@ export const metadata: Metadata = {
     canonical: baseUrl
   },
   openGraph: {
-    title: 'Andy Deng — Full-Stack Product Engineer',
+    title: 'Andy Deng — Full-Stack Software Engineer',
     description:
-      'Full-Stack Product Engineer with 2 years of experience building scalable consumer applications and AI-driven agentic workflows. Expertise in TypeScript, Next.js, and distributed systems.',
+      'Full-Stack Software Engineer with 2 years of experience building scalable applications and backend systems with AI-driven agentic workflows. Expertise in TypeScript, Next.js, and distributed systems.',
     url: baseUrl,
     siteName: 'Andy Deng',
     locale: 'en_US',
@@ -66,9 +68,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Andy Deng — Full-Stack Product Engineer',
+    title: 'Andy Deng — Full-Stack Software Engineer',
     description:
-      'Full-Stack Product Engineer with 2 years of experience building scalable consumer applications and AI-driven agentic workflows. Expertise in TypeScript, Next.js, and distributed systems.',
+      'Full-Stack Software Engineer with 2 years of experience building scalable applications and backend systems with AI-driven agentic workflows. Expertise in TypeScript, Next.js, and distributed systems.',
     images: ['/images/og.webp']
   },
   icons: {
@@ -103,7 +105,7 @@ export default function RootLayout({
               '@type': 'Person',
               name: 'Andy Deng',
               url: baseUrl,
-              jobTitle: 'Full-Stack Product Engineer',
+              jobTitle: 'Full-Stack Software Engineer',
               worksFor: {
                 '@type': 'Organization',
                 name: 'Pega'

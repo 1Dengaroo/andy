@@ -15,7 +15,7 @@ interface ExperienceEntry {
 const experiences: ExperienceEntry[] = [
   {
     company: 'Pegasystems',
-    title: 'Software Engineer (Backend / Frontend / Product)',
+    title: 'Software Engineer (Backend / Frontend / Infrastructure)',
     location: 'Boston, MA',
     dateRange: 'May 2025 – Present',
     description:
@@ -23,7 +23,7 @@ const experiences: ExperienceEntry[] = [
   },
   {
     company: 'forREAL',
-    title: 'Software Engineer (Full Stack / Product)',
+    title: 'Software Engineer (Full Stack / Infrastructure)',
     location: 'Boston, MA',
     dateRange: 'Sep 2024 – May 2025',
     description:

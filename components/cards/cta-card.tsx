@@ -18,6 +18,7 @@ import {
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '../ui/dialog';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import { socialLinks } from '@/lib/data';
+import { showResume } from '@/lib/config';
 import { Mail, Send, MessageSquare, CircleCheck, ArrowRight, FileText } from 'lucide-react';
 
 const contactSchema = z.object({
@@ -133,28 +134,30 @@ function CTACard() {
                   </Tooltip>
                 );
               })}
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    asChild
-                    className="h-8 w-8 text-white/60 transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/10 hover:text-white active:translate-y-0"
-                  >
-                    <a
-                      href="/docs/resume.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="View Resume"
+              {showResume && (
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      asChild
+                      className="h-8 w-8 text-white/60 transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/10 hover:text-white active:translate-y-0"
                     >
-                      <FileText className="h-3.5 w-3.5" />
-                    </a>
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Resume</p>
-                </TooltipContent>
-              </Tooltip>
+                      <a
+                        href="/docs/resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="View Resume"
+                      >
+                        <FileText className="h-3.5 w-3.5" />
+                      </a>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Resume</p>
+                  </TooltipContent>
+                </Tooltip>
+              )}
             </TooltipProvider>
           </div>
         </div>

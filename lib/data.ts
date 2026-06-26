@@ -18,16 +18,19 @@ export const skillCategories = [
       'LLM Orchestration',
       'Agentic Workflows',
       'Async Pipelines',
+      'Event-Driven Architecture',
       'WebSockets',
       'REST/GraphQL'
     ]
   },
   {
-    title: 'Cloud & Data',
+    title: 'Systems & Infrastructure',
     skills: [
       'AWS (EC2, S3, RDS, Lambda)',
       'Docker',
       'CI/CD (GitHub Actions)',
+      'Distributed Systems',
+      'Caching',
       'PostgreSQL',
       'Redis',
       'Celery'

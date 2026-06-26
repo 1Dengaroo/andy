@@ -7,12 +7,11 @@ function WelcomeCard() {
         <span className="section-label">About</span>
         <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
           <p>
-            I&apos;m a full-stack engineer, currently at{' '}
+            I&apos;m a full-stack engineer at{' '}
             <span className="font-medium text-foreground">Pega</span>, where I own end-to-end
-            development of Blueprint across the frontend and backend. I work comfortably across the
-            stack — modern TypeScript and Next.js up top, event-driven systems, scalable backend
-            architecture, and LLM infrastructure underneath — and I&apos;m happy going as deep as a
-            problem needs.
+            development of Blueprint across the frontend and backend. I work across the whole stack:
+            TypeScript and Next.js on the frontend, event-driven systems, scalable backend
+            architecture, and LLM infrastructure underneath.
           </p>
           <p>
             I&apos;m independent, work fast, and ship at quality. The work I find most rewarding

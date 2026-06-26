@@ -61,13 +61,13 @@ const Page = () => {
           className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"
         >
           <FadeIn>
-            <RShortsCard />
+            <SigdiffCard />
           </FadeIn>
           <FadeIn delay={D}>
             <RemesCard />
           </FadeIn>
           <FadeIn delay={D * 2}>
-            <SigdiffCard />
+            <RShortsCard />
           </FadeIn>
         </div>
 

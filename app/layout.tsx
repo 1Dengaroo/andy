@@ -23,11 +23,11 @@ const baseUrl = 'https://andydeng.me';
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Andy Deng | Full-Stack Software Engineer',
+    default: 'Andy Deng | Software Engineer',
     template: '%s | Andy Deng'
   },
   description:
-    'Full-Stack Software Engineer with 2 years of experience building scalable applications and backend systems with AI-driven agentic workflows. Expertise in modern TypeScript, Next.js, and distributed systems.',
+    'Software engineer specializing in scalable backend systems, AI infrastructure, and full-stack product development.',
   keywords: [
     'Andy Deng',
     'software engineer',
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     canonical: baseUrl
   },
   openGraph: {
-    title: 'Andy Deng | Full-Stack Software Engineer',
+    title: 'Andy Deng | Software Engineer',
     description:
-      'Full-Stack Software Engineer with 2 years of experience building scalable applications and backend systems with AI-driven agentic workflows. Expertise in TypeScript, Next.js, and distributed systems.',
+      'Software engineer specializing in scalable backend systems, AI infrastructure, and full-stack product development.',
     url: baseUrl,
     siteName: 'Andy Deng',
     locale: 'en_US',
@@ -68,9 +68,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Andy Deng | Full-Stack Software Engineer',
+    title: 'Andy Deng | Software Engineer',
     description:
-      'Full-Stack Software Engineer with 2 years of experience building scalable applications and backend systems with AI-driven agentic workflows. Expertise in TypeScript, Next.js, and distributed systems.',
+      'Software engineer specializing in scalable backend systems, AI infrastructure, and full-stack product development.',
     images: ['/images/og.webp']
   },
   icons: {

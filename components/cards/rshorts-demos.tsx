@@ -2,20 +2,22 @@
 
 import { useState, useEffect, useRef } from 'react';
 
-/* ── r/Shorts dark theme colors ── */
-const BG = '#170A0F';
-const CARD = '#211016';
-const FG = '#F0E8EA';
-const FG_SECONDARY = '#BCA8AD';
-const FG_MUTED = '#7A6A6F';
-const BORDER = '#3A1A24';
-const PRIMARY = '#E63757';
+/* ── r/Shorts "Ember" theme — vermilion & warm gold on tungsten charcoal ── */
+const BG = '#120E0C';
+const CARD = '#1C1715';
+const FG = '#F2EFEC';
+const FG_SECONDARY = '#B3A89F';
+const FG_MUTED = '#7E7369';
+const BORDER = '#2F2823';
+const PRIMARY = '#EF6A39';
+const GOLD = '#FAC342';
+const ON_PRIMARY = '#1D0E06';
 
-/* Vibrant warm gradients for buttons / accents */
-const PRIMARY_GRADIENT = 'linear-gradient(135deg, #FB7185 0%, #E63757 55%, #C81E4A 100%)';
+/* Warm ember gradients for buttons / accents */
+const PRIMARY_GRADIENT = 'linear-gradient(135deg, #FB8A55 0%, #EF6A39 55%, #D14E1F 100%)';
 const PRIMARY_GRADIENT_SOFT =
-  'linear-gradient(135deg, rgba(251,113,133,0.35) 0%, rgba(230,55,87,0.35) 100%)';
-const GLOW_SHADOW = '0 10px 28px -10px rgba(230,55,87,0.65)';
+  'linear-gradient(135deg, rgba(251,138,85,0.35) 0%, rgba(239,106,57,0.35) 100%)';
+const GLOW_SHADOW = '0 10px 28px -10px rgba(239,106,57,0.65)';
 
 const EXAMPLE_PROMPTS = [
   'My boss fired me for being 2 minutes late so I reported his $200k tax fraud to the IRS',
@@ -23,6 +25,8 @@ const EXAMPLE_PROMPTS = [
   'Neighbor kept stealing my packages so I shipped myself a box of glitter bombs',
   "My daughter's imaginary friend left her a voicemail"
 ];
+
+const TONES = ['Dramatic', 'Humorous', 'Suspenseful'];
 
 const STORY_TEXT =
   "I still remember the exact moment everything changed. It was a Tuesday morning, and I was running late. Not by hours — just two measly minutes. I walked through the door at 9:02, coffee in hand, ready to start my day. But my boss was already standing there, arms crossed, with HR beside him. 'You're done,' he said. Two minutes late. That's all it took.";
@@ -77,16 +81,16 @@ export function MockVideoGenerator() {
       className="relative w-full overflow-hidden rounded-xl border"
       style={{ borderColor: BORDER, backgroundColor: CARD }}
     >
-      {/* Warm glow accents */}
+      {/* Warm ember glow accents */}
       <div
         aria-hidden
         className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full blur-3xl"
-        style={{ background: 'radial-gradient(circle, rgba(244,63,94,0.20) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(239,106,57,0.20) 0%, transparent 70%)' }}
       />
       <div
         aria-hidden
         className="pointer-events-none absolute -bottom-12 -left-12 h-40 w-40 rounded-full blur-3xl"
-        style={{ background: 'radial-gradient(circle, rgba(251,146,60,0.14) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(250,195,66,0.14) 0%, transparent 70%)' }}
       />
 
       {/* Header */}
@@ -127,6 +131,27 @@ export function MockVideoGenerator() {
               />
             </div>
 
+            {/* Tone pills — mirrors the wizard's story step */}
+            <div className="flex gap-1">
+              {TONES.map((tone, i) => (
+                <span
+                  key={tone}
+                  className="rounded-full border px-2 py-0.5 text-[8px] font-medium"
+                  style={
+                    i === 0
+                      ? {
+                          borderColor: `${PRIMARY}80`,
+                          backgroundColor: 'rgba(239,106,57,0.12)',
+                          color: PRIMARY
+                        }
+                      : { borderColor: BORDER, color: FG_MUTED }
+                  }
+                >
+                  {tone}
+                </span>
+              ))}
+            </div>
+
             <div className="flex flex-wrap gap-1">
               {EXAMPLE_PROMPTS.map((p, i) => (
                 <button
@@ -151,9 +176,10 @@ export function MockVideoGenerator() {
 
             <button
               type="button"
-              className="w-full cursor-pointer rounded-lg py-2 text-[10px] font-medium text-white transition-all duration-150"
+              className="w-full cursor-pointer rounded-lg py-2 text-[10px] font-semibold transition-all duration-150"
               style={{
                 background: prompt.trim() ? PRIMARY_GRADIENT : PRIMARY_GRADIENT_SOFT,
+                color: prompt.trim() ? ON_PRIMARY : 'rgba(255,255,255,0.75)',
                 opacity: prompt.trim() ? 1 : 0.7,
                 boxShadow: prompt.trim() ? GLOW_SHADOW : 'none'
               }}
@@ -190,26 +216,54 @@ export function MockVideoGenerator() {
                 width: '130px',
                 aspectRatio: '9/16',
                 borderColor: `${BORDER}`,
-                background: 'linear-gradient(180deg, #160a0e 0%, #2a1320 100%)'
+                background: 'linear-gradient(180deg, #16100C 0%, #2A1A10 100%)'
               }}
             >
-              {/* Caption overlay — active word highlighted */}
+              {/* Mini Reddit-style title card — the video's intro */}
+              <div
+                className="absolute inset-x-2 top-3 rounded-lg border p-1.5"
+                style={{ backgroundColor: '#1A1A1B', borderColor: '#343536' }}
+              >
+                <div className="flex items-center gap-1">
+                  <span
+                    className="size-2 shrink-0 rounded-full"
+                    style={{ background: 'linear-gradient(135deg, #FF4500, #FF8717)' }}
+                  />
+                  <span className="text-[6px] font-semibold" style={{ color: '#D7DADC' }}>
+                    r/stories
+                  </span>
+                  <span className="text-[5px]" style={{ color: '#818384' }}>
+                    · 5h
+                  </span>
+                </div>
+                <div
+                  className="mt-0.5 line-clamp-2 text-[6px] font-bold leading-tight"
+                  style={{ color: '#D7DADC' }}
+                >
+                  {prompt}
+                </div>
+              </div>
+
+              {/* Caption overlay — active word pops in gold */}
               <div className="absolute inset-x-0 bottom-[28%] flex justify-center px-2">
-                <div className="text-center text-[9px] font-bold leading-relaxed">
+                <div className="text-center text-[9px] font-extrabold uppercase leading-relaxed tracking-wide">
                   {visibleWords.map((word, i) => {
                     const isActive = start + i === wordIndex;
                     return (
                       <span key={start + i}>
                         <span
-                          className="rounded px-1"
+                          className="inline-block transition-transform duration-150"
                           style={
                             isActive
                               ? {
-                                  background: PRIMARY_GRADIENT,
-                                  color: '#fff',
-                                  boxShadow: '0 2px 10px -2px rgba(230,55,87,0.7)'
+                                  color: GOLD,
+                                  transform: 'scale(1.12)',
+                                  textShadow: '0 2px 8px rgba(0,0,0,0.8)'
                                 }
-                              : { color: 'rgba(255,255,255,0.55)' }
+                              : {
+                                  color: 'rgba(255,255,255,0.55)',
+                                  textShadow: '0 2px 8px rgba(0,0,0,0.8)'
+                                }
                           }
                         >
                           {word}
@@ -259,7 +313,7 @@ export function MockVideoGenerator() {
                       Voice
                     </div>
                     <div className="mt-0.5 text-[9px] font-medium" style={{ color: FG_SECONDARY }}>
-                      Nova
+                      Onyx
                     </div>
                   </div>
                   <div>
@@ -289,10 +343,10 @@ export function MockVideoGenerator() {
 
               <button
                 type="button"
-                className="w-full cursor-pointer rounded-lg py-1.5 text-center text-[9px] font-medium text-white"
-                style={{ background: PRIMARY_GRADIENT, boxShadow: GLOW_SHADOW }}
+                className="w-full cursor-pointer rounded-lg py-1.5 text-center text-[9px] font-semibold"
+                style={{ background: PRIMARY_GRADIENT, color: ON_PRIMARY, boxShadow: GLOW_SHADOW }}
               >
-                Render & Download
+                Download MP4
               </button>
             </div>
           </div>

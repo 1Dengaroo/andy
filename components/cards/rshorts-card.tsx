@@ -43,28 +43,28 @@ function RShortsCard() {
           }
         }}
       >
-        {/* Base crimson gradient */}
+        {/* Base ember gradient — tungsten charcoal into molten vermilion */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(135deg, #1A0A0E 0%, #3D0F1E 40%, #6B1226 72%, #240A12 100%)'
+              'linear-gradient(135deg, #140C08 0%, #3A1708 40%, #7C300E 72%, #1C0E07 100%)'
           }}
         />
 
-        {/* Vibrant rose glow — behind the tiles, intensifies on hover */}
+        {/* Vibrant vermilion glow — behind the tiles, intensifies on hover */}
         <div
           className="absolute -right-10 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full opacity-80 blur-3xl transition-opacity duration-700 group-hover:opacity-100"
           style={{
-            background: 'radial-gradient(circle, rgba(244,63,94,0.45) 0%, transparent 70%)'
+            background: 'radial-gradient(circle, rgba(239,106,57,0.45) 0%, transparent 70%)'
           }}
         />
 
-        {/* Warm amber glow — top-left for depth */}
+        {/* Warm gold glow — top-left for depth */}
         <div
           className="absolute -left-10 -top-12 h-48 w-48 rounded-full blur-3xl"
           style={{
-            background: 'radial-gradient(circle, rgba(251,146,60,0.22) 0%, transparent 70%)'
+            background: 'radial-gradient(circle, rgba(250,195,66,0.20) 0%, transparent 70%)'
           }}
         />
 
@@ -76,17 +76,17 @@ function RShortsCard() {
           <div className="relative h-28 w-32">
             <FloatTile
               icon={Heart}
-              gradient="linear-gradient(135deg, #FB7185 0%, #E11D48 100%)"
+              gradient="linear-gradient(135deg, #FB8A55 0%, #E14D1A 100%)"
               className="left-0 top-9 z-10 -rotate-[10deg] group-hover:-translate-x-1 group-hover:-rotate-[14deg]"
             />
             <FloatTile
               icon={Play}
-              gradient="linear-gradient(135deg, #FDBA74 0%, #F43F5E 100%)"
+              gradient="linear-gradient(135deg, #FAC342 0%, #EF6A39 100%)"
               className="right-0 top-5 z-10 rotate-[10deg] group-hover:translate-x-1 group-hover:rotate-[14deg]"
             />
             <FloatTile
               icon={Sparkles}
-              gradient="linear-gradient(135deg, #F472B6 0%, #DB2777 100%)"
+              gradient="linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%)"
               className="left-1/2 top-0 z-20 -translate-x-1/2 group-hover:-translate-y-1"
             />
           </div>
@@ -97,7 +97,7 @@ function RShortsCard() {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(to right, rgba(10,4,6,0.78) 0%, rgba(10,4,6,0.25) 45%, transparent 68%)'
+              'linear-gradient(to right, rgba(9,6,4,0.78) 0%, rgba(9,6,4,0.25) 45%, transparent 68%)'
           }}
         />
 
@@ -144,7 +144,7 @@ function RShortsCard() {
         className="sm:!max-w-2xl"
         previewClassName=""
         preview={
-          <div className="relative h-full w-full p-5 pb-3" style={{ backgroundColor: '#170A0F' }}>
+          <div className="relative h-full w-full p-5 pb-3" style={{ backgroundColor: '#120E0C' }}>
             <MockVideoGenerator />
           </div>
         }

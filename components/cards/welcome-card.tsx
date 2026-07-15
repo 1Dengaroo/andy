@@ -7,27 +7,17 @@ function WelcomeCard() {
         <span className="section-label">About</span>
         <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
           <p>
-            I&apos;m a full-stack engineer at{' '}
+            I&apos;m a software engineer at{' '}
             <span className="font-medium text-foreground">Pega</span>, where I own end-to-end
-            development of Blueprint across the frontend and backend. I work across the whole stack:
-            TypeScript and Next.js on the frontend, event-driven systems, scalable backend
-            architecture, and LLM infrastructure underneath.
+            development of Blueprint across the frontend, backend, and agentic infrastructure. I
+            work fast, ship at quality, and ramp quickly in unfamiliar domains, thriving where the
+            scope is broad and the problems are ambiguous.
           </p>
           <p>
-            I&apos;m independent, work fast, and ship at quality. The work I find most rewarding
-            sits where product meets infrastructure, where decisions compound and the technical bar
-            is high enough to keep learning. Outside of work, I build across AI, developer tooling,
-            and web. Recent projects include{' '}
-            <span className="font-medium text-foreground">Remes</span>, an AI-powered outbound sales
-            platform, <span className="font-medium text-foreground">sigdiff</span>, an open-source
-            npm package for semantic code diffing, and{' '}
-            <span className="font-medium text-foreground">r/Shorts</span>, an AI short-form video
-            generator with 700+ videos created.
-          </p>
-          <p>
-            I&apos;m drawn to scale and to teams that take engineering seriously. I want to work on
-            systems used by millions, where the problems stay hard enough to grow into and the
-            quality of the work shows.
+            Outside of work, I build across AI, developer tooling, and web applications. I&apos;m
+            drawn to scale and to teams that take engineering seriously. I want to work on systems
+            used by millions, where the problems stay hard enough to grow into and the quality of
+            the work shows.
           </p>
           <p>
             Reach out:{' '}

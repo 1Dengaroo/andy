@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
+import type { ExperienceEntry } from './types';
 
 export const skillCategories = [
   {
@@ -38,64 +39,46 @@ export const skillCategories = [
   }
 ];
 
-export const experiences = [
+export const experiences: ExperienceEntry[] = [
   {
-    role: 'Software Engineer',
     company: 'Pegasystems',
+    title: 'Software Engineer (Backend / Frontend / Infrastructure)',
     location: 'Boston, MA',
-    date: 'May 2025 – Present',
-    achievements: [
-      'Own end-to-end development of Pega Blueprint, an agentic workflow SaaS platform, scaling the system to support 2M+ enterprise workflows',
-      'Created LLM abstraction layer, accelerating feature development by enabling multi-model support via a dependency injection layer',
-      'Accelerated initial load times by 75% (6s to 1.5s) via frontend optimization and backend API/service refactoring',
-      'Helpted to cut backend load/rates by 30%+ by replacing client-side polling with WebSocket event streams',
-      'Established WCAG 2.1 accessibility standards across Blueprint, ensuring full compliance for enterprise customers',
-      'Improved engineering efficiency by building harness framework, leading to 60%+ adoption of AI code generation across Blueprint frontend developers',
-      'Built concurrent async pipelines to parallelize LLM calls across Blueprint sections, cutting end-to-end generation time by over 50%'
-    ]
+    dateRange: 'May 2025 – Present',
+    description:
+      "At Pegasystems, I joined the team behind Blueprint, Pega's flagship AI product helping enterprises build applications through secure, governed agentic generation. I've helped scale Blueprint from early launch to millions of enterprise workflows by owning full-stack development across the generation pipeline, from the user-facing interface down through the distributed backend services and agentic orchestration infrastructure that power it. Along the way I've worked on LLM orchestration, event-driven pipelines, real-time delivery systems, and the agentic coding tooling and practices the team relies on to ship faster. My ownership has scaled up over time, starting with feature-level work and growing into a broader role across the platform's distributed architecture and the infrastructure the team depends on day to day.",
+    link: {
+      title: 'Agentic Workflow Builder | Pega Blueprint',
+      url: 'https://www.pega.com/blueprint',
+      image: 'https://www.pega.com/sites/default/files/media/images/2024-04/Pega-Blueprint-OG.png'
+    }
   },
   {
-    role: 'Software Engineer',
     company: 'forREAL',
+    title: 'Software Engineer (Full Stack / Infrastructure)',
     location: 'Boston, MA',
-    date: 'Sep 2024 – May 2025',
-    achievements: [
-      'Cut Google Maps API costs by 70% by implementing server-side clustering, caching, and lazy loading',
-      'Developed Stripe payments backend (Django/Celery), managing $120k+ in monthly rent payments for rent collection, autopay, and identity verification',
-      'Architected Django models/APIs for lease lifecycle and role management, ensuring transactional integrity with an integration test suite for payment flows',
-      'Delivered property management frontend (Next.js), supporting listing display, search, and lease dashboard'
-    ]
+    dateRange: 'Oct 2024 – May 2025',
+    description:
+      'At forREAL, I helped scale the platform from the ground up by architecting the full financial idempotent infrastructure including Stripe collection, autopay, payouts, and accounting. Because we were a small team, my work touched nearly everything on the platform, from authentication and apartment browsing to lease applications and document signing.',
+    link: {
+      title: 'forREAL Virtual Tour Showcase',
+      url: 'https://www.myforreal.com/showcase',
+      image: 'https://www.myforreal.com/images/luxuryassets/yachthero_frame.png'
+    }
   },
   {
-    role: 'Software Engineer Intern',
     company: 'Vanta',
+    title: 'Software Engineer Intern (Backend / Full Stack)',
     location: 'Remote',
-    date: 'Aug 2023 – Feb 2024',
-    achievements: [
-      'Reduced Stream Chat API costs by $500/month by implementing a Redis-based real-time notification system handling 10k+ daily messages',
-      'Improved reliability by implementing idempotent Stripe payment flows, processing 1k+ orders'
-    ]
-  },
-  {
-    company: 'Boston College',
-    location: 'Chestnut Hill, MA',
-    dateRange: 'Aug 2020 – May 2024',
-    roles: [
-      {
-        role: 'Research Assistant',
-        date: 'Jan 2023 – Jan 2024',
-        achievements: [
-          'Selected from 90+ engineering students to work directly with Professor Maira Samary on a Django REST API and algorithm that reduced TA-Professor matching time by almost 80% for 300+ BC students and faculty'
-        ]
-      },
-      {
-        role: 'IT Technician',
-        date: 'Aug 2022 – May 2024',
-        achievements: [
-          'Resolved over 400 support tickets by diagnosing and addressing technical issues for students and faculty'
-        ]
-      }
-    ]
+    dateRange: 'Aug 2023 – Feb 2024',
+    description:
+      "At Vanta, I joined the backend team supporting infrastructure behind the company's real-time messaging and payments systems. I worked on replacing a third-party notification dependency with an internal solution that scaled to tens of thousands of payloads, and built atomic Stripe payment flows that kept the system reliable under retries and failure conditions.",
+    link: {
+      title:
+        "PlayVS Acquires Vanta Esports, Strengthening the Nation's Largest Education-Focused Gaming Ecosystem - PlayVS",
+      url: 'https://playvs.com/playvs-vanta/',
+      image: 'https://playvs.com/wp-content/uploads/2026/01/VantaACQ_Blog.png'
+    }
   }
 ];
 

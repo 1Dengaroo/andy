@@ -2,22 +2,22 @@
 
 import { useState, useEffect, useRef } from 'react';
 
-/* ── r/Shorts "Ember" theme — vermilion & warm gold on tungsten charcoal ── */
-const BG = '#120E0C';
-const CARD = '#1C1715';
-const FG = '#F2EFEC';
-const FG_SECONDARY = '#B3A89F';
-const FG_MUTED = '#7E7369';
-const BORDER = '#2F2823';
-const PRIMARY = '#EF6A39';
-const GOLD = '#FAC342';
-const ON_PRIMARY = '#1D0E06';
+/* ── r/Shorts light theme — quartz pink, synthetic purple & acrylic blue on blush white ── */
+const BG = '#F9F6F8';
+const CARD = '#FFFFFF';
+const FG = '#182525';
+const FG_SECONDARY = '#5E6978';
+const FG_MUTED = '#7E8996';
+const BORDER = '#D8CAD5';
+const PRIMARY = '#CE2751';
+const BLUE = '#56A3E6';
+const ON_PRIMARY = '#FFFFFF';
 
-/* Warm ember gradients for buttons / accents */
-const PRIMARY_GRADIENT = 'linear-gradient(135deg, #FB8A55 0%, #EF6A39 55%, #D14E1F 100%)';
+/* Quartz-pink gradients for buttons / accents */
+const PRIMARY_GRADIENT = 'linear-gradient(135deg, #E0446F 0%, #CE2751 55%, #AD1F43 100%)';
 const PRIMARY_GRADIENT_SOFT =
-  'linear-gradient(135deg, rgba(251,138,85,0.35) 0%, rgba(239,106,57,0.35) 100%)';
-const GLOW_SHADOW = '0 10px 28px -10px rgba(239,106,57,0.65)';
+  'linear-gradient(135deg, rgba(224,68,111,0.30) 0%, rgba(206,39,81,0.30) 100%)';
+const GLOW_SHADOW = '0 10px 28px -10px rgba(206,39,81,0.45)';
 
 const EXAMPLE_PROMPTS = [
   'My boss fired me for being 2 minutes late so I reported his $200k tax fraud to the IRS',
@@ -81,16 +81,16 @@ export function MockVideoGenerator() {
       className="relative w-full overflow-hidden rounded-xl border"
       style={{ borderColor: BORDER, backgroundColor: CARD }}
     >
-      {/* Warm ember glow accents */}
+      {/* Quartz-pink & acrylic-blue glow accents */}
       <div
         aria-hidden
         className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full blur-3xl"
-        style={{ background: 'radial-gradient(circle, rgba(239,106,57,0.20) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(206,39,81,0.10) 0%, transparent 70%)' }}
       />
       <div
         aria-hidden
         className="pointer-events-none absolute -bottom-12 -left-12 h-40 w-40 rounded-full blur-3xl"
-        style={{ background: 'radial-gradient(circle, rgba(250,195,66,0.14) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(34,117,191,0.08) 0%, transparent 70%)' }}
       />
 
       {/* Header */}
@@ -141,7 +141,7 @@ export function MockVideoGenerator() {
                     i === 0
                       ? {
                           borderColor: `${PRIMARY}80`,
-                          backgroundColor: 'rgba(239,106,57,0.12)',
+                          backgroundColor: 'rgba(206,39,81,0.08)',
                           color: PRIMARY
                         }
                       : { borderColor: BORDER, color: FG_MUTED }
@@ -179,7 +179,7 @@ export function MockVideoGenerator() {
               className="w-full cursor-pointer rounded-lg py-2 text-[10px] font-semibold transition-all duration-150"
               style={{
                 background: prompt.trim() ? PRIMARY_GRADIENT : PRIMARY_GRADIENT_SOFT,
-                color: prompt.trim() ? ON_PRIMARY : 'rgba(255,255,255,0.75)',
+                color: prompt.trim() ? ON_PRIMARY : PRIMARY,
                 opacity: prompt.trim() ? 1 : 0.7,
                 boxShadow: prompt.trim() ? GLOW_SHADOW : 'none'
               }}
@@ -216,7 +216,7 @@ export function MockVideoGenerator() {
                 width: '130px',
                 aspectRatio: '9/16',
                 borderColor: `${BORDER}`,
-                background: 'linear-gradient(180deg, #16100C 0%, #2A1A10 100%)'
+                background: 'linear-gradient(180deg, #101818 0%, #1E2A33 100%)'
               }}
             >
               {/* Mini Reddit-style title card — the video's intro */}
@@ -244,7 +244,7 @@ export function MockVideoGenerator() {
                 </div>
               </div>
 
-              {/* Caption overlay — active word pops in gold */}
+              {/* Caption overlay — active word pops in acrylic blue */}
               <div className="absolute inset-x-0 bottom-[28%] flex justify-center px-2">
                 <div className="text-center text-[9px] font-extrabold uppercase leading-relaxed tracking-wide">
                   {visibleWords.map((word, i) => {
@@ -256,7 +256,7 @@ export function MockVideoGenerator() {
                           style={
                             isActive
                               ? {
-                                  color: GOLD,
+                                  color: BLUE,
                                   transform: 'scale(1.12)',
                                   textShadow: '0 2px 8px rgba(0,0,0,0.8)'
                                 }
@@ -277,7 +277,7 @@ export function MockVideoGenerator() {
               {/* Progress bar */}
               <div
                 className="absolute inset-x-0 bottom-0 h-0.5"
-                style={{ backgroundColor: BORDER }}
+                style={{ backgroundColor: 'rgba(255,255,255,0.25)' }}
               >
                 <div
                   className="h-full transition-all duration-300"

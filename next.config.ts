@@ -1,7 +1,13 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      { protocol: 'https', hostname: 'www.pega.com' },
+      { protocol: 'https', hostname: 'www.myforreal.com' },
+      { protocol: 'https', hostname: 'playvs.com' }
+    ]
+  }
 };
 
 export default nextConfig;

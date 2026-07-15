@@ -8,10 +8,20 @@ import { ProjectModal, useHashModal } from './project-modal';
 import { MockSignalDashboard, MockContactList, MockEmailPreview } from './remes-demos';
 
 /* Remes brand palette: #455eb5, #5643cc, #673fd7, #6366f1 */
-/* Hero colors — matches remes.so landing page */
-const HERO_BG = 'rgb(2, 9, 58)';
-const HERO_STROKE = '#8b8dca';
-const HERO_STROKE_LIGHT = '#5a5d9e';
+/* Hero scene — mirrors --landing-scene from remes.so styles/landing.css */
+const HERO_SCENE = [
+  'radial-gradient(52% 60% at 78% 12%, rgba(103, 63, 215, 0.5), transparent 70%)',
+  'radial-gradient(45% 55% at 10% 90%, rgba(69, 94, 181, 0.45), transparent 70%)',
+  'radial-gradient(70% 80% at 55% 115%, rgba(86, 67, 204, 0.35), transparent 75%)',
+  'linear-gradient(175deg, #1c1656 0%, #131040 55%, #0d0a32 100%)'
+].join(', ');
+const HERO_STROKE = 'rgba(165, 180, 252, 0.45)';
+const HERO_STROKE_LIGHT = 'rgba(165, 180, 252, 0.22)';
+const HERO_FG_SECONDARY = '#a5b4fc';
+
+/* Film grain — mirrors --landing-noise from remes.so */
+const HERO_NOISE =
+  "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")";
 
 const CONVEYOR_PATH =
   'm-2.75 440.36 210.2-57.14a20 20 0 0 1 25.25 19.3v148.26a20 20 0 0 0 20 20h240.7a20 20 0 0 0 20-20V479.7c0-50.1 49.93-84.84 96.9-67.42l233.78 86.67a72.5 72.5 0 0 1-15.11 139.78l-174.75 24.57a41.1 41.1 0 0 1-46.83-40.7l.02-359.45a36.9 36.9 0 0 1 36.92-36.9h191.94a54.13 54.13 0 0 0 14.01-106.43l-428-114.68a31.58 31.58 0 0 0-39.76 30.5v170.6a20 20 0 0 1-20 20H-18.15';
@@ -43,13 +53,21 @@ function RemesCard() {
           }
         }}
       >
-        <div className="absolute inset-0" style={{ backgroundColor: HERO_BG }} />
+        {/* Deep indigo hero scene — base gradient + ambient glows */}
+        <div className="absolute inset-0" style={{ background: HERO_SCENE }} />
+
+        {/* Extra glow — intensifies on hover */}
+        <div
+          className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+          style={{
+            background:
+              'radial-gradient(60% 80% at 75% 25%, rgba(103, 63, 215, 0.35), transparent 70%)'
+          }}
+        />
 
         {/* Left conveyor — primary */}
         <svg
-          className="pointer-events-none absolute left-0 top-0 h-full opacity-60"
-          width="896"
-          height="668"
+          className="pointer-events-none absolute left-0 top-0 h-full w-auto opacity-60"
           viewBox="0 0 896 668"
           fill="none"
           style={{ transform: 'translate(-30%, -5%)' }}
@@ -67,9 +85,7 @@ function RemesCard() {
 
         {/* Right conveyor — mirrored, lighter */}
         <svg
-          className="pointer-events-none absolute right-0 top-0 h-full opacity-35"
-          width="896"
-          height="668"
+          className="pointer-events-none absolute right-0 top-0 h-full w-auto opacity-40"
           viewBox="0 0 896 668"
           fill="none"
           style={{ transform: 'translate(40%, 15%) scaleX(-1)' }}
@@ -86,7 +102,7 @@ function RemesCard() {
 
         {/* Floating gear — bottom right area */}
         <svg
-          className="pointer-events-none absolute bottom-[20%] right-[15%] opacity-25 transition-transform duration-700 group-hover:rotate-12"
+          className="pointer-events-none absolute bottom-[20%] right-[15%] opacity-30 transition-transform duration-700 group-hover:rotate-12"
           width="48"
           height="48"
           viewBox="394 12 44 44"
@@ -96,34 +112,36 @@ function RemesCard() {
           <path d={GEAR_PATH} fill={HERO_STROKE} />
         </svg>
 
+        {/* Film grain */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: HERO_NOISE,
+            backgroundRepeat: 'repeat',
+            backgroundSize: '128px 128px'
+          }}
+          aria-hidden="true"
+        />
+
         <CardContent className="relative z-10 flex h-full w-full flex-col justify-end p-5">
           <div className="flex items-end justify-between">
             <div>
               <span
                 className="mb-1 block font-mono text-[0.6rem] uppercase tracking-widest"
-                style={{ color: HERO_STROKE }}
+                style={{ color: HERO_FG_SECONDARY }}
               >
                 AI-Powered Outbound
               </span>
-              <div className="flex items-center gap-2">
-                <Image
-                  src="/logos/remes-logo.png"
-                  alt="Remes"
-                  width={20}
-                  height={20}
-                  className="rounded-sm"
-                />
-                <span
-                  className="text-xl font-bold tracking-tight sm:text-2xl"
-                  style={{ color: '#ffffff', fontFamily: 'var(--font-space-grotesk)' }}
-                >
-                  Remes
-                </span>
-              </div>
+              <span
+                className="text-xl font-bold tracking-tight sm:text-2xl"
+                style={{ color: '#ffffff', fontFamily: 'var(--font-space-grotesk)' }}
+              >
+                Remes
+              </span>
             </div>
             <ArrowUpRight
               className="h-4 w-4 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-              style={{ color: HERO_STROKE }}
+              style={{ color: HERO_FG_SECONDARY }}
             />
           </div>
         </CardContent>

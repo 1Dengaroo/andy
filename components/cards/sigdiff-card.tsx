@@ -23,207 +23,77 @@ function SigdiffCard() {
         }}
       >
         {/* Dark base */}
-        <div className="absolute inset-0" style={{ backgroundColor: '#0d1117' }} />
+        <div className="absolute inset-0" style={{ backgroundColor: '#0A0C10' }} />
 
-        {/* Diff-style side-by-side visualization */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Hunk header — spanning both columns */}
-          <div
-            className="absolute font-mono text-[6px]"
-            style={{
-              left: '8%',
-              right: '8%',
-              top: '6%',
-              color: 'rgba(88,166,255,0.6)',
-              borderBottom: '1px solid rgba(48,54,61,0.5)',
-              paddingBottom: 3
-            }}
-          >
-            @@ -1,11 +1,11 @@ export interface ApiSurface
-          </div>
+        {/* Faint dot-grid texture, fading toward the bottom */}
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px)',
+            backgroundSize: '18px 18px',
+            maskImage: 'linear-gradient(to bottom, black 0%, transparent 85%)'
+          }}
+        />
 
-          {/* Left column — "before" (removals) */}
-          <div
-            className="absolute transition-transform duration-700 group-hover:translate-x-[-3px]"
-            style={{
-              left: '8%',
-              top: '14%',
-              width: '38%',
-              bottom: '38%'
-            }}
-          >
-            <div className="space-y-[3px]">
-              {/* Neutral */}
-              <div className="flex items-center gap-1 rounded-sm px-1.5 py-[2px]">
-                <span className="font-mono text-[6px]" style={{ color: 'rgba(139,148,158,0.45)' }}>
-                  1
-                </span>
-                <div
-                  className="h-[2px] w-16 rounded-full"
-                  style={{ backgroundColor: 'rgba(139,148,158,0.2)' }}
-                />
-              </div>
-              {/* Removed lines */}
-              {[20, 14, 10, 17, 12, 19, 8].map((w, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-1 rounded-sm px-1.5 py-[2px]"
-                  style={{ backgroundColor: 'rgba(248,81,73,0.15)' }}
-                >
-                  <span className="font-mono text-[6px]" style={{ color: 'rgba(248,81,73,0.7)' }}>
-                    {i + 2}
-                  </span>
-                  <span className="font-mono text-[6px]" style={{ color: 'rgba(248,81,73,0.6)' }}>
-                    -
-                  </span>
-                  <div
-                    className="h-[2px] rounded-full"
-                    style={{ backgroundColor: `rgba(248,81,73,${0.4 - i * 0.03})`, width: w * 4 }}
-                  />
-                </div>
-              ))}
-              {/* Neutral */}
-              <div className="flex items-center gap-1 rounded-sm px-1.5 py-[2px]">
-                <span className="font-mono text-[6px]" style={{ color: 'rgba(139,148,158,0.45)' }}>
-                  9
-                </span>
-                <div
-                  className="h-[2px] w-12 rounded-full"
-                  style={{ backgroundColor: 'rgba(139,148,158,0.2)' }}
-                />
-              </div>
-              <div className="flex items-center gap-1 rounded-sm px-1.5 py-[2px]">
-                <span className="font-mono text-[6px]" style={{ color: 'rgba(139,148,158,0.45)' }}>
-                  10
-                </span>
-                <div
-                  className="h-[2px] w-8 rounded-full"
-                  style={{ backgroundColor: 'rgba(139,148,158,0.15)' }}
-                />
-              </div>
-            </div>
-          </div>
+        {/* Soft ambient glow behind the diff cluster */}
+        <div
+          aria-hidden
+          className="absolute -right-8 top-1/2 h-56 w-96 -translate-y-1/2 rounded-full blur-3xl transition-opacity duration-700"
+          style={{
+            background: 'radial-gradient(circle, rgba(63,185,80,0.08) 0%, transparent 70%)'
+          }}
+        />
 
-          {/* Center divider */}
-          <div
-            className="absolute"
-            style={{
-              left: '50%',
-              top: '14%',
-              bottom: '40%',
-              width: 1,
-              backgroundColor: 'rgba(48,54,61,0.8)'
-            }}
-          />
-
-          {/* Right column — "after" (additions) */}
-          <div
-            className="absolute transition-transform duration-700 group-hover:translate-x-[3px]"
-            style={{
-              right: '8%',
-              top: '14%',
-              width: '38%',
-              bottom: '38%'
-            }}
-          >
-            <div className="space-y-[3px]">
-              {/* Neutral */}
-              <div className="flex items-center gap-1 rounded-sm px-1.5 py-[2px]">
-                <span className="font-mono text-[6px]" style={{ color: 'rgba(139,148,158,0.45)' }}>
-                  1
-                </span>
-                <div
-                  className="h-[2px] w-16 rounded-full"
-                  style={{ backgroundColor: 'rgba(139,148,158,0.2)' }}
-                />
-              </div>
-              {/* Added lines */}
-              {[18, 22, 12, 16, 20, 9].map((w, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-1 rounded-sm px-1.5 py-[2px]"
-                  style={{ backgroundColor: 'rgba(63,185,80,0.15)' }}
-                >
-                  <span className="font-mono text-[6px]" style={{ color: 'rgba(63,185,80,0.7)' }}>
-                    {i + 2}
-                  </span>
-                  <span className="font-mono text-[6px]" style={{ color: 'rgba(63,185,80,0.6)' }}>
-                    +
-                  </span>
-                  <div
-                    className="h-[2px] rounded-full"
-                    style={{ backgroundColor: `rgba(63,185,80,${0.4 - i * 0.03})`, width: w * 4 }}
-                  />
-                </div>
-              ))}
-              {/* Neutral */}
-              <div className="flex items-center gap-1 rounded-sm px-1.5 py-[2px]">
-                <span className="font-mono text-[6px]" style={{ color: 'rgba(139,148,158,0.45)' }}>
-                  8
-                </span>
-                <div
-                  className="h-[2px] w-12 rounded-full"
-                  style={{ backgroundColor: 'rgba(139,148,158,0.2)' }}
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Floating version bump badge — bottom-right of diff area */}
-          <div
-            className="absolute transition-transform duration-700 group-hover:translate-y-[-2px]"
-            style={{
-              right: '10%',
-              bottom: '38%',
-              borderRadius: 5,
-              border: '1px solid rgba(48,54,61,0.8)',
-              backgroundColor: 'rgba(22,27,34,0.95)',
-              padding: '3px 7px',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
-            }}
-          >
-            <div className="flex items-center gap-1.5 font-mono text-[6px]">
-              <span style={{ color: 'rgba(139,148,158,0.7)' }}>bump</span>
-              <span
-                className="rounded px-1 py-[1px]"
-                style={{
-                  backgroundColor: 'rgba(248,81,73,0.2)',
-                  color: 'rgba(248,81,73,0.85)',
-                  fontSize: 5,
-                  fontWeight: 600
-                }}
-              >
-                major
+        {/* One signature change → one version bump */}
+        <div className="absolute right-[7%] top-1/2 hidden -translate-y-1/2 font-mono sm:block">
+          <div className="space-y-1.5 text-[10px] leading-none">
+            <div
+              className="flex items-center gap-2 transition-opacity duration-500 group-hover:opacity-60"
+              style={{ color: 'rgba(248,81,73,0.75)' }}
+            >
+              <span className="select-none" style={{ color: 'rgba(248,81,73,0.5)' }}>
+                -
               </span>
-              <span style={{ color: 'rgba(139,148,158,0.5)' }}>·</span>
-              <span style={{ color: 'rgba(248,81,73,0.7)', fontSize: 5 }}>-4</span>
-              <span style={{ color: 'rgba(63,185,80,0.7)', fontSize: 5 }}>+6</span>
+              <span>diff(a: string, b: string)</span>
             </div>
+            <div className="flex items-center gap-2" style={{ color: 'rgba(63,185,80,0.9)' }}>
+              <span className="select-none" style={{ color: 'rgba(63,185,80,0.55)' }}>
+                +
+              </span>
+              <span>diff(a: Ref, b: Ref, opts?)</span>
+            </div>
+          </div>
+
+          <div className="my-2.5 h-px w-full" style={{ backgroundColor: 'rgba(48,54,61,0.7)' }} />
+
+          <div className="flex items-center gap-2 text-[11px] leading-none">
+            <span style={{ color: 'rgba(139,148,158,0.7)' }}>1.8.3</span>
+            <span
+              className="transition-transform duration-500 group-hover:translate-x-0.5"
+              style={{ color: 'rgba(139,148,158,0.5)' }}
+            >
+              →
+            </span>
+            <span className="font-semibold" style={{ color: '#E6EDF3' }}>
+              2.0.0
+            </span>
+            <span
+              className="rounded-full px-1.5 py-0.5 text-[8px] font-semibold"
+              style={{ backgroundColor: 'rgba(248,81,73,0.15)', color: 'rgba(248,81,73,0.9)' }}
+            >
+              major
+            </span>
           </div>
         </div>
-
-        {/* Ambient glow — red left, green right */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'radial-gradient(ellipse 30% 50% at 25% 30%, rgba(248,81,73,0.12) 0%, transparent 70%)'
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'radial-gradient(ellipse 30% 50% at 75% 30%, rgba(63,185,80,0.12) 0%, transparent 70%)'
-          }}
-        />
 
         {/* Bottom gradient for text */}
         <div
           className="absolute inset-x-0 bottom-0 h-2/3"
           style={{
             background:
-              'linear-gradient(to top, #0d1117 0%, rgba(13,17,23,0.9) 45%, transparent 100%)'
+              'linear-gradient(to top, #0A0C10 0%, rgba(10,12,16,0.85) 40%, transparent 100%)'
           }}
         />
 

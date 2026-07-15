@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Card } from '../ui/card';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
+import { Textarea } from '../ui/textarea';
 import { Send } from 'lucide-react';
 
 function ContactCard() {
@@ -37,13 +38,12 @@ function ContactCard() {
             required
           />
         </div>
-        <textarea
+        <Textarea
           placeholder="Message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
           rows={2}
-          className="flex w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-muted-foreground"
         />
         <Button
           type="submit"

@@ -8,6 +8,7 @@ import { z } from 'zod';
 import { Card } from '../ui/card';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
+import { Textarea } from '../ui/textarea';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 import {
   DropdownMenu,
@@ -211,11 +212,11 @@ function CTACard() {
                   </div>
                 </div>
                 <div>
-                  <textarea
+                  <Textarea
                     placeholder="Message"
                     rows={3}
                     {...register('message')}
-                    className="flex w-full resize-y rounded-sm border border-input bg-transparent px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-muted-foreground"
+                    className="resize-y rounded-sm"
                   />
                   {errors.message && (
                     <p className="mt-1 text-xs text-destructive">{errors.message.message}</p>

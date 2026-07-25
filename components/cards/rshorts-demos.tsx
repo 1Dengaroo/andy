@@ -118,7 +118,7 @@ export function MockVideoGenerator() {
           <div className="space-y-3">
             <div>
               <textarea
-                className="w-full resize-none rounded-lg border px-3 py-2 text-[10px] outline-none transition-colors placeholder:text-[10px]"
+                className="w-full resize-none rounded-lg border px-3 py-2 text-[10px] transition-colors placeholder:text-[10px]"
                 style={{
                   borderColor: prompt ? PRIMARY : BORDER,
                   backgroundColor: BG,

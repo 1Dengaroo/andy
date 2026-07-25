@@ -13,12 +13,12 @@ function BookmarkEmbed({ link }: { link: BookmarkLink }) {
   const domain = new URL(link.url).hostname.replace('www.', '');
 
   return (
-    <Card className="group/bookmark overflow-hidden border border-border/50">
+    <div className="group/bookmark rounded-lg border border-border/50 bg-background">
       <Link
         href={link.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-4 p-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring"
+        className="flex items-center gap-4 rounded-[inherit] p-2"
       >
         <div className="relative h-16 w-28 shrink-0 overflow-hidden rounded-md bg-muted">
           <Image
@@ -35,7 +35,7 @@ function BookmarkEmbed({ link }: { link: BookmarkLink }) {
         </div>
         <ArrowUpRight className="mr-1 h-4 w-4 shrink-0 text-muted-foreground transition-all duration-300 group-hover/bookmark:-translate-y-0.5 group-hover/bookmark:translate-x-0.5 group-hover/bookmark:text-foreground" />
       </Link>
-    </Card>
+    </div>
   );
 }
 

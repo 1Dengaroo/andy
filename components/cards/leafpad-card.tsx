@@ -324,9 +324,9 @@ function LeafpadCard() {
         open={open}
         onOpenChange={setOpen}
         triggerId="toolbench"
-        className="!border-[#e4e4e7] !bg-[#f7f7f8] !text-[#18181b] sm:!max-w-3xl"
+        className="sm:!max-w-3xl"
         previewClassName=""
-        closeClassName="text-[#a1a1aa] hover:text-[#18181b]"
+        closeClassName="text-black"
         preview={
           <div className="relative h-full w-full p-5 pb-3" style={{ backgroundColor: BASE }}>
             {/* Tab bar */}
@@ -368,11 +368,11 @@ function LeafpadCard() {
         subtitle="A clean set of developer tools"
         link={{ label: 'toolbench-one.vercel.app', href: 'https://toolbench-one.vercel.app' }}
       >
-        <p style={{ color: '#52525b' }}>
+        <p>
           I wanted a clean markdown editor, a fast JSON formatter, and a simple notepad that I
           actually enjoyed using. So I built them all in one place.
         </p>
-        <p style={{ color: '#52525b' }}>
+        <p>
           Toolbench is simple, free, and focused. No ads, no accounts, no distractions. Just the
           tools, done well.
         </p>

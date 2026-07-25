@@ -151,7 +151,9 @@ function RemesCard() {
         open={open}
         onOpenChange={setOpen}
         triggerId="remes"
-        className="!border-[#ddd8ed] !bg-[#f6f5fc] !text-[#1c1a30] sm:!max-w-3xl"
+        closeClassName="text-black"
+        className="sm:!max-w-3xl"
+        previewClassName=""
         preview={
           <div className="relative h-full w-full p-5 pb-3" style={{ backgroundColor: '#f6f5fc' }}>
             {/* Tab bar */}
@@ -202,12 +204,12 @@ function RemesCard() {
         subtitle="AI-powered outbound sales platform"
         link={{ label: 'remes.so', href: 'https://remes.so' }}
       >
-        <p style={{ color: '#5e5c78' }}>
+        <p>
           An AI-powered outbound sales platform for SMBs. Monitors the web for buying signals like
           job postings, funding rounds, and hiring surges, finds decision-makers via Apollo, and
           generates personalized outreach emails using Claude.
         </p>
-        <p style={{ color: '#5e5c78' }}>
+        <p>
           Built in collaboration with a sales colleague who actively uses it at Modal Labs. Stack
           includes Next.js App Router, TypeScript, Tailwind CSS, shadcn/ui, Supabase, Anthropic
           Claude API, Apollo API, and Gmail OAuth.

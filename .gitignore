@@ -41,8 +41,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# package-lock.json
-package-lock.json
-
 # Claude
 .claude/settings.local.json

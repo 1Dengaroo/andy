@@ -269,7 +269,7 @@ export function MockMarkdownEditor() {
           value={content}
           onChange={(e) => setContent(e.target.value)}
           spellCheck={false}
-          className="min-w-0 flex-1 resize-none bg-transparent p-3 text-[10px] leading-relaxed outline-none"
+          className="min-w-0 flex-1 resize-none bg-transparent p-3 text-[10px] leading-relaxed"
           style={{ color: FG, fontFamily: 'ui-monospace, monospace', caretColor: PRIMARY }}
         />
 
@@ -555,7 +555,7 @@ export function MockNotepad() {
                   onClick={(e) => e.stopPropagation()}
                   spellCheck={false}
                   rows={3}
-                  className="mt-1 w-full resize-none bg-transparent text-[9px] leading-snug outline-none"
+                  className="mt-1 w-full resize-none bg-transparent text-[9px] leading-snug"
                   style={{ color: FG_SECONDARY }}
                 />
               ) : (

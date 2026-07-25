@@ -3,16 +3,14 @@
 import { useState, useEffect } from 'react';
 import WelcomeCard from '@/components/cards/welcome-card';
 import AboutCard from '@/components/cards/about-card';
-import OoeyCard from '@/components/cards/ooey-card';
 import SigdiffCard from '@/components/cards/sigdiff-card';
 import ExperienceCard from '@/components/cards/experience-card';
-import QuFlowCard from '@/components/cards/quflow-card';
 import SkillsCard from '@/components/cards/skills-card';
 import EducationCard from '@/components/cards/education-card';
 import CTACard from '@/components/cards/cta-card';
 import RemesCard from '@/components/cards/remes-card';
 import RShortsCard from '@/components/cards/rshorts-card';
-import LeafpadCard from '@/components/cards/leafpad-card';
+import ArchivedProjects from '@/components/cards/archived-projects';
 import Controls from '@/components/layout/controls';
 import FadeIn from '@/components/layout/fade-in';
 import FooterCard from '@/components/cards/footer-card';
@@ -86,18 +84,10 @@ const Page = () => {
           </div>
         </div>
 
-        {/* Row 4: Second row of project cards — 3 columns */}
-        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          <FadeIn>
-            <LeafpadCard />
-          </FadeIn>
-          <FadeIn delay={D}>
-            <OoeyCard />
-          </FadeIn>
-          <FadeIn delay={D * 2}>
-            <QuFlowCard />
-          </FadeIn>
-        </div>
+        {/* Row 4: Archived project cards — collapsed by default */}
+        <FadeIn className="mx-auto w-full max-w-7xl">
+          <ArchivedProjects />
+        </FadeIn>
 
         {/* Row 5: CTA + Footer */}
         <FadeIn className="mx-auto flex w-full max-w-7xl flex-col gap-3">

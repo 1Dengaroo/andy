@@ -26,6 +26,8 @@
 - Never mark a task complete without proving it works
 - Diff behavior between main and your changes when relevant
 - Ask yourself: "Would a staff engineer approve this?"
+- Never debug in the browser -- no browser automation, no screenshots, no dev-server
+  inspection. Verify with build, lint, and typecheck only. The user checks the browser.
 
 ### Demand Elegance (Balanced)
 

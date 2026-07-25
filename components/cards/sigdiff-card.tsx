@@ -120,7 +120,7 @@ function SigdiffCard() {
         onOpenChange={setOpen}
         triggerId="sigdiff"
         closeClassName="text-white"
-        className="!border-[#30363d] !bg-[#0d1117] !text-[#e6edf3] sm:!max-w-2xl"
+        className="sm:!max-w-2xl"
         previewClassName=""
         preview={
           <div className="relative h-full w-full p-5 pb-3" style={{ backgroundColor: '#0d1117' }}>
@@ -131,12 +131,12 @@ function SigdiffCard() {
         subtitle="Automated semver classification for TypeScript"
         link={{ label: 'npmjs.com/package/sigdiff', href: 'https://www.npmjs.com/package/sigdiff' }}
       >
-        <p style={{ color: '#8b949e' }}>
+        <p>
           An automated API surface change detection tool for TypeScript projects. Compares public
           exports between two git refs and classifies every change as major, minor, or patch — zero
           configuration required.
         </p>
-        <p style={{ color: '#8b949e' }}>
+        <p>
           Built with the TypeScript Compiler API for AST-level analysis. Features a composable
           pipeline (extract → diff → classify → format), multiple output formats including JSON and
           CI-friendly exit codes, and ships as a single dependency under 8 KB.

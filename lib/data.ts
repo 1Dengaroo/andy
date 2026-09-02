@@ -16,6 +16,7 @@ export const skillCategories = [
       'Node.js',
       'Django',
       'Spring',
+      'Hibernate',
       'LLM Orchestration',
       'Agentic Workflows',
       'Async Pipelines',
@@ -30,6 +31,7 @@ export const skillCategories = [
       'AWS (EC2, S3, RDS, Lambda)',
       'Docker',
       'CI/CD (GitHub Actions)',
+      'Datadog',
       'Distributed Systems',
       'Caching',
       'PostgreSQL',
@@ -41,10 +43,21 @@ export const skillCategories = [
 
 export const experiences: ExperienceEntry[] = [
   {
+    company: 'CLEAR',
+    title: 'Software Engineer (Payments & Subscriptions)',
+    location: 'New York, NY',
+    dateRange: 'Sep 2026 – Present',
+    link: {
+      title: 'CLEAR',
+      url: 'http://clearme.com/',
+      image: '/logos/clear-og.png'
+    }
+  },
+  {
     company: 'Pegasystems',
     title: 'Software Engineer (Backend / Frontend / Infrastructure)',
     location: 'Boston, MA',
-    dateRange: 'May 2025 – Present',
+    dateRange: 'May 2025 – Sep 2026',
     description:
       "At Pegasystems, I joined the team behind Blueprint, Pega's flagship AI product helping enterprises build applications through secure, governed agentic generation. I've helped scale Blueprint from early launch to millions of enterprise workflows by owning full-stack development across the generation pipeline, from the user-facing interface down through the distributed backend services and agentic orchestration infrastructure that power it. Along the way I've worked on LLM orchestration, event-driven pipelines, real-time delivery systems, and the agentic coding tooling and practices the team relies on to ship faster. My ownership has scaled up over time, starting with feature-level work and growing into a broader role across the platform's distributed architecture and the infrastructure the team depends on day to day.",
     link: {

@@ -31,7 +31,7 @@ function AboutCard() {
         <div className="text-center">
           <h3 className="text-lg font-semibold">Andy Deng</h3>
           <p className="mt-2 text-sm text-muted-foreground">Full-stack software engineer</p>
-          <p className="text-sm text-muted-foreground">Based in Boston / NYC</p>
+          <p className="text-sm text-muted-foreground">Based in New York</p>
         </div>
         <div className="mt-4 flex gap-x-1.5">
           <TooltipProvider>

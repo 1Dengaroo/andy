@@ -9,6 +9,6 @@ export interface ExperienceEntry {
   title: string;
   location: string;
   dateRange: string;
-  description: string;
+  description?: string;
   link: BookmarkLink;
 }

@@ -32,17 +32,11 @@ interface FontDefinition {
 
 ### Data Structures
 
-Content in `lib/data.ts` uses inline typed arrays:
+Content lives in `lib/data.ts`; shared shapes come from `lib/types.ts`:
 
 ```typescript
 skillCategories: Array<{ title: string; skills: string[] }>;
-experiences: Array<{
-  role: string;
-  company: string;
-  location: string;
-  date: string;
-  achievements: string[];
-}>;
+experiences: ExperienceEntry[]; // company, title, location, dateRange, description?, link
 socialLinks: Array<{ href: string; icon: LucideIcon; label: string }>;
 ```
 

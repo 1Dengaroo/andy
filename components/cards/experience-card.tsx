@@ -53,18 +53,22 @@ function ExperienceItem({ exp }: { exp: ExperienceEntry }) {
         </div>
         <span className="whitespace-nowrap text-xs text-muted-foreground">{exp.dateRange}</span>
       </div>
-      <p
-        className={`text-sm leading-relaxed text-muted-foreground ${!expanded ? 'line-clamp-3' : ''}`}
-      >
-        {exp.description}
-      </p>
-      <Button
-        variant="link"
-        onClick={() => setExpanded(!expanded)}
-        className="h-auto p-0 font-mono text-xs text-accent-primary transition-colors hover:text-accent-primary/80 hover:no-underline"
-      >
-        {expanded ? '- Show less' : '+ Show more'}
-      </Button>
+      {exp.description && (
+        <>
+          <p
+            className={`text-sm leading-relaxed text-muted-foreground ${!expanded ? 'line-clamp-3' : ''}`}
+          >
+            {exp.description}
+          </p>
+          <Button
+            variant="link"
+            onClick={() => setExpanded(!expanded)}
+            className="h-auto p-0 font-mono text-xs text-accent-primary transition-colors hover:text-accent-primary/80 hover:no-underline"
+          >
+            {expanded ? '- Show less' : '+ Show more'}
+          </Button>
+        </>
+      )}
       <BookmarkEmbed link={exp.link} />
     </div>
   );

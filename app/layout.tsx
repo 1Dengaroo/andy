@@ -108,7 +108,7 @@ export default function RootLayout({
               jobTitle: 'Full-Stack Software Engineer',
               worksFor: {
                 '@type': 'Organization',
-                name: 'Pega'
+                name: 'CLEAR'
               },
               address: {
                 '@type': 'PostalAddress',

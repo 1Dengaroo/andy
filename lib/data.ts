@@ -44,9 +44,9 @@ export const skillCategories = [
 export const experiences: ExperienceEntry[] = [
   {
     company: 'CLEAR',
-    title: 'Software Engineer (Payments & Subscriptions)',
+    title: 'Incoming Software Engineer (Payments & Subscriptions)',
     location: 'New York, NY',
-    dateRange: 'Sep 2026 – Present',
+    dateRange: 'Starting Sep 2026',
     link: {
       title: 'CLEAR',
       url: 'http://clearme.com/',

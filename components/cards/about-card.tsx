@@ -3,12 +3,10 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FileText } from 'lucide-react';
 import { Card } from '../ui/card';
 import { Button } from '../ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 import { socialLinks } from '@/lib/data';
-import { showResume } from '@/lib/config';
 
 function AboutCard() {
   const [loaded, setLoaded] = useState(false);
@@ -62,30 +60,6 @@ function AboutCard() {
                 </Tooltip>
               );
             })}
-            {showResume && (
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    asChild
-                    className="h-8 w-8 rounded-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-accent-primary hover:text-accent-primary active:translate-y-0"
-                  >
-                    <a
-                      href="/docs/resume.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="View Resume"
-                    >
-                      <FileText className="h-3.5 w-3.5" />
-                    </a>
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Resume</p>
-                </TooltipContent>
-              </Tooltip>
-            )}
           </TooltipProvider>
         </div>
       </div>

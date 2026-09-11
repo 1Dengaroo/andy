@@ -3,7 +3,7 @@
 - [Architecture](docs/ARCHITECTURE.md) - Tech stack, directory structure, data flow, component patterns
 - [Theme Framework](docs/THEME_FRAMEWORK.md) - Token contract, color spaces, how to add themes, tokenization rules
 - [TypeScript](docs/TYPESCRIPT.md) - Compiler config, type patterns, style guidelines
-- [Skills](.claude/skills/) - Custom Claude Code skills (new-theme, update-resume, code-cleanup, cleanup-public)
+- [Skills](.claude/skills/) - Custom Claude Code skills (new-theme, code-cleanup, cleanup-public)
 
 ## Workflow Orchestration
 

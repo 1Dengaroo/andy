@@ -44,18 +44,21 @@ export const skillCategories = [
 export const experiences: ExperienceEntry[] = [
   {
     company: 'CLEAR',
-    title: 'Incoming Software Engineer (Payments & Subscriptions)',
+    title: 'Software Engineer (Subscriptions & Payments)',
     location: 'New York, NY',
-    dateRange: 'Starting Sep 2026',
+    dateRange: 'Sep 2026 – Present',
+    description:
+      'At CLEAR, I work on the subscriptions and payments platform behind over $1B in annual revenue and identity products used by tens of millions of members. My work spans the billing and subscription lifecycle systems that have to stay correct and reliable at that scale.',
     link: {
-      title: 'CLEAR',
-      url: 'http://clearme.com/',
-      image: '/logos/clear-og.png'
+      title: 'CLEAR+ — Airport Fast Pass | CLEAR',
+      url: 'https://www.clearme.com/clear-plus',
+      image:
+        'https://cdn.prod.website-files.com/646a6ec3f634076bc7bf77f2/696138ee8891a6a6f9115a05_midnight%20egate.jpg'
     }
   },
   {
     company: 'Pegasystems',
-    title: 'Software Engineer (Backend / Frontend / Infrastructure)',
+    title: 'Software Engineer (Full Stack / Infrastructure)',
     location: 'Boston, MA',
     dateRange: 'May 2025 – Sep 2026',
     description:
@@ -81,7 +84,7 @@ export const experiences: ExperienceEntry[] = [
   },
   {
     company: 'Vanta',
-    title: 'Software Engineer Intern (Backend / Full Stack)',
+    title: 'Software Engineer Intern (Full Stack)',
     location: 'Remote',
     dateRange: 'Aug 2023 – Feb 2024',
     description:

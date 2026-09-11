@@ -19,8 +19,7 @@ import {
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '../ui/dialog';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import { socialLinks } from '@/lib/data';
-import { showResume } from '@/lib/config';
-import { Mail, Send, MessageSquare, CircleCheck, ArrowRight, FileText } from 'lucide-react';
+import { Mail, Send, MessageSquare, CircleCheck, ArrowRight } from 'lucide-react';
 
 const contactSchema = z.object({
   name: z.string().min(1, 'Name is required'),
@@ -78,7 +77,7 @@ function CTACard() {
           <div>
             <p className="heading-serif text-lg font-semibold text-white">Reach out</p>
             <p className="mt-0.5 text-xs text-white/70">
-              Always open to new opportunities and collaborations.
+              Messages reach me directly &mdash; I&apos;ll get back to you.
             </p>
           </div>
         </div>
@@ -135,30 +134,6 @@ function CTACard() {
                   </Tooltip>
                 );
               })}
-              {showResume && (
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      asChild
-                      className="h-8 w-8 text-white/60 transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/10 hover:text-white active:translate-y-0"
-                    >
-                      <a
-                        href="/docs/resume.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="View Resume"
-                      >
-                        <FileText className="h-3.5 w-3.5" />
-                      </a>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Resume</p>
-                  </TooltipContent>
-                </Tooltip>
-              )}
             </TooltipProvider>
           </div>
         </div>

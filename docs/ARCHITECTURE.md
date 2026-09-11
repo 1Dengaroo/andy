@@ -37,7 +37,6 @@ styles/
   themes/               # Per-theme CSS variable files + _contract.css token spec
 
 public/
-  docs/                 # Static files (resume PDF)
   images/               # Portfolio images
 ```
 

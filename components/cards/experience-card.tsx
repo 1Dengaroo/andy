@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -41,6 +41,22 @@ function BookmarkEmbed({ link }: { link: BookmarkLink }) {
 
 function ExperienceItem({ exp }: { exp: ExperienceEntry }) {
   const [expanded, setExpanded] = useState(false);
+  const [clamped, setClamped] = useState(false);
+  const textRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    const el = textRef.current;
+    if (!el || expanded) return;
+
+    const measure = (): void => setClamped(el.scrollHeight > el.clientHeight + 1);
+    measure();
+
+    const observer = new ResizeObserver(measure);
+    observer.observe(el);
+    document.fonts?.ready.then(measure);
+
+    return () => observer.disconnect();
+  }, [expanded]);
 
   return (
     <div className="space-y-3 border-b border-border/30 pb-6">
@@ -56,17 +72,20 @@ function ExperienceItem({ exp }: { exp: ExperienceEntry }) {
       {exp.description && (
         <>
           <p
+            ref={textRef}
             className={`text-sm leading-relaxed text-muted-foreground ${!expanded ? 'line-clamp-3' : ''}`}
           >
             {exp.description}
           </p>
-          <Button
-            variant="link"
-            onClick={() => setExpanded(!expanded)}
-            className="h-auto p-0 font-mono text-xs text-accent-primary transition-colors hover:text-accent-primary/80 hover:no-underline"
-          >
-            {expanded ? '- Show less' : '+ Show more'}
-          </Button>
+          {clamped && (
+            <Button
+              variant="link"
+              onClick={() => setExpanded(!expanded)}
+              className="h-auto p-0 font-mono text-xs text-accent-primary transition-colors hover:text-accent-primary/80 hover:no-underline"
+            >
+              {expanded ? '- Show less' : '+ Show more'}
+            </Button>
+          )}
         </>
       )}
       <BookmarkEmbed link={exp.link} />

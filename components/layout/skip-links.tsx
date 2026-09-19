@@ -3,7 +3,6 @@
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 const skipLinks = [
-  { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
   { id: 'contact', label: 'Contact' }
 ];

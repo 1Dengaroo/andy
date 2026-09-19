@@ -4,9 +4,6 @@ import { useState, useEffect } from 'react';
 import WelcomeCard from '@/components/cards/welcome-card';
 import AboutCard from '@/components/cards/about-card';
 import SigdiffCard from '@/components/cards/sigdiff-card';
-import ExperienceCard from '@/components/cards/experience-card';
-import SkillsCard from '@/components/cards/skills-card';
-import EducationCard from '@/components/cards/education-card';
 import CTACard from '@/components/cards/cta-card';
 import RemesCard from '@/components/cards/remes-card';
 import RShortsCard from '@/components/cards/rshorts-card';
@@ -69,27 +66,12 @@ const Page = () => {
           </FadeIn>
         </div>
 
-        {/* Row 3: Experience (wide) | Skills + Education (stacked) */}
-        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-3 lg:grid-cols-6">
-          <FadeIn className="lg:col-span-4" delay={D}>
-            <ExperienceCard />
-          </FadeIn>
-          <div className="flex flex-col gap-3 lg:col-span-2">
-            <FadeIn delay={D * 2} className="flex flex-1 flex-col">
-              <SkillsCard />
-            </FadeIn>
-            <FadeIn delay={D * 3}>
-              <EducationCard />
-            </FadeIn>
-          </div>
-        </div>
-
-        {/* Row 4: Archived project cards — collapsed by default */}
+        {/* Row 3: Archived project cards — collapsed by default */}
         <FadeIn className="mx-auto w-full max-w-7xl">
           <ArchivedProjects />
         </FadeIn>
 
-        {/* Row 5: CTA + Footer */}
+        {/* Row 4: CTA + Footer */}
         <FadeIn className="mx-auto flex w-full max-w-7xl flex-col gap-3">
           <div id="contact">
             <CTACard />

@@ -13,7 +13,7 @@ function AboutCard() {
 
   return (
     <Card className="flex h-full flex-col items-center justify-center p-6">
-      <div className="relative h-80 w-80 overflow-hidden rounded-lg bg-muted">
+      <div className="relative h-80 w-80 overflow-hidden rounded-full bg-muted">
         {!loaded && <div className="absolute inset-0 animate-pulse bg-muted" />}
         <Image
           src="/images/pfp.webp"
@@ -21,7 +21,7 @@ function AboutCard() {
           fill
           sizes="320px"
           loading="lazy"
-          className={`scale-110 object-cover transition-all duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+          className={`object-cover transition-all duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
           onLoad={() => setLoaded(true)}
         />
       </div>

@@ -195,7 +195,7 @@ Skip this step if the CSS body background (texture + gradient) is sufficient. Mo
 
 ### 6. Verify
 
-- Run `npm run build` -- zero errors
+- Run `pnpm build` -- zero errors
 - Run `npx prettier --write .` -- consistent formatting
 - Switch to the new theme in the settings panel and verify:
   - Cards, tags, labels, buttons all look intentional

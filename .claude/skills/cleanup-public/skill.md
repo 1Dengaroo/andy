@@ -33,6 +33,7 @@ grep -r "photo.jpg" --include="*.tsx" --include="*.ts" --include="*.css" --inclu
 ### 3. Report findings
 
 Before deleting anything, list:
+
 - **Referenced files** -- files that are used somewhere in the codebase
 - **Unreferenced files** -- files with zero references (candidates for deletion)
 
@@ -41,6 +42,7 @@ Before deleting anything, list:
 Present the unreferenced files list and ask the user to confirm deletion. Some files may be referenced externally (e.g. `robots.txt`, `favicon.ico`, `resume.pdf` linked from outside the repo) -- flag these as "likely needed despite no code reference."
 
 **Always keep without asking:**
+
 - `favicon.ico`, `favicon*.png`, `apple-touch-icon.png`
 - `robots.txt`, `sitemap.xml`
 - `manifest.json`, `site.webmanifest`
@@ -54,7 +56,7 @@ Remove the confirmed unreferenced files. If an entire directory becomes empty af
 ### 6. Verify
 
 ```bash
-npm run build
+pnpm build
 ```
 
 Build must pass. If it fails, a deleted file was actually referenced -- restore it and re-check.

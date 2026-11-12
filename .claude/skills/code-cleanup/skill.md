@@ -64,7 +64,7 @@ After cleanup, verify docs reflect the current state:
 ### 7. Final Verification
 
 ```bash
-npm run build          # Zero type errors
+pnpm build          # Zero type errors
 npx prettier --write . # Consistent formatting
 ```
 

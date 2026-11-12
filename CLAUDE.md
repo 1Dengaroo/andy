@@ -48,6 +48,11 @@
 
 ## Conventions
 
+### Package Manager
+
+- Use `pnpm`, not `npm` -- `pnpm install` / `pnpm dev` / `pnpm build`
+- We switched from npm because this repo runs across several git worktrees (emdash), and npm needed a full reinstall in every worktree. pnpm hard-links packages from one shared store, so new worktrees install in seconds instead of minutes.
+
 ### SSR / Client Boundary
 
 - Never `'use client'` in `/app` -- not in `page.tsx`, `layout.tsx`, or any file

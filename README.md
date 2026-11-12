@@ -5,8 +5,8 @@ Personal portfolio site. Visit at [andydeng.me](https://andydeng.me).
 ## Getting Started
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
